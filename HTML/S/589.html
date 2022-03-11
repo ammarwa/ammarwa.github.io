@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>reuse_distance_tool/parda_print.c</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/627.html'>reuse_distance_tool</a>/parda_print.c</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L3'>[^]</a><a href='#L49'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L3' title='Defined at 3.'>parda_print_front</a></li>
+<li><a href='#L14' title='Defined at 14.'>parda_print_end</a></li>
+<li><a href='#L28' title='Defined at 28.'>parda_print_tree</a></li>
+<li><a href='#L33' title='Defined at 33.'>print_iterator</a></li>
+<li><a href='#L37' title='Defined at 37.'>parda_print_hash</a></li>
+<li><a href='#L43' title='Defined at 43.'>parda_print</a></li>
+<li><a href='#L49' title='Defined at 49.'>parda_print_histogram</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='601.html'>parda.h</a>"
+<a id='L2' name='L2'></a>   2 
+<a id='L3' name='L3'></a>   3 <strong class='reserved'>void</strong> <a href='../R/345.html' title='Multiple referred from 2 places.'>parda_print_front</a>(<strong class='reserved'>const</strong> <a href='../S/601.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a>* <a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>) <em class='brace'>{</em>
+<a id='L4' name='L4'></a>   4         <a href='../S/604.html#L17' title='Defined at 17 in reuse_distance_tool/narray.h.'>narray_t</a>* <a href='../Y/1060.html' title='Multiple used in 25 places.'>ga</a> = <a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>-&gt;<a href='../Y/1060.html' title='Multiple used in 25 places.'>ga</a>;
+<a id='L5' name='L5'></a>   5         <strong class='reserved'>int</strong> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>;
+<a id='L6' name='L6'></a>   6         <strong class='reserved'>unsigned</strong> <a href='../Y/1279.html' title='Multiple used in 66 places.'>len</a> = <a href='../S/604.html#L25' title='Defined at 25 in reuse_distance_tool/narray.h.'>narray_get_len</a>(<a href='../Y/1060.html' title='Multiple used in 25 places.'>ga</a>);
+<a id='L7' name='L7'></a>   7         <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("&lt; ");
+<a id='L8' name='L8'></a>   8         <strong class='reserved'>for</strong> (<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> = 0; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> &lt; <a href='../Y/1279.html' title='Multiple used in 66 places.'>len</a>; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>++) <em class='brace'>{</em>
+<a id='L9' name='L9'></a>   9                 <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("%s ", ((<a href='../Y/92.html' title='Multiple used in 19 places.'>HKEY</a>*)<a href='../Y/1060.html' title='Multiple used in 25 places.'>ga</a>-&gt;<a href='../Y/918.html' title='Multiple used in 60 places.'>data</a>)[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>]);
+<a id='L10' name='L10'></a>  10         <em class='brace'>}</em>
+<a id='L11' name='L11'></a>  11         <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("&gt;\n");
+<a id='L12' name='L12'></a>  12 <em class='brace'>}</em>
+<a id='L13' name='L13'></a>  13 
+<a id='L14' name='L14'></a>  14 <strong class='reserved'>void</strong> <a href='../S/601.html#L100' title='Referred from 100 in reuse_distance_tool/parda.h.'>parda_print_end</a>(<strong class='reserved'>const</strong> <a href='../S/601.html#L61' title='Defined at 61 in reuse_distance_tool/parda.h.'>end_keytime_t</a>* <a href='../Y/971.html' title='Multiple used in 20 places.'>ekt</a>) <em class='brace'>{</em>
+<a id='L15' name='L15'></a>  15         <a href='../S/604.html#L17' title='Defined at 17 in reuse_distance_tool/narray.h.'>narray_t</a>* <a href='../Y/1130.html' title='Multiple used in 10 places.'>gkeys</a> = <a href='../Y/971.html' title='Multiple used in 20 places.'>ekt</a>-&gt;<a href='../Y/1130.html' title='Multiple used in 10 places.'>gkeys</a>;
+<a id='L16' name='L16'></a>  16         <a href='../S/604.html#L17' title='Defined at 17 in reuse_distance_tool/narray.h.'>narray_t</a>* <a href='../Y/1148.html' title='Multiple used in 8 places.'>gtimes</a> = <a href='../Y/971.html' title='Multiple used in 20 places.'>ekt</a>-&gt;<a href='../Y/1148.html' title='Multiple used in 8 places.'>gtimes</a>;
+<a id='L17' name='L17'></a>  17         <em class='comment'>//printf("ekt=%p gkeys=%p gtimes=%p in print_end\n",ekt,gkeys,gtimes);</em>
+<a id='L18' name='L18'></a>  18         <strong class='reserved'>unsigned</strong> <a href='../Y/1279.html' title='Multiple used in 66 places.'>len</a> = <a href='../S/604.html#L25' title='Defined at 25 in reuse_distance_tool/narray.h.'>narray_get_len</a>(<a href='../Y/1130.html' title='Multiple used in 10 places.'>gkeys</a>);
+<a id='L19' name='L19'></a>  19         <em class='comment'>//  printf("len=%u\n",len);</em>
+<a id='L20' name='L20'></a>  20         <strong class='reserved'>int</strong> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>;
+<a id='L21' name='L21'></a>  21         <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("[ ");
+<a id='L22' name='L22'></a>  22         <strong class='reserved'>for</strong> ( <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> = 0; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> &lt; <a href='../Y/1279.html' title='Multiple used in 66 places.'>len</a>; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>++) <em class='brace'>{</em>
+<a id='L23' name='L23'></a>  23                 <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("(%s:%d) ", ((<a href='../Y/92.html' title='Multiple used in 19 places.'>HKEY</a>*)(<a href='../Y/1130.html' title='Multiple used in 10 places.'>gkeys</a>-&gt;<a href='../Y/918.html' title='Multiple used in 60 places.'>data</a>))[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>], ((<a href='../S/596.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a>*)(<a href='../Y/1148.html' title='Multiple used in 8 places.'>gtimes</a>-&gt;<a href='../Y/918.html' title='Multiple used in 60 places.'>data</a>))[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>]);
+<a id='L24' name='L24'></a>  24         <em class='brace'>}</em>
+<a id='L25' name='L25'></a>  25         <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("]\n");
+<a id='L26' name='L26'></a>  26 <em class='brace'>}</em>
+<a id='L27' name='L27'></a>  27 
+<a id='L28' name='L28'></a>  28 <strong class='reserved'>void</strong> <a href='../R/348.html' title='Multiple referred from 2 places.'>parda_print_tree</a>(<strong class='reserved'>const</strong> <a href='../S/601.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a>* <a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>) <em class='brace'>{</em>
+<a id='L29' name='L29'></a>  29         <a href='../S/596.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a>* <a href='../Y/1622.html' title='Multiple used in 50 places.'>root</a> = <a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>-&gt;<a href='../Y/1622.html' title='Multiple used in 50 places.'>root</a>;
+<a id='L30' name='L30'></a>  30         <a href='../S/595.html#L210' title='Defined at 210 in reuse_distance_tool/splay.c.'>printtree</a>(<a href='../Y/1622.html' title='Multiple used in 50 places.'>root</a>,0);
+<a id='L31' name='L31'></a>  31 <em class='brace'>}</em>
+<a id='L32' name='L32'></a>  32 
+<a id='L33' name='L33'></a>  33 <strong class='reserved'>void</strong> <a href='../R/352.html' title='Multiple referred from 2 places.'>print_iterator</a>(<a href='../Y/1136.html' title='Multiple used in 4 places.'>gpointer</a> <a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>, <a href='../Y/1136.html' title='Multiple used in 4 places.'>gpointer</a> <a href='../Y/1791.html' title='Multiple used in 51 places.'>value</a>, <a href='../Y/1136.html' title='Multiple used in 4 places.'>gpointer</a> <a href='../Y/971.html' title='Multiple used in 20 places.'>ekt</a>) <em class='brace'>{</em>
+<a id='L34' name='L34'></a>  34         <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("(%s:%d) ", (<strong class='reserved'>char</strong>*)<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>, *(<a href='../S/596.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a>*)<a href='../Y/1791.html' title='Multiple used in 51 places.'>value</a>);
+<a id='L35' name='L35'></a>  35 <em class='brace'>}</em>
+<a id='L36' name='L36'></a>  36 
+<a id='L37' name='L37'></a>  37 <strong class='reserved'>void</strong> <a href='../R/346.html' title='Multiple referred from 2 places.'>parda_print_hash</a>(<strong class='reserved'>const</strong> <a href='../S/601.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a>* <a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>) <em class='brace'>{</em>
+<a id='L38' name='L38'></a>  38         <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("[ ");
+<a id='L39' name='L39'></a>  39         <a href='../Y/1050.html' title='Multiple used in 2 places.'>g_hash_table_foreach</a>(<a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>-&gt;<a href='../Y/1129.html' title='Multiple used in 36 places.'>gh</a>, (<a href='../Y/83.html' title='Multiple used in 2 places.'>GHFunc</a>)<a href='../S/589.html#L33' title='Defined at 33 in reuse_distance_tool/parda_print.c.'>print_iterator</a>, <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>);
+<a id='L40' name='L40'></a>  40         <a href='../Y/1564.html' title='Multiple used in 61 places.'>printf</a>("]\n");
+<a id='L41' name='L41'></a>  41 <em class='brace'>}</em>
+<a id='L42' name='L42'></a>  42 
+<a id='L43' name='L43'></a>  43 <strong class='reserved'>void</strong> <a href='../S/601.html#L103' title='Referred from 103 in reuse_distance_tool/parda.h.'>parda_print</a>(<strong class='reserved'>const</strong> <a href='../S/601.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a>* <a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>) <em class='brace'>{</em>
+<a id='L44' name='L44'></a>  44         <a href='../S/589.html#L3' title='Defined at 3 in reuse_distance_tool/parda_print.c.'>parda_print_front</a>(<a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>);
+<a id='L45' name='L45'></a>  45         <a href='../S/589.html#L28' title='Defined at 28 in reuse_distance_tool/parda_print.c.'>parda_print_tree</a>(<a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>);
+<a id='L46' name='L46'></a>  46         <a href='../S/589.html#L37' title='Defined at 37 in reuse_distance_tool/parda_print.c.'>parda_print_hash</a>(<a href='../Y/1503.html' title='Multiple used in 63 places.'>pdt</a>);
+<a id='L47' name='L47'></a>  47 <em class='brace'>}</em>
+<a id='L48' name='L48'></a>  48 
+<a id='L49' name='L49'></a>  49 <strong class='reserved'>void</strong> <a href='../R/347.html' title='Multiple referred from 7 places.'>parda_print_histogram</a>(<a href='../Y/75.html' title='Multiple used in 27 places.'>FILE</a>* <a href='../Y/1028.html' title='Multiple used in 36 places.'>fp</a>, <strong class='reserved'>const</strong> <strong class='reserved'>unsigned</strong>* <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>) <em class='brace'>{</em>
+<a id='L50' name='L50'></a>  50         <strong class='reserved'>int</strong> <a href='../Y/1266.html' title='Multiple used in 6 places.'>last_bucket</a>;
+<a id='L51' name='L51'></a>  51         <strong class='reserved'>int</strong> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>;
+<a id='L52' name='L52'></a>  52         <strong class='reserved'>unsigned</strong> <strong class='reserved'>long</strong> <strong class='reserved'>long</strong> <a href='../Y/1704.html' title='Multiple used in 38 places.'>sum</a> = 0;  <em class='comment'>// For normalizing</em>
+<a id='L53' name='L53'></a>  53         <strong class='reserved'>unsigned</strong> <strong class='reserved'>long</strong> <strong class='reserved'>long</strong> <a href='../Y/908.html' title='Multiple used in 2 places.'>cum</a> = 0;  <em class='comment'>// Cumulative output</em>
+<a id='L54' name='L54'></a>  54 
+<a id='L55' name='L55'></a>  55         <em class='comment'>// Find the last non-zero bucket</em>
+<a id='L56' name='L56'></a>  56         <a href='../Y/1266.html' title='Multiple used in 6 places.'>last_bucket</a> = <a href='../Y/1349.html' title='Multiple used in 15 places.'>nbuckets</a>-1;
+<a id='L57' name='L57'></a>  57         <strong class='reserved'>while</strong> (<a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../Y/1266.html' title='Multiple used in 6 places.'>last_bucket</a>] == 0)
+<a id='L58' name='L58'></a>  58         <a href='../Y/1266.html' title='Multiple used in 6 places.'>last_bucket</a>--;
+<a id='L59' name='L59'></a>  59 
+<a id='L60' name='L60'></a>  60         <strong class='reserved'>for</strong> (<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> = 0; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> &lt;= <a href='../Y/1266.html' title='Multiple used in 6 places.'>last_bucket</a>; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>++)
+<a id='L61' name='L61'></a>  61         <a href='../Y/1704.html' title='Multiple used in 38 places.'>sum</a> += <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>];
+<a id='L62' name='L62'></a>  62         <a href='../Y/1704.html' title='Multiple used in 38 places.'>sum</a> += <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L46' title='Defined at 46 in reuse_distance_tool/parda.h.'>B_OVFL</a>];
+<a id='L63' name='L63'></a>  63         <a href='../Y/1704.html' title='Multiple used in 38 places.'>sum</a> += <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L47' title='Defined at 47 in reuse_distance_tool/parda.h.'>B_INF</a>];
+<a id='L64' name='L64'></a>  64 
+<a id='L65' name='L65'></a>  65         <em class='comment'>// printf("# Dist\t     Refs\t   Refs(%%)\t  Cum_Ref\tCum_Ref(%%)\n");</em>
+<a id='L66' name='L66'></a>  66 
+<a id='L67' name='L67'></a>  67         <strong class='reserved'>for</strong> (<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> = 0; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> &lt;= <a href='../Y/1266.html' title='Multiple used in 6 places.'>last_bucket</a>; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>++) <em class='brace'>{</em>
+<a id='L68' name='L68'></a>  68                 <a href='../Y/908.html' title='Multiple used in 2 places.'>cum</a> += <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>];
+<a id='L69' name='L69'></a>  69                 <strong class='reserved'>if</strong>(<a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>] != 0)
+<a id='L70' name='L70'></a>  70                 <em class='comment'>// printf("%6d\t%9u\t%0.8lf\t%9llu\t%0.8lf\n", i, histogram[i],</em>
+<a id='L71' name='L71'></a>  71                 <em class='comment'>//     histogram[i] / (double)sum, cum, cum / (double)sum);</em>
+<a id='L72' name='L72'></a>  72                 <a href='../Y/1030.html' title='Multiple used in 7 places.'>fprintf</a>(<a href='../Y/1028.html' title='Multiple used in 36 places.'>fp</a>, "%d, %0.8lf, %u\n", <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, (<a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>] / (<strong class='reserved'>double</strong>)<a href='../Y/1704.html' title='Multiple used in 38 places.'>sum</a>), <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>]);
+<a id='L73' name='L73'></a>  73         <em class='brace'>}</em>
+<a id='L74' name='L74'></a>  74         <strong class='reserved'>if</strong>(<a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L46' title='Defined at 46 in reuse_distance_tool/parda.h.'>B_OVFL</a>] != 0)<em class='brace'>{</em>
+<a id='L75' name='L75'></a>  75                 <em class='comment'>//cum += histogram[B_OVFL];</em>
+<a id='L76' name='L76'></a>  76                 <em class='comment'>// printf("#OVFL \t%9u\t%0.8f\t%9llu\t%0.8lf\n", histogram[B_OVFL], histogram[B_OVFL]/(double)sum, cum, cum/(double)sum);</em>
+<a id='L77' name='L77'></a>  77                 <a href='../Y/1030.html' title='Multiple used in 7 places.'>fprintf</a>(<a href='../Y/1028.html' title='Multiple used in 36 places.'>fp</a>, "%d , %0.8lf , %u\n", <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, (<a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L46' title='Defined at 46 in reuse_distance_tool/parda.h.'>B_OVFL</a>] / (<strong class='reserved'>double</strong>)<a href='../Y/1704.html' title='Multiple used in 38 places.'>sum</a>), <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L46' title='Defined at 46 in reuse_distance_tool/parda.h.'>B_OVFL</a>]);
+<a id='L78' name='L78'></a>  78         <em class='brace'>}</em>
+<a id='L79' name='L79'></a>  79         <strong class='reserved'>if</strong>(<a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L47' title='Defined at 47 in reuse_distance_tool/parda.h.'>B_INF</a>] != 0)<em class='brace'>{</em>
+<a id='L80' name='L80'></a>  80                 <em class='comment'>//cum += histogram[B_INF];</em>
+<a id='L81' name='L81'></a>  81                 <em class='comment'>// printf("#INF  \t%9u\t%0.8f\t%9llu\t%0.8lf\n", histogram[B_INF], histogram[B_INF]/(double)sum, cum, cum/(double)sum);</em>
+<a id='L82' name='L82'></a>  82                 <a href='../Y/1030.html' title='Multiple used in 7 places.'>fprintf</a>(<a href='../Y/1028.html' title='Multiple used in 36 places.'>fp</a>, "-1, %0.8lf, %u\n", <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L47' title='Defined at 47 in reuse_distance_tool/parda.h.'>B_INF</a>] / (<strong class='reserved'>double</strong>)<a href='../Y/1704.html' title='Multiple used in 38 places.'>sum</a>, <a href='../Y/1181.html' title='Multiple used in 49 places.'>histogram</a>[<a href='../S/601.html#L47' title='Defined at 47 in reuse_distance_tool/parda.h.'>B_INF</a>]);
+<a id='L83' name='L83'></a>  83         <em class='brace'>}</em>
+<a id='L84' name='L84'></a>  84 <em class='brace'>}</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L3'>[^]</a><a href='#L49'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

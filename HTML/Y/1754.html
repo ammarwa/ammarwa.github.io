@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>tokenVec</title>
+<title>traceFun</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,18 +9,8 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/26.html#L69'>tokenVec</a>           69 llvm_tool/lib/fluxDevicePass.cpp   auto tokenVec = mekong::lexicalAnalysis(ptxFile);</span>
-<span class='curline'><a href='../S/26.html#L70'>tokenVec</a>           70 llvm_tool/lib/fluxDevicePass.cpp   auto funcVec = mekong::parse(tokenVec);</span>
-<span class='curline'><a href='../S/10.html#L71'>tokenVec</a>           71 llvm_tool/mekong-utils/inc/ptx_parser.h   std::vector&lt;Token&gt; tokenVec;</span>
-<span class='curline'><a href='../S/10.html#L78'>tokenVec</a>           78 llvm_tool/mekong-utils/inc/ptx_parser.h     return tokenVec;</span>
-<span class='curline'><a href='../S/10.html#L80'>tokenVec</a>           80 llvm_tool/mekong-utils/inc/ptx_parser.h   auto addToken = [&amp;tokenVec](TokenClass ty, const char *const begin = nullptr,</span>
-<span class='curline'><a href='../S/10.html#L83'>tokenVec</a>           83 llvm_tool/mekong-utils/inc/ptx_parser.h       tokenVec.push_back({ty, ""});</span>
-<span class='curline'><a href='../S/10.html#L84'>tokenVec</a>           84 llvm_tool/mekong-utils/inc/ptx_parser.h     tokenVec.push_back({ty, std::string(begin, end - begin)});</span>
-<span class='curline'><a href='../S/10.html#L2977'>tokenVec</a>         2977 llvm_tool/mekong-utils/inc/ptx_parser.h   return tokenVec;</span>
-<span class='curline'><a href='../S/10.html#L3211'>tokenVec</a>         3211 llvm_tool/mekong-utils/inc/ptx_parser.h std::vector&lt;PTXFunction&gt; parse(std::vector&lt;Token&gt; tokenVec) {</span>
-<span class='curline'><a href='../S/10.html#L3214'>tokenVec</a>         3214 llvm_tool/mekong-utils/inc/ptx_parser.h   auto tokenIter = tokenVec.begin();</span>
-<span class='curline'><a href='../S/10.html#L3216'>tokenVec</a>         3216 llvm_tool/mekong-utils/inc/ptx_parser.h   while (tokenIter != tokenVec.end()) {</span>
-<span class='curline'><a href='../S/10.html#L3222'>tokenVec</a>         3222 llvm_tool/mekong-utils/inc/ptx_parser.h       parseFunction(tokenIter, tokenVec.end(), func);</span>
+<span class='curline'><a href='../S/26.html#L113'>traceFun</a>          113 llvm_tool/lib/fluxDevicePass.cpp   Function *traceFun = M.getFunction("incBlockCounter_mt_2");</span>
+<span class='curline'><a href='../S/26.html#L171'>traceFun</a>          171 llvm_tool/lib/fluxDevicePass.cpp       builder.CreateCall(traceFun, {trace_ptr, trace_ptr1, block_ID, n_banks, profiling});</span>
 </pre>
 </body>
 </html>

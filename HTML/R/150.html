@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>__CUDA_API_VERSION_INTERNAL</title>
+<title>__CUDA_DEPRECATED</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,49 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/630.html#L63'>__CUDA_API_VERSION_INTERNAL</a>   63 tracing_tool/nvbit/cuda.h #if defined(__CUDA_API_VERSION_INTERNAL) || defined(__DOXYGEN_ONLY__) || defined(CUDA_ENABLE_DEPRECATED)</span>
-<span class='curline'><a href='../S/630.html#L77'>__CUDA_API_VERSION_INTERNAL</a>   77 tracing_tool/nvbit/cuda.h #if defined(__CUDA_API_VERSION_INTERNAL) || defined(CUDA_API_PER_THREAD_DEFAULT_STREAM)</span>
-<span class='curline'><a href='../S/630.html#L15616'>__CUDA_API_VERSION_INTERNAL</a> 15616 tracing_tool/nvbit/cuda.h #if defined(__CUDA_API_VERSION_INTERNAL)</span>
+<span class='curline'><a href='../S/611.html#L3351'>__CUDA_DEPRECATED</a> 3351 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuDeviceGetProperties(CUdevprop *prop, CUdevice dev);</span>
+<span class='curline'><a href='../S/611.html#L3385'>__CUDA_DEPRECATED</a> 3385 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuDeviceComputeCapability(int *major, int *minor, CUdevice dev);</span>
+<span class='curline'><a href='../S/611.html#L4458'>__CUDA_DEPRECATED</a> 4458 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuCtxAttach(CUcontext *pctx, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L4494'>__CUDA_DEPRECATED</a> 4494 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuCtxDetach(CUcontext ctx);</span>
+<span class='curline'><a href='../S/611.html#L11983'>__CUDA_DEPRECATED</a> 11983 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuFuncSetBlockShape(CUfunction hfunc, int x, int y, int z);</span>
+<span class='curline'><a href='../S/611.html#L12017'>__CUDA_DEPRECATED</a> 12017 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuFuncSetSharedSize(CUfunction hfunc, unsigned int bytes);</span>
+<span class='curline'><a href='../S/611.html#L12049'>__CUDA_DEPRECATED</a> 12049 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetSize(CUfunction hfunc, unsigned int numbytes);</span>
+<span class='curline'><a href='../S/611.html#L12082'>__CUDA_DEPRECATED</a> 12082 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSeti(CUfunction hfunc, int offset, unsigned int value);</span>
+<span class='curline'><a href='../S/611.html#L12115'>__CUDA_DEPRECATED</a> 12115 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetf(CUfunction hfunc, int offset, float value);</span>
+<span class='curline'><a href='../S/611.html#L12150'>__CUDA_DEPRECATED</a> 12150 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetv(CUfunction hfunc, int offset, void *ptr, unsigned int numbytes);</span>
+<span class='curline'><a href='../S/611.html#L12202'>__CUDA_DEPRECATED</a> 12202 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunch(CUfunction f);</span>
+<span class='curline'><a href='../S/611.html#L12256'>__CUDA_DEPRECATED</a> 12256 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunchGrid(CUfunction f, int grid_width, int grid_height);</span>
+<span class='curline'><a href='../S/611.html#L12318'>__CUDA_DEPRECATED</a> 12318 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunchGridAsync(CUfunction f, int grid_width, int grid_height, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L12343'>__CUDA_DEPRECATED</a> 12343 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetTexRef(CUfunction hfunc, int texunit, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L13862'>__CUDA_DEPRECATED</a> 13862 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetArray(CUtexref hTexRef, CUarray hArray, unsigned int Flags);</span>
+<span class='curline'><a href='../S/611.html#L13892'>__CUDA_DEPRECATED</a> 13892 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetMipmappedArray(CUtexref hTexRef, CUmipmappedArray hMipmappedArray, unsigned int Flags);</span>
+<span class='curline'><a href='../S/611.html#L13938'>__CUDA_DEPRECATED</a> 13938 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetAddress(size_t *ByteOffset, CUtexref hTexRef, CUdeviceptr dptr, size_t bytes);</span>
+<span class='curline'><a href='../S/611.html#L13993'>__CUDA_DEPRECATED</a> 13993 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetAddress2D(CUtexref hTexRef, const CUDA_ARRAY_DESCRIPTOR *desc, CUdeviceptr dptr, size_t Pitch);</span>
+<span class='curline'><a href='../S/611.html#L14028'>__CUDA_DEPRECATED</a> 14028 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetFormat(CUtexref hTexRef, CUarray_format fmt, int NumPackedComponents);</span>
+<span class='curline'><a href='../S/611.html#L14074'>__CUDA_DEPRECATED</a> 14074 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetAddressMode(CUtexref hTexRef, int dim, CUaddress_mode am);</span>
+<span class='curline'><a href='../S/611.html#L14110'>__CUDA_DEPRECATED</a> 14110 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetFilterMode(CUtexref hTexRef, CUfilter_mode fm);</span>
+<span class='curline'><a href='../S/611.html#L14146'>__CUDA_DEPRECATED</a> 14146 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetMipmapFilterMode(CUtexref hTexRef, CUfilter_mode fm);</span>
+<span class='curline'><a href='../S/611.html#L14175'>__CUDA_DEPRECATED</a> 14175 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetMipmapLevelBias(CUtexref hTexRef, float bias);</span>
+<span class='curline'><a href='../S/611.html#L14206'>__CUDA_DEPRECATED</a> 14206 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetMipmapLevelClamp(CUtexref hTexRef, float minMipmapLevelClamp, float maxMipmapLevelClamp);</span>
+<span class='curline'><a href='../S/611.html#L14236'>__CUDA_DEPRECATED</a> 14236 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetMaxAnisotropy(CUtexref hTexRef, unsigned int maxAniso);</span>
+<span class='curline'><a href='../S/611.html#L14272'>__CUDA_DEPRECATED</a> 14272 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetBorderColor(CUtexref hTexRef, float *pBorderColor);</span>
+<span class='curline'><a href='../S/611.html#L14317'>__CUDA_DEPRECATED</a> 14317 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetFlags(CUtexref hTexRef, unsigned int Flags);</span>
+<span class='curline'><a href='../S/611.html#L14344'>__CUDA_DEPRECATED</a> 14344 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetAddress(CUdeviceptr *pdptr, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14371'>__CUDA_DEPRECATED</a> 14371 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetArray(CUarray *phArray, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14398'>__CUDA_DEPRECATED</a> 14398 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetMipmappedArray(CUmipmappedArray *phMipmappedArray, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14426'>__CUDA_DEPRECATED</a> 14426 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetAddressMode(CUaddress_mode *pam, CUtexref hTexRef, int dim);</span>
+<span class='curline'><a href='../S/611.html#L14452'>__CUDA_DEPRECATED</a> 14452 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetFilterMode(CUfilter_mode *pfm, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14480'>__CUDA_DEPRECATED</a> 14480 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetFormat(CUarray_format *pFormat, int *pNumChannels, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14506'>__CUDA_DEPRECATED</a> 14506 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetMipmapFilterMode(CUfilter_mode *pfm, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14532'>__CUDA_DEPRECATED</a> 14532 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetMipmapLevelBias(float *pbias, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14559'>__CUDA_DEPRECATED</a> 14559 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetMipmapLevelClamp(float *pminMipmapLevelClamp, float *pmaxMipmapLevelClamp, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14585'>__CUDA_DEPRECATED</a> 14585 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetMaxAnisotropy(int *pmaxAniso, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14614'>__CUDA_DEPRECATED</a> 14614 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetBorderColor(float *pBorderColor, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14639'>__CUDA_DEPRECATED</a> 14639 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetFlags(unsigned int *pFlags, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14664'>__CUDA_DEPRECATED</a> 14664 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefCreate(CUtexref *pTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14684'>__CUDA_DEPRECATED</a> 14684 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefDestroy(CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14728'>__CUDA_DEPRECATED</a> 14728 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuSurfRefSetArray(CUsurfref hSurfRef, CUarray hArray, unsigned int Flags);</span>
+<span class='curline'><a href='../S/611.html#L14751'>__CUDA_DEPRECATED</a> 14751 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuSurfRefGetArray(CUarray *phArray, CUsurfref hSurfRef);</span>
 </pre>
 </body>
 </html>

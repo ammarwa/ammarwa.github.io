@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>registerGlobals</title>
+<title>replacementWrapper</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,13 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/6.html#L215'>registerGlobals</a>   215 llvm_tool/mekong-utils/src/HostUtils.cpp   Function *registerGlobals = m.getFunction("__cuda_register_globals");</span>
-<span class='curline'><a href='../S/6.html#L217'>registerGlobals</a>   217 llvm_tool/mekong-utils/src/HostUtils.cpp   assert(registerGlobals != nullptr &amp;&amp; "Could not find __cuda_register_globals!");</span>
-<span class='curline'><a href='../S/6.html#L224'>registerGlobals</a>   224 llvm_tool/mekong-utils/src/HostUtils.cpp   if (registerGlobals != nullptr) {</span>
-<span class='curline'><a href='../S/6.html#L225'>registerGlobals</a>   225 llvm_tool/mekong-utils/src/HostUtils.cpp     bin_handle = &amp;*registerGlobals-&gt;arg_begin();</span>
-<span class='curline'><a href='../S/6.html#L228'>registerGlobals</a>   228 llvm_tool/mekong-utils/src/HostUtils.cpp     registerGlobals = m.getFunction("__cuda_module_ctor");</span>
-<span class='curline'><a href='../S/6.html#L230'>registerGlobals</a>   230 llvm_tool/mekong-utils/src/HostUtils.cpp     for (auto &amp;bb : *registerGlobals) {</span>
-<span class='curline'><a href='../S/6.html#L245'>registerGlobals</a>   245 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.SetInsertPoint(&amp;registerGlobals-&gt;back().back());</span>
+<span class='curline'><a href='../S/15.html#L30'>replacementWrapper</a>   30 llvm_tool/mekong-utils/inc/HostUtils.h                                     llvm::Function *replacementWrapper,</span>
+<span class='curline'><a href='../S/6.html#L374'>replacementWrapper</a>  374 llvm_tool/mekong-utils/src/HostUtils.cpp                                     llvm::Function *replacementWrapper,</span>
+<span class='curline'><a href='../S/6.html#L418'>replacementWrapper</a>  418 llvm_tool/mekong-utils/src/HostUtils.cpp   FunctionType *ft = replacementWrapper-&gt;getFunctionType();</span>
+<span class='curline'><a href='../S/6.html#L426'>replacementWrapper</a>  426 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *newLaunchCall = builder.CreateCall(replacementWrapper, args);</span>
 </pre>
 </body>
 </html>

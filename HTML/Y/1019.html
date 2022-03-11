@@ -9,91 +9,91 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/630.html#L411'>flags</a>             411 tracing_tool/nvbit/cuda.h         unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L421'>flags</a>             421 tracing_tool/nvbit/cuda.h         unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L426'>flags</a>             426 tracing_tool/nvbit/cuda.h         unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L1980'>flags</a>            1980 tracing_tool/nvbit/cuda.h     unsigned int flags;                       /**&lt; Flags (must be zero) */</span>
-<span class='curline'><a href='../S/630.html#L1989'>flags</a>            1989 tracing_tool/nvbit/cuda.h     unsigned int flags;             /**&lt; Flags */</span>
-<span class='curline'><a href='../S/630.html#L2209'>flags</a>            2209 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L2228'>flags</a>            2228 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L2338'>flags</a>            2338 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L2385'>flags</a>            2385 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L2435'>flags</a>            2435 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/630.html#L2543'>flags</a>            2543 tracing_tool/nvbit/cuda.h     CUmemAccess_flags flags;       /**&lt; ::CUmemProt accessibility flags to set on the request */</span>
-<span class='curline'><a href='../S/630.html#L3273'>flags</a>            3273 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetNvSciSyncAttributes(void *nvSciSyncAttrList, CUdevice dev, int flags);</span>
-<span class='curline'><a href='../S/630.html#L3558'>flags</a>            3558 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxSetFlags(CUdevice dev, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L3584'>flags</a>            3584 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxGetState(CUdevice dev, unsigned int *flags, int *active);</span>
-<span class='curline'><a href='../S/630.html#L3736'>flags</a>            3736 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
-<span class='curline'><a href='../S/630.html#L3953'>flags</a>            3953 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxGetFlags(unsigned int *flags);</span>
-<span class='curline'><a href='../S/630.html#L4458'>flags</a>            4458 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuCtxAttach(CUcontext *pctx, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L5537'>flags</a>            5537 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAllocManaged(CUdeviceptr *dptr, size_t bytesize, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L8551'>flags</a>            8551 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAddressReserve(CUdeviceptr *ptr, size_t size, size_t alignment, CUdeviceptr addr, unsigned long long flags);</span>
-<span class='curline'><a href='../S/630.html#L8607'>flags</a>            8607 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemCreate(CUmemGenericAllocationHandle *handle, size_t size, const CUmemAllocationProp *prop, unsigned long long flags);</span>
-<span class='curline'><a href='../S/630.html#L8678'>flags</a>            8678 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemMap(CUdeviceptr ptr, size_t size, size_t offset, CUmemGenericAllocationHandle handle, unsigned long long flags);</span>
-<span class='curline'><a href='../S/630.html#L8751'>flags</a>            8751 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemGetAccess(unsigned long long *flags, const CUmemLocation *location, CUdeviceptr ptr);</span>
-<span class='curline'><a href='../S/630.html#L8784'>flags</a>            8784 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemExportToShareableHandle(void *shareableHandle, CUmemGenericAllocationHandle handle, CUmemAllocationHandleType handleType, unsigned long long flags);</span>
-<span class='curline'><a href='../S/630.html#L9625'>flags</a>            9625 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamCreateWithPriority(CUstream *phStream, unsigned int flags, int priority);</span>
-<span class='curline'><a href='../S/630.html#L9684'>flags</a>            9684 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamGetFlags(CUstream hStream, unsigned int *flags);</span>
-<span class='curline'><a href='../S/630.html#L9834'>flags</a>            9834 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamAddCallback(CUstream hStream, CUstreamCallback callback, void *userData, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L10107'>flags</a>            10107 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamAttachMemAsync(CUstream hStream, CUdeviceptr dptr, size_t length, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L11173'>flags</a>            11173 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L11208'>flags</a>            11208 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L11243'>flags</a>            11243 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L11277'>flags</a>            11277 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L11312'>flags</a>            11312 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L11868'>flags</a>            11868 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuLaunchCooperativeKernelMultiDevice(CUDA_LAUNCH_PARAMS *launchParamsList, unsigned int numDevices, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L12389'>flags</a>            12389 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphCreate(CUgraph *phGraph, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L13696'>flags</a>            13696 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(int *numBlocks, CUfunction func, int blockSize, size_t dynamicSMemSize, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L13794'>flags</a>            13794 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxPotentialBlockSizeWithFlags(int *minGridSize, int *blockSize, CUfunction func, CUoccupancyB2DSize blockSizeToDynamicSMemSize, size_t dynamicSMemSize, int blockSizeLimit, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15502'>flags</a>            15502 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphicsResourceSetMapFlags(CUgraphicsResource resource, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15718'>flags</a>            15718 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuGraphicsResourceSetMapFlags(CUgraphicsResource resource, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15802'>flags</a>            15802 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
-<span class='curline'><a href='../S/630.html#L15851'>flags</a>            15851 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuDevicePrimaryCtxSetFlags(CUdevice dev, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15892'>flags</a>            15892 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamGetFlags(CUstream hStream, unsigned int *flags);</span>
-<span class='curline'><a href='../S/630.html#L15895'>flags</a>            15895 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamAddCallback(CUstream hStream, CUstreamCallback callback, void *userData, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15896'>flags</a>            15896 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamAttachMemAsync(CUstream hStream, CUdeviceptr dptr, size_t length, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15904'>flags</a>            15904 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15905'>flags</a>            15905 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15906'>flags</a>            15906 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15907'>flags</a>            15907 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L15908'>flags</a>            15908 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);</span>
-<span class='curline'><a href='../S/635.html#L116'>flags</a>             116 tracing_tool/nvbit/generated_cuda_meta.h     int flags;</span>
-<span class='curline'><a href='../S/635.html#L141'>flags</a>             141 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L146'>flags</a>             146 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
-<span class='curline'><a href='../S/635.html#L156'>flags</a>             156 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L185'>flags</a>             185 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
-<span class='curline'><a href='../S/635.html#L226'>flags</a>             226 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L379'>flags</a>             379 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L715'>flags</a>             715 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
-<span class='curline'><a href='../S/635.html#L727'>flags</a>             727 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
-<span class='curline'><a href='../S/635.html#L739'>flags</a>             739 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
-<span class='curline'><a href='../S/635.html#L755'>flags</a>             755 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long *flags;</span>
-<span class='curline'><a href='../S/635.html#L764'>flags</a>             764 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
-<span class='curline'><a href='../S/635.html#L846'>flags</a>             846 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L857'>flags</a>             857 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
-<span class='curline'><a href='../S/635.html#L875'>flags</a>             875 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L907'>flags</a>             907 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1015'>flags</a>            1015 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1022'>flags</a>            1022 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1029'>flags</a>            1029 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1036'>flags</a>            1036 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1043'>flags</a>            1043 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1098'>flags</a>            1098 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1168'>flags</a>            1168 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1413'>flags</a>            1413 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1432'>flags</a>            1432 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1684'>flags</a>            1684 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1717'>flags</a>            1717 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L1761'>flags</a>            1761 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2041'>flags</a>            2041 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2293'>flags</a>            2293 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
-<span class='curline'><a href='../S/635.html#L2311'>flags</a>            2311 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2318'>flags</a>            2318 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2370'>flags</a>            2370 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2377'>flags</a>            2377 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2384'>flags</a>            2384 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2391'>flags</a>            2391 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
-<span class='curline'><a href='../S/635.html#L2398'>flags</a>            2398 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L411'>flags</a>             411 tracing_tool/nvbit/cuda.h         unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L421'>flags</a>             421 tracing_tool/nvbit/cuda.h         unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L426'>flags</a>             426 tracing_tool/nvbit/cuda.h         unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L1980'>flags</a>            1980 tracing_tool/nvbit/cuda.h     unsigned int flags;                       /**&lt; Flags (must be zero) */</span>
+<span class='curline'><a href='../S/611.html#L1989'>flags</a>            1989 tracing_tool/nvbit/cuda.h     unsigned int flags;             /**&lt; Flags */</span>
+<span class='curline'><a href='../S/611.html#L2209'>flags</a>            2209 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L2228'>flags</a>            2228 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L2338'>flags</a>            2338 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L2385'>flags</a>            2385 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L2435'>flags</a>            2435 tracing_tool/nvbit/cuda.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/611.html#L2543'>flags</a>            2543 tracing_tool/nvbit/cuda.h     CUmemAccess_flags flags;       /**&lt; ::CUmemProt accessibility flags to set on the request */</span>
+<span class='curline'><a href='../S/611.html#L3273'>flags</a>            3273 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetNvSciSyncAttributes(void *nvSciSyncAttrList, CUdevice dev, int flags);</span>
+<span class='curline'><a href='../S/611.html#L3558'>flags</a>            3558 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxSetFlags(CUdevice dev, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L3584'>flags</a>            3584 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxGetState(CUdevice dev, unsigned int *flags, int *active);</span>
+<span class='curline'><a href='../S/611.html#L3736'>flags</a>            3736 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
+<span class='curline'><a href='../S/611.html#L3953'>flags</a>            3953 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxGetFlags(unsigned int *flags);</span>
+<span class='curline'><a href='../S/611.html#L4458'>flags</a>            4458 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuCtxAttach(CUcontext *pctx, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L5537'>flags</a>            5537 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAllocManaged(CUdeviceptr *dptr, size_t bytesize, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L8551'>flags</a>            8551 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAddressReserve(CUdeviceptr *ptr, size_t size, size_t alignment, CUdeviceptr addr, unsigned long long flags);</span>
+<span class='curline'><a href='../S/611.html#L8607'>flags</a>            8607 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemCreate(CUmemGenericAllocationHandle *handle, size_t size, const CUmemAllocationProp *prop, unsigned long long flags);</span>
+<span class='curline'><a href='../S/611.html#L8678'>flags</a>            8678 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemMap(CUdeviceptr ptr, size_t size, size_t offset, CUmemGenericAllocationHandle handle, unsigned long long flags);</span>
+<span class='curline'><a href='../S/611.html#L8751'>flags</a>            8751 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemGetAccess(unsigned long long *flags, const CUmemLocation *location, CUdeviceptr ptr);</span>
+<span class='curline'><a href='../S/611.html#L8784'>flags</a>            8784 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemExportToShareableHandle(void *shareableHandle, CUmemGenericAllocationHandle handle, CUmemAllocationHandleType handleType, unsigned long long flags);</span>
+<span class='curline'><a href='../S/611.html#L9625'>flags</a>            9625 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamCreateWithPriority(CUstream *phStream, unsigned int flags, int priority);</span>
+<span class='curline'><a href='../S/611.html#L9684'>flags</a>            9684 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamGetFlags(CUstream hStream, unsigned int *flags);</span>
+<span class='curline'><a href='../S/611.html#L9834'>flags</a>            9834 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamAddCallback(CUstream hStream, CUstreamCallback callback, void *userData, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L10107'>flags</a>            10107 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamAttachMemAsync(CUstream hStream, CUdeviceptr dptr, size_t length, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L11173'>flags</a>            11173 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L11208'>flags</a>            11208 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L11243'>flags</a>            11243 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L11277'>flags</a>            11277 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L11312'>flags</a>            11312 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L11868'>flags</a>            11868 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuLaunchCooperativeKernelMultiDevice(CUDA_LAUNCH_PARAMS *launchParamsList, unsigned int numDevices, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L12389'>flags</a>            12389 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphCreate(CUgraph *phGraph, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L13696'>flags</a>            13696 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(int *numBlocks, CUfunction func, int blockSize, size_t dynamicSMemSize, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L13794'>flags</a>            13794 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxPotentialBlockSizeWithFlags(int *minGridSize, int *blockSize, CUfunction func, CUoccupancyB2DSize blockSizeToDynamicSMemSize, size_t dynamicSMemSize, int blockSizeLimit, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15502'>flags</a>            15502 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphicsResourceSetMapFlags(CUgraphicsResource resource, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15718'>flags</a>            15718 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuGraphicsResourceSetMapFlags(CUgraphicsResource resource, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15802'>flags</a>            15802 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
+<span class='curline'><a href='../S/611.html#L15851'>flags</a>            15851 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuDevicePrimaryCtxSetFlags(CUdevice dev, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15892'>flags</a>            15892 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamGetFlags(CUstream hStream, unsigned int *flags);</span>
+<span class='curline'><a href='../S/611.html#L15895'>flags</a>            15895 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamAddCallback(CUstream hStream, CUstreamCallback callback, void *userData, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15896'>flags</a>            15896 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamAttachMemAsync(CUstream hStream, CUdeviceptr dptr, size_t length, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15904'>flags</a>            15904 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15905'>flags</a>            15905 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15906'>flags</a>            15906 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15907'>flags</a>            15907 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L15908'>flags</a>            15908 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);</span>
+<span class='curline'><a href='../S/616.html#L116'>flags</a>             116 tracing_tool/nvbit/generated_cuda_meta.h     int flags;</span>
+<span class='curline'><a href='../S/616.html#L141'>flags</a>             141 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L146'>flags</a>             146 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
+<span class='curline'><a href='../S/616.html#L156'>flags</a>             156 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L185'>flags</a>             185 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
+<span class='curline'><a href='../S/616.html#L226'>flags</a>             226 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L379'>flags</a>             379 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L715'>flags</a>             715 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
+<span class='curline'><a href='../S/616.html#L727'>flags</a>             727 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
+<span class='curline'><a href='../S/616.html#L739'>flags</a>             739 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
+<span class='curline'><a href='../S/616.html#L755'>flags</a>             755 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long *flags;</span>
+<span class='curline'><a href='../S/616.html#L764'>flags</a>             764 tracing_tool/nvbit/generated_cuda_meta.h     unsigned long long flags;</span>
+<span class='curline'><a href='../S/616.html#L846'>flags</a>             846 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L857'>flags</a>             857 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
+<span class='curline'><a href='../S/616.html#L875'>flags</a>             875 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L907'>flags</a>             907 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1015'>flags</a>            1015 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1022'>flags</a>            1022 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1029'>flags</a>            1029 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1036'>flags</a>            1036 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1043'>flags</a>            1043 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1098'>flags</a>            1098 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1168'>flags</a>            1168 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1413'>flags</a>            1413 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1432'>flags</a>            1432 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1684'>flags</a>            1684 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1717'>flags</a>            1717 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L1761'>flags</a>            1761 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2041'>flags</a>            2041 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2293'>flags</a>            2293 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *flags;</span>
+<span class='curline'><a href='../S/616.html#L2311'>flags</a>            2311 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2318'>flags</a>            2318 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2370'>flags</a>            2370 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2377'>flags</a>            2377 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2384'>flags</a>            2384 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2391'>flags</a>            2391 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
+<span class='curline'><a href='../S/616.html#L2398'>flags</a>            2398 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int flags;</span>
 </pre>
 </body>
 </html>

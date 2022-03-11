@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>pdt_gmem_lds</title>
+<title>peerContext</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,28 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/616.html#L223'>pdt_gmem_lds</a>      223 reuse_distance_tool/parda.c 		program_data_t* pdt_gmem_lds = &amp;pdt_c_gmem_lds;</span>
-<span class='curline'><a href='../S/616.html#L224'>pdt_gmem_lds</a>      224 reuse_distance_tool/parda.c 		pdt_gmem_lds-&gt;histogram[B_INF] += narray_get_len(pdt_gmem_lds-&gt;ga);</span>
-<span class='curline'><a href='../S/616.html#L226'>pdt_gmem_lds</a>      226 reuse_distance_tool/parda.c 		parda_print_histogram(gmem_fp_lds, pdt_gmem_lds-&gt;histogram);</span>
-<span class='curline'><a href='../S/616.html#L228'>pdt_gmem_lds</a>      228 reuse_distance_tool/parda.c 		parda_free(pdt_gmem_lds);</span>
-<span class='curline'><a href='../S/616.html#L255'>pdt_gmem_lds</a>      255 reuse_distance_tool/parda.c void parda_input_with_filename(char* inFileName, int kernel_id, int sm_id, long assoc, program_data_t* pdt_umem, program_data_t* pdt_gmem_lds, program_data_t* pdt_gmem, program_data_t* pdt_lmem, long begin, long end, char* output_directory) {</span>
-<span class='curline'><a href='../S/616.html#L261'>pdt_gmem_lds</a>      261 reuse_distance_tool/parda.c 		parda_input_with_textfilepointer(fp, kernel_id, sm_id, assoc, pdt_umem, pdt_gmem_lds, pdt_gmem, pdt_lmem, begin, end, output_directory);</span>
-<span class='curline'><a href='../S/616.html#L269'>pdt_gmem_lds</a>      269 reuse_distance_tool/parda.c void parda_input_with_textfilepointer(FILE* fp, int kernel_id, int sm_id, long assoc, program_data_t* pdt_umem, program_data_t* pdt_gmem_lds, program_data_t* pdt_gmem, program_data_t* pdt_lmem, long begin, long end, char* output_directory) {</span>
-<span class='curline'><a href='../S/616.html#L280'>pdt_gmem_lds</a>      280 reuse_distance_tool/parda.c 			process_one_access(inst_id, mem_id, warp_id, address, assoc, pdt_umem, pdt_gmem_lds, pdt_gmem, pdt_lmem, i);</span>
-<span class='curline'><a href='../S/620.html#L88'>pdt_gmem_lds</a>       88 reuse_distance_tool/parda.h void parda_input_with_filename(char* inFileName, int kernel_id, int sm_id, long assoc, program_data_t* pdt_umem, program_data_t* pdt_gmem_lds, program_data_t* pdt_gmem, program_data_t* pdt_lmem, long begin, long end, char* output_directory);</span>
-<span class='curline'><a href='../S/620.html#L89'>pdt_gmem_lds</a>       89 reuse_distance_tool/parda.h void parda_input_with_textfilepointer(FILE* fp, int kernel_id, int sm_id, long assoc, program_data_t* pdt_umem, program_data_t* pdt_gmem_lds, program_data_t* pdt_gmem, program_data_t* pdt_lmem, long begin, long end, char* output_directory);</span>
-<span class='curline'><a href='../S/620.html#L140'>pdt_gmem_lds</a>      140 reuse_distance_tool/parda.h static inline void process_one_access(char* inst, char* mem_id, char* warp_id, char* input, long assoc, program_data_t* pdt_umem, program_data_t* pdt_gmem_lds, program_data_t* pdt_gmem, program_data_t* pdt_lmem, const long tim) {</span>
-<span class='curline'><a href='../S/620.html#L228'>pdt_gmem_lds</a>      228 reuse_distance_tool/parda.h 		lookup = g_hash_table_lookup(pdt_gmem_lds-&gt;gh, input);</span>
-<span class='curline'><a href='../S/620.html#L232'>pdt_gmem_lds</a>      232 reuse_distance_tool/parda.h 			pdt_gmem_lds-&gt;root=insert(tim,pdt_gmem_lds-&gt;root);</span>
-<span class='curline'><a href='../S/620.html#L234'>pdt_gmem_lds</a>      234 reuse_distance_tool/parda.h 			narray_append_val(pdt_gmem_lds-&gt;ga,input);</span>
-<span class='curline'><a href='../S/620.html#L240'>pdt_gmem_lds</a>      240 reuse_distance_tool/parda.h 			g_hash_table_insert(pdt_gmem_lds-&gt;gh, data, p_data);  // Store pointer to list element</span>
-<span class='curline'><a href='../S/620.html#L245'>pdt_gmem_lds</a>      245 reuse_distance_tool/parda.h 			pdt_gmem_lds-&gt;root = insert((*lookup), pdt_gmem_lds-&gt;root);</span>
-<span class='curline'><a href='../S/620.html#L246'>pdt_gmem_lds</a>      246 reuse_distance_tool/parda.h 			distance = node_size(pdt_gmem_lds-&gt;root-&gt;right);</span>
-<span class='curline'><a href='../S/620.html#L247'>pdt_gmem_lds</a>      247 reuse_distance_tool/parda.h 			pdt_gmem_lds-&gt;root = delete(*lookup, pdt_gmem_lds-&gt;root);</span>
-<span class='curline'><a href='../S/620.html#L248'>pdt_gmem_lds</a>      248 reuse_distance_tool/parda.h 			pdt_gmem_lds-&gt;root = insert(tim, pdt_gmem_lds-&gt;root);</span>
-<span class='curline'><a href='../S/620.html#L256'>pdt_gmem_lds</a>      256 reuse_distance_tool/parda.h 			g_hash_table_replace(pdt_gmem_lds-&gt;gh, data, p_data);</span>
-<span class='curline'><a href='../S/620.html#L259'>pdt_gmem_lds</a>      259 reuse_distance_tool/parda.h 				pdt_gmem_lds-&gt;histogram[B_OVFL] += 1;</span>
-<span class='curline'><a href='../S/620.html#L261'>pdt_gmem_lds</a>      261 reuse_distance_tool/parda.h 				pdt_gmem_lds-&gt;histogram[distance] += 1;</span>
+<span class='curline'><a href='../S/611.html#L15245'>peerContext</a>      15245 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxEnablePeerAccess(CUcontext peerContext, unsigned int Flags);</span>
+<span class='curline'><a href='../S/611.html#L15272'>peerContext</a>      15272 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxDisablePeerAccess(CUcontext peerContext);</span>
+<span class='curline'><a href='../S/616.html#L1645'>peerContext</a>      1645 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext peerContext;</span>
+<span class='curline'><a href='../S/616.html#L1650'>peerContext</a>      1650 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext peerContext;</span>
 </pre>
 </body>
 </html>

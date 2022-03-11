@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>threadIdx</title>
+<title>tid</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,19 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/632.html#L80'>threadIdx</a>          80 tracing_tool/nvbit/utils/utils.h     int l_thread_id = (threadIdx.z * (blockDim.x * blockDim.y)) +</span>
-<span class='curline'><a href='../S/632.html#L81'>threadIdx</a>          81 tracing_tool/nvbit/utils/utils.h                       (threadIdx.y * blockDim.x) + threadIdx.x;</span>
+<span class='curline'><a href='../S/591.html#L53'>tid</a>                53 reuse_distance_tool/parda_omp.c         int tid = i;</span>
+<span class='curline'><a href='../S/591.html#L56'>tid</a>                56 reuse_distance_tool/parda_omp.c         for (var = tid, len = 1; len &lt;= mlen; len = (len &lt;&lt; 1)) {</span>
+<span class='curline'><a href='../S/591.html#L58'>tid</a>                58 reuse_distance_tool/parda_omp.c                 program_data_t pdt_A = pdt_a[tid - len];</span>
+<span class='curline'><a href='../S/591.html#L59'>tid</a>                59 reuse_distance_tool/parda_omp.c                 program_data_t pdt_B = pdt_a[tid];</span>
+<span class='curline'><a href='../S/591.html#L60'>tid</a>                60 reuse_distance_tool/parda_omp.c                 pdt_a[tid] = parda_merge(&amp;pdt_A, &amp;pdt_B, &amp;pit);</span>
+<span class='curline'><a href='../S/591.html#L93'>tid</a>                93 reuse_distance_tool/parda_omp.c             int tid = i;</span>
+<span class='curline'><a href='../S/591.html#L95'>tid</a>                95 reuse_distance_tool/parda_omp.c             for(var = tid, len = 1; var % 2 == 1; var = (var &gt;&gt; 1), len = (len &lt;&lt; 1)) {</span>
+<span class='curline'><a href='../S/591.html#L96'>tid</a>                96 reuse_distance_tool/parda_omp.c                 DEBUG(printf("before while in for %d and %d\n", tid - len, tid);)</span>
+<span class='curline'><a href='../S/591.html#L97'>tid</a>                97 reuse_distance_tool/parda_omp.c                 while(syn[(tid - len) &lt;&lt; 8] == 0) {</span>
+<span class='curline'><a href='../S/591.html#L100'>tid</a>               100 reuse_distance_tool/parda_omp.c                 DEBUG(printf("after while in for and will merge %d and %d\n",tid - len, tid);)</span>
+<span class='curline'><a href='../S/591.html#L101'>tid</a>               101 reuse_distance_tool/parda_omp.c                 pdt_a[tid] = parda_merge(&amp;pdt_a[tid - len], &amp;pdt_a[tid], &amp;pit_a[tid]);</span>
+<span class='curline'><a href='../S/591.html#L102'>tid</a>               102 reuse_distance_tool/parda_omp.c                 DEBUG(printf("after merged %d and %d\n",tid-len,tid);)</span>
+<span class='curline'><a href='../S/591.html#L104'>tid</a>               104 reuse_distance_tool/parda_omp.c             syn[tid &lt;&lt; 8]++;</span>
 </pre>
 </body>
 </html>

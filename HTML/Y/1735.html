@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>tfile</title>
+<title>threads</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,17 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/619.html#L76'>tfile</a>              76 reuse_distance_tool/seperate.c   FILE* tfile = fopen(linesFile,"w");</span>
-<span class='curline'><a href='../S/619.html#L77'>tfile</a>              77 reuse_distance_tool/seperate.c   fprintf(tfile, "%ld", lines);</span>
-<span class='curline'><a href='../S/619.html#L78'>tfile</a>              78 reuse_distance_tool/seperate.c   fclose(tfile);</span>
+<span class='curline'><a href='../S/602.html#L26'>threads</a>            26 reuse_distance_tool/main.c 		parda_seperate_file(inputFileName, threads, lines);</span>
+<span class='curline'><a href='../S/602.html#L33'>threads</a>            33 reuse_distance_tool/main.c 				parda_omp_stackdist(inputFileName, lines, threads);</span>
+<span class='curline'><a href='../S/591.html#L37'>threads</a>            37 reuse_distance_tool/parda_omp.c     int nthreads = threads;</span>
+<span class='curline'><a href='../S/591.html#L73'>threads</a>            73 reuse_distance_tool/parda_omp.c     int nthreads = threads;</span>
+<span class='curline'><a href='../S/591.html#L125'>threads</a>           125 reuse_distance_tool/parda_omp.c void parda_omp_stackdist(char* inputFileName, long lines, int threads)</span>
+<span class='curline'><a href='../S/591.html#L131'>threads</a>           131 reuse_distance_tool/parda_omp.c     program_data_t* pdt_a = parda_omp_init(threads);</span>
+<span class='curline'><a href='../S/591.html#L145'>threads</a>           145 reuse_distance_tool/parda_omp.c     parda_omp_free(pdt_a, threads);</span>
+<span class='curline'><a href='../S/592.html#L11'>threads</a>            11 reuse_distance_tool/parda_omp.h void parda_omp_stackdist(char* inputFileName, long lines, int threads);</span>
+<span class='curline'><a href='../S/593.html#L8'>threads</a>             8 reuse_distance_tool/process_args.c int threads = 1;</span>
+<span class='curline'><a href='../S/593.html#L94'>threads</a>            94 reuse_distance_tool/process_args.c 				threads = atol(optarg);</span>
+<span class='curline'><a href='../S/588.html#L22'>threads</a>            22 reuse_distance_tool/process_args.h extern int threads;</span>
 </pre>
 </body>
 </html>

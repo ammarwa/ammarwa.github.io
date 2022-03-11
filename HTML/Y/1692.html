@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>str</title>
+<title>strcpy</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,45 +9,11 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/26.html#L64'>str</a>                64 llvm_tool/lib/fluxDevicePass.cpp       "llc -O2 -mcpu=" + target_proc.str() + " -mattr=" + target_features.str() + " -o " + ptxFile + " " + byteCodeFile;</span>
-<span class='curline'><a href='../S/26.html#L140'>str</a>               140 llvm_tool/lib/fluxDevicePass.cpp     std::map&lt;BasicBlock *, int&gt; blockIDs = mekong::getBlockIDMap(kernelClone, funcVec, kernel-&gt;getName().str());</span>
-<span class='curline'><a href='../S/26.html#L218'>str</a>               218 llvm_tool/lib/fluxDevicePass.cpp   exec(std::string("clang++ -v -S -emit-llvm --cuda-device-only --cuda-gpu-arch=" + target_proc.str() +</span>
-<span class='curline'><a href='../S/24.html#L132'>str</a>               132 llvm_tool/lib/fluxHostPass.cpp     std::string kernelName = desc.name.str();</span>
-<span class='curline'><a href='../S/17.html#L48'>str</a>                48 llvm_tool/mekong-utils/inc/IRUtils.h llvm::CallInst *callPrintf(llvm::Module &amp;module, std::string str,</span>
-<span class='curline'><a href='../S/17.html#L51'>str</a>                51 llvm_tool/mekong-utils/inc/IRUtils.h                            std::string str, llvm::Value *val);</span>
-<span class='curline'><a href='../S/10.html#L22'>str</a>                22 llvm_tool/mekong-utils/inc/ptx_parser.h   char *str;</span>
-<span class='curline'><a href='../S/10.html#L24'>str</a>                24 llvm_tool/mekong-utils/inc/ptx_parser.h   input_t(const char *s) : len(strlen(s)), str(new char[len + YYMAXFILL]) {</span>
-<span class='curline'><a href='../S/10.html#L25'>str</a>                25 llvm_tool/mekong-utils/inc/ptx_parser.h     memcpy(str, s, len);</span>
-<span class='curline'><a href='../S/10.html#L26'>str</a>                26 llvm_tool/mekong-utils/inc/ptx_parser.h     memset(str + len, ' ', YYMAXFILL);</span>
-<span class='curline'><a href='../S/10.html#L28'>str</a>                28 llvm_tool/mekong-utils/inc/ptx_parser.h   ~input_t() { delete[] str; }</span>
-<span class='curline'><a href='../S/10.html#L65'>str</a>                65 llvm_tool/mekong-utils/inc/ptx_parser.h   std::string str;</span>
-<span class='curline'><a href='../S/10.html#L67'>str</a>                67 llvm_tool/mekong-utils/inc/ptx_parser.h   Token(TokenClass tc, std::string str) : ty(tc), str(str){};</span>
-<span class='curline'><a href='../S/10.html#L88'>str</a>                88 llvm_tool/mekong-utils/inc/ptx_parser.h   const char *YYCURSOR = input.str;</span>
-<span class='curline'><a href='../S/10.html#L89'>str</a>                89 llvm_tool/mekong-utils/inc/ptx_parser.h   const char *const YYLIMIT = input.str + input.len + YYMAXFILL;</span>
-<span class='curline'><a href='../S/10.html#L3002'>str</a>              3002 llvm_tool/mekong-utils/inc/ptx_parser.h       func.name = next.str; // Found Function Name</span>
-<span class='curline'><a href='../S/10.html#L3042'>str</a>              3042 llvm_tool/mekong-utils/inc/ptx_parser.h         if (next.str == ".loc") {</span>
-<span class='curline'><a href='../S/10.html#L3060'>str</a>              3060 llvm_tool/mekong-utils/inc/ptx_parser.h           std::cerr &lt;&lt; "Instruction: " &lt;&lt; next.str &lt;&lt; "\n";</span>
-<span class='curline'><a href='../S/10.html#L3065'>str</a>              3065 llvm_tool/mekong-utils/inc/ptx_parser.h 	std::string temp = next.str;</span>
-<span class='curline'><a href='../S/10.html#L3073'>str</a>              3073 llvm_tool/mekong-utils/inc/ptx_parser.h 				temp = temp + ".." + next.str + "..";</span>
-<span class='curline'><a href='../S/10.html#L3075'>str</a>              3075 llvm_tool/mekong-utils/inc/ptx_parser.h 				temp = temp + next.str;</span>
-<span class='curline'><a href='../S/10.html#L3078'>str</a>              3078 llvm_tool/mekong-utils/inc/ptx_parser.h                         temp = temp + " " + next.str;</span>
-<span class='curline'><a href='../S/10.html#L3093'>str</a>              3093 llvm_tool/mekong-utils/inc/ptx_parser.h         size_t pos = next.str.rfind("// %");</span>
-<span class='curline'><a href='../S/10.html#L3098'>str</a>              3098 llvm_tool/mekong-utils/inc/ptx_parser.h           size_t wpos1 = next.str.find(" ", bbPos);</span>
-<span class='curline'><a href='../S/10.html#L3099'>str</a>              3099 llvm_tool/mekong-utils/inc/ptx_parser.h           size_t wpos2 = next.str.find("\t", bbPos);</span>
-<span class='curline'><a href='../S/10.html#L3100'>str</a>              3100 llvm_tool/mekong-utils/inc/ptx_parser.h           size_t wpos3 = next.str.find(":", bbPos);</span>
-<span class='curline'><a href='../S/10.html#L3107'>str</a>              3107 llvm_tool/mekong-utils/inc/ptx_parser.h             len = next.str.rfind("\n") - (bbPos);</span>
-<span class='curline'><a href='../S/10.html#L3109'>str</a>              3109 llvm_tool/mekong-utils/inc/ptx_parser.h           currentBB = next.str.substr(bbPos, len);</span>
-<span class='curline'><a href='../S/10.html#L3124'>str</a>              3124 llvm_tool/mekong-utils/inc/ptx_parser.h 	if(next.str.compare(p) == 0){</span>
-<span class='curline'><a href='../S/10.html#L3168'>str</a>              3168 llvm_tool/mekong-utils/inc/ptx_parser.h 	  std::cout &lt;&lt; "Error with: " &lt;&lt; " " &lt;&lt; (*(iter-4)).str &lt;&lt; " " &lt;&lt; (*(iter-3)).str &lt;&lt; " " &lt;&lt; (*(iter-2)).str &lt;&lt; " ..RG.. " &lt;&lt; (*(iter-1)).str &lt;&lt; " " &lt;&lt; next.str &lt;&lt; " ..RG.. " &lt;&lt; (*(iter)).str &lt;&lt; " " &lt;&lt; (*(iter+1)).str &lt;&lt; " " &lt;&lt; (*(iter+2)).str &lt;&lt; "\n";</span>
-<span class='curline'><a href='../S/10.html#L3199'>str</a>              3199 llvm_tool/mekong-utils/inc/ptx_parser.h                   &lt;&lt; next.str &lt;&lt; '\n';</span>
-<span class='curline'><a href='../S/10.html#L3220'>str</a>              3220 llvm_tool/mekong-utils/inc/ptx_parser.h         (current.str == ".entry" or current.str == ".func")) {</span>
-<span class='curline'><a href='../S/5.html#L40'>str</a>                40 llvm_tool/mekong-utils/src/IRUtils.cpp   return std::string(oss.str());</span>
-<span class='curline'><a href='../S/5.html#L144'>str</a>               144 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::CallInst *callPrintf(llvm::Module &amp;module, std::string str,</span>
-<span class='curline'><a href='../S/5.html#L148'>str</a>               148 llvm_tool/mekong-utils/src/IRUtils.cpp       llvm::ArrayType::get(llvm::IntegerType::get(ctx, 8), str.size() + 1);</span>
-<span class='curline'><a href='../S/5.html#L149'>str</a>               149 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::Constant *strConstant = llvm::ConstantDataArray::getString(ctx, str);</span>
-<span class='curline'><a href='../S/5.html#L170'>str</a>               170 llvm_tool/mekong-utils/src/IRUtils.cpp                            std::string str, llvm::Value *val) {</span>
-<span class='curline'><a href='../S/5.html#L172'>str</a>               172 llvm_tool/mekong-utils/src/IRUtils.cpp   GlobalVariable *stringVal = builder.CreateGlobalString(str);</span>
-<span class='curline'><a href='../S/629.html#L97'>str</a>                97 tracing_tool/nvbit/instr_types.h     std::string str;</span>
+<span class='curline'><a href='../S/597.html#L17'>strcpy</a>             17 reuse_distance_tool/parda.c 	strcpy(temp, key);</span>
+<span class='curline'><a href='../S/597.html#L122'>strcpy</a>            122 reuse_distance_tool/parda.c 		strcpy(entry, temp);</span>
+<span class='curline'><a href='../S/597.html#L156'>strcpy</a>            156 reuse_distance_tool/parda.c 		strcpy(key, temp);</span>
+<span class='curline'><a href='../S/593.html#L72'>strcpy</a>             72 reuse_distance_tool/process_args.c 				strcpy(inputFileName, optarg);</span>
+<span class='curline'><a href='../S/593.html#L97'>strcpy</a>             97 reuse_distance_tool/process_args.c 				strcpy(output_directory, optarg);</span>
 </pre>
 </body>
 </html>

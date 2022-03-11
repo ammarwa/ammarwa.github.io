@@ -161,7 +161,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d7a/classsimian_1_1Simian.html#ab32bb31278eef1717b774ac3cf582c86">__init__</a>(self, libName):</div>
+<div class="fragment"><div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/d42/classsrc_1_1warps_1_1Warp.html#a665a9f1a52d5f0d7a8ed15fd75bc152c">__init__</a>(self, libName):</div>
 <div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;        <span class="keyword">global</span> mpi</div>
 <div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> mpi: mpi = <a class="code" href="../../de/da6/namespacesimian.html#a6de4a43908ee6161d12e2ed2881c4dc4">loadMPICH</a>(libName)</div>
 <div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160; </div>
@@ -193,7 +193,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160; </div>
 <div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;        self.numRanks = self.size()</div>
 <div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;        self.sndCounts = (C.c_long * self.numRanks)()</div>
-<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(self.sndCounts)): self.sndCounts[i] = 0</div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;        <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(<a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(self.sndCounts)): self.sndCounts[i] = 0</div>
 <div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;        self.rcvCounts = (C.c_long * self.numRanks)()</div>
 <div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160; </div>
 </div><!-- fragment --><div class="dynheader">
@@ -451,8 +451,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;    <span class="keyword">def </span>isend(self, x, dst, tag=None): <span class="comment">#Non-Blocking</span></div>
 <div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;        m = Pack(x)</div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;        tag = tag <span class="keywordflow">or</span> len(m) <span class="comment">#Set to message length if None</span></div>
-<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Isend(m, len(m), self.BYTE, dst, tag, self.comm, C.byref(self.request)) != mpi.MPI_SUCCESS:</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;        tag = tag <span class="keywordflow">or</span> <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(m) <span class="comment">#Set to message length if None</span></div>
+<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Isend(m, <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(m), self.BYTE, dst, tag, self.comm, C.byref(self.request)) != mpi.MPI_SUCCESS:</div>
 <div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;            <span class="keywordflow">raise</span> SimianError(<span class="stringliteral">&quot;MPI.isend(): error!&quot;</span>)</div>
 <div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160; </div>
 </div><!-- fragment -->
@@ -512,7 +512,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d7a/classsimian_1_1Simian.html#aea75c25bcb82f5957dfc023d00fe33d1">rank</a>(self):</div>
+<div class="fragment"><div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;    <span class="keyword">def </span>rank(self):</div>
 <div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Comm_rank(self.comm, C.byref(self.itemp)) == mpi.MPI_SUCCESS:</div>
 <div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;            <span class="keywordflow">return</span> self.itemp.value</div>
 <div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;        <span class="keywordflow">raise</span> SimianError(<span class="stringliteral">&quot;MPI.rank(): error!&quot;</span>)</div>
@@ -659,8 +659,8 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;    <span class="keyword">def </span>send(self, x, dst, tag=None): <span class="comment">#Blocking</span></div>
 <div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;        m = Pack(x)</div>
-<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;        tag = tag <span class="keywordflow">or</span> len(m) <span class="comment">#Set to message length if None</span></div>
-<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Send(m, len(m), self.BYTE, dst, tag, self.comm) != mpi.MPI_SUCCESS:</div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160;        tag = tag <span class="keywordflow">or</span> <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(m) <span class="comment">#Set to message length if None</span></div>
+<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Send(m, <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(m), self.BYTE, dst, tag, self.comm) != mpi.MPI_SUCCESS:</div>
 <div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;            <span class="keywordflow">raise</span> SimianError(<span class="stringliteral">&quot;MPI.send(): error!&quot;</span>)</div>
 <div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160; </div>
 </div><!-- fragment -->
@@ -706,8 +706,8 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l01559"></a><span class="lineno"> 1559</span>&#160;    <span class="keyword">def </span>sendAndCount(self, x, dst, tag=None): <span class="comment">#Blocking</span></div>
 <div class="line"><a name="l01560"></a><span class="lineno"> 1560</span>&#160;        <span class="comment">#print (&quot;MPI: &quot; + str(x))</span></div>
 <div class="line"><a name="l01561"></a><span class="lineno"> 1561</span>&#160;        m = Pack(x)</div>
-<div class="line"><a name="l01562"></a><span class="lineno"> 1562</span>&#160;        tag = tag <span class="keywordflow">or</span> len(m) <span class="comment">#Set to message length if None</span></div>
-<div class="line"><a name="l01563"></a><span class="lineno"> 1563</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Send(m, len(m), self.BYTE, dst, tag, self.comm) != mpi.MPI_SUCCESS:</div>
+<div class="line"><a name="l01562"></a><span class="lineno"> 1562</span>&#160;        tag = tag <span class="keywordflow">or</span> <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(m) <span class="comment">#Set to message length if None</span></div>
+<div class="line"><a name="l01563"></a><span class="lineno"> 1563</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Send(m, <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(m), self.BYTE, dst, tag, self.comm) != mpi.MPI_SUCCESS:</div>
 <div class="line"><a name="l01564"></a><span class="lineno"> 1564</span>&#160;            <span class="keywordflow">raise</span> SimianError(<span class="stringliteral">&quot;MPI.sendAndCount(): error!&quot;</span>)</div>
 <div class="line"><a name="l01565"></a><span class="lineno"> 1565</span>&#160;        self.sndCounts[dst] += 1</div>
 <div class="line"><a name="l01566"></a><span class="lineno"> 1566</span>&#160;<span class="comment">#===========================================================================================</span></div>
@@ -734,7 +734,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d7a/classsimian_1_1Simian.html#a5805f6b91d372f8759d64a940a9f0336">size</a>(self):</div>
+<div class="fragment"><div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;    <span class="keyword">def </span>size(self):</div>
 <div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;        <span class="comment">#size = (C.c_int * 1)()</span></div>
 <div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;        <span class="keywordflow">if</span> mpi.MPI_Comm_size(self.comm, C.byref(self.itemp)) == mpi.MPI_SUCCESS:</div>
 <div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;            <span class="keywordflow">return</span> self.itemp.value</div>
@@ -972,13 +972,12 @@ Here is the call graph for this function:</div>
 <li>PPT-GPU/<a class="el" href="../../">simian.py</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclasssimian_1_1Simian_html_a5805f6b91d372f8759d64a940a9f0336"><div class="ttname"><a href="../../df/d7a/classsimian_1_1Simian.html#a5805f6b91d372f8759d64a940a9f0336">simian.Simian.size</a></div><div class="ttdeci">size</div><div class="ttdef"><b>Definition:</b> simian.py:1611</div></div>
-<div class="ttc" id="aclasssimian_1_1Simian_html_aea75c25bcb82f5957dfc023d00fe33d1"><div class="ttname"><a href="../../df/d7a/classsimian_1_1Simian.html#aea75c25bcb82f5957dfc023d00fe33d1">simian.Simian.rank</a></div><div class="ttdeci">rank</div><div class="ttdef"><b>Definition:</b> simian.py:1610</div></div>
-<div class="ttc" id="aclasssimian_1_1Simian_html_ab32bb31278eef1717b774ac3cf582c86"><div class="ttname"><a href="../../df/d7a/classsimian_1_1Simian.html#ab32bb31278eef1717b774ac3cf582c86">simian.Simian.__init__</a></div><div class="ttdeci">def __init__(self, simName, startTime=0.0, endTime=10e10, minDelay=1, useMPI=False, opt=False, appPath=&quot;.&quot;, ISA=&quot;&quot;, granularity=&quot;&quot;, mpiLibName=defaultMpichLibName)</div><div class="ttdef"><b>Definition:</b> simian.py:1573</div></div>
+<div class="ttc" id="ahostRuntime_8cpp_html_a9fcf27257facab5e4f26bba1e14b20f6"><div class="ttname"><a href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a></div><div class="ttdeci">void uint64_t size_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../HTML/S/25.html#L93">hostRuntime.cpp:93</a></div></div>
 <div class="ttc" id="anamespacesimian_html_a6de4a43908ee6161d12e2ed2881c4dc4"><div class="ttname"><a href="../../de/da6/namespacesimian.html#a6de4a43908ee6161d12e2ed2881c4dc4">simian.loadMPICH</a></div><div class="ttdeci">def loadMPICH(mpichLib)</div><div class="ttdef"><b>Definition:</b> simian.py:1356</div></div>
+<div class="ttc" id="aclasssrc_1_1warps_1_1Warp_html_a665a9f1a52d5f0d7a8ed15fd75bc152c"><div class="ttname"><a href="../../d2/d42/classsrc_1_1warps_1_1Warp.html#a665a9f1a52d5f0d7a8ed15fd75bc152c">src.warps.Warp.__init__</a></div><div class="ttdeci">def __init__(self, block, gpu, tasklist, kernel_id, avg_mem_lat, avg_atom_lat)</div><div class="ttdef"><b>Definition:</b> warps.py:22</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 11 2022 13:07:26 for NMSU | Pearl Lab | PPT-GPU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2022 13:31:25 for NMSU | Pearl Lab | PPT-GPU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

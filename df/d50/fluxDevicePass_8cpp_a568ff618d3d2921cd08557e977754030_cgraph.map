@@ -1,0 +1,7 @@
+<map id="basicBlockInstrumentation" name="basicBlockInstrumentation">
+<area shape="rect" id="node1" title=" " alt="" coords="5,89,275,121"/>
+<area shape="rect" id="node2" href="$d3/dcd/namespacemekong.html#a64c2cc8ef711bb2c9c8c88d992aa9d83" title="===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—===// Transformation Functions ===..." alt="" coords="323,5,595,37"/>
+<area shape="rect" id="node3" href="$d3/dcd/namespacemekong.html#a769701c40cf1cb06898926ad2b7e6c6e" title=" " alt="" coords="335,61,582,93"/>
+<area shape="rect" id="node4" href="$d3/dcd/namespacemekong.html#a51a6949c9e5f60d1635f94ef386d397f" title="===&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;—===// Analysis Functions ===&#45;&#45;&#45;&#45;&#45;&#45;..." alt="" coords="356,117,561,149"/>
+<area shape="rect" id="node5" href="$d3/dcd/namespacemekong.html#a47c4770f047f5adfcc1ba8cc9d673480" title="Adds metadata to the current module that will make the given function callable as kernel." alt="" coords="352,173,565,205"/>
+</map>

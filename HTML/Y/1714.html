@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>t</title>
+<title>t_init</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,96 +9,9 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/25.html#L83'>t</a>                  83 llvm_tool/lib/hostRuntime.cpp   struct timeval *t = new struct timeval();</span>
-<span class='curline'><a href='../S/25.html#L84'>t</a>                  84 llvm_tool/lib/hostRuntime.cpp   gettimeofday(t, nullptr);</span>
-<span class='curline'><a href='../S/25.html#L85'>t</a>                  85 llvm_tool/lib/hostRuntime.cpp   return t;</span>
-<span class='curline'><a href='../S/616.html#L298'>t</a>                 298 reuse_distance_tool/parda.c 	long t, i;</span>
-<span class='curline'><a href='../S/616.html#L301'>t</a>                 301 reuse_distance_tool/parda.c 	for (t = begin; t &lt;= end; t += count) {</span>
-<span class='curline'><a href='../S/616.html#L305'>t</a>                 305 reuse_distance_tool/parda.c 			DEBUG(printf("%s %d\n",address,i+t);)</span>
-<span class='curline'><a href='../S/619.html#L51'>t</a>                  51 reuse_distance_tool/seperate.c   long t, count;</span>
-<span class='curline'><a href='../S/619.html#L57'>t</a>                  57 reuse_distance_tool/seperate.c     for(t = tstart; t &lt;= tend; t += count) {</span>
-<span class='curline'><a href='../S/619.html#L58'>t</a>                  58 reuse_distance_tool/seperate.c       count = min(tend + 1 - t, buffersize);</span>
-<span class='curline'><a href='../S/614.html#L55'>t</a>                  55 reuse_distance_tool/splay.c Tree * splay (T i, Tree *t)</span>
-<span class='curline'><a href='../S/614.html#L62'>t</a>                  62 reuse_distance_tool/splay.c     if (t == NULL) return t;</span>
-<span class='curline'><a href='../S/614.html#L68'>t</a>                  68 reuse_distance_tool/splay.c         comp = compare(i, t-&gt;key);</span>
-<span class='curline'><a href='../S/614.html#L70'>t</a>                  70 reuse_distance_tool/splay.c             if (t-&gt;left == NULL) break;</span>
-<span class='curline'><a href='../S/614.html#L71'>t</a>                  71 reuse_distance_tool/splay.c             if (compare(i, t-&gt;left-&gt;key) &lt; 0) {</span>
-<span class='curline'><a href='../S/614.html#L72'>t</a>                  72 reuse_distance_tool/splay.c                 y = t-&gt;left;                           /* rotate right */</span>
-<span class='curline'><a href='../S/614.html#L73'>t</a>                  73 reuse_distance_tool/splay.c                 t-&gt;left = y-&gt;right;</span>
-<span class='curline'><a href='../S/614.html#L74'>t</a>                  74 reuse_distance_tool/splay.c                 y-&gt;right = t;</span>
-<span class='curline'><a href='../S/614.html#L75'>t</a>                  75 reuse_distance_tool/splay.c                 t-&gt;size = node_size(t-&gt;left) + node_size(t-&gt;right) + 1;</span>
-<span class='curline'><a href='../S/614.html#L76'>t</a>                  76 reuse_distance_tool/splay.c                 t = y;</span>
-<span class='curline'><a href='../S/614.html#L77'>t</a>                  77 reuse_distance_tool/splay.c                 if (t-&gt;left == NULL) break;</span>
-<span class='curline'><a href='../S/614.html#L79'>t</a>                  79 reuse_distance_tool/splay.c             r-&gt;left = t;                               /* link right */</span>
-<span class='curline'><a href='../S/614.html#L80'>t</a>                  80 reuse_distance_tool/splay.c             r = t;</span>
-<span class='curline'><a href='../S/614.html#L81'>t</a>                  81 reuse_distance_tool/splay.c             t = t-&gt;left;</span>
-<span class='curline'><a href='../S/614.html#L84'>t</a>                  84 reuse_distance_tool/splay.c             if (t-&gt;right == NULL) break;</span>
-<span class='curline'><a href='../S/614.html#L85'>t</a>                  85 reuse_distance_tool/splay.c             if (compare(i, t-&gt;right-&gt;key) &gt; 0) {</span>
-<span class='curline'><a href='../S/614.html#L86'>t</a>                  86 reuse_distance_tool/splay.c                 y = t-&gt;right;                          /* rotate left */</span>
-<span class='curline'><a href='../S/614.html#L87'>t</a>                  87 reuse_distance_tool/splay.c                 t-&gt;right = y-&gt;left;</span>
-<span class='curline'><a href='../S/614.html#L88'>t</a>                  88 reuse_distance_tool/splay.c                 y-&gt;left = t;</span>
-<span class='curline'><a href='../S/614.html#L89'>t</a>                  89 reuse_distance_tool/splay.c 		t-&gt;size = node_size(t-&gt;left) + node_size(t-&gt;right) + 1;</span>
-<span class='curline'><a href='../S/614.html#L90'>t</a>                  90 reuse_distance_tool/splay.c                 t = y;</span>
-<span class='curline'><a href='../S/614.html#L91'>t</a>                  91 reuse_distance_tool/splay.c                 if (t-&gt;right == NULL) break;</span>
-<span class='curline'><a href='../S/614.html#L93'>t</a>                  93 reuse_distance_tool/splay.c             l-&gt;right = t;                              /* link left */</span>
-<span class='curline'><a href='../S/614.html#L94'>t</a>                  94 reuse_distance_tool/splay.c             l = t;</span>
-<span class='curline'><a href='../S/614.html#L95'>t</a>                  95 reuse_distance_tool/splay.c             t = t-&gt;right;</span>
-<span class='curline'><a href='../S/614.html#L101'>t</a>                 101 reuse_distance_tool/splay.c     l_size += node_size(t-&gt;left);  /* Now l_size and r_size are the sizes of */</span>
-<span class='curline'><a href='../S/614.html#L102'>t</a>                 102 reuse_distance_tool/splay.c     r_size += node_size(t-&gt;right); /* the left and right trees we just built.*/</span>
-<span class='curline'><a href='../S/614.html#L103'>t</a>                 103 reuse_distance_tool/splay.c     t-&gt;size = l_size + r_size + 1;</span>
-<span class='curline'><a href='../S/614.html#L119'>t</a>                 119 reuse_distance_tool/splay.c     l-&gt;right = t-&gt;left;                                /* assemble */</span>
-<span class='curline'><a href='../S/614.html#L120'>t</a>                 120 reuse_distance_tool/splay.c     r-&gt;left = t-&gt;right;</span>
-<span class='curline'><a href='../S/614.html#L121'>t</a>                 121 reuse_distance_tool/splay.c     t-&gt;left = N.right;</span>
-<span class='curline'><a href='../S/614.html#L122'>t</a>                 122 reuse_distance_tool/splay.c     t-&gt;right = N.left;</span>
-<span class='curline'><a href='../S/614.html#L124'>t</a>                 124 reuse_distance_tool/splay.c     return t;</span>
-<span class='curline'><a href='../S/614.html#L127'>t</a>                 127 reuse_distance_tool/splay.c Tree * insert(T i, Tree * t) {</span>
-<span class='curline'><a href='../S/614.html#L132'>t</a>                 132 reuse_distance_tool/splay.c     if (t != NULL) {</span>
-<span class='curline'><a href='../S/614.html#L133'>t</a>                 133 reuse_distance_tool/splay.c 	t = splay(i,t);</span>
-<span class='curline'><a href='../S/614.html#L134'>t</a>                 134 reuse_distance_tool/splay.c 	if (compare(i, t-&gt;key)==0) {</span>
-<span class='curline'><a href='../S/614.html#L135'>t</a>                 135 reuse_distance_tool/splay.c 	    return t;  /* it's already there */</span>
-<span class='curline'><a href='../S/614.html#L140'>t</a>                 140 reuse_distance_tool/splay.c     if (t == NULL) {</span>
-<span class='curline'><a href='../S/614.html#L142'>t</a>                 142 reuse_distance_tool/splay.c     } else if (compare(i, t-&gt;key) &lt; 0) {</span>
-<span class='curline'><a href='../S/614.html#L143'>t</a>                 143 reuse_distance_tool/splay.c 	new-&gt;left = t-&gt;left;</span>
-<span class='curline'><a href='../S/614.html#L144'>t</a>                 144 reuse_distance_tool/splay.c 	new-&gt;right = t;</span>
-<span class='curline'><a href='../S/614.html#L145'>t</a>                 145 reuse_distance_tool/splay.c 	t-&gt;left = NULL;</span>
-<span class='curline'><a href='../S/614.html#L146'>t</a>                 146 reuse_distance_tool/splay.c 	t-&gt;size = 1+node_size(t-&gt;right);</span>
-<span class='curline'><a href='../S/614.html#L148'>t</a>                 148 reuse_distance_tool/splay.c 	new-&gt;right = t-&gt;right;</span>
-<span class='curline'><a href='../S/614.html#L149'>t</a>                 149 reuse_distance_tool/splay.c 	new-&gt;left = t;</span>
-<span class='curline'><a href='../S/614.html#L150'>t</a>                 150 reuse_distance_tool/splay.c 	t-&gt;right = NULL;</span>
-<span class='curline'><a href='../S/614.html#L151'>t</a>                 151 reuse_distance_tool/splay.c 	t-&gt;size = 1+node_size(t-&gt;left);</span>
-<span class='curline'><a href='../S/614.html#L158'>t</a>                 158 reuse_distance_tool/splay.c Tree * delete(T i, Tree *t) {</span>
-<span class='curline'><a href='../S/614.html#L164'>t</a>                 164 reuse_distance_tool/splay.c     if (t==NULL) return NULL;</span>
-<span class='curline'><a href='../S/614.html#L165'>t</a>                 165 reuse_distance_tool/splay.c     tsize = t-&gt;size;</span>
-<span class='curline'><a href='../S/614.html#L166'>t</a>                 166 reuse_distance_tool/splay.c     t = splay(i,t);</span>
-<span class='curline'><a href='../S/614.html#L167'>t</a>                 167 reuse_distance_tool/splay.c     if (compare(i, t-&gt;key) == 0) {               /* found it */</span>
-<span class='curline'><a href='../S/614.html#L168'>t</a>                 168 reuse_distance_tool/splay.c 	if (t-&gt;left == NULL) {</span>
-<span class='curline'><a href='../S/614.html#L169'>t</a>                 169 reuse_distance_tool/splay.c 	    x = t-&gt;right;</span>
-<span class='curline'><a href='../S/614.html#L171'>t</a>                 171 reuse_distance_tool/splay.c 	    x = splay(i, t-&gt;left);</span>
-<span class='curline'><a href='../S/614.html#L172'>t</a>                 172 reuse_distance_tool/splay.c 	    x-&gt;right = t-&gt;right;</span>
-<span class='curline'><a href='../S/614.html#L174'>t</a>                 174 reuse_distance_tool/splay.c 	free(t);</span>
-<span class='curline'><a href='../S/614.html#L180'>t</a>                 180 reuse_distance_tool/splay.c 	return t;                         /* It wasn't there */</span>
-<span class='curline'><a href='../S/614.html#L184'>t</a>                 184 reuse_distance_tool/splay.c Tree *find_rank(T r, Tree *t) {</span>
-<span class='curline'><a href='../S/614.html#L190'>t</a>                 190 reuse_distance_tool/splay.c     if ((r &lt; 0) || (r &gt;= node_size(t))) return NULL;</span>
-<span class='curline'><a href='../S/614.html#L192'>t</a>                 192 reuse_distance_tool/splay.c 	lsize = node_size(t-&gt;left);</span>
-<span class='curline'><a href='../S/614.html#L194'>t</a>                 194 reuse_distance_tool/splay.c 	    t = t-&gt;left;</span>
-<span class='curline'><a href='../S/614.html#L197'>t</a>                 197 reuse_distance_tool/splay.c 	    t = t-&gt;right;</span>
-<span class='curline'><a href='../S/614.html#L199'>t</a>                 199 reuse_distance_tool/splay.c 	    return t;</span>
-<span class='curline'><a href='../S/614.html#L203'>t</a>                 203 reuse_distance_tool/splay.c void freetree(Tree* t)</span>
-<span class='curline'><a href='../S/614.html#L205'>t</a>                 205 reuse_distance_tool/splay.c     if(t==NULL) return;</span>
-<span class='curline'><a href='../S/614.html#L206'>t</a>                 206 reuse_distance_tool/splay.c     freetree(t-&gt;right);</span>
-<span class='curline'><a href='../S/614.html#L207'>t</a>                 207 reuse_distance_tool/splay.c     freetree(t-&gt;left);</span>
-<span class='curline'><a href='../S/614.html#L208'>t</a>                 208 reuse_distance_tool/splay.c     free(t);</span>
-<span class='curline'><a href='../S/614.html#L210'>t</a>                 210 reuse_distance_tool/splay.c void printtree(Tree * t, int d) {</span>
-<span class='curline'><a href='../S/614.html#L213'>t</a>                 213 reuse_distance_tool/splay.c     if (t == NULL) return;</span>
-<span class='curline'><a href='../S/614.html#L214'>t</a>                 214 reuse_distance_tool/splay.c     printtree(t-&gt;right, d+1);</span>
-<span class='curline'><a href='../S/614.html#L216'>t</a>                 216 reuse_distance_tool/splay.c     printf("%d(%d)\n", t-&gt;key, t-&gt;size);</span>
-<span class='curline'><a href='../S/614.html#L217'>t</a>                 217 reuse_distance_tool/splay.c     printtree(t-&gt;left, d+1);</span>
-<span class='curline'><a href='../S/615.html#L29'>t</a>                  29 reuse_distance_tool/splay.h Tree * splay (T i, Tree *t);</span>
-<span class='curline'><a href='../S/615.html#L30'>t</a>                  30 reuse_distance_tool/splay.h Tree * insert(T i, Tree * t); </span>
-<span class='curline'><a href='../S/615.html#L31'>t</a>                  31 reuse_distance_tool/splay.h Tree * delete(T i, Tree *t); </span>
-<span class='curline'><a href='../S/615.html#L32'>t</a>                  32 reuse_distance_tool/splay.h Tree *find_rank(T r, Tree *t); </span>
-<span class='curline'><a href='../S/615.html#L33'>t</a>                  33 reuse_distance_tool/splay.h void printtree(Tree * t, int d); </span>
-<span class='curline'><a href='../S/615.html#L34'>t</a>                  34 reuse_distance_tool/splay.h void freetree(Tree* t);</span>
+<span class='curline'><a href='../S/591.html#L128'>t_init</a>            128 reuse_distance_tool/parda_omp.c         double ts, te, t_init, t_input, t_print, t_free;</span>
+<span class='curline'><a href='../S/591.html#L133'>t_init</a>            133 reuse_distance_tool/parda_omp.c     PTIME(t_init = te - ts;)</span>
+<span class='curline'><a href='../S/591.html#L151'>t_init</a>            151 reuse_distance_tool/parda_omp.c     printf("init time is %lf\n", t_init);</span>
 </pre>
 </body>
 </html>

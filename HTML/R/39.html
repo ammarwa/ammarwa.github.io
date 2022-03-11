@@ -9,92 +9,92 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/630.html#L1839'>CUarray</a>          1839 tracing_tool/nvbit/cuda.h     CUarray srcArray;           /**&lt; Source array reference */</span>
-<span class='curline'><a href='../S/630.html#L1848'>CUarray</a>          1848 tracing_tool/nvbit/cuda.h     CUarray dstArray;           /**&lt; Destination array reference */</span>
-<span class='curline'><a href='../S/630.html#L1866'>CUarray</a>          1866 tracing_tool/nvbit/cuda.h     CUarray srcArray;           /**&lt; Source array reference */</span>
-<span class='curline'><a href='../S/630.html#L1878'>CUarray</a>          1878 tracing_tool/nvbit/cuda.h     CUarray dstArray;           /**&lt; Destination array reference */</span>
-<span class='curline'><a href='../S/630.html#L1899'>CUarray</a>          1899 tracing_tool/nvbit/cuda.h     CUarray srcArray;           /**&lt; Source array reference */</span>
-<span class='curline'><a href='../S/630.html#L1911'>CUarray</a>          1911 tracing_tool/nvbit/cuda.h     CUarray dstArray;           /**&lt; Destination array reference */</span>
-<span class='curline'><a href='../S/630.html#L1956'>CUarray</a>          1956 tracing_tool/nvbit/cuda.h             CUarray hArray;                   /**&lt; CUDA array */</span>
-<span class='curline'><a href='../S/630.html#L6136'>CUarray</a>          6136 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyDtoA(CUarray dstArray, size_t dstOffset, CUdeviceptr srcDevice, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L6174'>CUarray</a>          6174 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoD(CUdeviceptr dstDevice, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L6211'>CUarray</a>          6211 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoA(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L6248'>CUarray</a>          6248 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoH(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L6288'>CUarray</a>          6288 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoA(CUarray dstArray, size_t dstOffset, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L7050'>CUarray</a>          7050 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoAAsync(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L7092'>CUarray</a>          7092 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoHAsync(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L8030'>CUarray</a>          8030 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArrayCreate(CUarray *pHandle, const CUDA_ARRAY_DESCRIPTOR *pAllocateArray);</span>
-<span class='curline'><a href='../S/630.html#L8064'>CUarray</a>          8064 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArrayGetDescriptor(CUDA_ARRAY_DESCRIPTOR *pArrayDescriptor, CUarray hArray);</span>
-<span class='curline'><a href='../S/630.html#L8095'>CUarray</a>          8095 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArrayDestroy(CUarray hArray);</span>
-<span class='curline'><a href='../S/630.html#L8275'>CUarray</a>          8275 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArray3DCreate(CUarray *pHandle, const CUDA_ARRAY3D_DESCRIPTOR *pAllocateArray);</span>
-<span class='curline'><a href='../S/630.html#L8313'>CUarray</a>          8313 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArray3DGetDescriptor(CUDA_ARRAY3D_DESCRIPTOR *pArrayDescriptor, CUarray hArray);</span>
-<span class='curline'><a href='../S/630.html#L8485'>CUarray</a>          8485 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMipmappedArrayGetLevel(CUarray *pLevelArray, CUmipmappedArray hMipmappedArray, unsigned int level);</span>
-<span class='curline'><a href='../S/630.html#L13862'>CUarray</a>          13862 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetArray(CUtexref hTexRef, CUarray hArray, unsigned int Flags);</span>
-<span class='curline'><a href='../S/630.html#L14371'>CUarray</a>          14371 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetArray(CUarray *phArray, CUtexref hTexRef);</span>
-<span class='curline'><a href='../S/630.html#L14728'>CUarray</a>          14728 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuSurfRefSetArray(CUsurfref hSurfRef, CUarray hArray, unsigned int Flags);</span>
-<span class='curline'><a href='../S/630.html#L14751'>CUarray</a>          14751 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuSurfRefGetArray(CUarray *phArray, CUsurfref hSurfRef);</span>
-<span class='curline'><a href='../S/630.html#L15396'>CUarray</a>          15396 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphicsSubResourceGetMappedArray(CUarray *pArray, CUgraphicsResource resource, unsigned int arrayIndex, unsigned int mipLevel);</span>
-<span class='curline'><a href='../S/630.html#L15735'>CUarray</a>          15735 tracing_tool/nvbit/cuda.h         CUarray srcArray;           /**&lt; Source array reference */</span>
-<span class='curline'><a href='../S/630.html#L15743'>CUarray</a>          15743 tracing_tool/nvbit/cuda.h         CUarray dstArray;           /**&lt; Destination array reference */</span>
-<span class='curline'><a href='../S/630.html#L15759'>CUarray</a>          15759 tracing_tool/nvbit/cuda.h         CUarray srcArray;           /**&lt; Source array reference */</span>
-<span class='curline'><a href='../S/630.html#L15771'>CUarray</a>          15771 tracing_tool/nvbit/cuda.h         CUarray dstArray;           /**&lt; Destination array reference */</span>
-<span class='curline'><a href='../S/630.html#L15814'>CUarray</a>          15814 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoA(CUarray dstArray, unsigned int dstOffset, CUdeviceptr_v1 srcDevice, unsigned int ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15815'>CUarray</a>          15815 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoD(CUdeviceptr_v1 dstDevice, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15816'>CUarray</a>          15816 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoA(CUarray dstArray, unsigned int dstOffset, const void *srcHost, unsigned int ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15817'>CUarray</a>          15817 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoH(void *dstHost, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15818'>CUarray</a>          15818 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoA(CUarray dstArray, unsigned int dstOffset, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15819'>CUarray</a>          15819 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoAAsync(CUarray dstArray, unsigned int dstOffset, const void *srcHost, unsigned int ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L15820'>CUarray</a>          15820 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoHAsync(void *dstHost, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L15835'>CUarray</a>          15835 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArrayCreate(CUarray *pHandle, const CUDA_ARRAY_DESCRIPTOR_v1 *pAllocateArray);</span>
-<span class='curline'><a href='../S/630.html#L15836'>CUarray</a>          15836 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArrayGetDescriptor(CUDA_ARRAY_DESCRIPTOR_v1 *pArrayDescriptor, CUarray hArray);</span>
-<span class='curline'><a href='../S/630.html#L15837'>CUarray</a>          15837 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArray3DCreate(CUarray *pHandle, const CUDA_ARRAY3D_DESCRIPTOR_v1 *pAllocateArray);</span>
-<span class='curline'><a href='../S/630.html#L15838'>CUarray</a>          15838 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArray3DGetDescriptor(CUDA_ARRAY3D_DESCRIPTOR_v1 *pArrayDescriptor, CUarray hArray);</span>
-<span class='curline'><a href='../S/630.html#L15856'>CUarray</a>          15856 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoA_v2(CUarray dstArray, size_t dstOffset, CUdeviceptr srcDevice, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15857'>CUarray</a>          15857 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoD_v2(CUdeviceptr dstDevice, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15858'>CUarray</a>          15858 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoA_v2(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15859'>CUarray</a>          15859 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoH_v2(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15860'>CUarray</a>          15860 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoA_v2(CUarray dstArray, size_t dstOffset, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15861'>CUarray</a>          15861 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoAAsync_v2(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L15862'>CUarray</a>          15862 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoHAsync_v2(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/635.html#L461'>CUarray</a>           461 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L469'>CUarray</a>           469 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L475'>CUarray</a>           475 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L483'>CUarray</a>           483 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L489'>CUarray</a>           489 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L491'>CUarray</a>           491 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L550'>CUarray</a>           550 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L559'>CUarray</a>           559 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L671'>CUarray</a>           671 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
-<span class='curline'><a href='../S/635.html#L677'>CUarray</a>           677 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
-<span class='curline'><a href='../S/635.html#L681'>CUarray</a>           681 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
-<span class='curline'><a href='../S/635.html#L685'>CUarray</a>           685 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
-<span class='curline'><a href='../S/635.html#L691'>CUarray</a>           691 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
-<span class='curline'><a href='../S/635.html#L701'>CUarray</a>           701 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pLevelArray;</span>
-<span class='curline'><a href='../S/635.html#L1444'>CUarray</a>          1444 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
-<span class='curline'><a href='../S/635.html#L1522'>CUarray</a>          1522 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *phArray;</span>
-<span class='curline'><a href='../S/635.html#L1589'>CUarray</a>          1589 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
-<span class='curline'><a href='../S/635.html#L1594'>CUarray</a>          1594 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *phArray;</span>
-<span class='curline'><a href='../S/635.html#L1665'>CUarray</a>          1665 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pArray;</span>
-<span class='curline'><a href='../S/635.html#L1830'>CUarray</a>          1830 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L1838'>CUarray</a>          1838 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L1844'>CUarray</a>          1844 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L1852'>CUarray</a>          1852 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L1858'>CUarray</a>          1858 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L1860'>CUarray</a>          1860 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L1866'>CUarray</a>          1866 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L1875'>CUarray</a>          1875 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L1967'>CUarray</a>          1967 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
-<span class='curline'><a href='../S/635.html#L1973'>CUarray</a>          1973 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
-<span class='curline'><a href='../S/635.html#L1977'>CUarray</a>          1977 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
-<span class='curline'><a href='../S/635.html#L1983'>CUarray</a>          1983 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
-<span class='curline'><a href='../S/635.html#L2063'>CUarray</a>          2063 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L2071'>CUarray</a>          2071 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L2077'>CUarray</a>          2077 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L2085'>CUarray</a>          2085 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L2091'>CUarray</a>          2091 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L2093'>CUarray</a>          2093 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
-<span class='curline'><a href='../S/635.html#L2099'>CUarray</a>          2099 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
-<span class='curline'><a href='../S/635.html#L2108'>CUarray</a>          2108 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/611.html#L1839'>CUarray</a>          1839 tracing_tool/nvbit/cuda.h     CUarray srcArray;           /**&lt; Source array reference */</span>
+<span class='curline'><a href='../S/611.html#L1848'>CUarray</a>          1848 tracing_tool/nvbit/cuda.h     CUarray dstArray;           /**&lt; Destination array reference */</span>
+<span class='curline'><a href='../S/611.html#L1866'>CUarray</a>          1866 tracing_tool/nvbit/cuda.h     CUarray srcArray;           /**&lt; Source array reference */</span>
+<span class='curline'><a href='../S/611.html#L1878'>CUarray</a>          1878 tracing_tool/nvbit/cuda.h     CUarray dstArray;           /**&lt; Destination array reference */</span>
+<span class='curline'><a href='../S/611.html#L1899'>CUarray</a>          1899 tracing_tool/nvbit/cuda.h     CUarray srcArray;           /**&lt; Source array reference */</span>
+<span class='curline'><a href='../S/611.html#L1911'>CUarray</a>          1911 tracing_tool/nvbit/cuda.h     CUarray dstArray;           /**&lt; Destination array reference */</span>
+<span class='curline'><a href='../S/611.html#L1956'>CUarray</a>          1956 tracing_tool/nvbit/cuda.h             CUarray hArray;                   /**&lt; CUDA array */</span>
+<span class='curline'><a href='../S/611.html#L6136'>CUarray</a>          6136 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyDtoA(CUarray dstArray, size_t dstOffset, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L6174'>CUarray</a>          6174 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoD(CUdeviceptr dstDevice, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L6211'>CUarray</a>          6211 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoA(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L6248'>CUarray</a>          6248 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoH(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L6288'>CUarray</a>          6288 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoA(CUarray dstArray, size_t dstOffset, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L7050'>CUarray</a>          7050 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoAAsync(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L7092'>CUarray</a>          7092 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoHAsync(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L8030'>CUarray</a>          8030 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArrayCreate(CUarray *pHandle, const CUDA_ARRAY_DESCRIPTOR *pAllocateArray);</span>
+<span class='curline'><a href='../S/611.html#L8064'>CUarray</a>          8064 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArrayGetDescriptor(CUDA_ARRAY_DESCRIPTOR *pArrayDescriptor, CUarray hArray);</span>
+<span class='curline'><a href='../S/611.html#L8095'>CUarray</a>          8095 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArrayDestroy(CUarray hArray);</span>
+<span class='curline'><a href='../S/611.html#L8275'>CUarray</a>          8275 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArray3DCreate(CUarray *pHandle, const CUDA_ARRAY3D_DESCRIPTOR *pAllocateArray);</span>
+<span class='curline'><a href='../S/611.html#L8313'>CUarray</a>          8313 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuArray3DGetDescriptor(CUDA_ARRAY3D_DESCRIPTOR *pArrayDescriptor, CUarray hArray);</span>
+<span class='curline'><a href='../S/611.html#L8485'>CUarray</a>          8485 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMipmappedArrayGetLevel(CUarray *pLevelArray, CUmipmappedArray hMipmappedArray, unsigned int level);</span>
+<span class='curline'><a href='../S/611.html#L13862'>CUarray</a>          13862 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetArray(CUtexref hTexRef, CUarray hArray, unsigned int Flags);</span>
+<span class='curline'><a href='../S/611.html#L14371'>CUarray</a>          14371 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetArray(CUarray *phArray, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L14728'>CUarray</a>          14728 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuSurfRefSetArray(CUsurfref hSurfRef, CUarray hArray, unsigned int Flags);</span>
+<span class='curline'><a href='../S/611.html#L14751'>CUarray</a>          14751 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuSurfRefGetArray(CUarray *phArray, CUsurfref hSurfRef);</span>
+<span class='curline'><a href='../S/611.html#L15396'>CUarray</a>          15396 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphicsSubResourceGetMappedArray(CUarray *pArray, CUgraphicsResource resource, unsigned int arrayIndex, unsigned int mipLevel);</span>
+<span class='curline'><a href='../S/611.html#L15735'>CUarray</a>          15735 tracing_tool/nvbit/cuda.h         CUarray srcArray;           /**&lt; Source array reference */</span>
+<span class='curline'><a href='../S/611.html#L15743'>CUarray</a>          15743 tracing_tool/nvbit/cuda.h         CUarray dstArray;           /**&lt; Destination array reference */</span>
+<span class='curline'><a href='../S/611.html#L15759'>CUarray</a>          15759 tracing_tool/nvbit/cuda.h         CUarray srcArray;           /**&lt; Source array reference */</span>
+<span class='curline'><a href='../S/611.html#L15771'>CUarray</a>          15771 tracing_tool/nvbit/cuda.h         CUarray dstArray;           /**&lt; Destination array reference */</span>
+<span class='curline'><a href='../S/611.html#L15814'>CUarray</a>          15814 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoA(CUarray dstArray, unsigned int dstOffset, CUdeviceptr_v1 srcDevice, unsigned int ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15815'>CUarray</a>          15815 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoD(CUdeviceptr_v1 dstDevice, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15816'>CUarray</a>          15816 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoA(CUarray dstArray, unsigned int dstOffset, const void *srcHost, unsigned int ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15817'>CUarray</a>          15817 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoH(void *dstHost, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15818'>CUarray</a>          15818 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoA(CUarray dstArray, unsigned int dstOffset, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15819'>CUarray</a>          15819 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoAAsync(CUarray dstArray, unsigned int dstOffset, const void *srcHost, unsigned int ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L15820'>CUarray</a>          15820 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoHAsync(void *dstHost, CUarray srcArray, unsigned int srcOffset, unsigned int ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L15835'>CUarray</a>          15835 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArrayCreate(CUarray *pHandle, const CUDA_ARRAY_DESCRIPTOR_v1 *pAllocateArray);</span>
+<span class='curline'><a href='../S/611.html#L15836'>CUarray</a>          15836 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArrayGetDescriptor(CUDA_ARRAY_DESCRIPTOR_v1 *pArrayDescriptor, CUarray hArray);</span>
+<span class='curline'><a href='../S/611.html#L15837'>CUarray</a>          15837 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArray3DCreate(CUarray *pHandle, const CUDA_ARRAY3D_DESCRIPTOR_v1 *pAllocateArray);</span>
+<span class='curline'><a href='../S/611.html#L15838'>CUarray</a>          15838 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuArray3DGetDescriptor(CUDA_ARRAY3D_DESCRIPTOR_v1 *pArrayDescriptor, CUarray hArray);</span>
+<span class='curline'><a href='../S/611.html#L15856'>CUarray</a>          15856 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoA_v2(CUarray dstArray, size_t dstOffset, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15857'>CUarray</a>          15857 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoD_v2(CUdeviceptr dstDevice, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15858'>CUarray</a>          15858 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoA_v2(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15859'>CUarray</a>          15859 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoH_v2(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15860'>CUarray</a>          15860 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoA_v2(CUarray dstArray, size_t dstOffset, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15861'>CUarray</a>          15861 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoAAsync_v2(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L15862'>CUarray</a>          15862 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoHAsync_v2(void *dstHost, CUarray srcArray, size_t srcOffset, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/616.html#L461'>CUarray</a>           461 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L469'>CUarray</a>           469 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L475'>CUarray</a>           475 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L483'>CUarray</a>           483 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L489'>CUarray</a>           489 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L491'>CUarray</a>           491 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L550'>CUarray</a>           550 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L559'>CUarray</a>           559 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L671'>CUarray</a>           671 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
+<span class='curline'><a href='../S/616.html#L677'>CUarray</a>           677 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
+<span class='curline'><a href='../S/616.html#L681'>CUarray</a>           681 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
+<span class='curline'><a href='../S/616.html#L685'>CUarray</a>           685 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
+<span class='curline'><a href='../S/616.html#L691'>CUarray</a>           691 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
+<span class='curline'><a href='../S/616.html#L701'>CUarray</a>           701 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pLevelArray;</span>
+<span class='curline'><a href='../S/616.html#L1444'>CUarray</a>          1444 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
+<span class='curline'><a href='../S/616.html#L1522'>CUarray</a>          1522 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *phArray;</span>
+<span class='curline'><a href='../S/616.html#L1589'>CUarray</a>          1589 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
+<span class='curline'><a href='../S/616.html#L1594'>CUarray</a>          1594 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *phArray;</span>
+<span class='curline'><a href='../S/616.html#L1665'>CUarray</a>          1665 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pArray;</span>
+<span class='curline'><a href='../S/616.html#L1830'>CUarray</a>          1830 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L1838'>CUarray</a>          1838 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L1844'>CUarray</a>          1844 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L1852'>CUarray</a>          1852 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L1858'>CUarray</a>          1858 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L1860'>CUarray</a>          1860 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L1866'>CUarray</a>          1866 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L1875'>CUarray</a>          1875 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L1967'>CUarray</a>          1967 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
+<span class='curline'><a href='../S/616.html#L1973'>CUarray</a>          1973 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
+<span class='curline'><a href='../S/616.html#L1977'>CUarray</a>          1977 tracing_tool/nvbit/generated_cuda_meta.h     CUarray *pHandle;</span>
+<span class='curline'><a href='../S/616.html#L1983'>CUarray</a>          1983 tracing_tool/nvbit/generated_cuda_meta.h     CUarray hArray;</span>
+<span class='curline'><a href='../S/616.html#L2063'>CUarray</a>          2063 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L2071'>CUarray</a>          2071 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L2077'>CUarray</a>          2077 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L2085'>CUarray</a>          2085 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L2091'>CUarray</a>          2091 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L2093'>CUarray</a>          2093 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
+<span class='curline'><a href='../S/616.html#L2099'>CUarray</a>          2099 tracing_tool/nvbit/generated_cuda_meta.h     CUarray dstArray;</span>
+<span class='curline'><a href='../S/616.html#L2108'>CUarray</a>          2108 tracing_tool/nvbit/generated_cuda_meta.h     CUarray srcArray;</span>
 </pre>
 </body>
 </html>

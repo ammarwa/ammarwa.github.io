@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>value64</title>
+<title>vector</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,8 +9,60 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/630.html#L409'>value64</a>           409 tracing_tool/nvbit/cuda.h             cuuint64_t value64;</span>
-<span class='curline'><a href='../S/630.html#L419'>value64</a>           419 tracing_tool/nvbit/cuda.h             cuuint64_t value64;</span>
+<span class='curline'><a href='../S/26.html#L38'>vector</a>             38 llvm_tool/lib/fluxDevicePass.cpp std::vector&lt;mekong::PTXFunction&gt; ptxInstructionAnalysis(Module &amp;M) {</span>
+<span class='curline'><a href='../S/26.html#L51'>vector</a>             51 llvm_tool/lib/fluxDevicePass.cpp   std::vector&lt;Function *&gt; kernels;</span>
+<span class='curline'><a href='../S/26.html#L108'>vector</a>            108 llvm_tool/lib/fluxDevicePass.cpp void basicBlockInstrumentation(Module &amp;M, std::vector&lt;mekong::PTXFunction&gt; funcVec) {</span>
+<span class='curline'><a href='../S/26.html#L116'>vector</a>            116 llvm_tool/lib/fluxDevicePass.cpp   std::vector&lt;Function *&gt; kernels;</span>
+<span class='curline'><a href='../S/26.html#L130'>vector</a>            130 llvm_tool/lib/fluxDevicePass.cpp     std::vector&lt;Type *&gt; args;</span>
+<span class='curline'><a href='../S/26.html#L195'>vector</a>            195 llvm_tool/lib/fluxDevicePass.cpp   std::vector&lt;Function *&gt; kernels;</span>
+<span class='curline'><a href='../S/24.html#L57'>vector</a>             57 llvm_tool/lib/fluxHostPass.cpp   std::vector&lt;std::string&gt; lines;</span>
+<span class='curline'><a href='../S/24.html#L118'>vector</a>            118 llvm_tool/lib/fluxHostPass.cpp   std::vector&lt;mekong::KernelDescriptor&gt; descs;</span>
+<span class='curline'><a href='../S/24.html#L136'>vector</a>            136 llvm_tool/lib/fluxHostPass.cpp     std::vector&lt;Type *&gt; cloneParamenter;</span>
+<span class='curline'><a href='../S/24.html#L151'>vector</a>            151 llvm_tool/lib/fluxHostPass.cpp     std::vector&lt;CallBase *&gt; launchSites;</span>
+<span class='curline'><a href='../S/24.html#L194'>vector</a>            194 llvm_tool/lib/fluxHostPass.cpp       std::vector&lt;Value *&gt; additionalArgs;</span>
+<span class='curline'><a href='../S/25.html#L160'>vector</a>            160 llvm_tool/lib/hostRuntime.cpp   std::unordered_map&lt;int, std::vector&lt;std::string&gt;&gt; bb_inst_map;</span>
+<span class='curline'><a href='../S/25.html#L176'>vector</a>            176 llvm_tool/lib/hostRuntime.cpp   std::vector&lt;std::string&gt; trace_lines;</span>
+<span class='curline'><a href='../S/25.html#L191'>vector</a>            191 llvm_tool/lib/hostRuntime.cpp     std::vector&lt;std::string&gt; tempvec;</span>
+<span class='curline'><a href='../S/12.html#L14'>vector</a>             14 llvm_tool/mekong-utils/inc/DeviceUtils.h void getKernels(llvm::Module &amp;m, std::vector&lt;llvm::Function *&gt; &amp;kernels);</span>
+<span class='curline'><a href='../S/12.html#L24'>vector</a>             24 llvm_tool/mekong-utils/inc/DeviceUtils.h                                 std::vector&lt;llvm::Type *&gt; argType,</span>
+<span class='curline'><a href='../S/12.html#L25'>vector</a>             25 llvm_tool/mekong-utils/inc/DeviceUtils.h                                 std::vector&lt;std::string&gt; name);</span>
+<span class='curline'><a href='../S/15.html#L18'>vector</a>             18 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelDescriptors(llvm::Module &amp;m, std::vector&lt;KernelDescriptor&gt; &amp;desc);</span>
+<span class='curline'><a href='../S/15.html#L19'>vector</a>             19 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelLaunchSites(llvm::Function *klFun, std::vector&lt;llvm::CallBase *&gt; &amp;callSites);</span>
+<span class='curline'><a href='../S/15.html#L20'>vector</a>             20 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args);</span>
+<span class='curline'><a href='../S/15.html#L22'>vector</a>             22 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config);</span>
+<span class='curline'><a href='../S/15.html#L31'>vector</a>             31 llvm_tool/mekong-utils/inc/HostUtils.h                                     std::vector&lt;llvm::Value *&gt; &amp;additionalArguments);</span>
+<span class='curline'><a href='../S/17.html#L29'>vector</a>             29 llvm_tool/mekong-utils/inc/IRUtils.h getBlockIDMap(llvm::Function *func, std::vector&lt;mekong::PTXFunction&gt; funcVec,</span>
+<span class='curline'><a href='../S/9.html#L13'>vector</a>             13 llvm_tool/mekong-utils/inc/PTXFunction.h     std::vector&lt;std::string&gt; inst;</span>
+<span class='curline'><a href='../S/9.html#L16'>vector</a>             16 llvm_tool/mekong-utils/inc/PTXFunction.h   std::vector&lt;Block&gt; bb;</span>
+<span class='curline'><a href='../S/10.html#L70'>vector</a>             70 llvm_tool/mekong-utils/inc/ptx_parser.h std::vector&lt;Token&gt; lexicalAnalysis(std::string filename) {</span>
+<span class='curline'><a href='../S/10.html#L71'>vector</a>             71 llvm_tool/mekong-utils/inc/ptx_parser.h   std::vector&lt;Token&gt; tokenVec;</span>
+<span class='curline'><a href='../S/10.html#L2988'>vector</a>           2988 llvm_tool/mekong-utils/inc/ptx_parser.h bool parseFunction(std::vector&lt;Token&gt;::iterator iter,</span>
+<span class='curline'><a href='../S/10.html#L2989'>vector</a>           2989 llvm_tool/mekong-utils/inc/ptx_parser.h                    std::vector&lt;Token&gt;::iterator end, PTXFunction &amp;func) {</span>
+<span class='curline'><a href='../S/10.html#L3211'>vector</a>           3211 llvm_tool/mekong-utils/inc/ptx_parser.h std::vector&lt;PTXFunction&gt; parse(std::vector&lt;Token&gt; tokenVec) {</span>
+<span class='curline'><a href='../S/10.html#L3212'>vector</a>           3212 llvm_tool/mekong-utils/inc/ptx_parser.h   std::vector&lt;PTXFunction&gt; funcVec;</span>
+<span class='curline'><a href='../S/8.html#L16'>vector</a>             16 llvm_tool/mekong-utils/src/DeviceUtils.cpp void getKernels(llvm::Module &amp;m, std::vector&lt;llvm::Function *&gt; &amp;kernels) {</span>
+<span class='curline'><a href='../S/8.html#L41'>vector</a>             41 llvm_tool/mekong-utils/src/DeviceUtils.cpp                                 std::vector&lt;llvm::Type *&gt; argType,</span>
+<span class='curline'><a href='../S/8.html#L42'>vector</a>             42 llvm_tool/mekong-utils/src/DeviceUtils.cpp                                 std::vector&lt;std::string&gt; name) {</span>
+<span class='curline'><a href='../S/8.html#L46'>vector</a>             46 llvm_tool/mekong-utils/src/DeviceUtils.cpp   vector&lt;Type *&gt; cloneArgs = source-&gt;getFunctionType()-&gt;params().vec();</span>
+<span class='curline'><a href='../S/6.html#L76'>vector</a>             76 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelDescriptors(llvm::Module &amp;m, std::vector&lt;KernelDescriptor&gt; &amp;desc) {</span>
+<span class='curline'><a href='../S/6.html#L108'>vector</a>            108 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelLaunchSites(llvm::Function *klFun, std::vector&lt;llvm::CallBase *&gt; &amp;callSites) {</span>
+<span class='curline'><a href='../S/6.html#L119'>vector</a>            119 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args) {</span>
+<span class='curline'><a href='../S/6.html#L178'>vector</a>            178 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config) {</span>
+<span class='curline'><a href='../S/6.html#L251'>vector</a>            251 llvm_tool/mekong-utils/src/HostUtils.cpp   vector&lt;Value *&gt; registerFunctionsArgs = {bin_handle,</span>
+<span class='curline'><a href='../S/6.html#L287'>vector</a>            287 llvm_tool/mekong-utils/src/HostUtils.cpp   vector&lt;Type *&gt; wrapperParams = {builder.getInt64Ty(), builder.getInt32Ty(),</span>
+<span class='curline'><a href='../S/6.html#L306'>vector</a>            306 llvm_tool/mekong-utils/src/HostUtils.cpp   vector&lt;Value *&gt; launchKernelArgs;</span>
+<span class='curline'><a href='../S/6.html#L375'>vector</a>            375 llvm_tool/mekong-utils/src/HostUtils.cpp                                     std::vector&lt;llvm::Value *&gt; &amp;additionalArguments) {</span>
+<span class='curline'><a href='../S/6.html#L378'>vector</a>            378 llvm_tool/mekong-utils/src/HostUtils.cpp   std::vector&lt;Value *&gt; config;</span>
+<span class='curline'><a href='../S/6.html#L380'>vector</a>            380 llvm_tool/mekong-utils/src/HostUtils.cpp   std::vector&lt;Value *&gt; kargs;</span>
+<span class='curline'><a href='../S/6.html#L401'>vector</a>            401 llvm_tool/mekong-utils/src/HostUtils.cpp   std::vector&lt;Value *&gt; args;</span>
+<span class='curline'><a href='../S/5.html#L44'>vector</a>             44 llvm_tool/mekong-utils/src/IRUtils.cpp getBlockIDMap(llvm::Function *func, std::vector&lt;mekong::PTXFunction&gt; funcVec,</span>
+<span class='curline'><a href='../S/5.html#L135'>vector</a>            135 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;Type *&gt; args = {Type::getInt8PtrTy(ctx)};</span>
+<span class='curline'><a href='../S/5.html#L158'>vector</a>            158 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;llvm::Value *&gt; args;</span>
+<span class='curline'><a href='../S/5.html#L178'>vector</a>            178 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;llvm::Value *&gt; args;</span>
+<span class='curline'><a href='../S/617.html#L98'>vector</a>             98 tracing_tool/nvbit/nvbit.h typedef struct { std::vector&lt;Instr*&gt; instrs; } basic_block_t;</span>
+<span class='curline'><a href='../S/617.html#L108'>vector</a>            108 tracing_tool/nvbit/nvbit.h     std::vector&lt;basic_block_t*&gt; bbs;</span>
+<span class='curline'><a href='../S/617.html#L165'>vector</a>            165 tracing_tool/nvbit/nvbit.h std::vector&lt;CUfunction&gt; nvbit_get_related_functions(CUcontext ctx,</span>
+<span class='curline'><a href='../S/617.html#L169'>vector</a>            169 tracing_tool/nvbit/nvbit.h const std::vector&lt;Instr*&gt;&amp; nvbit_get_instrs(CUcontext ctx, CUfunction func);</span>
 </pre>
 </body>
 </html>

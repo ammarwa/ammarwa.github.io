@@ -58,7 +58,7 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a36efe971cb30d25a8cca6639bb1a3e61"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/namespaceppt.html#a36efe971cb30d25a8cca6639bb1a3e61">usage</a> ()</td></tr>
 <tr class="separator:a36efe971cb30d25a8cca6639bb1a3e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add78beeace0655d7bdef4924f2a7bc6e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/namespaceppt.html#add78beeace0655d7bdef4924f2a7bc6e">get_current_kernel_info</a> (kernel_id, app_name, app_path, app_config, instructions_type, granularity)</td></tr>
+<tr class="memitem:add78beeace0655d7bdef4924f2a7bc6e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/namespaceppt.html#add78beeace0655d7bdef4924f2a7bc6e">get_current_kernel_info</a> (<a class="el" href="../../da/d28/process__args_8h.html#a08233ff95467962a24950c73dbd3de40">kernel_id</a>, app_name, app_path, app_config, instructions_type, granularity)</td></tr>
 <tr class="separator:add78beeace0655d7bdef4924f2a7bc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5dcc24afe9af0d3e04b938b142a9a6d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d4c/namespaceppt.html#af5dcc24afe9af0d3e04b938b142a9a6d">main</a> ()</td></tr>
 <tr class="separator:af5dcc24afe9af0d3e04b938b142a9a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,7 +232,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">def </span><a class="code" href="../../d6/d4c/namespaceppt.html#af5dcc24afe9af0d3e04b938b142a9a6d">main</a>():</div>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="keyword">def </span><a class="code" href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>():</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    PTX = <span class="keyword">False</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    SASS = <span class="keyword">False</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    all_kernels = <span class="keyword">False</span></div>
@@ -255,12 +255,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <a class="code" href="../../d6/d4c/namespaceppt.html#a36efe971cb30d25a8cca6639bb1a3e61">usage</a>()</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        sys.exit(1)</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> len(argument_list) == 1:</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(argument_list) == 1:</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">for</span> current_argument, current_value <span class="keywordflow">in</span> arguments:</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">if</span> current_argument <span class="keywordflow">in</span> (<span class="stringliteral">&quot;-h&quot;</span>, <span class="stringliteral">&quot;--help&quot;</span>):</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <a class="code" href="../../d6/d4c/namespaceppt.html#a36efe971cb30d25a8cca6639bb1a3e61">usage</a>()</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                sys.exit(2)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">elif</span> len(argument_list) &gt; 9 <span class="keywordflow">or</span> len(argument_list) &lt; 5:</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">elif</span> <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(argument_list) &gt; 9 <span class="keywordflow">or</span> <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(argument_list) &lt; 5:</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        print(<span class="stringliteral">&quot;\n[Error]\nincorrect number arguments&quot;</span>)</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <a class="code" href="../../d6/d4c/namespaceppt.html#a36efe971cb30d25a8cca6639bb1a3e61">usage</a>()</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        sys.exit(1)</div>
@@ -378,12 +378,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    </div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    simianEngine = Simian(<span class="stringliteral">&quot;PPT-GPU&quot;</span>, useMPI=<span class="keyword">True</span>, opt=<span class="keyword">False</span>, appPath = app_path, ISA=instructions_type, granularity=granularity)</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;   </div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    gpuNode = GPUNode(gpu_configs.uarch, compute_capability.cc_configs, len(kernels_info))</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    gpuNode = GPUNode(gpu_configs.uarch, compute_capability.cc_configs, <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(kernels_info))</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        </div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range (len(kernels_info)):</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range (<a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(kernels_info)):</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        k_id = i </div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="comment"># Add Entity and sched Event only if Hash(Entity_name_i) % MPI.size == MPI.rank</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        simianEngine.addEntity(<span class="stringliteral">&quot;Kernel&quot;</span>, Kernel, k_id, len(kernels_info), gpuNode, kernels_info[i])</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        simianEngine.addEntity(<span class="stringliteral">&quot;Kernel&quot;</span>, Kernel, k_id, <a class="code" href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a>(kernels_info), gpuNode, kernels_info[i])</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        simianEngine.schedService(1, <span class="stringliteral">&quot;kernel_call&quot;</span>, <span class="keywordtype">None</span>, <span class="stringliteral">&quot;Kernel&quot;</span>, k_id)</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    simianEngine.run()</div>
@@ -435,12 +435,13 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="amain_8c_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="../../d0/d29/main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="../../HTML/S/602.html#L9">main.c:9</a></div></div>
+<div class="ttc" id="ahostRuntime_8cpp_html_a9fcf27257facab5e4f26bba1e14b20f6"><div class="ttname"><a href="../../da/de5/hostRuntime_8cpp.html#a9fcf27257facab5e4f26bba1e14b20f6">len</a></div><div class="ttdeci">void uint64_t size_t len</div><div class="ttdef"><b>Definition:</b> <a href="../../HTML/S/25.html#L93">hostRuntime.cpp:93</a></div></div>
 <div class="ttc" id="anamespaceppt_html_add78beeace0655d7bdef4924f2a7bc6e"><div class="ttname"><a href="../../d6/d4c/namespaceppt.html#add78beeace0655d7bdef4924f2a7bc6e">ppt.get_current_kernel_info</a></div><div class="ttdeci">def get_current_kernel_info(kernel_id, app_name, app_path, app_config, instructions_type, granularity)</div><div class="ttdef"><b>Definition:</b> ppt.py:33</div></div>
 <div class="ttc" id="anamespaceppt_html_a36efe971cb30d25a8cca6639bb1a3e61"><div class="ttname"><a href="../../d6/d4c/namespaceppt.html#a36efe971cb30d25a8cca6639bb1a3e61">ppt.usage</a></div><div class="ttdeci">def usage()</div><div class="ttdef"><b>Definition:</b> ppt.py:24</div></div>
-<div class="ttc" id="anamespaceppt_html_af5dcc24afe9af0d3e04b938b142a9a6d"><div class="ttname"><a href="../../d6/d4c/namespaceppt.html#af5dcc24afe9af0d3e04b938b142a9a6d">ppt.main</a></div><div class="ttdeci">def main()</div><div class="ttdef"><b>Definition:</b> ppt.py:137</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 11 2022 13:07:26 for NMSU | Pearl Lab | PPT-GPU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2022 13:31:25 for NMSU | Pearl Lab | PPT-GPU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

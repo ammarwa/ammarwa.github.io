@@ -9,68 +9,68 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/630.html#L1135'>CUfunction</a>       1135 tracing_tool/nvbit/cuda.h     CUfunction func;             /**&lt; Kernel to launch */</span>
-<span class='curline'><a href='../S/630.html#L2069'>CUfunction</a>       2069 tracing_tool/nvbit/cuda.h     CUfunction function;         /**&lt; Kernel to launch */</span>
-<span class='curline'><a href='../S/630.html#L4726'>CUfunction</a>       4726 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuModuleGetFunction(CUfunction *hfunc, CUmodule hmod, const char *name);</span>
-<span class='curline'><a href='../S/630.html#L11385'>CUfunction</a>       11385 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncGetAttribute(int *pi, CUfunction_attribute attrib, CUfunction hfunc);</span>
-<span class='curline'><a href='../S/630.html#L11431'>CUfunction</a>       11431 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncSetAttribute(CUfunction hfunc, CUfunction_attribute attrib, int value);</span>
-<span class='curline'><a href='../S/630.html#L11475'>CUfunction</a>       11475 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncSetCacheConfig(CUfunction hfunc, CUfunc_cache config);</span>
-<span class='curline'><a href='../S/630.html#L11527'>CUfunction</a>       11527 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncSetSharedMemConfig(CUfunction hfunc, CUsharedconfig config);</span>
-<span class='curline'><a href='../S/630.html#L11636'>CUfunction</a>       11636 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuLaunchKernel(CUfunction f,</span>
-<span class='curline'><a href='../S/630.html#L11724'>CUfunction</a>       11724 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuLaunchCooperativeKernel(CUfunction f,</span>
-<span class='curline'><a href='../S/630.html#L11983'>CUfunction</a>       11983 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuFuncSetBlockShape(CUfunction hfunc, int x, int y, int z);</span>
-<span class='curline'><a href='../S/630.html#L12017'>CUfunction</a>       12017 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuFuncSetSharedSize(CUfunction hfunc, unsigned int bytes);</span>
-<span class='curline'><a href='../S/630.html#L12049'>CUfunction</a>       12049 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetSize(CUfunction hfunc, unsigned int numbytes);</span>
-<span class='curline'><a href='../S/630.html#L12082'>CUfunction</a>       12082 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSeti(CUfunction hfunc, int offset, unsigned int value);</span>
-<span class='curline'><a href='../S/630.html#L12115'>CUfunction</a>       12115 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetf(CUfunction hfunc, int offset, float value);</span>
-<span class='curline'><a href='../S/630.html#L12150'>CUfunction</a>       12150 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetv(CUfunction hfunc, int offset, void *ptr, unsigned int numbytes);</span>
-<span class='curline'><a href='../S/630.html#L12202'>CUfunction</a>       12202 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunch(CUfunction f);</span>
-<span class='curline'><a href='../S/630.html#L12256'>CUfunction</a>       12256 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunchGrid(CUfunction f, int grid_width, int grid_height);</span>
-<span class='curline'><a href='../S/630.html#L12318'>CUfunction</a>       12318 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunchGridAsync(CUfunction f, int grid_width, int grid_height, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L12343'>CUfunction</a>       12343 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetTexRef(CUfunction hfunc, int texunit, CUtexref hTexRef);</span>
-<span class='curline'><a href='../S/630.html#L13654'>CUfunction</a>       13654 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxActiveBlocksPerMultiprocessor(int *numBlocks, CUfunction func, int blockSize, size_t dynamicSMemSize);</span>
-<span class='curline'><a href='../S/630.html#L13696'>CUfunction</a>       13696 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(int *numBlocks, CUfunction func, int blockSize, size_t dynamicSMemSize, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L13748'>CUfunction</a>       13748 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxPotentialBlockSize(int *minGridSize, int *blockSize, CUfunction func, CUoccupancyB2DSize blockSizeToDynamicSMemSize, size_t dynamicSMemSize, int blockSizeLimit);</span>
-<span class='curline'><a href='../S/630.html#L13794'>CUfunction</a>       13794 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxPotentialBlockSizeWithFlags(int *minGridSize, int *blockSize, CUfunction func, CUoccupancyB2DSize blockSizeToDynamicSMemSize, size_t dynamicSMemSize, int blockSizeLimit, unsigned int flags);</span>
-<span class='curline'><a href='../S/630.html#L13817'>CUfunction</a>       13817 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyAvailableDynamicSMemPerBlock(size_t *dynamicSmemSize, CUfunction func, int numBlocks, int blockSize);</span>
-<span class='curline'><a href='../S/630.html#L15610'>CUfunction</a>       15610 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncGetModule(CUmodule *hmod, CUfunction hfunc);</span>
-<span class='curline'><a href='../S/630.html#L15900'>CUfunction</a>       15900 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuLaunchKernel(CUfunction f, unsigned int gridDimX, unsigned int gridDimY, unsigned int gridDimZ, unsigned int blockDimX, unsigned int blockDimY, unsigned int blockDimZ, unsigned int sharedMemBytes, CUstream hStream, void **kernelParams, void **extra);</span>
-<span class='curline'><a href='../S/630.html#L15910'>CUfunction</a>       15910 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuLaunchCooperativeKernel(CUfunction f, unsigned int gridDimX, unsigned int gridDimY, unsigned int gridDimZ, unsigned int blockDimX, unsigned int blockDimY, unsigned int blockDimZ, unsigned int sharedMemBytes, CUstream hStream, void **kernelParams);</span>
-<span class='curline'><a href='../S/635.html#L261'>CUfunction</a>        261 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction *hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1049'>CUfunction</a>       1049 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1053'>CUfunction</a>       1053 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1059'>CUfunction</a>       1059 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1064'>CUfunction</a>       1064 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1069'>CUfunction</a>       1069 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
-<span class='curline'><a href='../S/635.html#L1083'>CUfunction</a>       1083 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
-<span class='curline'><a href='../S/635.html#L1108'>CUfunction</a>       1108 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1115'>CUfunction</a>       1115 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1120'>CUfunction</a>       1120 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1125'>CUfunction</a>       1125 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1131'>CUfunction</a>       1131 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1137'>CUfunction</a>       1137 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1144'>CUfunction</a>       1144 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
-<span class='curline'><a href='../S/635.html#L1148'>CUfunction</a>       1148 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
-<span class='curline'><a href='../S/635.html#L1154'>CUfunction</a>       1154 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
-<span class='curline'><a href='../S/635.html#L1161'>CUfunction</a>       1161 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L1403'>CUfunction</a>       1403 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
-<span class='curline'><a href='../S/635.html#L1410'>CUfunction</a>       1410 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
-<span class='curline'><a href='../S/635.html#L1419'>CUfunction</a>       1419 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
-<span class='curline'><a href='../S/635.html#L1428'>CUfunction</a>       1428 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
-<span class='curline'><a href='../S/635.html#L1437'>CUfunction</a>       1437 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
-<span class='curline'><a href='../S/635.html#L1706'>CUfunction</a>       1706 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
-<span class='curline'><a href='../S/635.html#L2335'>CUfunction</a>       2335 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
-<span class='curline'><a href='../S/635.html#L2409'>CUfunction</a>       2409 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
-<span class='curline'><a href='../S/636.html#L165'>CUfunction</a>        165 tracing_tool/nvbit/nvbit.h std::vector&lt;CUfunction&gt; nvbit_get_related_functions(CUcontext ctx,</span>
-<span class='curline'><a href='../S/636.html#L166'>CUfunction</a>        166 tracing_tool/nvbit/nvbit.h                                                     CUfunction func);</span>
-<span class='curline'><a href='../S/636.html#L169'>CUfunction</a>        169 tracing_tool/nvbit/nvbit.h const std::vector&lt;Instr*&gt;&amp; nvbit_get_instrs(CUcontext ctx, CUfunction func);</span>
-<span class='curline'><a href='../S/636.html#L172'>CUfunction</a>        172 tracing_tool/nvbit/nvbit.h const CFG_t&amp; nvbit_get_CFG(CUcontext ctx, CUfunction func);</span>
-<span class='curline'><a href='../S/636.html#L175'>CUfunction</a>        175 tracing_tool/nvbit/nvbit.h const char* nvbit_get_func_name(CUcontext ctx, CUfunction f,</span>
-<span class='curline'><a href='../S/636.html#L180'>CUfunction</a>        180 tracing_tool/nvbit/nvbit.h bool nvbit_get_line_info(CUcontext cuctx, CUfunction cufunc, uint32_t offset,</span>
-<span class='curline'><a href='../S/636.html#L187'>CUfunction</a>        187 tracing_tool/nvbit/nvbit.h uint64_t nvbit_get_func_addr(CUfunction func);</span>
-<span class='curline'><a href='../S/636.html#L190'>CUfunction</a>        190 tracing_tool/nvbit/nvbit.h bool nvbit_is_func_kernel(CUcontext ctx, CUfunction func);</span>
-<span class='curline'><a href='../S/636.html#L324'>CUfunction</a>        324 tracing_tool/nvbit/nvbit.h void nvbit_enable_instrumented(CUcontext ctx, CUfunction func, bool flag,</span>
-<span class='curline'><a href='../S/636.html#L329'>CUfunction</a>        329 tracing_tool/nvbit/nvbit.h void nvbit_set_at_launch(CUcontext ctx, CUfunction func, void* buf,</span>
+<span class='curline'><a href='../S/611.html#L1135'>CUfunction</a>       1135 tracing_tool/nvbit/cuda.h     CUfunction func;             /**&lt; Kernel to launch */</span>
+<span class='curline'><a href='../S/611.html#L2069'>CUfunction</a>       2069 tracing_tool/nvbit/cuda.h     CUfunction function;         /**&lt; Kernel to launch */</span>
+<span class='curline'><a href='../S/611.html#L4726'>CUfunction</a>       4726 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuModuleGetFunction(CUfunction *hfunc, CUmodule hmod, const char *name);</span>
+<span class='curline'><a href='../S/611.html#L11385'>CUfunction</a>       11385 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncGetAttribute(int *pi, CUfunction_attribute attrib, CUfunction hfunc);</span>
+<span class='curline'><a href='../S/611.html#L11431'>CUfunction</a>       11431 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncSetAttribute(CUfunction hfunc, CUfunction_attribute attrib, int value);</span>
+<span class='curline'><a href='../S/611.html#L11475'>CUfunction</a>       11475 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncSetCacheConfig(CUfunction hfunc, CUfunc_cache config);</span>
+<span class='curline'><a href='../S/611.html#L11527'>CUfunction</a>       11527 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncSetSharedMemConfig(CUfunction hfunc, CUsharedconfig config);</span>
+<span class='curline'><a href='../S/611.html#L11636'>CUfunction</a>       11636 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuLaunchKernel(CUfunction f,</span>
+<span class='curline'><a href='../S/611.html#L11724'>CUfunction</a>       11724 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuLaunchCooperativeKernel(CUfunction f,</span>
+<span class='curline'><a href='../S/611.html#L11983'>CUfunction</a>       11983 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuFuncSetBlockShape(CUfunction hfunc, int x, int y, int z);</span>
+<span class='curline'><a href='../S/611.html#L12017'>CUfunction</a>       12017 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuFuncSetSharedSize(CUfunction hfunc, unsigned int bytes);</span>
+<span class='curline'><a href='../S/611.html#L12049'>CUfunction</a>       12049 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetSize(CUfunction hfunc, unsigned int numbytes);</span>
+<span class='curline'><a href='../S/611.html#L12082'>CUfunction</a>       12082 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSeti(CUfunction hfunc, int offset, unsigned int value);</span>
+<span class='curline'><a href='../S/611.html#L12115'>CUfunction</a>       12115 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetf(CUfunction hfunc, int offset, float value);</span>
+<span class='curline'><a href='../S/611.html#L12150'>CUfunction</a>       12150 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetv(CUfunction hfunc, int offset, void *ptr, unsigned int numbytes);</span>
+<span class='curline'><a href='../S/611.html#L12202'>CUfunction</a>       12202 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunch(CUfunction f);</span>
+<span class='curline'><a href='../S/611.html#L12256'>CUfunction</a>       12256 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunchGrid(CUfunction f, int grid_width, int grid_height);</span>
+<span class='curline'><a href='../S/611.html#L12318'>CUfunction</a>       12318 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuLaunchGridAsync(CUfunction f, int grid_width, int grid_height, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L12343'>CUfunction</a>       12343 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuParamSetTexRef(CUfunction hfunc, int texunit, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/611.html#L13654'>CUfunction</a>       13654 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxActiveBlocksPerMultiprocessor(int *numBlocks, CUfunction func, int blockSize, size_t dynamicSMemSize);</span>
+<span class='curline'><a href='../S/611.html#L13696'>CUfunction</a>       13696 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxActiveBlocksPerMultiprocessorWithFlags(int *numBlocks, CUfunction func, int blockSize, size_t dynamicSMemSize, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L13748'>CUfunction</a>       13748 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxPotentialBlockSize(int *minGridSize, int *blockSize, CUfunction func, CUoccupancyB2DSize blockSizeToDynamicSMemSize, size_t dynamicSMemSize, int blockSizeLimit);</span>
+<span class='curline'><a href='../S/611.html#L13794'>CUfunction</a>       13794 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyMaxPotentialBlockSizeWithFlags(int *minGridSize, int *blockSize, CUfunction func, CUoccupancyB2DSize blockSizeToDynamicSMemSize, size_t dynamicSMemSize, int blockSizeLimit, unsigned int flags);</span>
+<span class='curline'><a href='../S/611.html#L13817'>CUfunction</a>       13817 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuOccupancyAvailableDynamicSMemPerBlock(size_t *dynamicSmemSize, CUfunction func, int numBlocks, int blockSize);</span>
+<span class='curline'><a href='../S/611.html#L15610'>CUfunction</a>       15610 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuFuncGetModule(CUmodule *hmod, CUfunction hfunc);</span>
+<span class='curline'><a href='../S/611.html#L15900'>CUfunction</a>       15900 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuLaunchKernel(CUfunction f, unsigned int gridDimX, unsigned int gridDimY, unsigned int gridDimZ, unsigned int blockDimX, unsigned int blockDimY, unsigned int blockDimZ, unsigned int sharedMemBytes, CUstream hStream, void **kernelParams, void **extra);</span>
+<span class='curline'><a href='../S/611.html#L15910'>CUfunction</a>       15910 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuLaunchCooperativeKernel(CUfunction f, unsigned int gridDimX, unsigned int gridDimY, unsigned int gridDimZ, unsigned int blockDimX, unsigned int blockDimY, unsigned int blockDimZ, unsigned int sharedMemBytes, CUstream hStream, void **kernelParams);</span>
+<span class='curline'><a href='../S/616.html#L261'>CUfunction</a>        261 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction *hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1049'>CUfunction</a>       1049 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1053'>CUfunction</a>       1053 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1059'>CUfunction</a>       1059 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1064'>CUfunction</a>       1064 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1069'>CUfunction</a>       1069 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
+<span class='curline'><a href='../S/616.html#L1083'>CUfunction</a>       1083 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
+<span class='curline'><a href='../S/616.html#L1108'>CUfunction</a>       1108 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1115'>CUfunction</a>       1115 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1120'>CUfunction</a>       1120 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1125'>CUfunction</a>       1125 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1131'>CUfunction</a>       1131 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1137'>CUfunction</a>       1137 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1144'>CUfunction</a>       1144 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
+<span class='curline'><a href='../S/616.html#L1148'>CUfunction</a>       1148 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
+<span class='curline'><a href='../S/616.html#L1154'>CUfunction</a>       1154 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
+<span class='curline'><a href='../S/616.html#L1161'>CUfunction</a>       1161 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L1403'>CUfunction</a>       1403 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
+<span class='curline'><a href='../S/616.html#L1410'>CUfunction</a>       1410 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
+<span class='curline'><a href='../S/616.html#L1419'>CUfunction</a>       1419 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
+<span class='curline'><a href='../S/616.html#L1428'>CUfunction</a>       1428 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
+<span class='curline'><a href='../S/616.html#L1437'>CUfunction</a>       1437 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction func;</span>
+<span class='curline'><a href='../S/616.html#L1706'>CUfunction</a>       1706 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction hfunc;</span>
+<span class='curline'><a href='../S/616.html#L2335'>CUfunction</a>       2335 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
+<span class='curline'><a href='../S/616.html#L2409'>CUfunction</a>       2409 tracing_tool/nvbit/generated_cuda_meta.h     CUfunction f;</span>
+<span class='curline'><a href='../S/617.html#L165'>CUfunction</a>        165 tracing_tool/nvbit/nvbit.h std::vector&lt;CUfunction&gt; nvbit_get_related_functions(CUcontext ctx,</span>
+<span class='curline'><a href='../S/617.html#L166'>CUfunction</a>        166 tracing_tool/nvbit/nvbit.h                                                     CUfunction func);</span>
+<span class='curline'><a href='../S/617.html#L169'>CUfunction</a>        169 tracing_tool/nvbit/nvbit.h const std::vector&lt;Instr*&gt;&amp; nvbit_get_instrs(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/617.html#L172'>CUfunction</a>        172 tracing_tool/nvbit/nvbit.h const CFG_t&amp; nvbit_get_CFG(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/617.html#L175'>CUfunction</a>        175 tracing_tool/nvbit/nvbit.h const char* nvbit_get_func_name(CUcontext ctx, CUfunction f,</span>
+<span class='curline'><a href='../S/617.html#L180'>CUfunction</a>        180 tracing_tool/nvbit/nvbit.h bool nvbit_get_line_info(CUcontext cuctx, CUfunction cufunc, uint32_t offset,</span>
+<span class='curline'><a href='../S/617.html#L187'>CUfunction</a>        187 tracing_tool/nvbit/nvbit.h uint64_t nvbit_get_func_addr(CUfunction func);</span>
+<span class='curline'><a href='../S/617.html#L190'>CUfunction</a>        190 tracing_tool/nvbit/nvbit.h bool nvbit_is_func_kernel(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/617.html#L324'>CUfunction</a>        324 tracing_tool/nvbit/nvbit.h void nvbit_enable_instrumented(CUcontext ctx, CUfunction func, bool flag,</span>
+<span class='curline'><a href='../S/617.html#L329'>CUfunction</a>        329 tracing_tool/nvbit/nvbit.h void nvbit_set_at_launch(CUcontext ctx, CUfunction func, void* buf,</span>
 </pre>
 </body>
 </html>

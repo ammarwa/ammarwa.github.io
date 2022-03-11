@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>cuMemcpyHtoDAsync</title>
+<title>cuMemcpyPeer</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,9 +9,10 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/630.html#L6926'>cuMemcpyHtoDAsync</a> 6926 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoDAsync(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L15824'>cuMemcpyHtoDAsync</a> 15824 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoDAsync(CUdeviceptr_v1 dstDevice, const void *srcHost, unsigned int ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/637.html#L94'>cuMemcpyHtoDAsync</a>   94 tracing_tool/nvbit/tools_cuda_api_meta.h     ACTION( cuda,         60,   cuMemcpyHtoDAsync,                             0)        \</span>
+<span class='curline'><a href='../S/611.html#L148'>cuMemcpyPeer</a>      148 tracing_tool/nvbit/cuda.h     #define cuMemcpyPeer                        __CUDA_API_PTDS(cuMemcpyPeer)</span>
+<span class='curline'><a href='../S/611.html#L5992'>cuMemcpyPeer</a>     5992 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15879'>cuMemcpyPeer</a>     15879 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
+<span class='curline'><a href='../S/618.html#L352'>cuMemcpyPeer</a>      352 tracing_tool/nvbit/tools_cuda_api_meta.h     ACTION( cuda,        318,   cuMemcpyPeer,                                  0)        \</span>
 </pre>
 </body>
 </html>

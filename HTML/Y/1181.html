@@ -9,55 +9,55 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/616.html#L37'>histogram</a>          37 reuse_distance_tool/parda.c 	unsigned int *histogram;</span>
-<span class='curline'><a href='../S/616.html#L38'>histogram</a>          38 reuse_distance_tool/parda.c 	histogram = malloc(sizeof(unsigned int) * (nbuckets+2));</span>
-<span class='curline'><a href='../S/616.html#L41'>histogram</a>          41 reuse_distance_tool/parda.c 	memset(histogram, 0, (nbuckets + 2) * sizeof(unsigned int));</span>
-<span class='curline'><a href='../S/616.html#L45'>histogram</a>          45 reuse_distance_tool/parda.c 	pdt.histogram = histogram;</span>
-<span class='curline'><a href='../S/616.html#L61'>histogram</a>          61 reuse_distance_tool/parda.c 	unsigned int *histogram = pdt-&gt;histogram;</span>
-<span class='curline'><a href='../S/616.html#L89'>histogram</a>          89 reuse_distance_tool/parda.c 			histogram[B_OVFL]++;</span>
-<span class='curline'><a href='../S/616.html#L91'>histogram</a>          91 reuse_distance_tool/parda.c 			histogram[distance]++;</span>
-<span class='curline'><a href='../S/616.html#L113'>histogram</a>         113 reuse_distance_tool/parda.c 	unsigned* histogram = pdt_a-&gt;histogram;</span>
-<span class='curline'><a href='../S/616.html#L134'>histogram</a>         134 reuse_distance_tool/parda.c 				histogram[B_OVFL]++;</span>
-<span class='curline'><a href='../S/616.html#L136'>histogram</a>         136 reuse_distance_tool/parda.c 				histogram[distance]++;</span>
-<span class='curline'><a href='../S/616.html#L187'>histogram</a>         187 reuse_distance_tool/parda.c 	pdt.histogram = pdt_a-&gt;histogram;</span>
-<span class='curline'><a href='../S/616.html#L190'>histogram</a>         190 reuse_distance_tool/parda.c 		pdt.histogram[i] += pdt_b-&gt;histogram[i];</span>
-<span class='curline'><a href='../S/616.html#L191'>histogram</a>         191 reuse_distance_tool/parda.c 	free(pdt_b-&gt;histogram);</span>
-<span class='curline'><a href='../S/616.html#L217'>histogram</a>         217 reuse_distance_tool/parda.c 	pdt_umem-&gt;histogram[B_INF] += narray_get_len(pdt_umem-&gt;ga);</span>
-<span class='curline'><a href='../S/616.html#L224'>histogram</a>         224 reuse_distance_tool/parda.c 		pdt_gmem_lds-&gt;histogram[B_INF] += narray_get_len(pdt_gmem_lds-&gt;ga);</span>
-<span class='curline'><a href='../S/616.html#L225'>histogram</a>         225 reuse_distance_tool/parda.c 		parda_print_histogram(umem_fp, pdt_umem-&gt;histogram);</span>
-<span class='curline'><a href='../S/616.html#L226'>histogram</a>         226 reuse_distance_tool/parda.c 		parda_print_histogram(gmem_fp_lds, pdt_gmem_lds-&gt;histogram);</span>
-<span class='curline'><a href='../S/616.html#L233'>histogram</a>         233 reuse_distance_tool/parda.c 		parda_print_histogram(shared_l2_fp, pdt_umem-&gt;histogram);</span>
-<span class='curline'><a href='../S/616.html#L243'>histogram</a>         243 reuse_distance_tool/parda.c 		pdt_gmem-&gt;histogram[B_INF] += narray_get_len(pdt_gmem-&gt;ga);</span>
-<span class='curline'><a href='../S/616.html#L245'>histogram</a>         245 reuse_distance_tool/parda.c 		pdt_lmem-&gt;histogram[B_INF] += narray_get_len(pdt_lmem-&gt;ga);</span>
-<span class='curline'><a href='../S/616.html#L246'>histogram</a>         246 reuse_distance_tool/parda.c 		parda_print_histogram(gmem_fp, pdt_gmem-&gt;histogram);</span>
-<span class='curline'><a href='../S/616.html#L247'>histogram</a>         247 reuse_distance_tool/parda.c 		parda_print_histogram(lmem_fp, pdt_lmem-&gt;histogram);</span>
-<span class='curline'><a href='../S/616.html#L316'>histogram</a>         316 reuse_distance_tool/parda.c   free(pdt-&gt;histogram);</span>
-<span class='curline'><a href='../S/620.html#L73'>histogram</a>          73 reuse_distance_tool/parda.h   unsigned int *histogram;</span>
-<span class='curline'><a href='../S/620.html#L105'>histogram</a>         105 reuse_distance_tool/parda.h void parda_print_histogram(FILE* fp, const unsigned* histogram);</span>
-<span class='curline'><a href='../S/620.html#L180'>histogram</a>         180 reuse_distance_tool/parda.h 					pdt_gmem-&gt;histogram[B_OVFL] += 1;</span>
-<span class='curline'><a href='../S/620.html#L182'>histogram</a>         182 reuse_distance_tool/parda.h 					pdt_gmem-&gt;histogram[distance] += 1;</span>
-<span class='curline'><a href='../S/620.html#L218'>histogram</a>         218 reuse_distance_tool/parda.h 					pdt_lmem-&gt;histogram[B_OVFL] += 1;</span>
-<span class='curline'><a href='../S/620.html#L220'>histogram</a>         220 reuse_distance_tool/parda.h 					pdt_lmem-&gt;histogram[distance] += 1;</span>
-<span class='curline'><a href='../S/620.html#L259'>histogram</a>         259 reuse_distance_tool/parda.h 				pdt_gmem_lds-&gt;histogram[B_OVFL] += 1;</span>
-<span class='curline'><a href='../S/620.html#L261'>histogram</a>         261 reuse_distance_tool/parda.h 				pdt_gmem_lds-&gt;histogram[distance] += 1;</span>
-<span class='curline'><a href='../S/620.html#L297'>histogram</a>         297 reuse_distance_tool/parda.h 			pdt_umem-&gt;histogram[B_OVFL] += 1;</span>
-<span class='curline'><a href='../S/620.html#L299'>histogram</a>         299 reuse_distance_tool/parda.h 			pdt_umem-&gt;histogram[distance] += 1;</span>
-<span class='curline'><a href='../S/620.html#L339'>histogram</a>         339 reuse_distance_tool/parda.h 				pdt-&gt;histogram[B_OVFL] += 1;</span>
-<span class='curline'><a href='../S/620.html#L341'>histogram</a>         341 reuse_distance_tool/parda.h 				pdt-&gt;histogram[distance] += 1;</span>
-<span class='curline'><a href='../S/610.html#L139'>histogram</a>         139 reuse_distance_tool/parda_omp.c     pdt-&gt;histogram[B_INF] += narray_get_len(pdt-&gt;ga);</span>
-<span class='curline'><a href='../S/610.html#L142'>histogram</a>         142 reuse_distance_tool/parda_omp.c     parda_print_histogram(pdt-&gt;histogram);</span>
-<span class='curline'><a href='../S/608.html#L49'>histogram</a>          49 reuse_distance_tool/parda_print.c void parda_print_histogram(FILE* fp, const unsigned* histogram) {</span>
-<span class='curline'><a href='../S/608.html#L57'>histogram</a>          57 reuse_distance_tool/parda_print.c 	while (histogram[last_bucket] == 0)</span>
-<span class='curline'><a href='../S/608.html#L61'>histogram</a>          61 reuse_distance_tool/parda_print.c 	sum += histogram[i];</span>
-<span class='curline'><a href='../S/608.html#L62'>histogram</a>          62 reuse_distance_tool/parda_print.c 	sum += histogram[B_OVFL];</span>
-<span class='curline'><a href='../S/608.html#L63'>histogram</a>          63 reuse_distance_tool/parda_print.c 	sum += histogram[B_INF];</span>
-<span class='curline'><a href='../S/608.html#L68'>histogram</a>          68 reuse_distance_tool/parda_print.c 		cum += histogram[i];</span>
-<span class='curline'><a href='../S/608.html#L69'>histogram</a>          69 reuse_distance_tool/parda_print.c 		if(histogram[i] != 0)</span>
-<span class='curline'><a href='../S/608.html#L72'>histogram</a>          72 reuse_distance_tool/parda_print.c 		fprintf(fp, "%d, %0.8lf, %u\n", i, (histogram[i] / (double)sum), histogram[i]);</span>
-<span class='curline'><a href='../S/608.html#L74'>histogram</a>          74 reuse_distance_tool/parda_print.c 	if(histogram[B_OVFL] != 0){</span>
-<span class='curline'><a href='../S/608.html#L77'>histogram</a>          77 reuse_distance_tool/parda_print.c 		fprintf(fp, "%d , %0.8lf , %u\n", i, (histogram[B_OVFL] / (double)sum), histogram[B_OVFL]);</span>
-<span class='curline'><a href='../S/608.html#L79'>histogram</a>          79 reuse_distance_tool/parda_print.c 	if(histogram[B_INF] != 0){</span>
-<span class='curline'><a href='../S/608.html#L82'>histogram</a>          82 reuse_distance_tool/parda_print.c 		fprintf(fp, "-1, %0.8lf, %u\n", histogram[B_INF] / (double)sum, histogram[B_INF]);</span>
+<span class='curline'><a href='../S/597.html#L37'>histogram</a>          37 reuse_distance_tool/parda.c 	unsigned int *histogram;</span>
+<span class='curline'><a href='../S/597.html#L38'>histogram</a>          38 reuse_distance_tool/parda.c 	histogram = malloc(sizeof(unsigned int) * (nbuckets+2));</span>
+<span class='curline'><a href='../S/597.html#L41'>histogram</a>          41 reuse_distance_tool/parda.c 	memset(histogram, 0, (nbuckets + 2) * sizeof(unsigned int));</span>
+<span class='curline'><a href='../S/597.html#L45'>histogram</a>          45 reuse_distance_tool/parda.c 	pdt.histogram = histogram;</span>
+<span class='curline'><a href='../S/597.html#L61'>histogram</a>          61 reuse_distance_tool/parda.c 	unsigned int *histogram = pdt-&gt;histogram;</span>
+<span class='curline'><a href='../S/597.html#L89'>histogram</a>          89 reuse_distance_tool/parda.c 			histogram[B_OVFL]++;</span>
+<span class='curline'><a href='../S/597.html#L91'>histogram</a>          91 reuse_distance_tool/parda.c 			histogram[distance]++;</span>
+<span class='curline'><a href='../S/597.html#L113'>histogram</a>         113 reuse_distance_tool/parda.c 	unsigned* histogram = pdt_a-&gt;histogram;</span>
+<span class='curline'><a href='../S/597.html#L134'>histogram</a>         134 reuse_distance_tool/parda.c 				histogram[B_OVFL]++;</span>
+<span class='curline'><a href='../S/597.html#L136'>histogram</a>         136 reuse_distance_tool/parda.c 				histogram[distance]++;</span>
+<span class='curline'><a href='../S/597.html#L187'>histogram</a>         187 reuse_distance_tool/parda.c 	pdt.histogram = pdt_a-&gt;histogram;</span>
+<span class='curline'><a href='../S/597.html#L190'>histogram</a>         190 reuse_distance_tool/parda.c 		pdt.histogram[i] += pdt_b-&gt;histogram[i];</span>
+<span class='curline'><a href='../S/597.html#L191'>histogram</a>         191 reuse_distance_tool/parda.c 	free(pdt_b-&gt;histogram);</span>
+<span class='curline'><a href='../S/597.html#L217'>histogram</a>         217 reuse_distance_tool/parda.c 	pdt_umem-&gt;histogram[B_INF] += narray_get_len(pdt_umem-&gt;ga);</span>
+<span class='curline'><a href='../S/597.html#L224'>histogram</a>         224 reuse_distance_tool/parda.c 		pdt_gmem_lds-&gt;histogram[B_INF] += narray_get_len(pdt_gmem_lds-&gt;ga);</span>
+<span class='curline'><a href='../S/597.html#L225'>histogram</a>         225 reuse_distance_tool/parda.c 		parda_print_histogram(umem_fp, pdt_umem-&gt;histogram);</span>
+<span class='curline'><a href='../S/597.html#L226'>histogram</a>         226 reuse_distance_tool/parda.c 		parda_print_histogram(gmem_fp_lds, pdt_gmem_lds-&gt;histogram);</span>
+<span class='curline'><a href='../S/597.html#L233'>histogram</a>         233 reuse_distance_tool/parda.c 		parda_print_histogram(shared_l2_fp, pdt_umem-&gt;histogram);</span>
+<span class='curline'><a href='../S/597.html#L243'>histogram</a>         243 reuse_distance_tool/parda.c 		pdt_gmem-&gt;histogram[B_INF] += narray_get_len(pdt_gmem-&gt;ga);</span>
+<span class='curline'><a href='../S/597.html#L245'>histogram</a>         245 reuse_distance_tool/parda.c 		pdt_lmem-&gt;histogram[B_INF] += narray_get_len(pdt_lmem-&gt;ga);</span>
+<span class='curline'><a href='../S/597.html#L246'>histogram</a>         246 reuse_distance_tool/parda.c 		parda_print_histogram(gmem_fp, pdt_gmem-&gt;histogram);</span>
+<span class='curline'><a href='../S/597.html#L247'>histogram</a>         247 reuse_distance_tool/parda.c 		parda_print_histogram(lmem_fp, pdt_lmem-&gt;histogram);</span>
+<span class='curline'><a href='../S/597.html#L316'>histogram</a>         316 reuse_distance_tool/parda.c   free(pdt-&gt;histogram);</span>
+<span class='curline'><a href='../S/601.html#L73'>histogram</a>          73 reuse_distance_tool/parda.h   unsigned int *histogram;</span>
+<span class='curline'><a href='../S/601.html#L105'>histogram</a>         105 reuse_distance_tool/parda.h void parda_print_histogram(FILE* fp, const unsigned* histogram);</span>
+<span class='curline'><a href='../S/601.html#L180'>histogram</a>         180 reuse_distance_tool/parda.h 					pdt_gmem-&gt;histogram[B_OVFL] += 1;</span>
+<span class='curline'><a href='../S/601.html#L182'>histogram</a>         182 reuse_distance_tool/parda.h 					pdt_gmem-&gt;histogram[distance] += 1;</span>
+<span class='curline'><a href='../S/601.html#L218'>histogram</a>         218 reuse_distance_tool/parda.h 					pdt_lmem-&gt;histogram[B_OVFL] += 1;</span>
+<span class='curline'><a href='../S/601.html#L220'>histogram</a>         220 reuse_distance_tool/parda.h 					pdt_lmem-&gt;histogram[distance] += 1;</span>
+<span class='curline'><a href='../S/601.html#L259'>histogram</a>         259 reuse_distance_tool/parda.h 				pdt_gmem_lds-&gt;histogram[B_OVFL] += 1;</span>
+<span class='curline'><a href='../S/601.html#L261'>histogram</a>         261 reuse_distance_tool/parda.h 				pdt_gmem_lds-&gt;histogram[distance] += 1;</span>
+<span class='curline'><a href='../S/601.html#L297'>histogram</a>         297 reuse_distance_tool/parda.h 			pdt_umem-&gt;histogram[B_OVFL] += 1;</span>
+<span class='curline'><a href='../S/601.html#L299'>histogram</a>         299 reuse_distance_tool/parda.h 			pdt_umem-&gt;histogram[distance] += 1;</span>
+<span class='curline'><a href='../S/601.html#L339'>histogram</a>         339 reuse_distance_tool/parda.h 				pdt-&gt;histogram[B_OVFL] += 1;</span>
+<span class='curline'><a href='../S/601.html#L341'>histogram</a>         341 reuse_distance_tool/parda.h 				pdt-&gt;histogram[distance] += 1;</span>
+<span class='curline'><a href='../S/591.html#L139'>histogram</a>         139 reuse_distance_tool/parda_omp.c     pdt-&gt;histogram[B_INF] += narray_get_len(pdt-&gt;ga);</span>
+<span class='curline'><a href='../S/591.html#L142'>histogram</a>         142 reuse_distance_tool/parda_omp.c     parda_print_histogram(pdt-&gt;histogram);</span>
+<span class='curline'><a href='../S/589.html#L49'>histogram</a>          49 reuse_distance_tool/parda_print.c void parda_print_histogram(FILE* fp, const unsigned* histogram) {</span>
+<span class='curline'><a href='../S/589.html#L57'>histogram</a>          57 reuse_distance_tool/parda_print.c 	while (histogram[last_bucket] == 0)</span>
+<span class='curline'><a href='../S/589.html#L61'>histogram</a>          61 reuse_distance_tool/parda_print.c 	sum += histogram[i];</span>
+<span class='curline'><a href='../S/589.html#L62'>histogram</a>          62 reuse_distance_tool/parda_print.c 	sum += histogram[B_OVFL];</span>
+<span class='curline'><a href='../S/589.html#L63'>histogram</a>          63 reuse_distance_tool/parda_print.c 	sum += histogram[B_INF];</span>
+<span class='curline'><a href='../S/589.html#L68'>histogram</a>          68 reuse_distance_tool/parda_print.c 		cum += histogram[i];</span>
+<span class='curline'><a href='../S/589.html#L69'>histogram</a>          69 reuse_distance_tool/parda_print.c 		if(histogram[i] != 0)</span>
+<span class='curline'><a href='../S/589.html#L72'>histogram</a>          72 reuse_distance_tool/parda_print.c 		fprintf(fp, "%d, %0.8lf, %u\n", i, (histogram[i] / (double)sum), histogram[i]);</span>
+<span class='curline'><a href='../S/589.html#L74'>histogram</a>          74 reuse_distance_tool/parda_print.c 	if(histogram[B_OVFL] != 0){</span>
+<span class='curline'><a href='../S/589.html#L77'>histogram</a>          77 reuse_distance_tool/parda_print.c 		fprintf(fp, "%d , %0.8lf , %u\n", i, (histogram[B_OVFL] / (double)sum), histogram[B_OVFL]);</span>
+<span class='curline'><a href='../S/589.html#L79'>histogram</a>          79 reuse_distance_tool/parda_print.c 	if(histogram[B_INF] != 0){</span>
+<span class='curline'><a href='../S/589.html#L82'>histogram</a>          82 reuse_distance_tool/parda_print.c 		fprintf(fp, "-1, %0.8lf, %u\n", histogram[B_INF] / (double)sum, histogram[B_INF]);</span>
 </pre>
 </body>
 </html>

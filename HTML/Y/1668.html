@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>srcContext</title>
+<title>srcHost</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,15 +9,35 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/630.html#L1900'>srcContext</a>       1900 tracing_tool/nvbit/cuda.h     CUcontext srcContext;       /**&lt; Source context (ignored with srcMemoryType is ::CU_MEMORYTYPE_ARRAY) */</span>
-<span class='curline'><a href='../S/630.html#L5992'>srcContext</a>       5992 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L6885'>srcContext</a>       6885 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyPeerAsync(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/630.html#L15879'>srcContext</a>       15879 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
-<span class='curline'><a href='../S/630.html#L15880'>srcContext</a>       15880 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyPeerAsync(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount, CUstream hStream);</span>
-<span class='curline'><a href='../S/635.html#L438'>srcContext</a>        438 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
-<span class='curline'><a href='../S/635.html#L523'>srcContext</a>        523 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
-<span class='curline'><a href='../S/635.html#L2216'>srcContext</a>       2216 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
-<span class='curline'><a href='../S/635.html#L2224'>srcContext</a>       2224 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
+<span class='curline'><a href='../S/611.html#L1837'>srcHost</a>          1837 tracing_tool/nvbit/cuda.h     const void *srcHost;        /**&lt; Source host pointer */</span>
+<span class='curline'><a href='../S/611.html#L1864'>srcHost</a>          1864 tracing_tool/nvbit/cuda.h     const void *srcHost;        /**&lt; Source host pointer */</span>
+<span class='curline'><a href='../S/611.html#L1897'>srcHost</a>          1897 tracing_tool/nvbit/cuda.h     const void *srcHost;        /**&lt; Source host pointer */</span>
+<span class='curline'><a href='../S/611.html#L6028'>srcHost</a>          6028 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoD(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L6211'>srcHost</a>          6211 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoA(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L6926'>srcHost</a>          6926 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoDAsync(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L7050'>srcHost</a>          7050 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoAAsync(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L15733'>srcHost</a>          15733 tracing_tool/nvbit/cuda.h         const void *srcHost;        /**&lt; Source host pointer */</span>
+<span class='curline'><a href='../S/611.html#L15757'>srcHost</a>          15757 tracing_tool/nvbit/cuda.h         const void *srcHost;        /**&lt; Source host pointer */</span>
+<span class='curline'><a href='../S/611.html#L15811'>srcHost</a>          15811 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoD(CUdeviceptr_v1 dstDevice, const void *srcHost, unsigned int ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15816'>srcHost</a>          15816 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoA(CUarray dstArray, unsigned int dstOffset, const void *srcHost, unsigned int ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15819'>srcHost</a>          15819 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoAAsync(CUarray dstArray, unsigned int dstOffset, const void *srcHost, unsigned int ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L15824'>srcHost</a>          15824 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoDAsync(CUdeviceptr_v1 dstDevice, const void *srcHost, unsigned int ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L15853'>srcHost</a>          15853 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoD_v2(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15858'>srcHost</a>          15858 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoA_v2(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/611.html#L15861'>srcHost</a>          15861 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoAAsync_v2(CUarray dstArray, size_t dstOffset, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/611.html#L15866'>srcHost</a>          15866 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoDAsync_v2(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/616.html#L444'>srcHost</a>           444 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L477'>srcHost</a>           477 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L530'>srcHost</a>           530 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L552'>srcHost</a>           552 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L1813'>srcHost</a>          1813 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L1846'>srcHost</a>          1846 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L1868'>srcHost</a>          1868 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L1895'>srcHost</a>          1895 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L2046'>srcHost</a>          2046 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L2079'>srcHost</a>          2079 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L2101'>srcHost</a>          2101 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
+<span class='curline'><a href='../S/616.html#L2128'>srcHost</a>          2128 tracing_tool/nvbit/generated_cuda_meta.h     const void *srcHost;</span>
 </pre>
 </body>
 </html>

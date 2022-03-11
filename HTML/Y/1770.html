@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<title>ty</title>
+<title>uint32_t</title>
 <meta name='robots' content='noindex,nofollow' />
 <meta name='generator' content='GLOBAL-6.6.4' />
 <meta http-equiv='Content-Style-Type' content='text/css' />
@@ -9,39 +9,25 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/10.html#L64'>ty</a>                 64 llvm_tool/mekong-utils/inc/ptx_parser.h   TokenClass ty = None;</span>
-<span class='curline'><a href='../S/10.html#L67'>ty</a>                 67 llvm_tool/mekong-utils/inc/ptx_parser.h   Token(TokenClass tc, std::string str) : ty(tc), str(str){};</span>
-<span class='curline'><a href='../S/10.html#L80'>ty</a>                 80 llvm_tool/mekong-utils/inc/ptx_parser.h   auto addToken = [&amp;tokenVec](TokenClass ty, const char *const begin = nullptr,</span>
-<span class='curline'><a href='../S/10.html#L83'>ty</a>                 83 llvm_tool/mekong-utils/inc/ptx_parser.h       tokenVec.push_back({ty, ""});</span>
-<span class='curline'><a href='../S/10.html#L84'>ty</a>                 84 llvm_tool/mekong-utils/inc/ptx_parser.h     tokenVec.push_back({ty, std::string(begin, end - begin)});</span>
-<span class='curline'><a href='../S/10.html#L2995'>ty</a>               2995 llvm_tool/mekong-utils/inc/ptx_parser.h     switch (next.ty) {</span>
-<span class='curline'><a href='../S/10.html#L2999'>ty</a>               2999 llvm_tool/mekong-utils/inc/ptx_parser.h       } while (next.ty != rBracket);</span>
-<span class='curline'><a href='../S/10.html#L3007'>ty</a>               3007 llvm_tool/mekong-utils/inc/ptx_parser.h   } while (next.ty != Identifier);</span>
-<span class='curline'><a href='../S/10.html#L3010'>ty</a>               3010 llvm_tool/mekong-utils/inc/ptx_parser.h   if (next.ty == lBracket) {</span>
-<span class='curline'><a href='../S/10.html#L3013'>ty</a>               3013 llvm_tool/mekong-utils/inc/ptx_parser.h     } while (next.ty != rBracket);</span>
-<span class='curline'><a href='../S/10.html#L3020'>ty</a>               3020 llvm_tool/mekong-utils/inc/ptx_parser.h     switch (next.ty) {</span>
-<span class='curline'><a href='../S/10.html#L3031'>ty</a>               3031 llvm_tool/mekong-utils/inc/ptx_parser.h   if (next.ty == lcBracket) {</span>
-<span class='curline'><a href='../S/10.html#L3040'>ty</a>               3040 llvm_tool/mekong-utils/inc/ptx_parser.h       if (next.ty == Directive) {</span>
-<span class='curline'><a href='../S/10.html#L3045'>ty</a>               3045 llvm_tool/mekong-utils/inc/ptx_parser.h             if (next.ty != Integer)</span>
-<span class='curline'><a href='../S/10.html#L3047'>ty</a>               3047 llvm_tool/mekong-utils/inc/ptx_parser.h                         &lt;&lt; TokenClassName[next.ty] &lt;&lt; " instead\n";</span>
-<span class='curline'><a href='../S/10.html#L3053'>ty</a>               3053 llvm_tool/mekong-utils/inc/ptx_parser.h           } while (next.ty != Semicolon);</span>
-<span class='curline'><a href='../S/10.html#L3057'>ty</a>               3057 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Instruction) {</span>
-<span class='curline'><a href='../S/10.html#L3070'>ty</a>               3070 llvm_tool/mekong-utils/inc/ptx_parser.h 	  if(next.ty != Comma &amp;&amp; next.ty != Semicolon){</span>
-<span class='curline'><a href='../S/10.html#L3071'>ty</a>               3071 llvm_tool/mekong-utils/inc/ptx_parser.h 		if(next.ty == reBracket || next.ty == AddressOp || flag==1){</span>
-<span class='curline'><a href='../S/10.html#L3072'>ty</a>               3072 llvm_tool/mekong-utils/inc/ptx_parser.h                         if(next.ty == Register){</span>
-<span class='curline'><a href='../S/10.html#L3080'>ty</a>               3080 llvm_tool/mekong-utils/inc/ptx_parser.h 		if(next.ty == leBracket){</span>
-<span class='curline'><a href='../S/10.html#L3083'>ty</a>               3083 llvm_tool/mekong-utils/inc/ptx_parser.h 		if(next.ty == reBracket){</span>
-<span class='curline'><a href='../S/10.html#L3087'>ty</a>               3087 llvm_tool/mekong-utils/inc/ptx_parser.h         } while (next.ty != Semicolon);</span>
-<span class='curline'><a href='../S/10.html#L3091'>ty</a>               3091 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Comment) {</span>
-<span class='curline'><a href='../S/10.html#L3116'>ty</a>               3116 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Label) {</span>
-<span class='curline'><a href='../S/10.html#L3120'>ty</a>               3120 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Guard) {</span>
-<span class='curline'><a href='../S/10.html#L3167'>ty</a>               3167 llvm_tool/mekong-utils/inc/ptx_parser.h 	} else*/ if (next.ty != Register) {</span>
-<span class='curline'><a href='../S/10.html#L3174'>ty</a>               3174 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == lcBracket) {</span>
-<span class='curline'><a href='../S/10.html#L3187'>ty</a>               3187 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == rcBracket) {</span>
-<span class='curline'><a href='../S/10.html#L3198'>ty</a>               3198 llvm_tool/mekong-utils/inc/ptx_parser.h         std::cerr &lt;&lt; "Unexpected token: " &lt;&lt; TokenClassName[next.ty] &lt;&lt; "\t"</span>
-<span class='curline'><a href='../S/10.html#L3219'>ty</a>               3219 llvm_tool/mekong-utils/inc/ptx_parser.h     if (current.ty == Directive and</span>
-<span class='curline'><a href='../S/8.html#L97'>ty</a>                 97 llvm_tool/mekong-utils/src/DeviceUtils.cpp   Type *ty = cast&lt;PointerType&gt;(gvp-&gt;getType())-&gt;getElementType();</span>
-<span class='curline'><a href='../S/8.html#L98'>ty</a>                 98 llvm_tool/mekong-utils/src/DeviceUtils.cpp   val = new LoadInst(ty, gvp, "", insertPoint);</span>
+<span class='curline'><a href='../S/25.html#L65'>uint32_t</a>           65 llvm_tool/lib/hostRuntime.cpp __attribute__((weak)) uint32_t g_profilingMode = 0;</span>
+<span class='curline'><a href='../S/25.html#L67'>uint32_t</a>           67 llvm_tool/lib/hostRuntime.cpp extern "C" uint32_t __attribute__((weak)) getProfilingMode() {</span>
+<span class='curline'><a href='../S/25.html#L93'>uint32_t</a>           93 llvm_tool/lib/hostRuntime.cpp serializeBBCounter(uint64_t *d_blockList, uint64_t *d_blockList1, size_t len, uint32_t n_banks, const char *kernelname,</span>
+<span class='curline'><a href='../S/25.html#L94'>uint32_t</a>           94 llvm_tool/lib/hostRuntime.cpp                    uint64_t gridXY, uint32_t gridZ, uint64_t blockXY, uint32_t blockZ, uint64_t shmsize,</span>
+<span class='curline'><a href='../S/611.html#L59'>uint32_t</a>           59 tracing_tool/nvbit/cuda.h typedef uint32_t cuuint32_t;</span>
+<span class='curline'><a href='../S/617.html#L52'>uint32_t</a>           52 tracing_tool/nvbit/nvbit.h     uint32_t getOffset();</span>
+<span class='curline'><a href='../S/617.html#L54'>uint32_t</a>           54 tracing_tool/nvbit/nvbit.h     uint32_t getIdx();</span>
+<span class='curline'><a href='../S/617.html#L180'>uint32_t</a>          180 tracing_tool/nvbit/nvbit.h bool nvbit_get_line_info(CUcontext cuctx, CUfunction cufunc, uint32_t offset,</span>
+<span class='curline'><a href='../S/617.html#L181'>uint32_t</a>          181 tracing_tool/nvbit/nvbit.h                          char** file_name, char** dir_name, uint32_t* line);</span>
+<span class='curline'><a href='../S/617.html#L184'>uint32_t</a>          184 tracing_tool/nvbit/nvbit.h uint32_t nvbit_get_sm_family(CUcontext cuctx);</span>
+<span class='curline'><a href='../S/617.html#L256'>uint32_t</a>          256 tracing_tool/nvbit/nvbit.h void nvbit_add_call_arg_const_val32(const Instr* instr, uint32_t val,</span>
+<span class='curline'><a href='../S/617.html#L330'>uint32_t</a>          330 tracing_tool/nvbit/nvbit.h                          uint32_t nbytes);</span>
+<span class='curline'><a href='../S/615.html#L41'>uint32_t</a>           41 tracing_tool/nvbit/nvbit_tool.h gen_mref_addr(uint32_t ra_high, int is_ra64, uint32_t ra_low, int ra_stride,</span>
+<span class='curline'><a href='../S/615.html#L42'>uint32_t</a>           42 tracing_tool/nvbit/nvbit_tool.h               uint32_t ru_high, int is_ru64, uint32_t ru_low, int32_t imm,</span>
+<span class='curline'><a href='../S/615.html#L43'>uint32_t</a>           43 tracing_tool/nvbit/nvbit_tool.h               uint32_t mref_idx /* unused */) {</span>
+<span class='curline'><a href='../S/614.html#L56'>uint32_t</a>           56 tracing_tool/nvbit/utils/channel.hpp     __device__ __forceinline__ void push(void *packet, uint32_t nbytes) {</span>
+<span class='curline'><a href='../S/614.html#L93'>uint32_t</a>           93 tracing_tool/nvbit/utils/channel.hpp         uint32_t nbytes = (uint32_t)(buff_write_tail_ptr - buff);</span>
+<span class='curline'><a href='../S/614.html#L224'>uint32_t</a>          224 tracing_tool/nvbit/utils/channel.hpp     uint32_t recv(void *buff, uint32_t max_buff_size) {</span>
+<span class='curline'><a href='../S/614.html#L227'>uint32_t</a>          227 tracing_tool/nvbit/utils/channel.hpp         uint32_t buff_nbytes = *doorbell;</span>
 </pre>
 </body>
 </html>

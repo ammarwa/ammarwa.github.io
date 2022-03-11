@@ -9,20 +9,20 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/633.html#L46'>buff</a>               46 tracing_tool/nvbit/utils/channel.hpp     uint8_t *buff;</span>
-<span class='curline'><a href='../S/633.html#L93'>buff</a>               93 tracing_tool/nvbit/utils/channel.hpp         uint32_t nbytes = (uint32_t)(buff_write_tail_ptr - buff);</span>
-<span class='curline'><a href='../S/633.html#L112'>buff</a>              112 tracing_tool/nvbit/utils/channel.hpp         buff_write_tail_ptr = buff;</span>
-<span class='curline'><a href='../S/633.html#L114'>buff</a>              114 tracing_tool/nvbit/utils/channel.hpp         buff_write_head_ptr = buff;</span>
-<span class='curline'><a href='../S/633.html#L127'>buff</a>              127 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMalloc((void **)&amp;buff, buff_size));</span>
-<span class='curline'><a href='../S/633.html#L129'>buff</a>              129 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMallocManaged((void **)&amp;buff, buff_size));</span>
-<span class='curline'><a href='../S/633.html#L131'>buff</a>              131 tracing_tool/nvbit/utils/channel.hpp         buff_write_head_ptr = buff;</span>
-<span class='curline'><a href='../S/633.html#L132'>buff</a>              132 tracing_tool/nvbit/utils/channel.hpp         buff_write_tail_ptr = buff;</span>
-<span class='curline'><a href='../S/633.html#L133'>buff</a>              133 tracing_tool/nvbit/utils/channel.hpp         buff_end = buff + buff_size;</span>
-<span class='curline'><a href='../S/633.html#L193'>buff</a>              193 tracing_tool/nvbit/utils/channel.hpp         dev_buff = ch_dev-&gt;buff;</span>
-<span class='curline'><a href='../S/633.html#L218'>buff</a>              218 tracing_tool/nvbit/utils/channel.hpp             CUDA_SAFECALL(cudaFree(ch_dev-&gt;buff));</span>
-<span class='curline'><a href='../S/633.html#L224'>buff</a>              224 tracing_tool/nvbit/utils/channel.hpp     uint32_t recv(void *buff, uint32_t max_buff_size) {</span>
-<span class='curline'><a href='../S/633.html#L237'>buff</a>              237 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMemcpyAsync(buff, dev_buff_read_head, nbytes,</span>
-<span class='curline'><a href='../S/633.html#L241'>buff</a>              241 tracing_tool/nvbit/utils/channel.hpp         memcpy(buff, dev_buff_read_head, nbytes);</span>
+<span class='curline'><a href='../S/614.html#L46'>buff</a>               46 tracing_tool/nvbit/utils/channel.hpp     uint8_t *buff;</span>
+<span class='curline'><a href='../S/614.html#L93'>buff</a>               93 tracing_tool/nvbit/utils/channel.hpp         uint32_t nbytes = (uint32_t)(buff_write_tail_ptr - buff);</span>
+<span class='curline'><a href='../S/614.html#L112'>buff</a>              112 tracing_tool/nvbit/utils/channel.hpp         buff_write_tail_ptr = buff;</span>
+<span class='curline'><a href='../S/614.html#L114'>buff</a>              114 tracing_tool/nvbit/utils/channel.hpp         buff_write_head_ptr = buff;</span>
+<span class='curline'><a href='../S/614.html#L127'>buff</a>              127 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMalloc((void **)&amp;buff, buff_size));</span>
+<span class='curline'><a href='../S/614.html#L129'>buff</a>              129 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMallocManaged((void **)&amp;buff, buff_size));</span>
+<span class='curline'><a href='../S/614.html#L131'>buff</a>              131 tracing_tool/nvbit/utils/channel.hpp         buff_write_head_ptr = buff;</span>
+<span class='curline'><a href='../S/614.html#L132'>buff</a>              132 tracing_tool/nvbit/utils/channel.hpp         buff_write_tail_ptr = buff;</span>
+<span class='curline'><a href='../S/614.html#L133'>buff</a>              133 tracing_tool/nvbit/utils/channel.hpp         buff_end = buff + buff_size;</span>
+<span class='curline'><a href='../S/614.html#L193'>buff</a>              193 tracing_tool/nvbit/utils/channel.hpp         dev_buff = ch_dev-&gt;buff;</span>
+<span class='curline'><a href='../S/614.html#L218'>buff</a>              218 tracing_tool/nvbit/utils/channel.hpp             CUDA_SAFECALL(cudaFree(ch_dev-&gt;buff));</span>
+<span class='curline'><a href='../S/614.html#L224'>buff</a>              224 tracing_tool/nvbit/utils/channel.hpp     uint32_t recv(void *buff, uint32_t max_buff_size) {</span>
+<span class='curline'><a href='../S/614.html#L237'>buff</a>              237 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMemcpyAsync(buff, dev_buff_read_head, nbytes,</span>
+<span class='curline'><a href='../S/614.html#L241'>buff</a>              241 tracing_tool/nvbit/utils/channel.hpp         memcpy(buff, dev_buff_read_head, nbytes);</span>
 </pre>
 </body>
 </html>

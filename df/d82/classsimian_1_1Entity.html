@@ -56,7 +56,8 @@ $(function() {
 <div class="dynheader">
 Inheritance diagram for simian.Entity:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/db5/classsimian_1_1Entity__inherit__graph.svg" width="154" height="123"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../df/db5/classsimian_1_1Entity__inherit__graph.svg" width="195" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for simian.Entity:</div>
@@ -145,7 +146,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d7a/classsimian_1_1Simian.html#ab32bb31278eef1717b774ac3cf582c86">__init__</a>(self, initInfo):</div>
+<div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">def </span><a class="code" href="../../d2/d42/classsrc_1_1warps_1_1Warp.html#a665a9f1a52d5f0d7a8ed15fd75bc152c">__init__</a>(self, initInfo):</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="comment">#Constructor of derived entity to be called as &lt;entityName&gt;(name, out, engine, num, reqServiceProxy, &lt;args&gt;)</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="comment">#Here &lt;args&gt; are any additional arguments needed in the derived entity-class&#39;s __init__() method</span></div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        self.name = initInfo[<span class="stringliteral">&quot;name&quot;</span>]</div>
@@ -216,7 +217,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keyword">def </span><a class="code" href="../../df/d7a/classsimian_1_1Simian.html#a4af6aee01e7289f22ba5220be3d7314f">attachService</a>(self, name, fun):</div>
+<div class="fragment"><div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keyword">def </span>attachService(self, name, fun):</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="comment">#Attaches a service at runtime to instance</span></div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        setattr(self, name, types.MethodType(fun, self))</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
@@ -746,7 +747,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                <span class="keywordflow">if</span> engine.color == <span class="stringliteral">&quot;white&quot;</span>:</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    engine.whiteMsg += 1</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="keywordflow">else</span>:</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    engine.t_min = min(engine.t_min, time)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                    engine.t_min = <a class="code" href="../../de/dfb/seperate_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a>(engine.t_min, time)</div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                engine.MPI.send(e, recvRank)</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <span class="keywordflow">else</span>:</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                <span class="comment">#print (e)</span></div>
@@ -1042,11 +1043,11 @@ Here is the call graph for this function:</div>
 <li>PPT-GPU/<a class="el" href="../../">simian.py</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclasssimian_1_1Simian_html_a4af6aee01e7289f22ba5220be3d7314f"><div class="ttname"><a href="../../df/d7a/classsimian_1_1Simian.html#a4af6aee01e7289f22ba5220be3d7314f">simian.Simian.attachService</a></div><div class="ttdeci">def attachService(self, klass, name, fun)</div><div class="ttdef"><b>Definition:</b> simian.py:2074</div></div>
-<div class="ttc" id="aclasssimian_1_1Simian_html_ab32bb31278eef1717b774ac3cf582c86"><div class="ttname"><a href="../../df/d7a/classsimian_1_1Simian.html#ab32bb31278eef1717b774ac3cf582c86">simian.Simian.__init__</a></div><div class="ttdeci">def __init__(self, simName, startTime=0.0, endTime=10e10, minDelay=1, useMPI=False, opt=False, appPath=&quot;.&quot;, ISA=&quot;&quot;, granularity=&quot;&quot;, mpiLibName=defaultMpichLibName)</div><div class="ttdef"><b>Definition:</b> simian.py:1573</div></div>
+<div class="ttc" id="aseperate_8h_html_ac6afabdc09a49a433ee19d8a9486056d"><div class="ttname"><a href="../../de/dfb/seperate_8h.html#ac6afabdc09a49a433ee19d8a9486056d">min</a></div><div class="ttdeci">#define min(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="../../HTML/S/594.html#L16">seperate.h:16</a></div></div>
+<div class="ttc" id="aclasssrc_1_1warps_1_1Warp_html_a665a9f1a52d5f0d7a8ed15fd75bc152c"><div class="ttname"><a href="../../d2/d42/classsrc_1_1warps_1_1Warp.html#a665a9f1a52d5f0d7a8ed15fd75bc152c">src.warps.Warp.__init__</a></div><div class="ttdeci">def __init__(self, block, gpu, tasklist, kernel_id, avg_mem_lat, avg_atom_lat)</div><div class="ttdef"><b>Definition:</b> warps.py:22</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Mar 11 2022 13:07:26 for NMSU | Pearl Lab | PPT-GPU by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Mar 11 2022 13:31:25 for NMSU | Pearl Lab | PPT-GPU by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

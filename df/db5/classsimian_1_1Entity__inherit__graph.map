@@ -1,4 +1,5 @@
 <map id="simian.Entity" name="simian.Entity">
-<area shape="rect" id="node1" title=" " alt="" coords="5,85,148,117"/>
-<area shape="rect" id="node2" title=" " alt="" coords="37,5,116,37"/>
+<area shape="rect" id="node1" title=" " alt="" coords="26,85,169,117"/>
+<area shape="rect" id="node3" href="$dd/d03/classsrc_1_1kernels_1_1Kernel.html" title=" " alt="" coords="5,165,189,197"/>
+<area shape="rect" id="node2" title=" " alt="" coords="58,5,137,37"/>
 </map>

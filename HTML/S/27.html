@@ -8,7 +8,7 @@
 <link rel='stylesheet' type='text/css' href='../style.css' />
 </head>
 <body>
-<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/643.html'>llvm_tool</a>/<a href='../files/645.html'>lib</a>/registerPasses.cpp</h2>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/621.html'>llvm_tool</a>/<a href='../files/623.html'>lib</a>/registerPasses.cpp</h2>
 <em class='comment'>/* [&lt;][&gt;]<a href='#L17'>[^]</a><a href='#L27'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
 <hr />
 <h2 class='header'>DEFINITIONS</h2>
@@ -35,7 +35,7 @@ This source file includes following definitions.
 <a id='L14' name='L14'></a>  14 <strong class='reserved'>static</strong> <a href='../Y/157.html' title='Multiple used in 2 places.'>RegisterPass</a>&lt;<a href='../Y/78.html' title='Multiple used in 8 places.'>FluxHostPass</a>&gt; Y("host-cuda-flux", "Instrument nvptx kernel launches for basic block profiling");
 <a id='L15' name='L15'></a>  15 
 <a id='L16' name='L16'></a>  16 <em class='comment'>// Register Device Pass</em>
-<a id='L17' name='L17'></a>  17 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/365.html' title='Multiple referred from 2 places.'>registerDeviceBlockProfilerPass</a>(<strong class='reserved'>const</strong> <a href='../Y/145.html' title='Multiple used in 6 places.'>PassManagerBuilder</a> &amp;, <a href='../Y/1278.html' title='Multiple used in 2 places.'>legacy</a>::<a href='../Y/144.html' title='Multiple used in 2 places.'>PassManagerBase</a> &amp;<a href='../Y/139.html' title='Multiple used in 4 places.'>PM</a>) <em class='brace'>{</em>
+<a id='L17' name='L17'></a>  17 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/364.html' title='Multiple referred from 2 places.'>registerDeviceBlockProfilerPass</a>(<strong class='reserved'>const</strong> <a href='../Y/145.html' title='Multiple used in 6 places.'>PassManagerBuilder</a> &amp;, <a href='../Y/1278.html' title='Multiple used in 2 places.'>legacy</a>::<a href='../Y/144.html' title='Multiple used in 2 places.'>PassManagerBase</a> &amp;<a href='../Y/139.html' title='Multiple used in 4 places.'>PM</a>) <em class='brace'>{</em>
 <a id='L18' name='L18'></a>  18   <a href='../Y/139.html' title='Multiple used in 4 places.'>PM</a>.<a href='../Y/232.html' title='Multiple used in 2 places.'>add</a>(<strong class='reserved'>new</strong> <a href='../Y/77.html' title='Multiple used in 8 places.'>FluxDevicePass</a>());
 <a id='L19' name='L19'></a>  19 <em class='brace'>}</em>
 <a id='L20' name='L20'></a>  20 
@@ -45,7 +45,7 @@ This source file includes following definitions.
 <a id='L24' name='L24'></a>  24                                                   <a href='../S/27.html#L17' title='Defined at 17 in llvm_tool/lib/registerPasses.cpp.'>registerDeviceBlockProfilerPass</a>);
 <a id='L25' name='L25'></a>  25 
 <a id='L26' name='L26'></a>  26 <em class='comment'>// Register Host Pass as std pass</em>
-<a id='L27' name='L27'></a>  27 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/367.html' title='Multiple referred from 2 places.'>registerHostBlockProfilerPass</a>(<strong class='reserved'>const</strong> <a href='../Y/145.html' title='Multiple used in 6 places.'>PassManagerBuilder</a> &amp;, <a href='../Y/1278.html' title='Multiple used in 2 places.'>legacy</a>::<a href='../Y/144.html' title='Multiple used in 2 places.'>PassManagerBase</a> &amp;<a href='../Y/139.html' title='Multiple used in 4 places.'>PM</a>) <em class='brace'>{</em>
+<a id='L27' name='L27'></a>  27 <strong class='reserved'>static</strong> <strong class='reserved'>void</strong> <a href='../R/366.html' title='Multiple referred from 2 places.'>registerHostBlockProfilerPass</a>(<strong class='reserved'>const</strong> <a href='../Y/145.html' title='Multiple used in 6 places.'>PassManagerBuilder</a> &amp;, <a href='../Y/1278.html' title='Multiple used in 2 places.'>legacy</a>::<a href='../Y/144.html' title='Multiple used in 2 places.'>PassManagerBase</a> &amp;<a href='../Y/139.html' title='Multiple used in 4 places.'>PM</a>) <em class='brace'>{</em>
 <a id='L28' name='L28'></a>  28   <a href='../Y/139.html' title='Multiple used in 4 places.'>PM</a>.<a href='../Y/232.html' title='Multiple used in 2 places.'>add</a>(<strong class='reserved'>new</strong> <a href='../Y/78.html' title='Multiple used in 8 places.'>FluxHostPass</a>());
 <a id='L29' name='L29'></a>  29 <em class='brace'>}</em>
 <a id='L30' name='L30'></a>  30 

@@ -9,24 +9,24 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/629.html#L105'>nbytes</a>            105 tracing_tool/nvbit/instr_types.h     int nbytes;</span>
-<span class='curline'><a href='../S/636.html#L330'>nbytes</a>            330 tracing_tool/nvbit/nvbit.h                          uint32_t nbytes);</span>
-<span class='curline'><a href='../S/633.html#L56'>nbytes</a>             56 tracing_tool/nvbit/utils/channel.hpp     __device__ __forceinline__ void push(void *packet, uint32_t nbytes) {</span>
-<span class='curline'><a href='../S/633.html#L57'>nbytes</a>             57 tracing_tool/nvbit/utils/channel.hpp         assert(nbytes != 0);</span>
-<span class='curline'><a href='../S/633.html#L63'>nbytes</a>             63 tracing_tool/nvbit/utils/channel.hpp                 (uint8_t *)atomicAdd((ULL *)&amp;buff_write_head_ptr, (ULL)nbytes);</span>
-<span class='curline'><a href='../S/633.html#L69'>nbytes</a>             69 tracing_tool/nvbit/utils/channel.hpp             if (curr_ptr + nbytes &gt; buff_end) {</span>
-<span class='curline'><a href='../S/633.html#L88'>nbytes</a>             88 tracing_tool/nvbit/utils/channel.hpp         memcpy(curr_ptr, packet, nbytes);</span>
-<span class='curline'><a href='../S/633.html#L89'>nbytes</a>             89 tracing_tool/nvbit/utils/channel.hpp         atomicAdd((ULL *)&amp;buff_write_tail_ptr, (ULL)nbytes);</span>
-<span class='curline'><a href='../S/633.html#L93'>nbytes</a>             93 tracing_tool/nvbit/utils/channel.hpp         uint32_t nbytes = (uint32_t)(buff_write_tail_ptr - buff);</span>
-<span class='curline'><a href='../S/633.html#L95'>nbytes</a>             95 tracing_tool/nvbit/utils/channel.hpp         if (nbytes == 0) {</span>
-<span class='curline'><a href='../S/633.html#L104'>nbytes</a>            104 tracing_tool/nvbit/utils/channel.hpp         *doorbell = nbytes;</span>
-<span class='curline'><a href='../S/633.html#L231'>nbytes</a>            231 tracing_tool/nvbit/utils/channel.hpp         int nbytes = buff_nbytes;</span>
-<span class='curline'><a href='../S/633.html#L234'>nbytes</a>            234 tracing_tool/nvbit/utils/channel.hpp             nbytes = max_buff_size;</span>
-<span class='curline'><a href='../S/633.html#L237'>nbytes</a>            237 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMemcpyAsync(buff, dev_buff_read_head, nbytes,</span>
-<span class='curline'><a href='../S/633.html#L241'>nbytes</a>            241 tracing_tool/nvbit/utils/channel.hpp         memcpy(buff, dev_buff_read_head, nbytes);</span>
-<span class='curline'><a href='../S/633.html#L243'>nbytes</a>            243 tracing_tool/nvbit/utils/channel.hpp         int bytes_left = buff_nbytes - nbytes;</span>
-<span class='curline'><a href='../S/633.html#L246'>nbytes</a>            246 tracing_tool/nvbit/utils/channel.hpp             dev_buff_read_head += nbytes;</span>
-<span class='curline'><a href='../S/633.html#L254'>nbytes</a>            254 tracing_tool/nvbit/utils/channel.hpp         return nbytes;</span>
+<span class='curline'><a href='../S/610.html#L105'>nbytes</a>            105 tracing_tool/nvbit/instr_types.h     int nbytes;</span>
+<span class='curline'><a href='../S/617.html#L330'>nbytes</a>            330 tracing_tool/nvbit/nvbit.h                          uint32_t nbytes);</span>
+<span class='curline'><a href='../S/614.html#L56'>nbytes</a>             56 tracing_tool/nvbit/utils/channel.hpp     __device__ __forceinline__ void push(void *packet, uint32_t nbytes) {</span>
+<span class='curline'><a href='../S/614.html#L57'>nbytes</a>             57 tracing_tool/nvbit/utils/channel.hpp         assert(nbytes != 0);</span>
+<span class='curline'><a href='../S/614.html#L63'>nbytes</a>             63 tracing_tool/nvbit/utils/channel.hpp                 (uint8_t *)atomicAdd((ULL *)&amp;buff_write_head_ptr, (ULL)nbytes);</span>
+<span class='curline'><a href='../S/614.html#L69'>nbytes</a>             69 tracing_tool/nvbit/utils/channel.hpp             if (curr_ptr + nbytes &gt; buff_end) {</span>
+<span class='curline'><a href='../S/614.html#L88'>nbytes</a>             88 tracing_tool/nvbit/utils/channel.hpp         memcpy(curr_ptr, packet, nbytes);</span>
+<span class='curline'><a href='../S/614.html#L89'>nbytes</a>             89 tracing_tool/nvbit/utils/channel.hpp         atomicAdd((ULL *)&amp;buff_write_tail_ptr, (ULL)nbytes);</span>
+<span class='curline'><a href='../S/614.html#L93'>nbytes</a>             93 tracing_tool/nvbit/utils/channel.hpp         uint32_t nbytes = (uint32_t)(buff_write_tail_ptr - buff);</span>
+<span class='curline'><a href='../S/614.html#L95'>nbytes</a>             95 tracing_tool/nvbit/utils/channel.hpp         if (nbytes == 0) {</span>
+<span class='curline'><a href='../S/614.html#L104'>nbytes</a>            104 tracing_tool/nvbit/utils/channel.hpp         *doorbell = nbytes;</span>
+<span class='curline'><a href='../S/614.html#L231'>nbytes</a>            231 tracing_tool/nvbit/utils/channel.hpp         int nbytes = buff_nbytes;</span>
+<span class='curline'><a href='../S/614.html#L234'>nbytes</a>            234 tracing_tool/nvbit/utils/channel.hpp             nbytes = max_buff_size;</span>
+<span class='curline'><a href='../S/614.html#L237'>nbytes</a>            237 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMemcpyAsync(buff, dev_buff_read_head, nbytes,</span>
+<span class='curline'><a href='../S/614.html#L241'>nbytes</a>            241 tracing_tool/nvbit/utils/channel.hpp         memcpy(buff, dev_buff_read_head, nbytes);</span>
+<span class='curline'><a href='../S/614.html#L243'>nbytes</a>            243 tracing_tool/nvbit/utils/channel.hpp         int bytes_left = buff_nbytes - nbytes;</span>
+<span class='curline'><a href='../S/614.html#L246'>nbytes</a>            246 tracing_tool/nvbit/utils/channel.hpp             dev_buff_read_head += nbytes;</span>
+<span class='curline'><a href='../S/614.html#L254'>nbytes</a>            254 tracing_tool/nvbit/utils/channel.hpp         return nbytes;</span>
 </pre>
 </body>
 </html>
