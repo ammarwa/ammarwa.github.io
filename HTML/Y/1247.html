@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>kernelLaunchSite</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/15.html#L20'>kernelLaunchSite</a>   20 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args);</span>
+<span class='curline'><a href='../S/15.html#L21'>kernelLaunchSite</a>   21 llvm_tool/mekong-utils/inc/HostUtils.h llvm::CallBase *getKernelConfigCall(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite);</span>
+<span class='curline'><a href='../S/15.html#L22'>kernelLaunchSite</a>   22 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config);</span>
+<span class='curline'><a href='../S/15.html#L29'>kernelLaunchSite</a>   29 llvm_tool/mekong-utils/inc/HostUtils.h llvm::CallBase *replaceKernelLaunch(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite,</span>
+<span class='curline'><a href='../S/6.html#L119'>kernelLaunchSite</a>  119 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args) {</span>
+<span class='curline'><a href='../S/6.html#L120'>kernelLaunchSite</a>  120 llvm_tool/mekong-utils/src/HostUtils.cpp   for (Use &amp;op : kernelLaunchSite-&gt;operands()) {</span>
+<span class='curline'><a href='../S/6.html#L123'>kernelLaunchSite</a>  123 llvm_tool/mekong-utils/src/HostUtils.cpp     if (fun != nullptr and fun == kernelLaunchSite-&gt;getCalledFunction())</span>
+<span class='curline'><a href='../S/6.html#L135'>kernelLaunchSite</a>  135 llvm_tool/mekong-utils/src/HostUtils.cpp CallBase *getKernelConfigCall(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite) {</span>
+<span class='curline'><a href='../S/6.html#L149'>kernelLaunchSite</a>  149 llvm_tool/mekong-utils/src/HostUtils.cpp   q.push(kernelLaunchSite-&gt;getParent());</span>
+<span class='curline'><a href='../S/6.html#L154'>kernelLaunchSite</a>  154 llvm_tool/mekong-utils/src/HostUtils.cpp     if (currentBlock != kernelLaunchSite-&gt;getParent()) {</span>
+<span class='curline'><a href='../S/6.html#L178'>kernelLaunchSite</a>  178 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config) {</span>
+<span class='curline'><a href='../S/6.html#L179'>kernelLaunchSite</a>  179 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *confCall = getKernelConfigCall(m, kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L373'>kernelLaunchSite</a>  373 llvm_tool/mekong-utils/src/HostUtils.cpp llvm::CallBase *replaceKernelLaunch(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite,</span>
+<span class='curline'><a href='../S/6.html#L379'>kernelLaunchSite</a>  379 llvm_tool/mekong-utils/src/HostUtils.cpp   getKernelLaunchConfig(m, kernelLaunchSite, config);</span>
+<span class='curline'><a href='../S/6.html#L381'>kernelLaunchSite</a>  381 llvm_tool/mekong-utils/src/HostUtils.cpp   getKernelArguments(kernelLaunchSite, kargs);</span>
+<span class='curline'><a href='../S/6.html#L382'>kernelLaunchSite</a>  382 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *confCall = getKernelConfigCall(m, kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L416'>kernelLaunchSite</a>  416 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.SetInsertPoint(kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L429'>kernelLaunchSite</a>  429 llvm_tool/mekong-utils/src/HostUtils.cpp   InvokeInst *kernelInv = dyn_cast_or_null&lt;InvokeInst&gt;(kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L432'>kernelLaunchSite</a>  432 llvm_tool/mekong-utils/src/HostUtils.cpp     builder.SetInsertPoint(kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L437'>kernelLaunchSite</a>  437 llvm_tool/mekong-utils/src/HostUtils.cpp   kernelLaunchSite-&gt;eraseFromParent();</span>
+</pre>
+</body>
+</html>

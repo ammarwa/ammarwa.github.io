@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>kernelClone</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L135'>kernelClone</a>       135 llvm_tool/lib/fluxDevicePass.cpp     Function *kernelClone = mekong::cloneAndAddArgs(kernel, args, {"bblist", "bblist1", "n_banks", "profiling_mode"});</span>
+<span class='curline'><a href='../S/26.html#L140'>kernelClone</a>       140 llvm_tool/lib/fluxDevicePass.cpp     std::map&lt;BasicBlock *, int&gt; blockIDs = mekong::getBlockIDMap(kernelClone, funcVec, kernel-&gt;getName().str());</span>
+<span class='curline'><a href='../S/26.html#L142'>kernelClone</a>       142 llvm_tool/lib/fluxDevicePass.cpp     for (llvm::BasicBlock &amp;bb : kernelClone-&gt;getBasicBlockList()) {</span>
+<span class='curline'><a href='../S/26.html#L148'>kernelClone</a>       148 llvm_tool/lib/fluxDevicePass.cpp     Value *trace_ptr = &amp;*(kernelClone-&gt;arg_begin() + (kernelClone-&gt;arg_size() - 4));</span>
+<span class='curline'><a href='../S/26.html#L149'>kernelClone</a>       149 llvm_tool/lib/fluxDevicePass.cpp     Value *trace_ptr1 = &amp;*(kernelClone-&gt;arg_begin() + (kernelClone-&gt;arg_size() - 3));</span>
+<span class='curline'><a href='../S/26.html#L151'>kernelClone</a>       151 llvm_tool/lib/fluxDevicePass.cpp     Value *n_banks = &amp;*(kernelClone-&gt;arg_begin() + (kernelClone-&gt;arg_size() - 2));</span>
+<span class='curline'><a href='../S/26.html#L153'>kernelClone</a>       153 llvm_tool/lib/fluxDevicePass.cpp     Value *profiling = &amp;*(kernelClone-&gt;arg_begin() + (kernelClone-&gt;arg_size() - 1));</span>
+<span class='curline'><a href='../S/26.html#L158'>kernelClone</a>       158 llvm_tool/lib/fluxDevicePass.cpp     Instruction *insertPoint = &amp;*kernelClone-&gt;begin()-&gt;getFirstInsertionPt();</span>
+<span class='curline'><a href='../S/26.html#L163'>kernelClone</a>       163 llvm_tool/lib/fluxDevicePass.cpp     for (BasicBlock &amp;bb : kernelClone-&gt;getBasicBlockList()) {</span>
+<span class='curline'><a href='../S/26.html#L176'>kernelClone</a>       176 llvm_tool/lib/fluxDevicePass.cpp     mekong::markKernel(M, kernelClone);</span>
+</pre>
+</body>
+</html>

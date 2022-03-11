@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>GlobalVariable</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/24.html#L108'>GlobalVariable</a>    108 llvm_tool/lib/fluxHostPass.cpp   GlobalVariable *ptxAnalysIsWritten =</span>
+<span class='curline'><a href='../S/24.html#L109'>GlobalVariable</a>    109 llvm_tool/lib/fluxHostPass.cpp       new GlobalVariable(M, builder.getInt8Ty(), false, GlobalValue::PrivateLinkage, builder.getInt8(0),</span>
+<span class='curline'><a href='../S/24.html#L110'>GlobalVariable</a>    110 llvm_tool/lib/fluxHostPass.cpp                          "ptxAnalysisWritten", nullptr, GlobalVariable::NotThreadLocal, 0);</span>
+<span class='curline'><a href='../S/12.html#L19'>GlobalVariable</a>     19 llvm_tool/mekong-utils/inc/DeviceUtils.h                        llvm::GlobalVariable *&amp;gv);</span>
+<span class='curline'><a href='../S/12.html#L20'>GlobalVariable</a>     20 llvm_tool/mekong-utils/inc/DeviceUtils.h void loadGlobalVar(llvm::Function *kernel, llvm::GlobalVariable *gv,</span>
+<span class='curline'><a href='../S/17.html#L36'>GlobalVariable</a>     36 llvm_tool/mekong-utils/inc/IRUtils.h llvm::GlobalVariable *createGlobalString(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/8.html#L83'>GlobalVariable</a>     83 llvm_tool/mekong-utils/src/DeviceUtils.cpp                        GlobalVariable *&amp;gv) {</span>
+<span class='curline'><a href='../S/8.html#L85'>GlobalVariable</a>     85 llvm_tool/mekong-utils/src/DeviceUtils.cpp   gv = new GlobalVariable(m, type, false, GlobalValue::ExternalLinkage, nullptr,</span>
+<span class='curline'><a href='../S/8.html#L86'>GlobalVariable</a>     86 llvm_tool/mekong-utils/src/DeviceUtils.cpp                           name, nullptr, GlobalVariable::NotThreadLocal, 1,</span>
+<span class='curline'><a href='../S/8.html#L92'>GlobalVariable</a>     92 llvm_tool/mekong-utils/src/DeviceUtils.cpp void loadGlobalVar(Function *kernel, GlobalVariable *gv, Value *&amp;val) {</span>
+<span class='curline'><a href='../S/6.html#L88'>GlobalVariable</a>     88 llvm_tool/mekong-utils/src/HostUtils.cpp       GlobalVariable *gv = dyn_cast_or_null&lt;GlobalVariable&gt;(callBase-&gt;getArgOperand(2)-&gt;stripPointerCastsAndAliases());</span>
+<span class='curline'><a href='../S/5.html#L92'>GlobalVariable</a>     92 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::GlobalVariable *createGlobalString(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/5.html#L96'>GlobalVariable</a>     96 llvm_tool/mekong-utils/src/IRUtils.cpp   auto *GV = new GlobalVariable(</span>
+<span class='curline'><a href='../S/5.html#L98'>GlobalVariable</a>     98 llvm_tool/mekong-utils/src/IRUtils.cpp       Name, nullptr, GlobalVariable::NotThreadLocal, AddressSpace);</span>
+<span class='curline'><a href='../S/5.html#L110'>GlobalVariable</a>    110 llvm_tool/mekong-utils/src/IRUtils.cpp   GlobalVariable *GV = createGlobalString(M, Str, Name, AddressSpace);</span>
+<span class='curline'><a href='../S/5.html#L150'>GlobalVariable</a>    150 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::GlobalVariable *GVStr = new llvm::GlobalVariable(</span>
+<span class='curline'><a href='../S/5.html#L172'>GlobalVariable</a>    172 llvm_tool/mekong-utils/src/IRUtils.cpp   GlobalVariable *stringVal = builder.CreateGlobalString(str);</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>nthreads</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/610.html#L16'>nthreads</a>           16 reuse_distance_tool/parda_omp.c program_data_t* parda_omp_init(int nthreads) {</span>
+<span class='curline'><a href='../S/610.html#L18'>nthreads</a>           18 reuse_distance_tool/parda_omp.c     program_data_t* pdt_a = (program_data_t*)malloc(nthreads * sizeof(program_data_t));</span>
+<span class='curline'><a href='../S/610.html#L20'>nthreads</a>           20 reuse_distance_tool/parda_omp.c     for(i=0;i&lt;nthreads;i++)</span>
+<span class='curline'><a href='../S/610.html#L22'>nthreads</a>           22 reuse_distance_tool/parda_omp.c     omp_set_num_threads(nthreads);</span>
+<span class='curline'><a href='../S/610.html#L27'>nthreads</a>           27 reuse_distance_tool/parda_omp.c     const int pid, const int nthreads, const int psize, FILE* fpa[]) {</span>
+<span class='curline'><a href='../S/610.html#L29'>nthreads</a>           29 reuse_distance_tool/parda_omp.c     for(i = 0; i &lt; nthreads; i++) {</span>
+<span class='curline'><a href='../S/610.html#L30'>nthreads</a>           30 reuse_distance_tool/parda_omp.c         char* pfilename = parda_generate_pfilename(inputFileName, pid * nthreads + i, psize * nthreads);</span>
+<span class='curline'><a href='../S/610.html#L37'>nthreads</a>           37 reuse_distance_tool/parda_omp.c     int nthreads = threads;</span>
+<span class='curline'><a href='../S/610.html#L40'>nthreads</a>           40 reuse_distance_tool/parda_omp.c     parda_omp_openfile(inputFileName, pid, nthreads, psize, fpa);</span>
+<span class='curline'><a href='../S/610.html#L45'>nthreads</a>           45 reuse_distance_tool/parda_omp.c         processor_info_t pit = parda_get_thread_info(lines, begin, i, nthreads);</span>
+<span class='curline'><a href='../S/610.html#L55'>nthreads</a>           55 reuse_distance_tool/parda_omp.c         int mlen = nthreads &gt;&gt; 1;</span>
+<span class='curline'><a href='../S/610.html#L66'>nthreads</a>           66 reuse_distance_tool/parda_omp.c     program_data_t pdt_c = pdt_a[nthreads - 1];</span>
+<span class='curline'><a href='../S/610.html#L73'>nthreads</a>           73 reuse_distance_tool/parda_omp.c     int nthreads = threads;</span>
+<span class='curline'><a href='../S/610.html#L85'>nthreads</a>           85 reuse_distance_tool/parda_omp.c         for(i=0 ;i &lt; nthreads; i++)</span>
+<span class='curline'><a href='../S/610.html#L88'>nthreads</a>           88 reuse_distance_tool/parda_omp.c             pit_a[i] = parda_get_thread_info(lines, begin, i, nthreads);</span>
+<span class='curline'><a href='../S/610.html#L89'>nthreads</a>           89 reuse_distance_tool/parda_omp.c             parda_input_with_filename(parda_generate_pfilename(inputFileName, pid * nthreads + i, psize * nthreads), &amp;pdt_a[i], pit_a[i].tstart, pit_a[i].tend);</span>
+<span class='curline'><a href='../S/610.html#L108'>nthreads</a>          108 reuse_distance_tool/parda_omp.c     program_data_t pdt = pdt_a[nthreads - 1];</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Module</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/20.html#L21'>Module</a>             21 llvm_tool/inc/cudaFluxPasses.h   virtual bool runOnModule(llvm::Module &amp;M) override;</span>
+<span class='curline'><a href='../S/20.html#L35'>Module</a>             35 llvm_tool/inc/cudaFluxPasses.h   virtual bool runOnModule(llvm::Module &amp;M) override;</span>
+<span class='curline'><a href='../S/26.html#L38'>Module</a>             38 llvm_tool/lib/fluxDevicePass.cpp std::vector&lt;mekong::PTXFunction&gt; ptxInstructionAnalysis(Module &amp;M) {</span>
+<span class='curline'><a href='../S/26.html#L108'>Module</a>            108 llvm_tool/lib/fluxDevicePass.cpp void basicBlockInstrumentation(Module &amp;M, std::vector&lt;mekong::PTXFunction&gt; funcVec) {</span>
+<span class='curline'><a href='../S/26.html#L180'>Module</a>            180 llvm_tool/lib/fluxDevicePass.cpp bool FluxDevicePass::runOnModule(Module &amp;M) {</span>
+<span class='curline'><a href='../S/24.html#L22'>Module</a>             22 llvm_tool/lib/fluxHostPass.cpp bool FluxHostPass::runOnModule(llvm::Module &amp;M) {</span>
+<span class='curline'><a href='../S/12.html#L14'>Module</a>             14 llvm_tool/mekong-utils/inc/DeviceUtils.h void getKernels(llvm::Module &amp;m, std::vector&lt;llvm::Function *&gt; &amp;kernels);</span>
+<span class='curline'><a href='../S/12.html#L18'>Module</a>             18 llvm_tool/mekong-utils/inc/DeviceUtils.h void registerGlobalVar(llvm::Module &amp;m, std::string name, llvm::Type *type,</span>
+<span class='curline'><a href='../S/12.html#L27'>Module</a>             27 llvm_tool/mekong-utils/inc/DeviceUtils.h void markKernel(llvm::Module &amp;m, llvm::Function *kernel);</span>
+<span class='curline'><a href='../S/15.html#L17'>Module</a>             17 llvm_tool/mekong-utils/inc/HostUtils.h bool usesNewKernelLaunch(llvm::Module &amp;m);</span>
+<span class='curline'><a href='../S/15.html#L18'>Module</a>             18 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelDescriptors(llvm::Module &amp;m, std::vector&lt;KernelDescriptor&gt; &amp;desc);</span>
+<span class='curline'><a href='../S/15.html#L21'>Module</a>             21 llvm_tool/mekong-utils/inc/HostUtils.h llvm::CallBase *getKernelConfigCall(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite);</span>
+<span class='curline'><a href='../S/15.html#L22'>Module</a>             22 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config);</span>
+<span class='curline'><a href='../S/15.html#L24'>Module</a>             24 llvm_tool/mekong-utils/inc/HostUtils.h llvm::Function *getCudaSynchronizeStream(llvm::Module &amp;m);</span>
+<span class='curline'><a href='../S/15.html#L27'>Module</a>             27 llvm_tool/mekong-utils/inc/HostUtils.h llvm::Value *createCudaGlobalVar(llvm::Module &amp;m, const std::string name, llvm::Type *varType);</span>
+<span class='curline'><a href='../S/15.html#L28'>Module</a>             28 llvm_tool/mekong-utils/inc/HostUtils.h void registerKernel(llvm::Module &amp;m, const std::string name, llvm::Function *kernelWrapper);</span>
+<span class='curline'><a href='../S/15.html#L29'>Module</a>             29 llvm_tool/mekong-utils/inc/HostUtils.h llvm::CallBase *replaceKernelLaunch(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite,</span>
+<span class='curline'><a href='../S/15.html#L32'>Module</a>             32 llvm_tool/mekong-utils/inc/HostUtils.h llvm::Function *createKernelWrapper(llvm::Module &amp;m, const std::string name, llvm::FunctionType *ft);</span>
+<span class='curline'><a href='../S/17.html#L25'>Module</a>             25 llvm_tool/mekong-utils/inc/IRUtils.h std::string getModulePrefix(llvm::Module *m);</span>
+<span class='curline'><a href='../S/17.html#L26'>Module</a>             26 llvm_tool/mekong-utils/inc/IRUtils.h void dumpModuleToFile(llvm::Module &amp;m, std::string filepath);</span>
+<span class='curline'><a href='../S/17.html#L27'>Module</a>             27 llvm_tool/mekong-utils/inc/IRUtils.h void dumpModuleToFile(llvm::Module &amp;m, const char *filepath);</span>
+<span class='curline'><a href='../S/17.html#L36'>Module</a>             36 llvm_tool/mekong-utils/inc/IRUtils.h llvm::GlobalVariable *createGlobalString(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/17.html#L40'>Module</a>             40 llvm_tool/mekong-utils/inc/IRUtils.h llvm::Constant *createGlobalStringPtr(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/17.html#L44'>Module</a>             44 llvm_tool/mekong-utils/inc/IRUtils.h void linkIR(llvm::StringRef ir, llvm::Module &amp;m);</span>
+<span class='curline'><a href='../S/17.html#L46'>Module</a>             46 llvm_tool/mekong-utils/inc/IRUtils.h llvm::Function *getPrintfFunc(llvm::Module &amp;module);</span>
+<span class='curline'><a href='../S/17.html#L48'>Module</a>             48 llvm_tool/mekong-utils/inc/IRUtils.h llvm::CallInst *callPrintf(llvm::Module &amp;module, std::string str,</span>
+<span class='curline'><a href='../S/17.html#L50'>Module</a>             50 llvm_tool/mekong-utils/inc/IRUtils.h llvm::CallInst *callPrintf(llvm::Module &amp;module, llvm::IRBuilder&lt;&gt; &amp;builder,</span>
+<span class='curline'><a href='../S/8.html#L16'>Module</a>             16 llvm_tool/mekong-utils/src/DeviceUtils.cpp void getKernels(llvm::Module &amp;m, std::vector&lt;llvm::Function *&gt; &amp;kernels) {</span>
+<span class='curline'><a href='../S/8.html#L82'>Module</a>             82 llvm_tool/mekong-utils/src/DeviceUtils.cpp void registerGlobalVar(Module &amp;m, string name, Type *type,</span>
+<span class='curline'><a href='../S/8.html#L105'>Module</a>            105 llvm_tool/mekong-utils/src/DeviceUtils.cpp void markKernel(llvm::Module &amp;m, llvm::Function *kernel) {</span>
+<span class='curline'><a href='../S/6.html#L74'>Module</a>             74 llvm_tool/mekong-utils/src/HostUtils.cpp bool usesNewKernelLaunch(llvm::Module &amp;m) { return m.getSDKVersion() &gt;= VersionTuple(9, 2); }</span>
+<span class='curline'><a href='../S/6.html#L76'>Module</a>             76 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelDescriptors(llvm::Module &amp;m, std::vector&lt;KernelDescriptor&gt; &amp;desc) {</span>
+<span class='curline'><a href='../S/6.html#L135'>Module</a>            135 llvm_tool/mekong-utils/src/HostUtils.cpp CallBase *getKernelConfigCall(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite) {</span>
+<span class='curline'><a href='../S/6.html#L178'>Module</a>            178 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config) {</span>
+<span class='curline'><a href='../S/6.html#L193'>Module</a>            193 llvm_tool/mekong-utils/src/HostUtils.cpp llvm::Function *getCudaSynchronizeStream(llvm::Module &amp;m) {</span>
+<span class='curline'><a href='../S/6.html#L212'>Module</a>            212 llvm_tool/mekong-utils/src/HostUtils.cpp void registerKernel(llvm::Module &amp;m, const std::string name, llvm::Function *kernelWrapper) {</span>
+<span class='curline'><a href='../S/6.html#L270'>Module</a>            270 llvm_tool/mekong-utils/src/HostUtils.cpp Function *createKernelWrapper(llvm::Module &amp;m, const std::string name, FunctionType *ft) {</span>
+<span class='curline'><a href='../S/6.html#L357'>Module</a>            357 llvm_tool/mekong-utils/src/HostUtils.cpp Function *createDummyKernelWrapper(llvm::Module &amp;m, const std::string name) {</span>
+<span class='curline'><a href='../S/6.html#L373'>Module</a>            373 llvm_tool/mekong-utils/src/HostUtils.cpp llvm::CallBase *replaceKernelLaunch(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite,</span>
+<span class='curline'><a href='../S/5.html#L18'>Module</a>             18 llvm_tool/mekong-utils/src/IRUtils.cpp std::string getModulePrefix(llvm::Module *m) {</span>
+<span class='curline'><a href='../S/5.html#L67'>Module</a>             67 llvm_tool/mekong-utils/src/IRUtils.cpp void dumpModuleToFile(llvm::Module &amp;m, std::string filepath) {</span>
+<span class='curline'><a href='../S/5.html#L80'>Module</a>             80 llvm_tool/mekong-utils/src/IRUtils.cpp void dumpModuleToFile(llvm::Module &amp;m, const char *filepath) {</span>
+<span class='curline'><a href='../S/5.html#L92'>Module</a>             92 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::GlobalVariable *createGlobalString(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/5.html#L106'>Module</a>            106 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::Constant *createGlobalStringPtr(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/5.html#L117'>Module</a>            117 llvm_tool/mekong-utils/src/IRUtils.cpp void linkIR(llvm::StringRef ir, llvm::Module &amp;m) {</span>
+<span class='curline'><a href='../S/5.html#L121'>Module</a>            121 llvm_tool/mekong-utils/src/IRUtils.cpp   std::unique_ptr&lt;llvm::Module&gt; irModule = llvm::parseIR(</span>
+<span class='curline'><a href='../S/5.html#L131'>Module</a>            131 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::Function *getPrintfFunc(llvm::Module &amp;module) {</span>
+<span class='curline'><a href='../S/5.html#L144'>Module</a>            144 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::CallInst *callPrintf(llvm::Module &amp;module, std::string str,</span>
+<span class='curline'><a href='../S/5.html#L169'>Module</a>            169 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::CallInst *callPrintf(llvm::Module &amp;module, llvm::IRBuilder&lt;&gt; &amp;builder,</span>
+</pre>
+</body>
+</html>

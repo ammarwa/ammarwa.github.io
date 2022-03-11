@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>ch_dev</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/633.html#L145'>ch_dev</a>            145 tracing_tool/nvbit/utils/channel.hpp     ChannelDev *ch_dev;</span>
+<span class='curline'><a href='../S/633.html#L162'>ch_dev</a>            162 tracing_tool/nvbit/utils/channel.hpp     void init(int id, int buff_size, ChannelDev *ch_dev,</span>
+<span class='curline'><a href='../S/633.html#L190'>ch_dev</a>            190 tracing_tool/nvbit/utils/channel.hpp         this-&gt;ch_dev = ch_dev;</span>
+<span class='curline'><a href='../S/633.html#L191'>ch_dev</a>            191 tracing_tool/nvbit/utils/channel.hpp         ch_dev-&gt;init(id, (int *)doorbell, buff_size);</span>
+<span class='curline'><a href='../S/633.html#L193'>ch_dev</a>            193 tracing_tool/nvbit/utils/channel.hpp         dev_buff = ch_dev-&gt;buff;</span>
+<span class='curline'><a href='../S/633.html#L218'>ch_dev</a>            218 tracing_tool/nvbit/utils/channel.hpp             CUDA_SAFECALL(cudaFree(ch_dev-&gt;buff));</span>
+</pre>
+</body>
+</html>

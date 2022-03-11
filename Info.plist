@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+     <key>CFBundleName</key>
+     <string>NMSU | Pearl Lab | PPT-GPU</string>
+     <key>CFBundleIdentifier</key>
+     <string>edu.nmsu.pearl.ppt-gpu</string>
+     <key>CFBundleVersion</key>
+     <string>1.2</string>
+     <key>DocSetFeedName</key>
+     <string>NMSU | PEARL Lab | PPT-GPU</string>
+     <key>DocSetPublisherIdentifier</key>
+     <string>edu.nmsu.pearl</string>
+     <key>DocSetPublisherName</key>
+     <string>PearlLab@NMSU</string>
+     <key>DashDocSetFamily</key>
+     <string>doxy</string>
+     <key>DocSetPlatformFamily</key>
+     <string>doxygen</string>
+</dict>
+</plist>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>file</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L211'>file</a>              211 llvm_tool/lib/fluxDevicePass.cpp     raw_fd_ostream file(rt_path + ".cu", EC, llvm::sys::fs::OpenFlags(1)); // OF_Text</span>
+<span class='curline'><a href='../S/26.html#L213'>file</a>              213 llvm_tool/lib/fluxDevicePass.cpp     file.write((const char *)deviceRuntime_cu, deviceRuntime_cu_len);</span>
+<span class='curline'><a href='../S/26.html#L214'>file</a>              214 llvm_tool/lib/fluxDevicePass.cpp     file.flush();</span>
+<span class='curline'><a href='../S/26.html#L224'>file</a>              224 llvm_tool/lib/fluxDevicePass.cpp     std::ifstream file(rt_path + ".ll");</span>
+<span class='curline'><a href='../S/26.html#L225'>file</a>              225 llvm_tool/lib/fluxDevicePass.cpp     file.seekg(0, std::ios::end);</span>
+<span class='curline'><a href='../S/26.html#L226'>file</a>              226 llvm_tool/lib/fluxDevicePass.cpp     auto size = file.tellg();</span>
+<span class='curline'><a href='../S/26.html#L228'>file</a>              228 llvm_tool/lib/fluxDevicePass.cpp     file.seekg(0);</span>
+<span class='curline'><a href='../S/26.html#L229'>file</a>              229 llvm_tool/lib/fluxDevicePass.cpp     file.read(&amp;deviceRuntime_ll[0], size);</span>
+<span class='curline'><a href='../S/24.html#L44'>file</a>               44 llvm_tool/lib/fluxHostPass.cpp   std::ifstream file(deviceInfoFile, std::ios::binary | std::ios::ate);</span>
+<span class='curline'><a href='../S/24.html#L45'>file</a>               45 llvm_tool/lib/fluxHostPass.cpp   auto size = file.tellg();</span>
+<span class='curline'><a href='../S/24.html#L52'>file</a>               52 llvm_tool/lib/fluxHostPass.cpp   file.seekg(0, std::ios::beg);</span>
+<span class='curline'><a href='../S/24.html#L55'>file</a>               55 llvm_tool/lib/fluxHostPass.cpp   assert(file.read(&amp;buffer[0], size));</span>
+<span class='curline'><a href='../S/10.html#L72'>file</a>               72 llvm_tool/mekong-utils/inc/ptx_parser.h   std::ifstream file(filename, std::ios::binary | std::ios::ate);</span>
+<span class='curline'><a href='../S/10.html#L73'>file</a>               73 llvm_tool/mekong-utils/inc/ptx_parser.h   auto size = file.tellg();</span>
+<span class='curline'><a href='../S/10.html#L74'>file</a>               74 llvm_tool/mekong-utils/inc/ptx_parser.h   file.seekg(0, std::ios::beg);</span>
+<span class='curline'><a href='../S/10.html#L77'>file</a>               77 llvm_tool/mekong-utils/inc/ptx_parser.h   if (!file.read(&amp;buffer[0], size))</span>
+<span class='curline'><a href='../S/5.html#L29'>file</a>               29 llvm_tool/mekong-utils/src/IRUtils.cpp   std::ifstream file(sourceFile, std::ios::binary | std::ios::ate);</span>
+<span class='curline'><a href='../S/5.html#L30'>file</a>               30 llvm_tool/mekong-utils/src/IRUtils.cpp   auto size = file.tellg();</span>
+<span class='curline'><a href='../S/5.html#L31'>file</a>               31 llvm_tool/mekong-utils/src/IRUtils.cpp   file.seekg(0, std::ios::beg);</span>
+<span class='curline'><a href='../S/5.html#L34'>file</a>               34 llvm_tool/mekong-utils/src/IRUtils.cpp   assert(file.read(&amp;buffer[0], size &amp;&amp; "Could not read file!"));</span>
+<span class='curline'><a href='../S/5.html#L72'>file</a>               72 llvm_tool/mekong-utils/src/IRUtils.cpp     raw_fd_ostream file(filepath, EC, llvm::sys::fs::OpenFlags(1)); // OF_Text</span>
+<span class='curline'><a href='../S/5.html#L75'>file</a>               75 llvm_tool/mekong-utils/src/IRUtils.cpp     llvm::WriteBitcodeToFile(m, file);</span>
+<span class='curline'><a href='../S/5.html#L76'>file</a>               76 llvm_tool/mekong-utils/src/IRUtils.cpp     file.flush();</span>
+</pre>
+</body>
+</html>

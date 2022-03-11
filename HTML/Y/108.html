@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>M</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/20.html#L21'>M</a>                  21 llvm_tool/inc/cudaFluxPasses.h   virtual bool runOnModule(llvm::Module &amp;M) override;</span>
+<span class='curline'><a href='../S/20.html#L35'>M</a>                  35 llvm_tool/inc/cudaFluxPasses.h   virtual bool runOnModule(llvm::Module &amp;M) override;</span>
+<span class='curline'><a href='../S/26.html#L38'>M</a>                  38 llvm_tool/lib/fluxDevicePass.cpp std::vector&lt;mekong::PTXFunction&gt; ptxInstructionAnalysis(Module &amp;M) {</span>
+<span class='curline'><a href='../S/26.html#L40'>M</a>                  40 llvm_tool/lib/fluxDevicePass.cpp   std::string prefix = mekong::getModulePrefix(&amp;M);</span>
+<span class='curline'><a href='../S/26.html#L46'>M</a>                  46 llvm_tool/lib/fluxDevicePass.cpp   mekong::dumpModuleToFile(M, byteCodeFile);</span>
+<span class='curline'><a href='../S/26.html#L52'>M</a>                  52 llvm_tool/lib/fluxDevicePass.cpp   mekong::getKernels(M, kernels);</span>
+<span class='curline'><a href='../S/26.html#L108'>M</a>                 108 llvm_tool/lib/fluxDevicePass.cpp void basicBlockInstrumentation(Module &amp;M, std::vector&lt;mekong::PTXFunction&gt; funcVec) {</span>
+<span class='curline'><a href='../S/26.html#L110'>M</a>                 110 llvm_tool/lib/fluxDevicePass.cpp   LLVMContext &amp;ctx = M.getContext();</span>
+<span class='curline'><a href='../S/26.html#L113'>M</a>                 113 llvm_tool/lib/fluxDevicePass.cpp   Function *traceFun = M.getFunction("incBlockCounter_mt_2");</span>
+<span class='curline'><a href='../S/26.html#L117'>M</a>                 117 llvm_tool/lib/fluxDevicePass.cpp   mekong::getKernels(M, kernels);</span>
+<span class='curline'><a href='../S/26.html#L176'>M</a>                 176 llvm_tool/lib/fluxDevicePass.cpp     mekong::markKernel(M, kernelClone);</span>
+<span class='curline'><a href='../S/26.html#L180'>M</a>                 180 llvm_tool/lib/fluxDevicePass.cpp bool FluxDevicePass::runOnModule(Module &amp;M) {</span>
+<span class='curline'><a href='../S/26.html#L181'>M</a>                 181 llvm_tool/lib/fluxDevicePass.cpp   if (M.getTargetTriple().find("nvptx64") == std::string::npos)</span>
+<span class='curline'><a href='../S/26.html#L184'>M</a>                 184 llvm_tool/lib/fluxDevicePass.cpp   LLVMContext &amp;ctx = M.getContext();</span>
+<span class='curline'><a href='../S/26.html#L188'>M</a>                 188 llvm_tool/lib/fluxDevicePass.cpp   auto funcVec = ptxInstructionAnalysis(M);</span>
+<span class='curline'><a href='../S/26.html#L196'>M</a>                 196 llvm_tool/lib/fluxDevicePass.cpp   mekong::getKernels(M, kernels);</span>
+<span class='curline'><a href='../S/26.html#L234'>M</a>                 234 llvm_tool/lib/fluxDevicePass.cpp   mekong::linkIR(deviceRuntime, M);</span>
+<span class='curline'><a href='../S/26.html#L237'>M</a>                 237 llvm_tool/lib/fluxDevicePass.cpp   basicBlockInstrumentation(M, funcVec);</span>
+<span class='curline'><a href='../S/24.html#L22'>M</a>                  22 llvm_tool/lib/fluxHostPass.cpp bool FluxHostPass::runOnModule(llvm::Module &amp;M) {</span>
+<span class='curline'><a href='../S/24.html#L23'>M</a>                  23 llvm_tool/lib/fluxHostPass.cpp   if (M.getTargetTriple().find("x86_64") == std::string::npos)</span>
+<span class='curline'><a href='../S/24.html#L26'>M</a>                  26 llvm_tool/lib/fluxHostPass.cpp   LLVMContext &amp;ctx = M.getContext();</span>
+<span class='curline'><a href='../S/24.html#L30'>M</a>                  30 llvm_tool/lib/fluxHostPass.cpp   errs() &lt;&lt; M.getSDKVersion().getMajor() &lt;&lt; "." &lt;&lt; M.getSDKVersion().getMinor().getValue() &lt;&lt; "\n";</span>
+<span class='curline'><a href='../S/24.html#L39'>M</a>                  39 llvm_tool/lib/fluxHostPass.cpp   mekong::linkIR(hostRuntime, M);</span>
+<span class='curline'><a href='../S/24.html#L42'>M</a>                  42 llvm_tool/lib/fluxHostPass.cpp   std::string prefix = mekong::getModulePrefix(&amp;M);</span>
+<span class='curline'><a href='../S/24.html#L107'>M</a>                 107 llvm_tool/lib/fluxHostPass.cpp   Value *analysisStr = mekong::createGlobalStringPtr(M, StringRef(buffer));</span>
+<span class='curline'><a href='../S/24.html#L109'>M</a>                 109 llvm_tool/lib/fluxHostPass.cpp       new GlobalVariable(M, builder.getInt8Ty(), false, GlobalValue::PrivateLinkage, builder.getInt8(0),</span>
+<span class='curline'><a href='../S/24.html#L119'>M</a>                 119 llvm_tool/lib/fluxHostPass.cpp   mekong::getKernelDescriptors(M, descs);</span>
+<span class='curline'><a href='../S/24.html#L147'>M</a>                 147 llvm_tool/lib/fluxHostPass.cpp     Function *clonedKernelWrapper = mekong::createKernelWrapper(M, cloneName, cloneType);</span>
+<span class='curline'><a href='../S/24.html#L149'>M</a>                 149 llvm_tool/lib/fluxHostPass.cpp     mekong::registerKernel(M, cloneName, clonedKernelWrapper);</span>
+<span class='curline'><a href='../S/24.html#L155'>M</a>                 155 llvm_tool/lib/fluxHostPass.cpp       CallBase *confCall = mekong::getKernelConfigCall(M, launch);</span>
+<span class='curline'><a href='../S/24.html#L176'>M</a>                 176 llvm_tool/lib/fluxHostPass.cpp       Function *createBBCounterMemoryFu = M.getFunction("createBBCounterMemory");</span>
+<span class='curline'><a href='../S/24.html#L181'>M</a>                 181 llvm_tool/lib/fluxHostPass.cpp       Function *createBBCounterMemory1Fu = M.getFunction("createBBCounterMemory1");</span>
+<span class='curline'><a href='../S/24.html#L186'>M</a>                 186 llvm_tool/lib/fluxHostPass.cpp       Function *getProfilingModeFu = M.getFunction("getProfilingMode");</span>
+<span class='curline'><a href='../S/24.html#L190'>M</a>                 190 llvm_tool/lib/fluxHostPass.cpp       Function *startClockFu = M.getFunction("startClock");</span>
+<span class='curline'><a href='../S/24.html#L206'>M</a>                 206 llvm_tool/lib/fluxHostPass.cpp       CallBase *cloneLaunchCall = mekong::replaceKernelLaunch(M, launch, clonedKernelWrapper, additionalArgs);</span>
+<span class='curline'><a href='../S/24.html#L214'>M</a>                 214 llvm_tool/lib/fluxHostPass.cpp       Function *serializeCountersFu = M.getFunction("serializeBBCounter");</span>
+<span class='curline'><a href='../S/24.html#L230'>M</a>                 230 llvm_tool/lib/fluxHostPass.cpp       Function *writePTX_Analysis = M.getFunction("mekong_WritePTXBlockAnalysis");</span>
+<span class='curline'><a href='../S/17.html#L36'>M</a>                  36 llvm_tool/mekong-utils/inc/IRUtils.h llvm::GlobalVariable *createGlobalString(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/17.html#L40'>M</a>                  40 llvm_tool/mekong-utils/inc/IRUtils.h llvm::Constant *createGlobalStringPtr(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/5.html#L92'>M</a>                  92 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::GlobalVariable *createGlobalString(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/5.html#L95'>M</a>                  95 llvm_tool/mekong-utils/src/IRUtils.cpp   Constant *StrConstant = ConstantDataArray::getString(M.getContext(), Str);</span>
+<span class='curline'><a href='../S/5.html#L97'>M</a>                  97 llvm_tool/mekong-utils/src/IRUtils.cpp       M, StrConstant-&gt;getType(), true, GlobalValue::PrivateLinkage, StrConstant,</span>
+<span class='curline'><a href='../S/5.html#L106'>M</a>                 106 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::Constant *createGlobalStringPtr(llvm::Module &amp;M, llvm::StringRef Str,</span>
+<span class='curline'><a href='../S/5.html#L110'>M</a>                 110 llvm_tool/mekong-utils/src/IRUtils.cpp   GlobalVariable *GV = createGlobalString(M, Str, Name, AddressSpace);</span>
+<span class='curline'><a href='../S/5.html#L111'>M</a>                 111 llvm_tool/mekong-utils/src/IRUtils.cpp   Constant *Zero = ConstantInt::get(Type::getInt32Ty(M.getContext()), 0);</span>
+</pre>
+</body>
+</html>

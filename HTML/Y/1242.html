@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>kernel</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L55'>kernel</a>             55 llvm_tool/lib/fluxDevicePass.cpp   for (Function *kernel : kernels) {</span>
+<span class='curline'><a href='../S/26.html#L56'>kernel</a>             56 llvm_tool/lib/fluxDevicePass.cpp     target_proc = kernel-&gt;getFnAttribute("target-cpu").getValueAsString();</span>
+<span class='curline'><a href='../S/26.html#L57'>kernel</a>             57 llvm_tool/lib/fluxDevicePass.cpp     target_features = kernel-&gt;getFnAttribute("target-features").getValueAsString();</span>
+<span class='curline'><a href='../S/26.html#L120'>kernel</a>            120 llvm_tool/lib/fluxDevicePass.cpp   for (Function *kernel : kernels) {</span>
+<span class='curline'><a href='../S/26.html#L121'>kernel</a>            121 llvm_tool/lib/fluxDevicePass.cpp     errs() &lt;&lt; "CUDA Flux: Working on kernel: " + kernel-&gt;getName() + "\n";</span>
+<span class='curline'><a href='../S/26.html#L127'>kernel</a>            127 llvm_tool/lib/fluxDevicePass.cpp       errs() &lt;&lt; "CUDA Flux: WARNING for kernel " + kernel-&gt;getName() + ": FunctionCalls are not supported yet!\n";</span>
+<span class='curline'><a href='../S/26.html#L135'>kernel</a>            135 llvm_tool/lib/fluxDevicePass.cpp     Function *kernelClone = mekong::cloneAndAddArgs(kernel, args, {"bblist", "bblist1", "n_banks", "profiling_mode"});</span>
+<span class='curline'><a href='../S/26.html#L140'>kernel</a>            140 llvm_tool/lib/fluxDevicePass.cpp     std::map&lt;BasicBlock *, int&gt; blockIDs = mekong::getBlockIDMap(kernelClone, funcVec, kernel-&gt;getName().str());</span>
+<span class='curline'><a href='../S/26.html#L198'>kernel</a>            198 llvm_tool/lib/fluxDevicePass.cpp   for (Function *kernel : kernels) {</span>
+<span class='curline'><a href='../S/26.html#L199'>kernel</a>            199 llvm_tool/lib/fluxDevicePass.cpp     target_proc = kernel-&gt;getFnAttribute("target-cpu").getValueAsString();</span>
+<span class='curline'><a href='../S/12.html#L20'>kernel</a>             20 llvm_tool/mekong-utils/inc/DeviceUtils.h void loadGlobalVar(llvm::Function *kernel, llvm::GlobalVariable *gv,</span>
+<span class='curline'><a href='../S/12.html#L27'>kernel</a>             27 llvm_tool/mekong-utils/inc/DeviceUtils.h void markKernel(llvm::Module &amp;m, llvm::Function *kernel);</span>
+<span class='curline'><a href='../S/8.html#L24'>kernel</a>             24 llvm_tool/mekong-utils/src/DeviceUtils.cpp           if (Function *kernel = dyn_cast&lt;Function&gt;(v-&gt;getValue())) {</span>
+<span class='curline'><a href='../S/8.html#L25'>kernel</a>             25 llvm_tool/mekong-utils/src/DeviceUtils.cpp             assert(kernel != nullptr &amp;&amp; "Kernel is nullptr");</span>
+<span class='curline'><a href='../S/8.html#L26'>kernel</a>             26 llvm_tool/mekong-utils/src/DeviceUtils.cpp             kernels.push_back(kernel);</span>
+<span class='curline'><a href='../S/8.html#L92'>kernel</a>             92 llvm_tool/mekong-utils/src/DeviceUtils.cpp void loadGlobalVar(Function *kernel, GlobalVariable *gv, Value *&amp;val) {</span>
+<span class='curline'><a href='../S/8.html#L93'>kernel</a>             93 llvm_tool/mekong-utils/src/DeviceUtils.cpp   Instruction *insertPoint = &amp;*(kernel-&gt;begin()-&gt;begin());</span>
+<span class='curline'><a href='../S/8.html#L105'>kernel</a>            105 llvm_tool/mekong-utils/src/DeviceUtils.cpp void markKernel(llvm::Module &amp;m, llvm::Function *kernel) {</span>
+<span class='curline'><a href='../S/8.html#L111'>kernel</a>            111 llvm_tool/mekong-utils/src/DeviceUtils.cpp         ctx, {ValueAsMetadata::get(kernel), MDString::get(ctx, "kernel"),</span>
+</pre>
+</body>
+</html>

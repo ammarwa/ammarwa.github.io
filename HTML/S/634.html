@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>tracing_tool/nvbit/nvbit_tool.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/650.html'>tracing_tool</a>/<a href='../files/651.html'>nvbit</a>/nvbit_tool.h</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L41'>[^]</a><a href='#L79'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L41' title='Defined at 41.'>gen_mref_addr</a></li>
+<li><a href='#L70' title='Defined at 70.'>load_module_nvbit_kernel</a></li>
+<li><a href='#L79' title='Defined at 79.'>nvbit_at_context_init_hook</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='comment'>/* Copyright (c) 2019, NVIDIA CORPORATION. All rights reserved.</em>
+<a id='L2' name='L2'></a>   2 <em class='comment'> *</em>
+<a id='L3' name='L3'></a>   3 <em class='comment'> * Redistribution and use in source and binary forms, with or without</em>
+<a id='L4' name='L4'></a>   4 <em class='comment'> * modification, are permitted provided that the following conditions</em>
+<a id='L5' name='L5'></a>   5 <em class='comment'> * are met:</em>
+<a id='L6' name='L6'></a>   6 <em class='comment'> *  * Redistributions of source code must retain the above copyright</em>
+<a id='L7' name='L7'></a>   7 <em class='comment'> *    notice, this list of conditions and the following disclaimer.</em>
+<a id='L8' name='L8'></a>   8 <em class='comment'> *  * Redistributions in binary form must reproduce the above copyright</em>
+<a id='L9' name='L9'></a>   9 <em class='comment'> *    notice, this list of conditions and the following disclaimer in the</em>
+<a id='L10' name='L10'></a>  10 <em class='comment'> *    documentation and/or other materials provided with the distribution.</em>
+<a id='L11' name='L11'></a>  11 <em class='comment'> *  * Neither the name of NVIDIA CORPORATION nor the names of its</em>
+<a id='L12' name='L12'></a>  12 <em class='comment'> *    contributors may be used to endorse or promote products derived</em>
+<a id='L13' name='L13'></a>  13 <em class='comment'> *    from this software without specific prior written permission.</em>
+<a id='L14' name='L14'></a>  14 <em class='comment'> *</em>
+<a id='L15' name='L15'></a>  15 <em class='comment'> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS'' AND ANY</em>
+<a id='L16' name='L16'></a>  16 <em class='comment'> * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</em>
+<a id='L17' name='L17'></a>  17 <em class='comment'> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</em>
+<a id='L18' name='L18'></a>  18 <em class='comment'> * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR</em>
+<a id='L19' name='L19'></a>  19 <em class='comment'> * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,</em>
+<a id='L20' name='L20'></a>  20 <em class='comment'> * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,</em>
+<a id='L21' name='L21'></a>  21 <em class='comment'> * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR</em>
+<a id='L22' name='L22'></a>  22 <em class='comment'> * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY</em>
+<a id='L23' name='L23'></a>  23 <em class='comment'> * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</em>
+<a id='L24' name='L24'></a>  24 <em class='comment'> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</em>
+<a id='L25' name='L25'></a>  25 <em class='comment'> * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</em>
+<a id='L26' name='L26'></a>  26 <em class='comment'> */</em>
+<a id='L27' name='L27'></a>  27 
+<a id='L28' name='L28'></a>  28 <em class='comment'>/* This file needs to be include once in your nvbit tool, it provides hooks to</em>
+<a id='L29' name='L29'></a>  29 <em class='comment'> * the nvbit core library to properly load this tool.</em>
+<a id='L30' name='L30'></a>  30 <em class='comment'> * Do not modify!!!  */</em>
+<a id='L31' name='L31'></a>  31 
+<a id='L32' name='L32'></a>  32 <em class='sharp'>#pragma</em> once
+<a id='L33' name='L33'></a>  33 <em class='sharp'>#include</em> &lt;stdio.h&gt;
+<a id='L34' name='L34'></a>  34 <em class='sharp'>#include</em> &lt;cassert&gt;
+<a id='L35' name='L35'></a>  35 <em class='sharp'>#include</em> &lt;stdint.h&gt;
+<a id='L36' name='L36'></a>  36 
+<a id='L37' name='L37'></a>  37 <em class='sharp'>#define</em> <a href='../R/130.html' title='Multiple referred from 2 places.'>SIGN_EXTEND64</a>(<a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a>) ((((<a href='../Y/1210.html' title='Multiple used in 3 places.'>int64_t</a>)(<a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a>)) &lt;&lt; 32) &gt;&gt; 32)
+<a id='L38' name='L38'></a>  38 
+<a id='L39' name='L39'></a>  39 <em class='comment'>/* generic address generation code */</em>
+<a id='L40' name='L40'></a>  40 <strong class='reserved'>extern</strong> "C" <a href='../Y/212.html' title='Multiple used in 26 places.'>__device__</a> <a href='../Y/218.html' title='Multiple used in 17 places.'>__noinline__</a> <a href='../Y/1776.html' title='Multiple used in 37 places.'>uint64_t</a>
+<a id='L41' name='L41'></a>  41 <a href='../S/634.html#L73' title='Referred from 73 in tracing_tool/nvbit/nvbit_tool.h.'>gen_mref_addr</a>(<a href='../Y/1775.html' title='Multiple used in 19 places.'>uint32_t</a> <a href='../Y/1595.html' title='Multiple used in 3 places.'>ra_high</a>, <strong class='reserved'>int</strong> <a href='../Y/1233.html' title='Multiple used in 3 places.'>is_ra64</a>, <a href='../Y/1775.html' title='Multiple used in 19 places.'>uint32_t</a> <a href='../Y/1596.html' title='Multiple used in 4 places.'>ra_low</a>, <strong class='reserved'>int</strong> <a href='../Y/1599.html' title='Multiple used in 4 places.'>ra_stride</a>,
+<a id='L42' name='L42'></a>  42               <a href='../Y/1775.html' title='Multiple used in 19 places.'>uint32_t</a> <a href='../Y/1629.html' title='Multiple used in 3 places.'>ru_high</a>, <strong class='reserved'>int</strong> <a href='../Y/1234.html' title='Multiple used in 3 places.'>is_ru64</a>, <a href='../Y/1775.html' title='Multiple used in 19 places.'>uint32_t</a> <a href='../Y/1630.html' title='Multiple used in 4 places.'>ru_low</a>, <a href='../Y/1207.html' title='Multiple used in 19 places.'>int32_t</a> <a href='../Y/1193.html' title='Multiple used in 4 places.'>imm</a>,
+<a id='L43' name='L43'></a>  43               <a href='../Y/1775.html' title='Multiple used in 19 places.'>uint32_t</a> mref_idx <em class='comment'>/* unused */</em>) <em class='brace'>{</em>
+<a id='L44' name='L44'></a>  44     <a href='../Y/1210.html' title='Multiple used in 3 places.'>int64_t</a> <a href='../Y/284.html' title='Multiple used in 7 places.'>base_addr</a> = 0;
+<a id='L45' name='L45'></a>  45 
+<a id='L46' name='L46'></a>  46     <strong class='reserved'>if</strong> (<a href='../Y/1233.html' title='Multiple used in 3 places.'>is_ra64</a>) <em class='brace'>{</em>
+<a id='L47' name='L47'></a>  47         <a href='../Y/284.html' title='Multiple used in 7 places.'>base_addr</a> +=
+<a id='L48' name='L48'></a>  48             (((<a href='../Y/1776.html' title='Multiple used in 37 places.'>uint64_t</a>)<a href='../Y/1595.html' title='Multiple used in 3 places.'>ra_high</a>) &lt;&lt; 32) | ((<a href='../Y/1776.html' title='Multiple used in 37 places.'>uint64_t</a>)<a href='../Y/1596.html' title='Multiple used in 4 places.'>ra_low</a> * <a href='../Y/1599.html' title='Multiple used in 4 places.'>ra_stride</a>);
+<a id='L49' name='L49'></a>  49     <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L50' name='L50'></a>  50         <a href='../Y/284.html' title='Multiple used in 7 places.'>base_addr</a> += <a href='../S/634.html#L37' title='Defined at 37 in tracing_tool/nvbit/nvbit_tool.h.'>SIGN_EXTEND64</a>(<a href='../Y/1596.html' title='Multiple used in 4 places.'>ra_low</a> * <a href='../Y/1599.html' title='Multiple used in 4 places.'>ra_stride</a>);
+<a id='L51' name='L51'></a>  51     <em class='brace'>}</em>
+<a id='L52' name='L52'></a>  52 
+<a id='L53' name='L53'></a>  53     <strong class='reserved'>if</strong> (<a href='../Y/1234.html' title='Multiple used in 3 places.'>is_ru64</a>) <em class='brace'>{</em>
+<a id='L54' name='L54'></a>  54         <a href='../Y/284.html' title='Multiple used in 7 places.'>base_addr</a> += (((<a href='../Y/1776.html' title='Multiple used in 37 places.'>uint64_t</a>)<a href='../Y/1629.html' title='Multiple used in 3 places.'>ru_high</a>) &lt;&lt; 32) | ((<a href='../Y/1776.html' title='Multiple used in 37 places.'>uint64_t</a>)<a href='../Y/1630.html' title='Multiple used in 4 places.'>ru_low</a>);
+<a id='L55' name='L55'></a>  55     <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L56' name='L56'></a>  56         <a href='../Y/284.html' title='Multiple used in 7 places.'>base_addr</a> += <a href='../S/634.html#L37' title='Defined at 37 in tracing_tool/nvbit/nvbit_tool.h.'>SIGN_EXTEND64</a>(<a href='../Y/1630.html' title='Multiple used in 4 places.'>ru_low</a>);
+<a id='L57' name='L57'></a>  57     <em class='brace'>}</em>
+<a id='L58' name='L58'></a>  58 
+<a id='L59' name='L59'></a>  59     <a href='../Y/1776.html' title='Multiple used in 37 places.'>uint64_t</a> <a href='../Y/237.html' title='Multiple used in 23 places.'>addr</a> = <a href='../Y/284.html' title='Multiple used in 7 places.'>base_addr</a> + <a href='../Y/1193.html' title='Multiple used in 4 places.'>imm</a>;
+<a id='L60' name='L60'></a>  60 <em class='sharp'>#if</em> 0
+<a id='L61' name='L61'></a>  61     <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>(
+<a id='L62' name='L62'></a>  62         "ra_high %d - is_ra64 %d - ra_low %d - ra_stride %d - ru_high %d - "
+<a id='L63' name='L63'></a>  63         "is_ru64 %d - ru_low %d - imm %d base_addr %lx addr %lx\n",
+<a id='L64' name='L64'></a>  64         <a href='../Y/1595.html' title='Multiple used in 3 places.'>ra_high</a>, <a href='../Y/1233.html' title='Multiple used in 3 places.'>is_ra64</a>, <a href='../Y/1596.html' title='Multiple used in 4 places.'>ra_low</a>, <a href='../Y/1599.html' title='Multiple used in 4 places.'>ra_stride</a>, <a href='../Y/1629.html' title='Multiple used in 3 places.'>ru_high</a>, <a href='../Y/1234.html' title='Multiple used in 3 places.'>is_ru64</a>, <a href='../Y/1630.html' title='Multiple used in 4 places.'>ru_low</a>, <a href='../Y/1193.html' title='Multiple used in 4 places.'>imm</a>,
+<a id='L65' name='L65'></a>  65         <a href='../Y/284.html' title='Multiple used in 7 places.'>base_addr</a>, <a href='../Y/237.html' title='Multiple used in 23 places.'>addr</a>);
+<a id='L66' name='L66'></a>  66 <em class='sharp'>#endif</em>
+<a id='L67' name='L67'></a>  67     <strong class='reserved'>return</strong> <a href='../Y/237.html' title='Multiple used in 23 places.'>addr</a>;
+<a id='L68' name='L68'></a>  68 <em class='brace'>}</em>
+<a id='L69' name='L69'></a>  69 
+<a id='L70' name='L70'></a>  70 __global__ <strong class='reserved'>void</strong> <a href='../S/634.html#L81' title='Referred from 81 in tracing_tool/nvbit/nvbit_tool.h.'>load_module_nvbit_kernel</a>(<strong class='reserved'>int</strong> <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>) <em class='brace'>{</em>
+<a id='L71' name='L71'></a>  71     <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("");
+<a id='L72' name='L72'></a>  72     <strong class='reserved'>if</strong> (<a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>) <em class='brace'>{</em>
+<a id='L73' name='L73'></a>  73         <strong class='reserved'>int</strong> <a href='../Y/1748.html' title='Multiple used in 2 places.'>tmp</a> = <a href='../S/634.html#L41' title='Defined at 41 in tracing_tool/nvbit/nvbit_tool.h.'>gen_mref_addr</a>(<a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>, <a href='../Y/1799.html' title='Multiple used in 22 places.'>var</a>);
+<a id='L74' name='L74'></a>  74         <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("%d\n", <a href='../Y/1748.html' title='Multiple used in 2 places.'>tmp</a>);
+<a id='L75' name='L75'></a>  75     <em class='brace'>}</em>
+<a id='L76' name='L76'></a>  76 <em class='brace'>}</em>
+<a id='L77' name='L77'></a>  77 <strong class='reserved'>extern</strong> "C" <strong class='reserved'>void</strong> <a href='../Y/219.html' title='Multiple used in 2 places.'>__nvbit_start</a>();
+<a id='L78' name='L78'></a>  78 
+<a id='L79' name='L79'></a>  79 <strong class='reserved'>extern</strong> "C" <strong class='reserved'>void</strong> nvbit_at_context_init_hook() <em class='brace'>{</em>
+<a id='L80' name='L80'></a>  80     <a href='../Y/219.html' title='Multiple used in 2 places.'>__nvbit_start</a>();
+<a id='L81' name='L81'></a>  81     <a href='../S/634.html#L70' title='Defined at 70 in tracing_tool/nvbit/nvbit_tool.h.'>load_module_nvbit_kernel</a>&lt;&lt;&lt;1, 1&gt;&gt;&gt;(0);
+<a id='L82' name='L82'></a>  82     cudaDeviceSynchronize();
+<a id='L83' name='L83'></a>  83     <a href='../Y/267.html' title='Multiple used in 38 places.'>assert</a>(<a href='../Y/884.html' title='Multiple used in 2 places.'>cudaGetLastError</a>() == <a href='../Y/903.html' title='Multiple used in 2 places.'>cudaSuccess</a>);
+<a id='L84' name='L84'></a>  84 <em class='brace'>}</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L41'>[^]</a><a href='#L79'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

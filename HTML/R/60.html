@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>CUgraphNode</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/630.html#L12489'>CUgraphNode</a>      12489 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddKernelNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_KERNEL_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12521'>CUgraphNode</a>      12521 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphKernelNodeGetParams(CUgraphNode hNode, CUDA_KERNEL_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12544'>CUgraphNode</a>      12544 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphKernelNodeSetParams(CUgraphNode hNode, const CUDA_KERNEL_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12592'>CUgraphNode</a>      12592 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddMemcpyNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_MEMCPY3D *copyParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L12615'>CUgraphNode</a>      12615 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphMemcpyNodeGetParams(CUgraphNode hNode, CUDA_MEMCPY3D *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12638'>CUgraphNode</a>      12638 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphMemcpyNodeSetParams(CUgraphNode hNode, const CUDA_MEMCPY3D *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12680'>CUgraphNode</a>      12680 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddMemsetNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_MEMSET_NODE_PARAMS *memsetParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L12703'>CUgraphNode</a>      12703 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphMemsetNodeGetParams(CUgraphNode hNode, CUDA_MEMSET_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12726'>CUgraphNode</a>      12726 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphMemsetNodeSetParams(CUgraphNode hNode, const CUDA_MEMSET_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12767'>CUgraphNode</a>      12767 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddHostNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_HOST_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12790'>CUgraphNode</a>      12790 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphHostNodeGetParams(CUgraphNode hNode, CUDA_HOST_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12813'>CUgraphNode</a>      12813 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphHostNodeSetParams(CUgraphNode hNode, const CUDA_HOST_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L12851'>CUgraphNode</a>      12851 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddChildGraphNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, CUgraph childGraph);</span>
+<span class='curline'><a href='../S/630.html#L12875'>CUgraphNode</a>      12875 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphChildGraphNodeGetGraph(CUgraphNode hNode, CUgraph *phGraph);</span>
+<span class='curline'><a href='../S/630.html#L12913'>CUgraphNode</a>      12913 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddEmptyNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies);</span>
+<span class='curline'><a href='../S/630.html#L12964'>CUgraphNode</a>      12964 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphNodeFindInClone(CUgraphNode *phNode, CUgraphNode hOriginalNode, CUgraph hClonedGraph);</span>
+<span class='curline'><a href='../S/630.html#L12995'>CUgraphNode</a>      12995 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphNodeGetType(CUgraphNode hNode, CUgraphNodeType *type);</span>
+<span class='curline'><a href='../S/630.html#L13026'>CUgraphNode</a>      13026 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphGetNodes(CUgraph hGraph, CUgraphNode *nodes, size_t *numNodes);</span>
+<span class='curline'><a href='../S/630.html#L13057'>CUgraphNode</a>      13057 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphGetRootNodes(CUgraph hGraph, CUgraphNode *rootNodes, size_t *numRootNodes);</span>
+<span class='curline'><a href='../S/630.html#L13091'>CUgraphNode</a>      13091 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphGetEdges(CUgraph hGraph, CUgraphNode *from, CUgraphNode *to, size_t *numEdges);</span>
+<span class='curline'><a href='../S/630.html#L13122'>CUgraphNode</a>      13122 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphNodeGetDependencies(CUgraphNode hNode, CUgraphNode *dependencies, size_t *numDependencies);</span>
+<span class='curline'><a href='../S/630.html#L13154'>CUgraphNode</a>      13154 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphNodeGetDependentNodes(CUgraphNode hNode, CUgraphNode *dependentNodes, size_t *numDependentNodes);</span>
+<span class='curline'><a href='../S/630.html#L13183'>CUgraphNode</a>      13183 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddDependencies(CUgraph hGraph, const CUgraphNode *from, const CUgraphNode *to, size_t numDependencies);</span>
+<span class='curline'><a href='../S/630.html#L13212'>CUgraphNode</a>      13212 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphRemoveDependencies(CUgraph hGraph, const CUgraphNode *from, const CUgraphNode *to, size_t numDependencies);</span>
+<span class='curline'><a href='../S/630.html#L13236'>CUgraphNode</a>      13236 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphDestroyNode(CUgraphNode hNode);</span>
+<span class='curline'><a href='../S/630.html#L13272'>CUgraphNode</a>      13272 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphInstantiate(CUgraphExec *phGraphExec, CUgraph hGraph, CUgraphNode *phErrorNode, char *logBuffer, size_t bufferSize);</span>
+<span class='curline'><a href='../S/630.html#L13304'>CUgraphNode</a>      13304 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecKernelNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_KERNEL_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L13342'>CUgraphNode</a>      13342 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecMemcpyNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_MEMCPY3D *copyParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L13380'>CUgraphNode</a>      13380 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecMemsetNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_MEMSET_NODE_PARAMS *memsetParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L13409'>CUgraphNode</a>      13409 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecHostNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_HOST_NODE_PARAMS *nodeParams);</span>
+<span class='curline'><a href='../S/630.html#L13551'>CUgraphNode</a>      13551 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecUpdate(CUgraphExec hGraphExec, CUgraph hGraph, CUgraphNode *hErrorNode_out, CUgraphExecUpdateResult *updateResult_out);</span>
+<span class='curline'><a href='../S/630.html#L13571'>CUgraphNode</a>      13571 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphKernelNodeCopyAttributes(CUgraphNode dst, CUgraphNode src);</span>
+<span class='curline'><a href='../S/630.html#L13592'>CUgraphNode</a>      13592 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphKernelNodeGetAttribute(CUgraphNode hNode, CUkernelNodeAttrID attr,</span>
+<span class='curline'><a href='../S/630.html#L13614'>CUgraphNode</a>      13614 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphKernelNodeSetAttribute(CUgraphNode hNode, CUkernelNodeAttrID attr,</span>
+<span class='curline'><a href='../S/630.html#L15925'>CUgraphNode</a>      15925 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuGraphInstantiate(CUgraphExec *phGraphExec, CUgraph hGraph, CUgraphNode *phErrorNode, char *logBuffer, size_t bufferSize);</span>
+<span class='curline'><a href='../S/635.html#L1172'>CUgraphNode</a>      1172 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phGraphNode;</span>
+<span class='curline'><a href='../S/635.html#L1174'>CUgraphNode</a>      1174 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *dependencies;</span>
+<span class='curline'><a href='../S/635.html#L1180'>CUgraphNode</a>      1180 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1185'>CUgraphNode</a>      1185 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1190'>CUgraphNode</a>      1190 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phGraphNode;</span>
+<span class='curline'><a href='../S/635.html#L1192'>CUgraphNode</a>      1192 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *dependencies;</span>
+<span class='curline'><a href='../S/635.html#L1199'>CUgraphNode</a>      1199 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1204'>CUgraphNode</a>      1204 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1209'>CUgraphNode</a>      1209 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phGraphNode;</span>
+<span class='curline'><a href='../S/635.html#L1211'>CUgraphNode</a>      1211 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *dependencies;</span>
+<span class='curline'><a href='../S/635.html#L1218'>CUgraphNode</a>      1218 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1223'>CUgraphNode</a>      1223 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1228'>CUgraphNode</a>      1228 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phGraphNode;</span>
+<span class='curline'><a href='../S/635.html#L1230'>CUgraphNode</a>      1230 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *dependencies;</span>
+<span class='curline'><a href='../S/635.html#L1236'>CUgraphNode</a>      1236 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1241'>CUgraphNode</a>      1241 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1246'>CUgraphNode</a>      1246 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phGraphNode;</span>
+<span class='curline'><a href='../S/635.html#L1248'>CUgraphNode</a>      1248 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *dependencies;</span>
+<span class='curline'><a href='../S/635.html#L1254'>CUgraphNode</a>      1254 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1259'>CUgraphNode</a>      1259 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phGraphNode;</span>
+<span class='curline'><a href='../S/635.html#L1261'>CUgraphNode</a>      1261 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *dependencies;</span>
+<span class='curline'><a href='../S/635.html#L1271'>CUgraphNode</a>      1271 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phNode;</span>
+<span class='curline'><a href='../S/635.html#L1272'>CUgraphNode</a>      1272 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hOriginalNode;</span>
+<span class='curline'><a href='../S/635.html#L1277'>CUgraphNode</a>      1277 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1283'>CUgraphNode</a>      1283 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *nodes;</span>
+<span class='curline'><a href='../S/635.html#L1289'>CUgraphNode</a>      1289 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *rootNodes;</span>
+<span class='curline'><a href='../S/635.html#L1295'>CUgraphNode</a>      1295 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *from;</span>
+<span class='curline'><a href='../S/635.html#L1296'>CUgraphNode</a>      1296 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *to;</span>
+<span class='curline'><a href='../S/635.html#L1301'>CUgraphNode</a>      1301 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1302'>CUgraphNode</a>      1302 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *dependencies;</span>
+<span class='curline'><a href='../S/635.html#L1307'>CUgraphNode</a>      1307 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1308'>CUgraphNode</a>      1308 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *dependentNodes;</span>
+<span class='curline'><a href='../S/635.html#L1314'>CUgraphNode</a>      1314 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *from;</span>
+<span class='curline'><a href='../S/635.html#L1315'>CUgraphNode</a>      1315 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *to;</span>
+<span class='curline'><a href='../S/635.html#L1321'>CUgraphNode</a>      1321 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *from;</span>
+<span class='curline'><a href='../S/635.html#L1322'>CUgraphNode</a>      1322 tracing_tool/nvbit/generated_cuda_meta.h     const CUgraphNode *to;</span>
+<span class='curline'><a href='../S/635.html#L1327'>CUgraphNode</a>      1327 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1333'>CUgraphNode</a>      1333 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phErrorNode;</span>
+<span class='curline'><a href='../S/635.html#L1340'>CUgraphNode</a>      1340 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1346'>CUgraphNode</a>      1346 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1353'>CUgraphNode</a>      1353 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1360'>CUgraphNode</a>      1360 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1380'>CUgraphNode</a>      1380 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *hErrorNode_out;</span>
+<span class='curline'><a href='../S/635.html#L1385'>CUgraphNode</a>      1385 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode dst;</span>
+<span class='curline'><a href='../S/635.html#L1386'>CUgraphNode</a>      1386 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode src;</span>
+<span class='curline'><a href='../S/635.html#L1390'>CUgraphNode</a>      1390 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L1396'>CUgraphNode</a>      1396 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode hNode;</span>
+<span class='curline'><a href='../S/635.html#L2495'>CUgraphNode</a>      2495 tracing_tool/nvbit/generated_cuda_meta.h     CUgraphNode *phErrorNode;</span>
+</pre>
+</body>
+</html>

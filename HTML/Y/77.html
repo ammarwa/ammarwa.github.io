@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>FluxDevicePass</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/20.html#L16'>FluxDevicePass</a>     16 llvm_tool/inc/cudaFluxPasses.h struct FluxDevicePass : public llvm::ModulePass {</span>
+<span class='curline'><a href='../S/20.html#L19'>FluxDevicePass</a>     19 llvm_tool/inc/cudaFluxPasses.h   FluxDevicePass() : llvm::ModulePass(ID) {}</span>
+<span class='curline'><a href='../S/26.html#L180'>FluxDevicePass</a>    180 llvm_tool/lib/fluxDevicePass.cpp bool FluxDevicePass::runOnModule(Module &amp;M) {</span>
+<span class='curline'><a href='../S/26.html#L242'>FluxDevicePass</a>    242 llvm_tool/lib/fluxDevicePass.cpp void FluxDevicePass::getAnalysisUsage(AnalysisUsage &amp;AU) const {</span>
+<span class='curline'><a href='../S/26.html#L246'>FluxDevicePass</a>    246 llvm_tool/lib/fluxDevicePass.cpp void FluxDevicePass::releaseMemory() {}</span>
+<span class='curline'><a href='../S/27.html#L9'>FluxDevicePass</a>      9 llvm_tool/lib/registerPasses.cpp char FluxDevicePass::ID = 0;</span>
+<span class='curline'><a href='../S/27.html#L13'>FluxDevicePass</a>     13 llvm_tool/lib/registerPasses.cpp static RegisterPass&lt;FluxDevicePass&gt; X("nvptx-cuda-flux", "Instruments basic blocks for profiling");</span>
+<span class='curline'><a href='../S/27.html#L18'>FluxDevicePass</a>     18 llvm_tool/lib/registerPasses.cpp   PM.add(new FluxDevicePass());</span>
+</pre>
+</body>
+</html>

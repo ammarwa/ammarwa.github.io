@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>CallBase</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/24.html#L151'>CallBase</a>          151 llvm_tool/lib/fluxHostPass.cpp     std::vector&lt;CallBase *&gt; launchSites;</span>
+<span class='curline'><a href='../S/24.html#L155'>CallBase</a>          155 llvm_tool/lib/fluxHostPass.cpp       CallBase *confCall = mekong::getKernelConfigCall(M, launch);</span>
+<span class='curline'><a href='../S/24.html#L206'>CallBase</a>          206 llvm_tool/lib/fluxHostPass.cpp       CallBase *cloneLaunchCall = mekong::replaceKernelLaunch(M, launch, clonedKernelWrapper, additionalArgs);</span>
+<span class='curline'><a href='../S/15.html#L19'>CallBase</a>           19 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelLaunchSites(llvm::Function *klFun, std::vector&lt;llvm::CallBase *&gt; &amp;callSites);</span>
+<span class='curline'><a href='../S/15.html#L20'>CallBase</a>           20 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args);</span>
+<span class='curline'><a href='../S/15.html#L21'>CallBase</a>           21 llvm_tool/mekong-utils/inc/HostUtils.h llvm::CallBase *getKernelConfigCall(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite);</span>
+<span class='curline'><a href='../S/15.html#L22'>CallBase</a>           22 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config);</span>
+<span class='curline'><a href='../S/15.html#L29'>CallBase</a>           29 llvm_tool/mekong-utils/inc/HostUtils.h llvm::CallBase *replaceKernelLaunch(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite,</span>
+<span class='curline'><a href='../S/6.html#L20'>CallBase</a>           20 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase **ptr = (CallBase **)launchCallPtr;</span>
+<span class='curline'><a href='../S/6.html#L25'>CallBase</a>           25 llvm_tool/mekong-utils/src/HostUtils.cpp     if (CallBase *ci = dyn_cast_or_null&lt;CallBase&gt;(&amp;inst)) {</span>
+<span class='curline'><a href='../S/6.html#L39'>CallBase</a>           39 llvm_tool/mekong-utils/src/HostUtils.cpp           if (CallBase *launchCallBase = dyn_cast_or_null&lt;CallBase&gt;(launchCallVal)) {</span>
+<span class='curline'><a href='../S/6.html#L53'>CallBase</a>           53 llvm_tool/mekong-utils/src/HostUtils.cpp         if (CallBase *launchCallBase = dyn_cast_or_null&lt;CallBase&gt;(launchCallVal)) {</span>
+<span class='curline'><a href='../S/6.html#L82'>CallBase</a>           82 llvm_tool/mekong-utils/src/HostUtils.cpp     CallBase *callBase = dyn_cast_or_null&lt;CallBase&gt;(user);</span>
+<span class='curline'><a href='../S/6.html#L108'>CallBase</a>          108 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelLaunchSites(llvm::Function *klFun, std::vector&lt;llvm::CallBase *&gt; &amp;callSites) {</span>
+<span class='curline'><a href='../S/6.html#L110'>CallBase</a>          110 llvm_tool/mekong-utils/src/HostUtils.cpp     CallBase *callBase = dyn_cast_or_null&lt;CallBase&gt;(user);</span>
+<span class='curline'><a href='../S/6.html#L119'>CallBase</a>          119 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args) {</span>
+<span class='curline'><a href='../S/6.html#L135'>CallBase</a>          135 llvm_tool/mekong-utils/src/HostUtils.cpp CallBase *getKernelConfigCall(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite) {</span>
+<span class='curline'><a href='../S/6.html#L147'>CallBase</a>          147 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *confCall = nullptr;</span>
+<span class='curline'><a href='../S/6.html#L157'>CallBase</a>          157 llvm_tool/mekong-utils/src/HostUtils.cpp         CallBase *ci = dyn_cast_or_null&lt;CallBase&gt;(&amp;inst);</span>
+<span class='curline'><a href='../S/6.html#L178'>CallBase</a>          178 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelLaunchConfig(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;config) {</span>
+<span class='curline'><a href='../S/6.html#L179'>CallBase</a>          179 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *confCall = getKernelConfigCall(m, kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L200'>CallBase</a>          200 llvm_tool/mekong-utils/src/HostUtils.cpp void getGridConfig(llvm::CallBase *call, llvm::Value *(&amp;arguments)[4]) {</span>
+<span class='curline'><a href='../S/6.html#L232'>CallBase</a>          232 llvm_tool/mekong-utils/src/HostUtils.cpp         if (CallBase *ci = dyn_cast_or_null&lt;CallBase&gt;(&amp;inst)) {</span>
+<span class='curline'><a href='../S/6.html#L373'>CallBase</a>          373 llvm_tool/mekong-utils/src/HostUtils.cpp llvm::CallBase *replaceKernelLaunch(llvm::Module &amp;m, llvm::CallBase *kernelLaunchSite,</span>
+<span class='curline'><a href='../S/6.html#L382'>CallBase</a>          382 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *confCall = getKernelConfigCall(m, kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L426'>CallBase</a>          426 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *newLaunchCall = builder.CreateCall(replacementWrapper, args);</span>
+</pre>
+</body>
+</html>

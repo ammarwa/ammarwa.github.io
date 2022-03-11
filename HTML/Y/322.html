@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>buff_size</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/633.html#L121'>buff_size</a>         121 tracing_tool/nvbit/utils/channel.hpp     void init(int id, int *h_doorbell, int buff_size) {</span>
+<span class='curline'><a href='../S/633.html#L127'>buff_size</a>         127 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMalloc((void **)&amp;buff, buff_size));</span>
+<span class='curline'><a href='../S/633.html#L129'>buff_size</a>         129 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaMallocManaged((void **)&amp;buff, buff_size));</span>
+<span class='curline'><a href='../S/633.html#L133'>buff_size</a>         133 tracing_tool/nvbit/utils/channel.hpp         buff_end = buff + buff_size;</span>
+<span class='curline'><a href='../S/633.html#L157'>buff_size</a>         157 tracing_tool/nvbit/utils/channel.hpp     int buff_size;</span>
+<span class='curline'><a href='../S/633.html#L162'>buff_size</a>         162 tracing_tool/nvbit/utils/channel.hpp     void init(int id, int buff_size, ChannelDev *ch_dev,</span>
+<span class='curline'><a href='../S/633.html#L164'>buff_size</a>         164 tracing_tool/nvbit/utils/channel.hpp         this-&gt;buff_size = buff_size;</span>
+<span class='curline'><a href='../S/633.html#L191'>buff_size</a>         191 tracing_tool/nvbit/utils/channel.hpp         ch_dev-&gt;init(id, (int *)doorbell, buff_size);</span>
+</pre>
+</body>
+</html>

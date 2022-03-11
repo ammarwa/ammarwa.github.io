@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>y</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/614.html#L60'>y</a>                  60 reuse_distance_tool/splay.c     Tree N, *l, *r, *y;</span>
+<span class='curline'><a href='../S/614.html#L72'>y</a>                  72 reuse_distance_tool/splay.c                 y = t-&gt;left;                           /* rotate right */</span>
+<span class='curline'><a href='../S/614.html#L73'>y</a>                  73 reuse_distance_tool/splay.c                 t-&gt;left = y-&gt;right;</span>
+<span class='curline'><a href='../S/614.html#L74'>y</a>                  74 reuse_distance_tool/splay.c                 y-&gt;right = t;</span>
+<span class='curline'><a href='../S/614.html#L76'>y</a>                  76 reuse_distance_tool/splay.c                 t = y;</span>
+<span class='curline'><a href='../S/614.html#L86'>y</a>                  86 reuse_distance_tool/splay.c                 y = t-&gt;right;                          /* rotate left */</span>
+<span class='curline'><a href='../S/614.html#L87'>y</a>                  87 reuse_distance_tool/splay.c                 t-&gt;right = y-&gt;left;</span>
+<span class='curline'><a href='../S/614.html#L88'>y</a>                  88 reuse_distance_tool/splay.c                 y-&gt;left = t;</span>
+<span class='curline'><a href='../S/614.html#L90'>y</a>                  90 reuse_distance_tool/splay.c                 t = y;</span>
+<span class='curline'><a href='../S/614.html#L110'>y</a>                 110 reuse_distance_tool/splay.c     for (y = N.right; y != NULL; y = y-&gt;right) {</span>
+<span class='curline'><a href='../S/614.html#L111'>y</a>                 111 reuse_distance_tool/splay.c         y-&gt;size = l_size;</span>
+<span class='curline'><a href='../S/614.html#L112'>y</a>                 112 reuse_distance_tool/splay.c         l_size -= 1+node_size(y-&gt;left);</span>
+<span class='curline'><a href='../S/614.html#L114'>y</a>                 114 reuse_distance_tool/splay.c     for (y = N.left; y != NULL; y = y-&gt;left) {</span>
+<span class='curline'><a href='../S/614.html#L115'>y</a>                 115 reuse_distance_tool/splay.c         y-&gt;size = r_size;</span>
+<span class='curline'><a href='../S/614.html#L116'>y</a>                 116 reuse_distance_tool/splay.c         r_size -= 1+node_size(y-&gt;right);</span>
+<span class='curline'><a href='../S/630.html#L11983'>y</a>                11983 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuFuncSetBlockShape(CUfunction hfunc, int x, int y, int z);</span>
+<span class='curline'><a href='../S/635.html#L1110'>y</a>                1110 tracing_tool/nvbit/generated_cuda_meta.h     int y;</span>
+<span class='curline'><a href='../S/632.html#L32'>y</a>                  32 tracing_tool/nvbit/utils/utils.h #define CEILING(x, y) (((x) + (y)-1) / (y))</span>
+<span class='curline'><a href='../S/632.html#L77'>y</a>                  77 tracing_tool/nvbit/utils/utils.h     int block_id = blockIdx.x + blockIdx.y * gridDim.x +</span>
+<span class='curline'><a href='../S/632.html#L78'>y</a>                  78 tracing_tool/nvbit/utils/utils.h                    gridDim.x * gridDim.y * blockIdx.z;</span>
+<span class='curline'><a href='../S/632.html#L80'>y</a>                  80 tracing_tool/nvbit/utils/utils.h     int l_thread_id = (threadIdx.z * (blockDim.x * blockDim.y)) +</span>
+<span class='curline'><a href='../S/632.html#L81'>y</a>                  81 tracing_tool/nvbit/utils/utils.h                       (threadIdx.y * blockDim.x) + threadIdx.x;</span>
+<span class='curline'><a href='../S/632.html#L85'>y</a>                  85 tracing_tool/nvbit/utils/utils.h     int n_warps = CEILING(blockDim.x * blockDim.y * blockDim.z, 32);</span>
+<span class='curline'><a href='../S/632.html#L96'>y</a>                  96 tracing_tool/nvbit/utils/utils.h     asm("mov.u32 %0, %ctaid.y;" : "=r"(ret.y));</span>
+<span class='curline'><a href='../S/632.html#L105'>y</a>                 105 tracing_tool/nvbit/utils/utils.h     asm("mov.u32 %0, %nctaid.y;" : "=r"(ret.y));</span>
+</pre>
+</body>
+</html>

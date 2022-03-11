@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>BasicBlock</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L140'>BasicBlock</a>        140 llvm_tool/lib/fluxDevicePass.cpp     std::map&lt;BasicBlock *, int&gt; blockIDs = mekong::getBlockIDMap(kernelClone, funcVec, kernel-&gt;getName().str());</span>
+<span class='curline'><a href='../S/26.html#L142'>BasicBlock</a>        142 llvm_tool/lib/fluxDevicePass.cpp     for (llvm::BasicBlock &amp;bb : kernelClone-&gt;getBasicBlockList()) {</span>
+<span class='curline'><a href='../S/26.html#L163'>BasicBlock</a>        163 llvm_tool/lib/fluxDevicePass.cpp     for (BasicBlock &amp;bb : kernelClone-&gt;getBasicBlockList()) {</span>
+<span class='curline'><a href='../S/16.html#L7'>BasicBlock</a>          7 llvm_tool/mekong-utils/inc/BasicBlockEnumerator.h void visitNodes(llvm::BasicBlock *begin, llvm::BasicBlock *end, void *data,</span>
+<span class='curline'><a href='../S/16.html#L8'>BasicBlock</a>          8 llvm_tool/mekong-utils/inc/BasicBlockEnumerator.h                 bool (*visitorFunc)(llvm::BasicBlock *, void *));</span>
+<span class='curline'><a href='../S/17.html#L28'>BasicBlock</a>         28 llvm_tool/mekong-utils/inc/IRUtils.h std::map&lt;llvm::BasicBlock *, int&gt;</span>
+<span class='curline'><a href='../S/7.html#L10'>BasicBlock</a>         10 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp bool contains(BasicBlock *key, std::deque&lt;BasicBlock *&gt; &amp;frontier) {</span>
+<span class='curline'><a href='../S/7.html#L11'>BasicBlock</a>         11 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp   for (BasicBlock *item : frontier) {</span>
+<span class='curline'><a href='../S/7.html#L18'>BasicBlock</a>         18 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp void expand(BasicBlock *node, std::set&lt;BasicBlock *&gt; &amp;visited,</span>
+<span class='curline'><a href='../S/7.html#L19'>BasicBlock</a>         19 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp             std::deque&lt;BasicBlock *&gt; &amp;frontier) {</span>
+<span class='curline'><a href='../S/7.html#L22'>BasicBlock</a>         22 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp     for (BasicBlock *successor : bi-&gt;successors()) {</span>
+<span class='curline'><a href='../S/7.html#L31'>BasicBlock</a>         31 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp       BasicBlock *successor = invi-&gt;getSuccessor(i);</span>
+<span class='curline'><a href='../S/7.html#L42'>BasicBlock</a>         42 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp void visitNodes(BasicBlock *begin, BasicBlock *end, void *data,</span>
+<span class='curline'><a href='../S/7.html#L43'>BasicBlock</a>         43 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp                 bool (*visitorFunc)(BasicBlock *, void *)) {</span>
+<span class='curline'><a href='../S/7.html#L44'>BasicBlock</a>         44 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp   std::set&lt;BasicBlock *&gt; visited = {end};</span>
+<span class='curline'><a href='../S/7.html#L45'>BasicBlock</a>         45 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp   std::deque&lt;BasicBlock *&gt; frontier = {begin};</span>
+<span class='curline'><a href='../S/7.html#L48'>BasicBlock</a>         48 llvm_tool/mekong-utils/src/BasicBlockEnumerator.cpp     BasicBlock *currentNode = frontier.front();</span>
+<span class='curline'><a href='../S/6.html#L19'>BasicBlock</a>         19 llvm_tool/mekong-utils/src/HostUtils.cpp bool launchFinder(BasicBlock *block, void *launchCallPtr) {</span>
+<span class='curline'><a href='../S/6.html#L126'>BasicBlock</a>        126 llvm_tool/mekong-utils/src/HostUtils.cpp     if (dyn_cast_or_null&lt;BasicBlock&gt;(op.get()) != nullptr)</span>
+<span class='curline'><a href='../S/6.html#L148'>BasicBlock</a>        148 llvm_tool/mekong-utils/src/HostUtils.cpp   queue&lt;BasicBlock *&gt; q;</span>
+<span class='curline'><a href='../S/6.html#L151'>BasicBlock</a>        151 llvm_tool/mekong-utils/src/HostUtils.cpp     BasicBlock *currentBlock = q.front();</span>
+<span class='curline'><a href='../S/6.html#L186'>BasicBlock</a>        186 llvm_tool/mekong-utils/src/HostUtils.cpp     if (dyn_cast_or_null&lt;BasicBlock&gt;(val.get()) != nullptr)</span>
+<span class='curline'><a href='../S/6.html#L299'>BasicBlock</a>        299 llvm_tool/mekong-utils/src/HostUtils.cpp   BasicBlock *entry = BasicBlock::Create(ctx, "entry", wrapper, nullptr);</span>
+<span class='curline'><a href='../S/6.html#L365'>BasicBlock</a>        365 llvm_tool/mekong-utils/src/HostUtils.cpp   BasicBlock *entry = BasicBlock::Create(ctx, "entry", dummy, nullptr);</span>
+<span class='curline'><a href='../S/6.html#L391'>BasicBlock</a>        391 llvm_tool/mekong-utils/src/HostUtils.cpp     BasicBlock *branchTarget = confInv-&gt;getNormalDest();</span>
+<span class='curline'><a href='../S/6.html#L431'>BasicBlock</a>        431 llvm_tool/mekong-utils/src/HostUtils.cpp     BasicBlock *branchTarget = kernelInv-&gt;getNormalDest();</span>
+<span class='curline'><a href='../S/5.html#L43'>BasicBlock</a>         43 llvm_tool/mekong-utils/src/IRUtils.cpp std::map&lt;llvm::BasicBlock *, int&gt;</span>
+<span class='curline'><a href='../S/5.html#L59'>BasicBlock</a>         59 llvm_tool/mekong-utils/src/IRUtils.cpp   std::map&lt;llvm::BasicBlock *, int&gt; ptrMap;</span>
+<span class='curline'><a href='../S/5.html#L60'>BasicBlock</a>         60 llvm_tool/mekong-utils/src/IRUtils.cpp   for (llvm::BasicBlock &amp;bb : func-&gt;getBasicBlockList()) {</span>
+</pre>
+</body>
+</html>

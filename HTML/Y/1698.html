@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>stream</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/25.html#L95'>stream</a>             95 llvm_tool/lib/hostRuntime.cpp                    cudaStream_t stream, struct timeval *t1) {</span>
+<span class='curline'><a href='../S/25.html#L96'>stream</a>             96 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaStreamSynchronize(stream));</span>
+<span class='curline'><a href='../S/6.html#L329'>stream</a>            329 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *stream = &amp;*(it++); // Stream</span>
+<span class='curline'><a href='../S/6.html#L348'>stream</a>            348 llvm_tool/mekong-utils/src/HostUtils.cpp   launchKernelArgs.push_back(stream);</span>
+<span class='curline'><a href='../S/630.html#L10994'>stream</a>           10994 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuSignalExternalSemaphoresAsync(const CUexternalSemaphore *extSemArray, const CUDA_EXTERNAL_SEMAPHORE_SIGNAL_PARAMS *paramsArray, unsigned int numExtSems, CUstream stream);</span>
+<span class='curline'><a href='../S/630.html#L11068'>stream</a>           11068 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuWaitExternalSemaphoresAsync(const CUexternalSemaphore *extSemArray, const CUDA_EXTERNAL_SEMAPHORE_WAIT_PARAMS *paramsArray, unsigned int numExtSems, CUstream stream);</span>
+<span class='curline'><a href='../S/630.html#L11173'>stream</a>           11173 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L11208'>stream</a>           11208 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L11243'>stream</a>           11243 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L11277'>stream</a>           11277 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L11312'>stream</a>           11312 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15904'>stream</a>           15904 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15905'>stream</a>           15905 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15906'>stream</a>           15906 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15907'>stream</a>           15907 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15908'>stream</a>           15908 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamBatchMemOp(CUstream stream, unsigned int count, CUstreamBatchMemOpParams *paramArray, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15911'>stream</a>           15911 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuSignalExternalSemaphoresAsync(const CUexternalSemaphore *extSemArray, const CUDA_EXTERNAL_SEMAPHORE_SIGNAL_PARAMS *paramsArray, unsigned int numExtSems, CUstream stream);</span>
+<span class='curline'><a href='../S/630.html#L15912'>stream</a>           15912 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuWaitExternalSemaphoresAsync(const CUexternalSemaphore *extSemArray, const CUDA_EXTERNAL_SEMAPHORE_WAIT_PARAMS *paramsArray, unsigned int numExtSems, CUstream stream);</span>
+<span class='curline'><a href='../S/635.html#L997'>stream</a>            997 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L1004'>stream</a>           1004 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L1012'>stream</a>           1012 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L1019'>stream</a>           1019 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L1026'>stream</a>           1026 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L1033'>stream</a>           1033 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L1040'>stream</a>           1040 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L2367'>stream</a>           2367 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L2374'>stream</a>           2374 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L2381'>stream</a>           2381 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L2388'>stream</a>           2388 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L2395'>stream</a>           2395 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L2425'>stream</a>           2425 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/635.html#L2432'>stream</a>           2432 tracing_tool/nvbit/generated_cuda_meta.h     CUstream stream;</span>
+<span class='curline'><a href='../S/633.html#L144'>stream</a>            144 tracing_tool/nvbit/utils/channel.hpp     cudaStream_t stream;</span>
+<span class='curline'><a href='../S/633.html#L180'>stream</a>            180 tracing_tool/nvbit/utils/channel.hpp             &amp;stream, cudaStreamNonBlocking, priority_high));</span>
+<span class='curline'><a href='../S/633.html#L215'>stream</a>            215 tracing_tool/nvbit/utils/channel.hpp             CUDA_SAFECALL(cudaStreamDestroy(stream));</span>
+<span class='curline'><a href='../S/633.html#L238'>stream</a>            238 tracing_tool/nvbit/utils/channel.hpp                                       cudaMemcpyDeviceToHost, stream));</span>
+<span class='curline'><a href='../S/633.html#L239'>stream</a>            239 tracing_tool/nvbit/utils/channel.hpp         CUDA_SAFECALL(cudaStreamSynchronize(stream));</span>
+</pre>
+</body>
+</html>

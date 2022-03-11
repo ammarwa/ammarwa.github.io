@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>pdt</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/616.html#L22'>pdt</a>                22 reuse_distance_tool/parda.c end_keytime_t parda_generate_end(const program_data_t* pdt) {</span>
+<span class='curline'><a href='../S/616.html#L23'>pdt</a>                23 reuse_distance_tool/parda.c 	GHashTable *gh = pdt-&gt;gh;</span>
+<span class='curline'><a href='../S/616.html#L33'>pdt</a>                33 reuse_distance_tool/parda.c 	program_data_t pdt;</span>
+<span class='curline'><a href='../S/616.html#L42'>pdt</a>                42 reuse_distance_tool/parda.c 	pdt.ga = ga;</span>
+<span class='curline'><a href='../S/616.html#L43'>pdt</a>                43 reuse_distance_tool/parda.c 	pdt.gh = gh;</span>
+<span class='curline'><a href='../S/616.html#L44'>pdt</a>                44 reuse_distance_tool/parda.c 	pdt.root = root;</span>
+<span class='curline'><a href='../S/616.html#L45'>pdt</a>                45 reuse_distance_tool/parda.c 	pdt.histogram = histogram;</span>
+<span class='curline'><a href='../S/616.html#L47'>pdt</a>                47 reuse_distance_tool/parda.c 	return pdt;</span>
+<span class='curline'><a href='../S/616.html#L57'>pdt</a>                57 reuse_distance_tool/parda.c void parda_process(char* input, T tim, program_data_t* pdt) {</span>
+<span class='curline'><a href='../S/616.html#L58'>pdt</a>                58 reuse_distance_tool/parda.c 	GHashTable *gh = pdt-&gt;gh;</span>
+<span class='curline'><a href='../S/616.html#L59'>pdt</a>                59 reuse_distance_tool/parda.c 	Tree* root = pdt-&gt;root;</span>
+<span class='curline'><a href='../S/616.html#L60'>pdt</a>                60 reuse_distance_tool/parda.c 	narray_t* ga = pdt-&gt;ga;</span>
+<span class='curline'><a href='../S/616.html#L61'>pdt</a>                61 reuse_distance_tool/parda.c 	unsigned int *histogram = pdt-&gt;histogram;</span>
+<span class='curline'><a href='../S/616.html#L93'>pdt</a>                93 reuse_distance_tool/parda.c 	pdt-&gt;root = root;</span>
+<span class='curline'><a href='../S/616.html#L176'>pdt</a>               176 reuse_distance_tool/parda.c 	program_data_t pdt;</span>
+<span class='curline'><a href='../S/616.html#L184'>pdt</a>               184 reuse_distance_tool/parda.c 	pdt.ga = pdt_a-&gt;ga;</span>
+<span class='curline'><a href='../S/616.html#L185'>pdt</a>               185 reuse_distance_tool/parda.c 	pdt.root = pdt_b-&gt;root;</span>
+<span class='curline'><a href='../S/616.html#L186'>pdt</a>               186 reuse_distance_tool/parda.c 	pdt.gh = pdt_b-&gt;gh;</span>
+<span class='curline'><a href='../S/616.html#L187'>pdt</a>               187 reuse_distance_tool/parda.c 	pdt.histogram = pdt_a-&gt;histogram;</span>
+<span class='curline'><a href='../S/616.html#L190'>pdt</a>               190 reuse_distance_tool/parda.c 		pdt.histogram[i] += pdt_b-&gt;histogram[i];</span>
+<span class='curline'><a href='../S/616.html#L193'>pdt</a>               193 reuse_distance_tool/parda.c 	return pdt;</span>
+<span class='curline'><a href='../S/616.html#L293'>pdt</a>               293 reuse_distance_tool/parda.c void parda_input_with_binaryfilepointer(FILE* fp, program_data_t* pdt, long begin,long end) {</span>
+<span class='curline'><a href='../S/616.html#L312'>pdt</a>               312 reuse_distance_tool/parda.c void parda_free(program_data_t* pdt) {</span>
+<span class='curline'><a href='../S/616.html#L313'>pdt</a>               313 reuse_distance_tool/parda.c   narray_free(pdt-&gt;ga);</span>
+<span class='curline'><a href='../S/616.html#L315'>pdt</a>               315 reuse_distance_tool/parda.c   g_hash_table_destroy(pdt-&gt;gh);</span>
+<span class='curline'><a href='../S/616.html#L316'>pdt</a>               316 reuse_distance_tool/parda.c   free(pdt-&gt;histogram);</span>
+<span class='curline'><a href='../S/616.html#L317'>pdt</a>               317 reuse_distance_tool/parda.c   freetree(pdt-&gt;root);</span>
+<span class='curline'><a href='../S/620.html#L90'>pdt</a>                90 reuse_distance_tool/parda.h void parda_input_with_binaryfilepointer(FILE* fp, program_data_t* pdt, long begin, long end);</span>
+<span class='curline'><a href='../S/620.html#L91'>pdt</a>                91 reuse_distance_tool/parda.h void parda_free(program_data_t* pdt);</span>
+<span class='curline'><a href='../S/620.html#L92'>pdt</a>                92 reuse_distance_tool/parda.h end_keytime_t parda_generate_end(const program_data_t* pdt);</span>
+<span class='curline'><a href='../S/620.html#L99'>pdt</a>                99 reuse_distance_tool/parda.h void parda_print_front(const program_data_t* pdt);</span>
+<span class='curline'><a href='../S/620.html#L101'>pdt</a>               101 reuse_distance_tool/parda.h void parda_print_tree(const program_data_t* pdt);</span>
+<span class='curline'><a href='../S/620.html#L102'>pdt</a>               102 reuse_distance_tool/parda.h void parda_print_hash(const program_data_t* pdt);</span>
+<span class='curline'><a href='../S/620.html#L103'>pdt</a>               103 reuse_distance_tool/parda.h void parda_print(const program_data_t* pdt);</span>
+<span class='curline'><a href='../S/620.html#L108'>pdt</a>               108 reuse_distance_tool/parda.h void parda_process(char* input, T tim, program_data_t* pdt);</span>
+<span class='curline'><a href='../S/620.html#L305'>pdt</a>               305 reuse_distance_tool/parda.h static inline void process_one_access_shared(char* input, program_data_t* pdt, const long tim) {</span>
+<span class='curline'><a href='../S/620.html#L308'>pdt</a>               308 reuse_distance_tool/parda.h 	lookup = g_hash_table_lookup(pdt-&gt;gh, input);</span>
+<span class='curline'><a href='../S/620.html#L313'>pdt</a>               313 reuse_distance_tool/parda.h 		pdt-&gt;root=insert(tim,pdt-&gt;root);</span>
+<span class='curline'><a href='../S/620.html#L315'>pdt</a>               315 reuse_distance_tool/parda.h         narray_append_val(pdt-&gt;ga,input);</span>
+<span class='curline'><a href='../S/620.html#L321'>pdt</a>               321 reuse_distance_tool/parda.h 		g_hash_table_insert(pdt-&gt;gh, data, p_data);  // Store pointer to list element</span>
+<span class='curline'><a href='../S/620.html#L326'>pdt</a>               326 reuse_distance_tool/parda.h 		pdt-&gt;root = insert((*lookup), pdt-&gt;root);</span>
+<span class='curline'><a href='../S/620.html#L327'>pdt</a>               327 reuse_distance_tool/parda.h 		distance = node_size(pdt-&gt;root-&gt;right);</span>
+<span class='curline'><a href='../S/620.html#L328'>pdt</a>               328 reuse_distance_tool/parda.h 		pdt-&gt;root = delete(*lookup, pdt-&gt;root);</span>
+<span class='curline'><a href='../S/620.html#L329'>pdt</a>               329 reuse_distance_tool/parda.h 		pdt-&gt;root = insert(tim, pdt-&gt;root);</span>
+<span class='curline'><a href='../S/620.html#L336'>pdt</a>               336 reuse_distance_tool/parda.h 			g_hash_table_replace(pdt-&gt;gh, data, p_data);</span>
+<span class='curline'><a href='../S/620.html#L339'>pdt</a>               339 reuse_distance_tool/parda.h 				pdt-&gt;histogram[B_OVFL] += 1;</span>
+<span class='curline'><a href='../S/620.html#L341'>pdt</a>               341 reuse_distance_tool/parda.h 				pdt-&gt;histogram[distance] += 1;</span>
+<span class='curline'><a href='../S/610.html#L108'>pdt</a>               108 reuse_distance_tool/parda_omp.c     program_data_t pdt = pdt_a[nthreads - 1];</span>
+<span class='curline'><a href='../S/610.html#L109'>pdt</a>               109 reuse_distance_tool/parda_omp.c     return pdt;</span>
+<span class='curline'><a href='../S/610.html#L138'>pdt</a>               138 reuse_distance_tool/parda_omp.c     program_data_t* pdt = &amp;pdt_c;</span>
+<span class='curline'><a href='../S/610.html#L139'>pdt</a>               139 reuse_distance_tool/parda_omp.c     pdt-&gt;histogram[B_INF] += narray_get_len(pdt-&gt;ga);</span>
+<span class='curline'><a href='../S/610.html#L142'>pdt</a>               142 reuse_distance_tool/parda_omp.c     parda_print_histogram(pdt-&gt;histogram);</span>
+<span class='curline'><a href='../S/610.html#L146'>pdt</a>               146 reuse_distance_tool/parda_omp.c     parda_free(pdt);</span>
+<span class='curline'><a href='../S/608.html#L3'>pdt</a>                 3 reuse_distance_tool/parda_print.c void parda_print_front(const program_data_t* pdt) {</span>
+<span class='curline'><a href='../S/608.html#L4'>pdt</a>                 4 reuse_distance_tool/parda_print.c 	narray_t* ga = pdt-&gt;ga;</span>
+<span class='curline'><a href='../S/608.html#L28'>pdt</a>                28 reuse_distance_tool/parda_print.c void parda_print_tree(const program_data_t* pdt) {</span>
+<span class='curline'><a href='../S/608.html#L29'>pdt</a>                29 reuse_distance_tool/parda_print.c 	Tree* root = pdt-&gt;root;</span>
+<span class='curline'><a href='../S/608.html#L37'>pdt</a>                37 reuse_distance_tool/parda_print.c void parda_print_hash(const program_data_t* pdt) {</span>
+<span class='curline'><a href='../S/608.html#L39'>pdt</a>                39 reuse_distance_tool/parda_print.c 	g_hash_table_foreach(pdt-&gt;gh, (GHFunc)print_iterator, NULL);</span>
+<span class='curline'><a href='../S/608.html#L43'>pdt</a>                43 reuse_distance_tool/parda_print.c void parda_print(const program_data_t* pdt) {</span>
+<span class='curline'><a href='../S/608.html#L44'>pdt</a>                44 reuse_distance_tool/parda_print.c 	parda_print_front(pdt);</span>
+<span class='curline'><a href='../S/608.html#L45'>pdt</a>                45 reuse_distance_tool/parda_print.c 	parda_print_tree(pdt);</span>
+<span class='curline'><a href='../S/608.html#L46'>pdt</a>                46 reuse_distance_tool/parda_print.c 	parda_print_hash(pdt);</span>
+</pre>
+</body>
+</html>

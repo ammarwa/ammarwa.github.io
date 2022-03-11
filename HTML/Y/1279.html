@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>len</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/25.html#L32'>len</a>                32 llvm_tool/lib/hostRuntime.cpp extern "C" uint64_t *__attribute__((weak)) createBBCounterMemory(size_t len) {</span>
+<span class='curline'><a href='../S/25.html#L36'>len</a>                36 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMalloc(&amp;d_ptr, len * sizeof(uint64_t)));</span>
+<span class='curline'><a href='../S/25.html#L43'>len</a>                43 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMemset(d_ptr, 0, len * sizeof(uint64_t)));</span>
+<span class='curline'><a href='../S/25.html#L49'>len</a>                49 llvm_tool/lib/hostRuntime.cpp extern "C" uint64_t *__attribute__((weak)) createBBCounterMemory1(size_t len) {</span>
+<span class='curline'><a href='../S/25.html#L53'>len</a>                53 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMalloc(&amp;t_ptr, len * array_size * sizeof(uint64_t)));</span>
+<span class='curline'><a href='../S/25.html#L60'>len</a>                60 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMemset(t_ptr, 0, len * array_size * sizeof(uint64_t)));</span>
+<span class='curline'><a href='../S/25.html#L93'>len</a>                93 llvm_tool/lib/hostRuntime.cpp serializeBBCounter(uint64_t *d_blockList, uint64_t *d_blockList1, size_t len, uint32_t n_banks, const char *kernelname,</span>
+<span class='curline'><a href='../S/25.html#L104'>len</a>               104 llvm_tool/lib/hostRuntime.cpp   uint64_t *h_blockList = (uint64_t *)malloc(len * sizeof(uint64_t));</span>
+<span class='curline'><a href='../S/25.html#L105'>len</a>               105 llvm_tool/lib/hostRuntime.cpp   uint64_t *h_blockList1 = (uint64_t *)malloc(len * array_size * sizeof(uint64_t));</span>
+<span class='curline'><a href='../S/25.html#L108'>len</a>               108 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMemcpy(h_blockList, d_blockList, len * sizeof(uint64_t), cudaMemcpyDeviceToHost));</span>
+<span class='curline'><a href='../S/25.html#L109'>len</a>               109 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMemcpy(h_blockList1, d_blockList1, len * array_size * sizeof(uint64_t), cudaMemcpyDeviceToHost));</span>
+<span class='curline'><a href='../S/25.html#L111'>len</a>               111 llvm_tool/lib/hostRuntime.cpp   for (int block_ID = 0; block_ID &lt; len / n_banks; ++block_ID) {</span>
+<span class='curline'><a href='../S/25.html#L141'>len</a>               141 llvm_tool/lib/hostRuntime.cpp   for (int block_ID = 0; block_ID &lt; len / n_banks; ++block_ID) {</span>
+<span class='curline'><a href='../S/10.html#L21'>len</a>                21 llvm_tool/mekong-utils/inc/ptx_parser.h   size_t len;</span>
+<span class='curline'><a href='../S/10.html#L24'>len</a>                24 llvm_tool/mekong-utils/inc/ptx_parser.h   input_t(const char *s) : len(strlen(s)), str(new char[len + YYMAXFILL]) {</span>
+<span class='curline'><a href='../S/10.html#L25'>len</a>                25 llvm_tool/mekong-utils/inc/ptx_parser.h     memcpy(str, s, len);</span>
+<span class='curline'><a href='../S/10.html#L26'>len</a>                26 llvm_tool/mekong-utils/inc/ptx_parser.h     memset(str + len, ' ', YYMAXFILL);</span>
+<span class='curline'><a href='../S/10.html#L89'>len</a>                89 llvm_tool/mekong-utils/inc/ptx_parser.h   const char *const YYLIMIT = input.str + input.len + YYMAXFILL;</span>
+<span class='curline'><a href='../S/10.html#L3103'>len</a>              3103 llvm_tool/mekong-utils/inc/ptx_parser.h           size_t len;</span>
+<span class='curline'><a href='../S/10.html#L3105'>len</a>              3105 llvm_tool/mekong-utils/inc/ptx_parser.h             len = wpos - (bbPos);</span>
+<span class='curline'><a href='../S/10.html#L3107'>len</a>              3107 llvm_tool/mekong-utils/inc/ptx_parser.h             len = next.str.rfind("\n") - (bbPos);</span>
+<span class='curline'><a href='../S/10.html#L3109'>len</a>              3109 llvm_tool/mekong-utils/inc/ptx_parser.h           currentBB = next.str.substr(bbPos, len);</span>
+<span class='curline'><a href='../S/13.html#L5'>len</a>                 5 llvm_tool/mekong-utils/inc/x65599.h unsigned int generateHash(const char *string, size_t len) {</span>
+<span class='curline'><a href='../S/13.html#L7'>len</a>                 7 llvm_tool/mekong-utils/inc/x65599.h   for (size_t i = 0; i &lt; len; ++i) {</span>
+<span class='curline'><a href='../S/617.html#L6'>len</a>                 6 reuse_distance_tool/narray.c     na-&gt;len = 0;</span>
+<span class='curline'><a href='../S/617.html#L13'>len</a>                13 reuse_distance_tool/narray.c    if(na-&gt;len == na-&gt;capacity) {</span>
+<span class='curline'><a href='../S/617.html#L16'>len</a>                16 reuse_distance_tool/narray.c        memcpy(ndata, na-&gt;data, na-&gt;len);</span>
+<span class='curline'><a href='../S/617.html#L21'>len</a>                21 reuse_distance_tool/narray.c    memcpy(na-&gt;data + na-&gt;len, value, na-&gt;element_size);</span>
+<span class='curline'><a href='../S/617.html#L22'>len</a>                22 reuse_distance_tool/narray.c 	 na-&gt;len += na-&gt;element_size;</span>
+<span class='curline'><a href='../S/617.html#L31'>len</a>                31 reuse_distance_tool/narray.c   mdebug(fprintf(fp, "enter narray_print len=%u\n",na-&gt;len);)</span>
+<span class='curline'><a href='../S/617.html#L32'>len</a>                32 reuse_distance_tool/narray.c   unsigned len = narray_get_len(na);</span>
+<span class='curline'><a href='../S/617.html#L34'>len</a>                34 reuse_distance_tool/narray.c 	for (i = 0; i &lt; len; i++) {</span>
+<span class='curline'><a href='../S/617.html#L40'>len</a>                40 reuse_distance_tool/narray.c narray_t* narray_heaparray_new(void* data, const unsigned len, const unsigned element_size) {</span>
+<span class='curline'><a href='../S/617.html#L43'>len</a>                43 reuse_distance_tool/narray.c     na-&gt;len = len;</span>
+<span class='curline'><a href='../S/617.html#L44'>len</a>                44 reuse_distance_tool/narray.c     na-&gt;capacity = len;</span>
+<span class='curline'><a href='../S/623.html#L16'>len</a>                16 reuse_distance_tool/narray.h     unsigned len, capacity, element_size;</span>
+<span class='curline'><a href='../S/623.html#L19'>len</a>                19 reuse_distance_tool/narray.h narray_t* narray_heaparray_new(void* data, unsigned len, unsigned element_size);</span>
+<span class='curline'><a href='../S/623.html#L26'>len</a>                26 reuse_distance_tool/narray.h     return na-&gt;len/na-&gt;element_size;</span>
+<span class='curline'><a href='../S/616.html#L117'>len</a>               117 reuse_distance_tool/parda.c 	unsigned len = narray_get_len(gb);</span>
+<span class='curline'><a href='../S/616.html#L119'>len</a>               119 reuse_distance_tool/parda.c 	for(i=0; i &lt; len; i++, tim++) {</span>
+<span class='curline'><a href='../S/616.html#L149'>len</a>               149 reuse_distance_tool/parda.c 	unsigned len = narray_get_len(gkeys);</span>
+<span class='curline'><a href='../S/616.html#L154'>len</a>               154 reuse_distance_tool/parda.c 	for (i = 0; i &lt; len; i++) {</span>
+<span class='curline'><a href='../S/610.html#L54'>len</a>                54 reuse_distance_tool/parda_omp.c         int var, len;</span>
+<span class='curline'><a href='../S/610.html#L56'>len</a>                56 reuse_distance_tool/parda_omp.c         for (var = tid, len = 1; len &lt;= mlen; len = (len &lt;&lt; 1)) {</span>
+<span class='curline'><a href='../S/610.html#L58'>len</a>                58 reuse_distance_tool/parda_omp.c                 program_data_t pdt_A = pdt_a[tid - len];</span>
+<span class='curline'><a href='../S/610.html#L94'>len</a>                94 reuse_distance_tool/parda_omp.c             int var, len;</span>
+<span class='curline'><a href='../S/610.html#L95'>len</a>                95 reuse_distance_tool/parda_omp.c             for(var = tid, len = 1; var % 2 == 1; var = (var &gt;&gt; 1), len = (len &lt;&lt; 1)) {</span>
+<span class='curline'><a href='../S/610.html#L96'>len</a>                96 reuse_distance_tool/parda_omp.c                 DEBUG(printf("before while in for %d and %d\n", tid - len, tid);)</span>
+<span class='curline'><a href='../S/610.html#L97'>len</a>                97 reuse_distance_tool/parda_omp.c                 while(syn[(tid - len) &lt;&lt; 8] == 0) {</span>
+<span class='curline'><a href='../S/610.html#L100'>len</a>               100 reuse_distance_tool/parda_omp.c                 DEBUG(printf("after while in for and will merge %d and %d\n",tid - len, tid);)</span>
+<span class='curline'><a href='../S/610.html#L101'>len</a>               101 reuse_distance_tool/parda_omp.c                 pdt_a[tid] = parda_merge(&amp;pdt_a[tid - len], &amp;pdt_a[tid], &amp;pit_a[tid]);</span>
+<span class='curline'><a href='../S/610.html#L102'>len</a>               102 reuse_distance_tool/parda_omp.c                 DEBUG(printf("after merged %d and %d\n",tid-len,tid);)</span>
+<span class='curline'><a href='../S/608.html#L6'>len</a>                 6 reuse_distance_tool/parda_print.c 	unsigned len = narray_get_len(ga);</span>
+<span class='curline'><a href='../S/608.html#L8'>len</a>                 8 reuse_distance_tool/parda_print.c 	for (i = 0; i &lt; len; i++) {</span>
+<span class='curline'><a href='../S/608.html#L18'>len</a>                18 reuse_distance_tool/parda_print.c 	unsigned len = narray_get_len(gkeys);</span>
+<span class='curline'><a href='../S/608.html#L22'>len</a>                22 reuse_distance_tool/parda_print.c 	for ( i = 0; i &lt; len; i++) {</span>
+<span class='curline'><a href='../S/619.html#L33'>len</a>                33 reuse_distance_tool/seperate.c       int len = strlen(input);</span>
+<span class='curline'><a href='../S/619.html#L34'>len</a>                34 reuse_distance_tool/seperate.c       if(len &gt;= 20)  {</span>
+<span class='curline'><a href='../S/630.html#L2927'>len</a>              2927 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L5598'>len</a>              5598 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetPCIBusId(char *pciBusId, int len, CUdevice dev);</span>
+<span class='curline'><a href='../S/635.html#L93'>len</a>                93 tracing_tool/nvbit/generated_cuda_meta.h     int len;</span>
+<span class='curline'><a href='../S/635.html#L389'>len</a>               389 tracing_tool/nvbit/generated_cuda_meta.h     int len;</span>
+<span class='curline'><a href='../S/632.html#L122'>len</a>               122 tracing_tool/nvbit/utils/utils.h     void *operator new(size_t len) {</span>
+<span class='curline'><a href='../S/632.html#L124'>len</a>               124 tracing_tool/nvbit/utils/utils.h         cudaMallocManaged(&amp;ptr, len);</span>
+<span class='curline'><a href='../S/632.html#L131'>len</a>               131 tracing_tool/nvbit/utils/utils.h     void *operator new[](size_t len) {</span>
+<span class='curline'><a href='../S/632.html#L133'>len</a>               133 tracing_tool/nvbit/utils/utils.h         cudaMallocManaged(&amp;ptr, len);</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>llvm_tool/lib/fluxHostPass.cpp</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/643.html'>llvm_tool</a>/<a href='../files/645.html'>lib</a>/fluxHostPass.cpp</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L22'>[^]</a><a href='#L241'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L22' title='Defined at 22.'>runOnModule</a></li>
+<li><a href='#L239' title='Defined at 239.'>getAnalysisUsage</a></li>
+<li><a href='#L241' title='Defined at 241.'>releaseMemory</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='11.html'>Mekong-Utils.h</a>"
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#include</em> "<a href='20.html'>cudaFluxPasses.h</a>"
+<a id='L3' name='L3'></a>   3 <em class='sharp'>#include</em> "<a href='19.html'>hostRuntime.h</a>"
+<a id='L4' name='L4'></a>   4 
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> "llvm/Bitcode/BitcodeWriter.h"
+<a id='L6' name='L6'></a>   6 <em class='sharp'>#include</em> "llvm/IR/Constants.h"
+<a id='L7' name='L7'></a>   7 <em class='sharp'>#include</em> "llvm/IR/Function.h"
+<a id='L8' name='L8'></a>   8 <em class='sharp'>#include</em> "llvm/IR/IRBuilder.h"
+<a id='L9' name='L9'></a>   9 <em class='sharp'>#include</em> "llvm/IR/Instructions.h"
+<a id='L10' name='L10'></a>  10 <em class='sharp'>#include</em> "llvm/Pass.h"
+<a id='L11' name='L11'></a>  11 <em class='sharp'>#include</em> "llvm/Support/VersionTuple.h"
+<a id='L12' name='L12'></a>  12 <em class='sharp'>#include</em> "llvm/Support/raw_ostream.h"
+<a id='L13' name='L13'></a>  13 <em class='sharp'>#include</em> &lt;llvm/Transforms/Utils/Cloning.h&gt;
+<a id='L14' name='L14'></a>  14 
+<a id='L15' name='L15'></a>  15 <em class='sharp'>#include</em> &lt;fstream&gt;
+<a id='L16' name='L16'></a>  16 <em class='sharp'>#include</em> &lt;map&gt;
+<a id='L17' name='L17'></a>  17 <em class='sharp'>#include</em> &lt;string&gt;
+<a id='L18' name='L18'></a>  18 <em class='sharp'>#include</em> &lt;vector&gt;
+<a id='L19' name='L19'></a>  19 
+<a id='L20' name='L20'></a>  20 <strong class='reserved'>using</strong> <strong class='reserved'>namespace</strong> <a href='../Y/1291.html' title='Multiple used in 118 places.'>llvm</a>;
+<a id='L21' name='L21'></a>  21 
+<a id='L22' name='L22'></a>  22 <strong class='reserved'>bool</strong> <a href='../Y/78.html' title='Multiple used in 8 places.'>FluxHostPass</a>::<a href='../R/371.html' title='Multiple referred from 2 places.'>runOnModule</a>(<a href='../Y/1291.html' title='Multiple used in 118 places.'>llvm</a>::<a href='../Y/122.html' title='Multiple used in 49 places.'>Module</a> &amp;<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>) <em class='brace'>{</em>
+<a id='L23' name='L23'></a>  23   <strong class='reserved'>if</strong> (<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1117.html' title='Multiple used in 2 places.'>getTargetTriple</a>().<a href='../Y/1015.html' title='Multiple used in 29 places.'>find</a>("x86_64") == <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a>::<a href='../Y/1362.html' title='Multiple used in 23 places.'>npos</a>)
+<a id='L24' name='L24'></a>  24     <strong class='reserved'>return</strong> <strong class='reserved'>false</strong>;
+<a id='L25' name='L25'></a>  25 
+<a id='L26' name='L26'></a>  26   <a href='../Y/104.html' title='Multiple used in 13 places.'>LLVMContext</a> &amp;<a href='../Y/386.html' title='Multiple used in 71 places.'>ctx</a> = <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1072.html' title='Multiple used in 17 places.'>getContext</a>();
+<a id='L27' name='L27'></a>  27   <a href='../Y/991.html' title='Multiple used in 14 places.'>errs</a>() &lt;&lt; "CUDA Flux: instrumenting host code...\n";
+<a id='L28' name='L28'></a>  28 
+<a id='L29' name='L29'></a>  29   <a href='../Y/991.html' title='Multiple used in 14 places.'>errs</a>() &lt;&lt; "CUDA Flux: CUDA Version ";
+<a id='L30' name='L30'></a>  30   <a href='../Y/991.html' title='Multiple used in 14 places.'>errs</a>() &lt;&lt; <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1111.html' title='Multiple used in 2 places.'>getSDKVersion</a>().getMajor() &lt;&lt; "." &lt;&lt; <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1111.html' title='Multiple used in 2 places.'>getSDKVersion</a>().getMinor().<a href='../Y/1121.html' title='Multiple used in 2 places.'>getValue</a>() &lt;&lt; "\n";
+<a id='L31' name='L31'></a>  31 
+<a id='L32' name='L32'></a>  32   <em class='comment'>// Link Device Runtime //</em>
+<a id='L33' name='L33'></a>  33   <em class='comment'>// Load Memory Buffer from Headerfile</em>
+<a id='L34' name='L34'></a>  34   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/1186.html' title='Multiple used in 3 places.'>hostRuntimeNull</a>((<strong class='reserved'>const</strong> <strong class='reserved'>char</strong> *)<a href='../Y/1187.html' title='Multiple used in 2 places.'>hostRuntime_ll</a>, <a href='../Y/1188.html' title='Multiple used in 2 places.'>hostRuntime_ll_len</a>);
+<a id='L35' name='L35'></a>  35   <em class='comment'>// Add nulltermination</em>
+<a id='L36' name='L36'></a>  36   <a href='../Y/1186.html' title='Multiple used in 3 places.'>hostRuntimeNull</a>.append("\0");
+<a id='L37' name='L37'></a>  37   <a href='../Y/167.html' title='Multiple used in 16 places.'>StringRef</a> <a href='../Y/1185.html' title='Multiple used in 2 places.'>hostRuntime</a>(<a href='../Y/1186.html' title='Multiple used in 3 places.'>hostRuntimeNull</a>.<a href='../Y/336.html' title='Multiple used in 9 places.'>c_str</a>(), <a href='../Y/1186.html' title='Multiple used in 3 places.'>hostRuntimeNull</a>.<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a>());
+<a id='L38' name='L38'></a>  38   <em class='comment'>// Link against current module</em>
+<a id='L39' name='L39'></a>  39   <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/5.html#L117' title='Defined at 117 in llvm_tool/mekong-utils/src/IRUtils.cpp.'>linkIR</a>(<a href='../Y/1185.html' title='Multiple used in 2 places.'>hostRuntime</a>, <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>);
+<a id='L40' name='L40'></a>  40 
+<a id='L41' name='L41'></a>  41   <em class='comment'>// Read BlockAnalysis</em>
+<a id='L42' name='L42'></a>  42   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/1564.html' title='Multiple used in 8 places.'>prefix</a> = <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/5.html#L18' title='Defined at 18 in llvm_tool/mekong-utils/src/IRUtils.cpp.'>getModulePrefix</a>(&amp;<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>);
+<a id='L43' name='L43'></a>  43   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/937.html' title='Multiple used in 2 places.'>deviceInfoFile</a> = <a href='../Y/1564.html' title='Multiple used in 8 places.'>prefix</a> + ".out";
+<a id='L44' name='L44'></a>  44   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1191.html' title='Multiple used in 5 places.'>ifstream</a> <a href='../Y/1010.html' title='Multiple used in 23 places.'>file</a>(<a href='../Y/937.html' title='Multiple used in 2 places.'>deviceInfoFile</a>, <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1212.html' title='Multiple used in 12 places.'>ios</a>::<a href='../Y/297.html' title='Multiple used in 5 places.'>binary</a> | <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1212.html' title='Multiple used in 12 places.'>ios</a>::<a href='../Y/270.html' title='Multiple used in 3 places.'>ate</a>);
+<a id='L45' name='L45'></a>  45   <strong class='reserved'>auto</strong> <a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = <a href='../Y/1010.html' title='Multiple used in 23 places.'>file</a>.<a href='../Y/1726.html' title='Multiple used in 4 places.'>tellg</a>();
+<a id='L46' name='L46'></a>  46   <em class='comment'>// TODO Fail earlier</em>
+<a id='L47' name='L47'></a>  47   <strong class='reserved'>if</strong> (<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> &lt; 0) <em class='brace'>{</em>
+<a id='L48' name='L48'></a>  48     <a href='../Y/991.html' title='Multiple used in 14 places.'>errs</a>() &lt;&lt; "Could not read Device Analysis Info. Assume Hostcode Only. "
+<a id='L49' name='L49'></a>  49               "Terminating...\n";
+<a id='L50' name='L50'></a>  50     <strong class='reserved'>return</strong> <strong class='reserved'>true</strong>;
+<a id='L51' name='L51'></a>  51   <em class='brace'>}</em>
+<a id='L52' name='L52'></a>  52   <a href='../Y/1010.html' title='Multiple used in 23 places.'>file</a>.<a href='../Y/1635.html' title='Multiple used in 5 places.'>seekg</a>(0, <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1212.html' title='Multiple used in 12 places.'>ios</a>::<a href='../Y/292.html' title='Multiple used in 3 places.'>beg</a>);
+<a id='L53' name='L53'></a>  53 
+<a id='L54' name='L54'></a>  54   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/325.html' title='Multiple used in 20 places.'>buffer</a>(<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a>, '\0');
+<a id='L55' name='L55'></a>  55   <a href='../Y/267.html' title='Multiple used in 38 places.'>assert</a>(<a href='../Y/1010.html' title='Multiple used in 23 places.'>file</a>.<a href='../Y/1601.html' title='Multiple used in 4 places.'>read</a>(&amp;<a href='../Y/325.html' title='Multiple used in 20 places.'>buffer</a>[0], <a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a>));
+<a id='L56' name='L56'></a>  56 
+<a id='L57' name='L57'></a>  57   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1802.html' title='Multiple used in 54 places.'>vector</a>&lt;<a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a>&gt; <a href='../Y/1286.html' title='Multiple used in 42 places.'>lines</a>;
+<a id='L58' name='L58'></a>  58   <a href='../Y/1661.html' title='Multiple used in 352 places.'>size_t</a> <a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> = 0;
+<a id='L59' name='L59'></a>  59   <a href='../Y/1661.html' title='Multiple used in 352 places.'>size_t</a> <a href='../Y/1554.html' title='Multiple used in 4 places.'>pos_end</a> = <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a>::<a href='../Y/1362.html' title='Multiple used in 23 places.'>npos</a>;
+<a id='L60' name='L60'></a>  60   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/1752.html' title='Multiple used in 37 places.'>token</a>;
+<a id='L61' name='L61'></a>  61   <strong class='reserved'>while</strong> ((<a href='../Y/1554.html' title='Multiple used in 4 places.'>pos_end</a> = <a href='../Y/325.html' title='Multiple used in 20 places.'>buffer</a>.<a href='../Y/1015.html' title='Multiple used in 29 places.'>find</a>("\n", <a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a>)) != <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a>::<a href='../Y/1362.html' title='Multiple used in 23 places.'>npos</a>) <em class='brace'>{</em>
+<a id='L62' name='L62'></a>  62     <a href='../Y/1286.html' title='Multiple used in 42 places.'>lines</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/325.html' title='Multiple used in 20 places.'>buffer</a>.<a href='../Y/1705.html' title='Multiple used in 6 places.'>substr</a>(<a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a>, <a href='../Y/1554.html' title='Multiple used in 4 places.'>pos_end</a> - <a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a>));
+<a id='L63' name='L63'></a>  63     <a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> = <a href='../Y/1554.html' title='Multiple used in 4 places.'>pos_end</a> + 1;
+<a id='L64' name='L64'></a>  64   <em class='brace'>}</em>
+<a id='L65' name='L65'></a>  65 
+<a id='L66' name='L66'></a>  66   <em class='comment'>// kernel -&gt; BasicBlockCount</em>
+<a id='L67' name='L67'></a>  67   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1306.html' title='Multiple used in 6 places.'>map</a>&lt;<a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a>, <strong class='reserved'>int</strong>&gt; <a href='../Y/1243.html' title='Multiple used in 4 places.'>kernelBlockMap</a>;
+<a id='L68' name='L68'></a>  68 
+<a id='L69' name='L69'></a>  69   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> = "";
+<a id='L70' name='L70'></a>  70   <strong class='reserved'>int</strong> <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> = -1;
+<a id='L71' name='L71'></a>  71   <strong class='reserved'>for</strong> (<strong class='reserved'>int</strong> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> = 0; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a> &lt; <a href='../Y/1286.html' title='Multiple used in 42 places.'>lines</a>.<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a>(); ++<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>) <em class='brace'>{</em>
+<a id='L72' name='L72'></a>  72     <strong class='reserved'>auto</strong> <a href='../Y/1284.html' title='Multiple used in 11 places.'>line</a> = <a href='../Y/1286.html' title='Multiple used in 42 places.'>lines</a>[<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>];
+<a id='L73' name='L73'></a>  73 
+<a id='L74' name='L74'></a>  74     <em class='comment'>// If new item in yaml list reset</em>
+<a id='L75' name='L75'></a>  75     <strong class='reserved'>if</strong> (<a href='../Y/1284.html' title='Multiple used in 11 places.'>line</a>[0] == '-') <em class='brace'>{</em>
+<a id='L76' name='L76'></a>  76       <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> = "";
+<a id='L77' name='L77'></a>  77       <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> = -1;
+<a id='L78' name='L78'></a>  78     <em class='brace'>}</em>
+<a id='L79' name='L79'></a>  79 
+<a id='L80' name='L80'></a>  80     <em class='comment'>// If blockcount found, parse and store it</em>
+<a id='L81' name='L81'></a>  81     <a href='../Y/1661.html' title='Multiple used in 352 places.'>size_t</a> <a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> = <a href='../Y/1284.html' title='Multiple used in 11 places.'>line</a>.<a href='../Y/1015.html' title='Multiple used in 29 places.'>find</a>("BlockCount");
+<a id='L82' name='L82'></a>  82     <strong class='reserved'>if</strong> (<a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> != <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a>::<a href='../Y/1362.html' title='Multiple used in 23 places.'>npos</a>) <em class='brace'>{</em>
+<a id='L83' name='L83'></a>  83       <strong class='reserved'>auto</strong> <a href='../Y/378.html' title='Multiple used in 37 places.'>count</a> = <a href='../Y/1284.html' title='Multiple used in 11 places.'>line</a>.<a href='../Y/1705.html' title='Multiple used in 6 places.'>substr</a>(<a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> + 11); <em class='comment'>// BlockCount: has 11 characters</em>
+<a id='L84' name='L84'></a>  84       <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> = <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::stoi(<a href='../Y/378.html' title='Multiple used in 37 places.'>count</a>);
+<a id='L85' name='L85'></a>  85     <em class='brace'>}</em>
+<a id='L86' name='L86'></a>  86 
+<a id='L87' name='L87'></a>  87     <em class='comment'>// If name found, also store it</em>
+<a id='L88' name='L88'></a>  88     <a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> = <a href='../Y/1284.html' title='Multiple used in 11 places.'>line</a>.<a href='../Y/1015.html' title='Multiple used in 29 places.'>find</a>("Name");
+<a id='L89' name='L89'></a>  89     <strong class='reserved'>if</strong> (<a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> != <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a>::<a href='../Y/1362.html' title='Multiple used in 23 places.'>npos</a>) <em class='brace'>{</em>
+<a id='L90' name='L90'></a>  90       <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> = <a href='../Y/1284.html' title='Multiple used in 11 places.'>line</a>.<a href='../Y/1705.html' title='Multiple used in 6 places.'>substr</a>(<a href='../Y/1553.html' title='Multiple used in 16 places.'>pos</a> + 6); <em class='comment'>// 'Name: ' has 6 characters</em>
+<a id='L91' name='L91'></a>  91     <em class='brace'>}</em>
+<a id='L92' name='L92'></a>  92 
+<a id='L93' name='L93'></a>  93     <em class='comment'>// If name and blockcount have been found a valid entry can be added to the</em>
+<a id='L94' name='L94'></a>  94     <em class='comment'>// map, reset afterwards</em>
+<a id='L95' name='L95'></a>  95     <strong class='reserved'>if</strong> (<a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> != "" <a href='../Y/248.html' title='Multiple used in 6 places.'>and</a> <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> != -1) <em class='brace'>{</em>
+<a id='L96' name='L96'></a>  96       <a href='../Y/1243.html' title='Multiple used in 4 places.'>kernelBlockMap</a>[<a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a>] = <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a>;
+<a id='L97' name='L97'></a>  97       <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> = "";
+<a id='L98' name='L98'></a>  98       <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> = -1;
+<a id='L99' name='L99'></a>  99     <em class='brace'>}</em>
+<a id='L100' name='L100'></a> 100   <em class='brace'>}</em>
+<a id='L101' name='L101'></a> 101 
+<a id='L102' name='L102'></a> 102   <em class='comment'>// Insert Global String Containing the BasicBlock Analysis</em>
+<a id='L103' name='L103'></a> 103   <em class='comment'>// Create Another Global Variable indicating if the ptx analysis was already</em>
+<a id='L104' name='L104'></a> 104   <em class='comment'>// written to disk</em>
+<a id='L105' name='L105'></a> 105 
+<a id='L106' name='L106'></a> 106   <a href='../Y/97.html' title='Multiple used in 9 places.'>IRBuilder</a>&lt;&gt; <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>(<a href='../Y/386.html' title='Multiple used in 71 places.'>ctx</a>);
+<a id='L107' name='L107'></a> 107   <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/247.html' title='Multiple used in 2 places.'>analysisStr</a> = <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/5.html#L106' title='Defined at 106 in llvm_tool/mekong-utils/src/IRUtils.cpp.'>createGlobalStringPtr</a>(<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>, <a href='../Y/167.html' title='Multiple used in 16 places.'>StringRef</a>(<a href='../Y/325.html' title='Multiple used in 20 places.'>buffer</a>));
+<a id='L108' name='L108'></a> 108   <a href='../Y/91.html' title='Multiple used in 17 places.'>GlobalVariable</a> *<a href='../Y/1585.html' title='Multiple used in 2 places.'>ptxAnalysIsWritten</a> =
+<a id='L109' name='L109'></a> 109       <strong class='reserved'>new</strong> <a href='../Y/91.html' title='Multiple used in 17 places.'>GlobalVariable</a>(<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>, <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.getInt8Ty(), <strong class='reserved'>false</strong>, <a href='../Y/90.html' title='Multiple used in 5 places.'>GlobalValue</a>::<a href='../Y/148.html' title='Multiple used in 2 places.'>PrivateLinkage</a>, <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.getInt8(0),
+<a id='L110' name='L110'></a> 110                          "ptxAnalysisWritten", <a href='../Y/1365.html' title='Multiple used in 43 places.'>nullptr</a>, <a href='../Y/91.html' title='Multiple used in 17 places.'>GlobalVariable</a>::<a href='../Y/131.html' title='Multiple used in 3 places.'>NotThreadLocal</a>, 0);
+<a id='L111' name='L111'></a> 111 
+<a id='L112' name='L112'></a> 112   <em class='comment'>// Call modified kernel</em>
+<a id='L113' name='L113'></a> 113 
+<a id='L114' name='L114'></a> 114   <em class='comment'>// Get Kernel Calls and Kernels</em>
+<a id='L115' name='L115'></a> 115   <em class='comment'>// Kernel Descriptor:</em>
+<a id='L116' name='L116'></a> 116   <em class='comment'>// - handle</em>
+<a id='L117' name='L117'></a> 117   <em class='comment'>// - name</em>
+<a id='L118' name='L118'></a> 118   <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1802.html' title='Multiple used in 54 places.'>vector</a>&lt;<a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/15.html#L11' title='Defined at 11 in llvm_tool/mekong-utils/inc/HostUtils.h.'>KernelDescriptor</a>&gt; <a href='../Y/930.html' title='Multiple used in 3 places.'>descs</a>;
+<a id='L119' name='L119'></a> 119   <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/6.html#L76' title='Defined at 76 in llvm_tool/mekong-utils/src/HostUtils.cpp.'>getKernelDescriptors</a>(<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>, <a href='../Y/930.html' title='Multiple used in 3 places.'>descs</a>);
+<a id='L120' name='L120'></a> 120 
+<a id='L121' name='L121'></a> 121   <em class='comment'>// For Kernel Call</em>
+<a id='L122' name='L122'></a> 122   <em class='comment'>//   Allocate memory for trace</em>
+<a id='L123' name='L123'></a> 123   <em class='comment'>//   Memset</em>
+<a id='L124' name='L124'></a> 124   <em class='comment'>//   Copy Ptr to global variable</em>
+<a id='L125' name='L125'></a> 125   <em class='comment'>//   Stream Sync</em>
+<a id='L126' name='L126'></a> 126   <em class='comment'>//   Copy Data Back</em>
+<a id='L127' name='L127'></a> 127   <em class='comment'>//   Write Log</em>
+<a id='L128' name='L128'></a> 128   <em class='comment'>//   Free Memory</em>
+<a id='L129' name='L129'></a> 129   <strong class='reserved'>for</strong> (<strong class='reserved'>auto</strong> &amp;<a href='../Y/929.html' title='Multiple used in 16 places.'>desc</a> : <a href='../Y/930.html' title='Multiple used in 3 places.'>descs</a>) <em class='brace'>{</em>
+<a id='L130' name='L130'></a> 130 
+<a id='L131' name='L131'></a> 131     <em class='comment'>// Get Name of the Kernel</em>
+<a id='L132' name='L132'></a> 132     <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> = <a href='../Y/929.html' title='Multiple used in 16 places.'>desc</a>.<a href='../Y/1346.html' title='Multiple used in 51 places.'>name</a>.<a href='../Y/1692.html' title='Multiple used in 39 places.'>str</a>();
+<a id='L133' name='L133'></a> 133     <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1699.html' title='Multiple used in 105 places.'>string</a> <a href='../Y/363.html' title='Multiple used in 3 places.'>cloneName</a> = <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> + "_clone";
+<a id='L134' name='L134'></a> 134 
+<a id='L135' name='L135'></a> 135     <em class='comment'>// Add Parameters of original Kernel and add the Array for the BB Counters</em>
+<a id='L136' name='L136'></a> 136     <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1802.html' title='Multiple used in 54 places.'>vector</a>&lt;<a href='../Y/171.html' title='Multiple used in 23 places.'>Type</a> *&gt; <a href='../Y/364.html' title='Multiple used in 7 places.'>cloneParamenter</a>;
+<a id='L137' name='L137'></a> 137     <strong class='reserved'>for</strong> (<strong class='reserved'>auto</strong> *<a href='../Y/1771.html' title='Multiple used in 22 places.'>type</a> : <a href='../Y/929.html' title='Multiple used in 16 places.'>desc</a>.<a href='../Y/1168.html' title='Multiple used in 30 places.'>handle</a>-&gt;<a href='../Y/1077.html' title='Multiple used in 4 places.'>getFunctionType</a>()-&gt;<a href='../Y/1490.html' title='Multiple used in 12 places.'>params</a>())
+<a id='L138' name='L138'></a> 138       <a href='../Y/364.html' title='Multiple used in 7 places.'>cloneParamenter</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/1771.html' title='Multiple used in 22 places.'>type</a>);
+<a id='L139' name='L139'></a> 139     <a href='../Y/364.html' title='Multiple used in 7 places.'>cloneParamenter</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/171.html' title='Multiple used in 23 places.'>Type</a>::<a href='../Y/1084.html' title='Multiple used in 4 places.'>getInt64PtrTy</a>(<a href='../Y/386.html' title='Multiple used in 71 places.'>ctx</a>)); <em class='comment'>// Pointer to Counters for Basic Blocks</em>
+<a id='L140' name='L140'></a> 140     <a href='../Y/364.html' title='Multiple used in 7 places.'>cloneParamenter</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/171.html' title='Multiple used in 23 places.'>Type</a>::<a href='../Y/1084.html' title='Multiple used in 4 places.'>getInt64PtrTy</a>(<a href='../Y/386.html' title='Multiple used in 71 places.'>ctx</a>)); <em class='comment'>// Pointer to Counters for Basic Blocks</em>
+<a id='L141' name='L141'></a> 141     <a href='../Y/364.html' title='Multiple used in 7 places.'>cloneParamenter</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/171.html' title='Multiple used in 23 places.'>Type</a>::<a href='../Y/1082.html' title='Multiple used in 16 places.'>getInt32Ty</a>(<a href='../Y/386.html' title='Multiple used in 71 places.'>ctx</a>));    <em class='comment'>// Number of Banks for the counters</em>
+<a id='L142' name='L142'></a> 142     <a href='../Y/364.html' title='Multiple used in 7 places.'>cloneParamenter</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/171.html' title='Multiple used in 23 places.'>Type</a>::<a href='../Y/1082.html' title='Multiple used in 16 places.'>getInt32Ty</a>(<a href='../Y/386.html' title='Multiple used in 71 places.'>ctx</a>));    <em class='comment'>// Profiling Mode</em>
+<a id='L143' name='L143'></a> 143 
+<a id='L144' name='L144'></a> 144     <em class='comment'>// Create Kernelclone wrapper</em>
+<a id='L145' name='L145'></a> 145     <a href='../Y/81.html' title='Multiple used in 15 places.'>FunctionType</a> *<a href='../Y/365.html' title='Multiple used in 4 places.'>cloneType</a> =
+<a id='L146' name='L146'></a> 146         <a href='../Y/81.html' title='Multiple used in 15 places.'>FunctionType</a>::<a href='../Y/1065.html' title='Multiple used in 24 places.'>get</a>(<a href='../Y/929.html' title='Multiple used in 16 places.'>desc</a>.<a href='../Y/1168.html' title='Multiple used in 30 places.'>handle</a>-&gt;<a href='../Y/1077.html' title='Multiple used in 4 places.'>getFunctionType</a>()-&gt;<a href='../Y/1110.html' title='Multiple used in 2 places.'>getReturnType</a>(), <a href='../Y/364.html' title='Multiple used in 7 places.'>cloneParamenter</a>, <strong class='reserved'>false</strong>);
+<a id='L147' name='L147'></a> 147     <a href='../Y/80.html' title='Multiple used in 59 places.'>Function</a> *<a href='../Y/366.html' title='Multiple used in 3 places.'>clonedKernelWrapper</a> = <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/6.html#L270' title='Defined at 270 in llvm_tool/mekong-utils/src/HostUtils.cpp.'>createKernelWrapper</a>(<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>, <a href='../Y/363.html' title='Multiple used in 3 places.'>cloneName</a>, <a href='../Y/365.html' title='Multiple used in 4 places.'>cloneType</a>);
+<a id='L148' name='L148'></a> 148 
+<a id='L149' name='L149'></a> 149     <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/6.html#L212' title='Defined at 212 in llvm_tool/mekong-utils/src/HostUtils.cpp.'>registerKernel</a>(<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>, <a href='../Y/363.html' title='Multiple used in 3 places.'>cloneName</a>, <a href='../Y/366.html' title='Multiple used in 3 places.'>clonedKernelWrapper</a>);
+<a id='L150' name='L150'></a> 150 
+<a id='L151' name='L151'></a> 151     <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1802.html' title='Multiple used in 54 places.'>vector</a>&lt;<a href='../Y/41.html' title='Multiple used in 26 places.'>CallBase</a> *&gt; <a href='../Y/1274.html' title='Multiple used in 3 places.'>launchSites</a>;
+<a id='L152' name='L152'></a> 152     <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/6.html#L108' title='Defined at 108 in llvm_tool/mekong-utils/src/HostUtils.cpp.'>getKernelLaunchSites</a>(<a href='../Y/929.html' title='Multiple used in 16 places.'>desc</a>.<a href='../Y/1168.html' title='Multiple used in 30 places.'>handle</a>, <a href='../Y/1274.html' title='Multiple used in 3 places.'>launchSites</a>);
+<a id='L153' name='L153'></a> 153     <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("passed before launches loop\n");
+<a id='L154' name='L154'></a> 154     <strong class='reserved'>for</strong> (<strong class='reserved'>auto</strong> *<a href='../Y/1267.html' title='Multiple used in 3 places.'>launch</a> : <a href='../Y/1274.html' title='Multiple used in 3 places.'>launchSites</a>) <em class='brace'>{</em>
+<a id='L155' name='L155'></a> 155       <a href='../Y/41.html' title='Multiple used in 26 places.'>CallBase</a> *<a href='../Y/371.html' title='Multiple used in 16 places.'>confCall</a> = <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/6.html#L135' title='Defined at 135 in llvm_tool/mekong-utils/src/HostUtils.cpp.'>getKernelConfigCall</a>(<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>, <a href='../Y/1267.html' title='Multiple used in 3 places.'>launch</a>);
+<a id='L156' name='L156'></a> 156       <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/163.html' title='Multiple used in 10 places.'>SetInsertPoint</a>(<a href='../Y/371.html' title='Multiple used in 16 places.'>confCall</a>);
+<a id='L157' name='L157'></a> 157 
+<a id='L158' name='L158'></a> 158       <em class='comment'>// Allocate memory for BB Counters</em>
+<a id='L159' name='L159'></a> 159 
+<a id='L160' name='L160'></a> 160       <a href='../Y/1210.html' title='Multiple used in 3 places.'>int64_t</a> <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> = 100;
+<a id='L161' name='L161'></a> 161       <strong class='reserved'>auto</strong> <a href='../Y/1621.html' title='Multiple used in 6 places.'>result</a> = <a href='../Y/1243.html' title='Multiple used in 4 places.'>kernelBlockMap</a>.<a href='../Y/1015.html' title='Multiple used in 29 places.'>find</a>(<a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a>);
+<a id='L162' name='L162'></a> 162       <strong class='reserved'>if</strong> (<a href='../Y/1621.html' title='Multiple used in 6 places.'>result</a> != <a href='../Y/1243.html' title='Multiple used in 4 places.'>kernelBlockMap</a>.<a href='../Y/982.html' title='Multiple used in 34 places.'>end</a>()) <em class='brace'>{</em>
+<a id='L163' name='L163'></a> 163         <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> = <a href='../Y/1621.html' title='Multiple used in 6 places.'>result</a>-&gt;second;
+<a id='L164' name='L164'></a> 164         <a href='../Y/991.html' title='Multiple used in 14 places.'>errs</a>() &lt;&lt; "CUDA Flux: Found BasicBlockCount for kernel " &lt;&lt; <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> &lt;&lt; ": " &lt;&lt; <a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> &lt;&lt; "\n";
+<a id='L165' name='L165'></a> 165       <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L166' name='L166'></a> 166         <a href='../Y/991.html' title='Multiple used in 14 places.'>errs</a>() &lt;&lt; "CUDA Flux: BasicBlockCount for kernel " &lt;&lt; <a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a> &lt;&lt; "not found!\n";
+<a id='L167' name='L167'></a> 167       <em class='brace'>}</em>
+<a id='L168' name='L168'></a> 168 
+<a id='L169' name='L169'></a> 169       <em class='comment'>// Set Number of Banks to 64, using the number of SMs would probably be</em>
+<a id='L170' name='L170'></a> 170       <em class='comment'>// better Optimize later</em>
+<a id='L171' name='L171'></a> 171       <a href='../Y/1207.html' title='Multiple used in 19 places.'>int32_t</a> <a href='../Y/1342.html' title='Multiple used in 14 places.'>n_banks</a> = 64;
+<a id='L172' name='L172'></a> 172       <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/300.html' title='Multiple used in 4 places.'>blockCountVal</a> = <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/1083.html' title='Multiple used in 3 places.'>getInt64</a>(<a href='../Y/299.html' title='Multiple used in 10 places.'>blockCount</a> * <a href='../Y/1342.html' title='Multiple used in 14 places.'>n_banks</a>);
+<a id='L173' name='L173'></a> 173 
+<a id='L174' name='L174'></a> 174       <em class='comment'>// Insert function call to create the memory needed for the basic block</em>
+<a id='L175' name='L175'></a> 175       <em class='comment'>// counters</em>
+<a id='L176' name='L176'></a> 176       <a href='../Y/80.html' title='Multiple used in 59 places.'>Function</a> *<a href='../Y/381.html' title='Multiple used in 2 places.'>createBBCounterMemoryFu</a> = <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1076.html' title='Multiple used in 17 places.'>getFunction</a>("createBBCounterMemory");
+<a id='L177' name='L177'></a> 177       <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/932.html' title='Multiple used in 17 places.'>devPtr</a> = <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/55.html' title='Multiple used in 12 places.'>CreateCall</a>(<a href='../Y/381.html' title='Multiple used in 2 places.'>createBBCounterMemoryFu</a>, <em class='brace'>{</em><a href='../Y/300.html' title='Multiple used in 4 places.'>blockCountVal</a><em class='brace'>}</em>);
+<a id='L178' name='L178'></a> 178       <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/1343.html' title='Multiple used in 3 places.'>n_banks_val</a> = <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/1081.html' title='Multiple used in 6 places.'>getInt32</a>(<a href='../Y/1342.html' title='Multiple used in 14 places.'>n_banks</a>);
+<a id='L179' name='L179'></a> 179 
+<a id='L180' name='L180'></a> 180       <em class='comment'>// Allocation of the new counter</em>
+<a id='L181' name='L181'></a> 181       <a href='../Y/80.html' title='Multiple used in 59 places.'>Function</a> *<a href='../Y/380.html' title='Multiple used in 2 places.'>createBBCounterMemory1Fu</a> = <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1076.html' title='Multiple used in 17 places.'>getFunction</a>("createBBCounterMemory1");
+<a id='L182' name='L182'></a> 182       <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/1758.html' title='Multiple used in 3 places.'>tracPtr</a> = <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/55.html' title='Multiple used in 12 places.'>CreateCall</a>(<a href='../Y/380.html' title='Multiple used in 2 places.'>createBBCounterMemory1Fu</a>, <em class='brace'>{</em><a href='../Y/300.html' title='Multiple used in 4 places.'>blockCountVal</a><em class='brace'>}</em>);
+<a id='L183' name='L183'></a> 183       <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("Passed flux trac pointer creation\n");
+<a id='L184' name='L184'></a> 184 
+<a id='L185' name='L185'></a> 185       <em class='comment'>// Insert function call to get the profiling Mode</em>
+<a id='L186' name='L186'></a> 186       <a href='../Y/80.html' title='Multiple used in 59 places.'>Function</a> *<a href='../Y/1109.html' title='Multiple used in 2 places.'>getProfilingModeFu</a> = <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1076.html' title='Multiple used in 17 places.'>getFunction</a>("getProfilingMode");
+<a id='L187' name='L187'></a> 187       <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/1576.html' title='Multiple used in 6 places.'>profilingMode</a> = <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/55.html' title='Multiple used in 12 places.'>CreateCall</a>(<a href='../Y/1109.html' title='Multiple used in 2 places.'>getProfilingModeFu</a>);
+<a id='L188' name='L188'></a> 188 
+<a id='L189' name='L189'></a> 189       <em class='comment'>// Insert function call to start time measurement</em>
+<a id='L190' name='L190'></a> 190       <a href='../Y/80.html' title='Multiple used in 59 places.'>Function</a> *<a href='../Y/1682.html' title='Multiple used in 2 places.'>startClockFu</a> = <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1076.html' title='Multiple used in 17 places.'>getFunction</a>("startClock");
+<a id='L191' name='L191'></a> 191       <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/1745.html' title='Multiple used in 6 places.'>timeval</a> = <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/55.html' title='Multiple used in 12 places.'>CreateCall</a>(<a href='../Y/1682.html' title='Multiple used in 2 places.'>startClockFu</a>);
+<a id='L192' name='L192'></a> 192 
+<a id='L193' name='L193'></a> 193       <em class='comment'>// Prepare remaining arguments for the cloned kernel</em>
+<a id='L194' name='L194'></a> 194       <a href='../Y/1688.html' title='Multiple used in 197 places.'>std</a>::<a href='../Y/1802.html' title='Multiple used in 54 places.'>vector</a>&lt;<a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *&gt; <a href='../Y/235.html' title='Multiple used in 6 places.'>additionalArgs</a>;
+<a id='L195' name='L195'></a> 195       <a href='../Y/235.html' title='Multiple used in 6 places.'>additionalArgs</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/932.html' title='Multiple used in 17 places.'>devPtr</a>);
+<a id='L196' name='L196'></a> 196       <em class='comment'>// Passing our new counter</em>
+<a id='L197' name='L197'></a> 197       <a href='../Y/235.html' title='Multiple used in 6 places.'>additionalArgs</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/1758.html' title='Multiple used in 3 places.'>tracPtr</a>);
+<a id='L198' name='L198'></a> 198       <em class='comment'>// printf("passed addition of tracPtr to addArgs\n");</em>
+<a id='L199' name='L199'></a> 199       <em class='comment'>// Let the kernel know how many banks are used</em>
+<a id='L200' name='L200'></a> 200       <a href='../Y/235.html' title='Multiple used in 6 places.'>additionalArgs</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/1343.html' title='Multiple used in 3 places.'>n_banks_val</a>);
+<a id='L201' name='L201'></a> 201       <em class='comment'>// Let the kernel know which profiling mode is used</em>
+<a id='L202' name='L202'></a> 202       <a href='../Y/235.html' title='Multiple used in 6 places.'>additionalArgs</a>.<a href='../Y/1588.html' title='Multiple used in 46 places.'>push_back</a>(<a href='../Y/1576.html' title='Multiple used in 6 places.'>profilingMode</a>);
+<a id='L203' name='L203'></a> 203 
+<a id='L204' name='L204'></a> 204       <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("passed addition of tracPtr to addArgs\n");
+<a id='L205' name='L205'></a> 205 
+<a id='L206' name='L206'></a> 206       <a href='../Y/41.html' title='Multiple used in 26 places.'>CallBase</a> *<a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a> = <a href='../D/1777.html' title='Multiple defined in 4 places.'>mekong</a>::<a href='../S/6.html#L373' title='Defined at 373 in llvm_tool/mekong-utils/src/HostUtils.cpp.'>replaceKernelLaunch</a>(<a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>, <a href='../Y/1267.html' title='Multiple used in 3 places.'>launch</a>, <a href='../Y/366.html' title='Multiple used in 3 places.'>clonedKernelWrapper</a>, <a href='../Y/235.html' title='Multiple used in 6 places.'>additionalArgs</a>);
+<a id='L207' name='L207'></a> 207 
+<a id='L208' name='L208'></a> 208       <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("Passed cloneLaunchCall\n");
+<a id='L209' name='L209'></a> 209       <em class='comment'>// Make sure to insert after the launch call</em>
+<a id='L210' name='L210'></a> 210       <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/163.html' title='Multiple used in 10 places.'>SetInsertPoint</a>(<a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a>-&gt;<a href='../Y/1096.html' title='Multiple used in 2 places.'>getNextNode</a>());
+<a id='L211' name='L211'></a> 211 
+<a id='L212' name='L212'></a> 212       <em class='comment'>// Synchronize and Serialize BB Counters</em>
+<a id='L213' name='L213'></a> 213       <em class='comment'>// ( syncStream, copy to host, write to file)</em>
+<a id='L214' name='L214'></a> 214       <a href='../Y/80.html' title='Multiple used in 59 places.'>Function</a> *<a href='../Y/1637.html' title='Multiple used in 2 places.'>serializeCountersFu</a> = <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1076.html' title='Multiple used in 17 places.'>getFunction</a>("serializeBBCounter");
+<a id='L215' name='L215'></a> 215 
+<a id='L216' name='L216'></a> 216       <a href='../Y/181.html' title='Multiple used in 53 places.'>Value</a> *<a href='../Y/1251.html' title='Multiple used in 2 places.'>kernelStringPtr</a> = <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/58.html' title='Multiple used in 2 places.'>CreateGlobalStringPtr</a>(<a href='../Y/1249.html' title='Multiple used in 12 places.'>kernelName</a>.<a href='../Y/336.html' title='Multiple used in 9 places.'>c_str</a>());
+<a id='L217' name='L217'></a> 217 
+<a id='L218' name='L218'></a> 218       <em class='comment'>// Use 6th Arg of the clone kernel wrapper, which is the stream</em>
+<a id='L219' name='L219'></a> 219       <em class='comment'>// wrapper( i64 gridXY, i32 gridZ, i64 blockXY, i32 blockZ, int64 shmsize,</em>
+<a id='L220' name='L220'></a> 220       <em class='comment'>// cudaStream_t stream, ... )</em>
+<a id='L221' name='L221'></a> 221       <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/55.html' title='Multiple used in 12 places.'>CreateCall</a>(<a href='../Y/1637.html' title='Multiple used in 2 places.'>serializeCountersFu</a>,
+<a id='L222' name='L222'></a> 222                          <em class='brace'>{</em><a href='../Y/932.html' title='Multiple used in 17 places.'>devPtr</a>, <a href='../Y/1758.html' title='Multiple used in 3 places.'>tracPtr</a>, <a href='../Y/300.html' title='Multiple used in 4 places.'>blockCountVal</a>, <a href='../Y/1343.html' title='Multiple used in 3 places.'>n_banks_val</a>, <a href='../Y/1251.html' title='Multiple used in 2 places.'>kernelStringPtr</a>,
+<a id='L223' name='L223'></a> 223                           <a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a>-&gt;<a href='../Y/1067.html' title='Multiple used in 3 places.'>getArgOperandUse</a>(0), <a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a>-&gt;<a href='../Y/1067.html' title='Multiple used in 3 places.'>getArgOperandUse</a>(1),
+<a id='L224' name='L224'></a> 224                           <a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a>-&gt;<a href='../Y/1067.html' title='Multiple used in 3 places.'>getArgOperandUse</a>(2), <a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a>-&gt;<a href='../Y/1067.html' title='Multiple used in 3 places.'>getArgOperandUse</a>(3),
+<a id='L225' name='L225'></a> 225                           <a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a>-&gt;<a href='../Y/1067.html' title='Multiple used in 3 places.'>getArgOperandUse</a>(4), <a href='../Y/362.html' title='Multiple used in 5 places.'>cloneLaunchCall</a>-&gt;<a href='../Y/1067.html' title='Multiple used in 3 places.'>getArgOperandUse</a>(5), <a href='../Y/1745.html' title='Multiple used in 6 places.'>timeval</a><em class='brace'>}</em>);
+<a id='L226' name='L226'></a> 226 
+<a id='L227' name='L227'></a> 227       <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("Call creation serializeCountersFu with tracPtr\n");
+<a id='L228' name='L228'></a> 228 
+<a id='L229' name='L229'></a> 229       <em class='comment'>// Serializing PTX Analysis</em>
+<a id='L230' name='L230'></a> 230       <a href='../Y/80.html' title='Multiple used in 59 places.'>Function</a> *<a href='../Y/1823.html' title='Multiple used in 2 places.'>writePTX_Analysis</a> = <a href='../Y/108.html' title='Multiple used in 45 places.'>M</a>.<a href='../Y/1076.html' title='Multiple used in 17 places.'>getFunction</a>("mekong_WritePTXBlockAnalysis");
+<a id='L231' name='L231'></a> 231 
+<a id='L232' name='L232'></a> 232       <a href='../Y/329.html' title='Multiple used in 67 places.'>builder</a>.<a href='../Y/55.html' title='Multiple used in 12 places.'>CreateCall</a>(<a href='../Y/1823.html' title='Multiple used in 2 places.'>writePTX_Analysis</a>, <em class='brace'>{</em><a href='../Y/1585.html' title='Multiple used in 2 places.'>ptxAnalysIsWritten</a>, <a href='../Y/247.html' title='Multiple used in 2 places.'>analysisStr</a><em class='brace'>}</em>);
+<a id='L233' name='L233'></a> 233     <em class='brace'>}</em>
+<a id='L234' name='L234'></a> 234   <em class='brace'>}</em>
+<a id='L235' name='L235'></a> 235 
+<a id='L236' name='L236'></a> 236   <strong class='reserved'>return</strong> <strong class='reserved'>true</strong>;
+<a id='L237' name='L237'></a> 237 <em class='brace'>}</em>
+<a id='L238' name='L238'></a> 238 
+<a id='L239' name='L239'></a> 239 <strong class='reserved'>void</strong> <a href='../Y/78.html' title='Multiple used in 8 places.'>FluxHostPass</a>::<a href='../R/279.html' title='Multiple referred from 2 places.'>getAnalysisUsage</a>(<a href='../Y/6.html' title='Multiple used in 4 places.'>AnalysisUsage</a> &amp;<a href='../Y/3.html' title='Multiple used in 4 places.'>AU</a>) <strong class='reserved'>const</strong> <em class='brace'>{</em> <a href='../Y/3.html' title='Multiple used in 4 places.'>AU</a>.setPreservesAll(); <em class='brace'>}</em>
+<a id='L240' name='L240'></a> 240 
+<a id='L241' name='L241'></a> 241 <strong class='reserved'>void</strong> <a href='../Y/78.html' title='Multiple used in 8 places.'>FluxHostPass</a>::<a href='../R/369.html' title='Multiple referred from 2 places.'>releaseMemory</a>() <em class='brace'>{</em><em class='brace'>}</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L22'>[^]</a><a href='#L241'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

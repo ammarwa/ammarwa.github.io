@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>na</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/617.html#L4'>na</a>                  4 reuse_distance_tool/narray.c     narray_t* na = (narray_t*)malloc(sizeof(narray_t));</span>
+<span class='curline'><a href='../S/617.html#L5'>na</a>                  5 reuse_distance_tool/narray.c     na-&gt;element_size = element_size;</span>
+<span class='curline'><a href='../S/617.html#L6'>na</a>                  6 reuse_distance_tool/narray.c     na-&gt;len = 0;</span>
+<span class='curline'><a href='../S/617.html#L7'>na</a>                  7 reuse_distance_tool/narray.c     na-&gt;capacity = capacity * element_size;</span>
+<span class='curline'><a href='../S/617.html#L8'>na</a>                  8 reuse_distance_tool/narray.c     na-&gt;data = calloc(capacity, element_size);</span>
+<span class='curline'><a href='../S/617.html#L9'>na</a>                  9 reuse_distance_tool/narray.c     return na;</span>
+<span class='curline'><a href='../S/617.html#L12'>na</a>                 12 reuse_distance_tool/narray.c void narray_append_val(narray_t* na, const void* value) {</span>
+<span class='curline'><a href='../S/617.html#L13'>na</a>                 13 reuse_distance_tool/narray.c    if(na-&gt;len == na-&gt;capacity) {</span>
+<span class='curline'><a href='../S/617.html#L14'>na</a>                 14 reuse_distance_tool/narray.c        unsigned new_capacity = na-&gt;capacity + na-&gt;capacity + 10 * na-&gt;element_size;</span>
+<span class='curline'><a href='../S/617.html#L16'>na</a>                 16 reuse_distance_tool/narray.c        memcpy(ndata, na-&gt;data, na-&gt;len);</span>
+<span class='curline'><a href='../S/617.html#L17'>na</a>                 17 reuse_distance_tool/narray.c        free(na-&gt;data);</span>
+<span class='curline'><a href='../S/617.html#L18'>na</a>                 18 reuse_distance_tool/narray.c        na-&gt;data = ndata;</span>
+<span class='curline'><a href='../S/617.html#L19'>na</a>                 19 reuse_distance_tool/narray.c        na-&gt;capacity = new_capacity;</span>
+<span class='curline'><a href='../S/617.html#L21'>na</a>                 21 reuse_distance_tool/narray.c    memcpy(na-&gt;data + na-&gt;len, value, na-&gt;element_size);</span>
+<span class='curline'><a href='../S/617.html#L22'>na</a>                 22 reuse_distance_tool/narray.c 	 na-&gt;len += na-&gt;element_size;</span>
+<span class='curline'><a href='../S/617.html#L25'>na</a>                 25 reuse_distance_tool/narray.c void narray_free(narray_t* na) {</span>
+<span class='curline'><a href='../S/617.html#L26'>na</a>                 26 reuse_distance_tool/narray.c 		free(na-&gt;data);</span>
+<span class='curline'><a href='../S/617.html#L27'>na</a>                 27 reuse_distance_tool/narray.c 		free(na);</span>
+<span class='curline'><a href='../S/617.html#L30'>na</a>                 30 reuse_distance_tool/narray.c void narray_print(narray_t* na, void (*show_element)(void*, int, FILE*), FILE* fp) {</span>
+<span class='curline'><a href='../S/617.html#L31'>na</a>                 31 reuse_distance_tool/narray.c   mdebug(fprintf(fp, "enter narray_print len=%u\n",na-&gt;len);)</span>
+<span class='curline'><a href='../S/617.html#L32'>na</a>                 32 reuse_distance_tool/narray.c   unsigned len = narray_get_len(na);</span>
+<span class='curline'><a href='../S/617.html#L35'>na</a>                 35 reuse_distance_tool/narray.c       show_element(na-&gt;data, i, fp);</span>
+<span class='curline'><a href='../S/617.html#L41'>na</a>                 41 reuse_distance_tool/narray.c     narray_t* na = (narray_t*)malloc(sizeof(narray_t));</span>
+<span class='curline'><a href='../S/617.html#L42'>na</a>                 42 reuse_distance_tool/narray.c     na-&gt;data = data;</span>
+<span class='curline'><a href='../S/617.html#L43'>na</a>                 43 reuse_distance_tool/narray.c     na-&gt;len = len;</span>
+<span class='curline'><a href='../S/617.html#L44'>na</a>                 44 reuse_distance_tool/narray.c     na-&gt;capacity = len;</span>
+<span class='curline'><a href='../S/617.html#L45'>na</a>                 45 reuse_distance_tool/narray.c     na-&gt;element_size = element_size;</span>
+<span class='curline'><a href='../S/617.html#L46'>na</a>                 46 reuse_distance_tool/narray.c     return na;</span>
+<span class='curline'><a href='../S/623.html#L21'>na</a>                 21 reuse_distance_tool/narray.h void narray_append_val(narray_t* na, const void* value);</span>
+<span class='curline'><a href='../S/623.html#L22'>na</a>                 22 reuse_distance_tool/narray.h void narray_free(narray_t* na);</span>
+<span class='curline'><a href='../S/623.html#L23'>na</a>                 23 reuse_distance_tool/narray.h void narray_print(narray_t* na, void (*show_element)(void*, int, FILE*), FILE* fp);</span>
+<span class='curline'><a href='../S/623.html#L25'>na</a>                 25 reuse_distance_tool/narray.h static inline unsigned narray_get_len(const narray_t* na) {</span>
+<span class='curline'><a href='../S/623.html#L26'>na</a>                 26 reuse_distance_tool/narray.h     return na-&gt;len/na-&gt;element_size;</span>
+</pre>
+</body>
+</html>

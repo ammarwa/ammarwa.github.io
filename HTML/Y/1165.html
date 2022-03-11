@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>h_blockList</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/25.html#L104'>h_blockList</a>       104 llvm_tool/lib/hostRuntime.cpp   uint64_t *h_blockList = (uint64_t *)malloc(len * sizeof(uint64_t));</span>
+<span class='curline'><a href='../S/25.html#L108'>h_blockList</a>       108 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMemcpy(h_blockList, d_blockList, len * sizeof(uint64_t), cudaMemcpyDeviceToHost));</span>
+<span class='curline'><a href='../S/25.html#L115'>h_blockList</a>       115 llvm_tool/lib/hostRuntime.cpp       if (__builtin_add_overflow(sum, h_blockList[block_ID * n_banks + bank], &amp;sum)) {</span>
+<span class='curline'><a href='../S/25.html#L127'>h_blockList</a>       127 llvm_tool/lib/hostRuntime.cpp     h_blockList[block_ID * n_banks + 0] = sum;</span>
+<span class='curline'><a href='../S/25.html#L143'>h_blockList</a>       143 llvm_tool/lib/hostRuntime.cpp     output &lt;&lt; ", " &lt;&lt; h_blockList[block_ID * n_banks + 0] / 32.0;</span>
+<span class='curline'><a href='../S/25.html#L284'>h_blockList</a>       284 llvm_tool/lib/hostRuntime.cpp   free(h_blockList);</span>
+</pre>
+</body>
+</html>

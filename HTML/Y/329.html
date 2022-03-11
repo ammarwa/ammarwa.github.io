@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>builder</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L156'>builder</a>           156 llvm_tool/lib/fluxDevicePass.cpp     IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/26.html#L160'>builder</a>           160 llvm_tool/lib/fluxDevicePass.cpp     builder.SetInsertPoint(insertPoint);</span>
+<span class='curline'><a href='../S/26.html#L164'>builder</a>           164 llvm_tool/lib/fluxDevicePass.cpp       builder.SetInsertPoint(&amp;*bb.getFirstInsertionPt());</span>
+<span class='curline'><a href='../S/26.html#L165'>builder</a>           165 llvm_tool/lib/fluxDevicePass.cpp       Constant *block_ID = builder.getInt32(blockIDs.at(&amp;bb));</span>
+<span class='curline'><a href='../S/26.html#L171'>builder</a>           171 llvm_tool/lib/fluxDevicePass.cpp       builder.CreateCall(traceFun, {trace_ptr, trace_ptr1, block_ID, n_banks, profiling});</span>
+<span class='curline'><a href='../S/24.html#L106'>builder</a>           106 llvm_tool/lib/fluxHostPass.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/24.html#L109'>builder</a>           109 llvm_tool/lib/fluxHostPass.cpp       new GlobalVariable(M, builder.getInt8Ty(), false, GlobalValue::PrivateLinkage, builder.getInt8(0),</span>
+<span class='curline'><a href='../S/24.html#L156'>builder</a>           156 llvm_tool/lib/fluxHostPass.cpp       builder.SetInsertPoint(confCall);</span>
+<span class='curline'><a href='../S/24.html#L172'>builder</a>           172 llvm_tool/lib/fluxHostPass.cpp       Value *blockCountVal = builder.getInt64(blockCount * n_banks);</span>
+<span class='curline'><a href='../S/24.html#L177'>builder</a>           177 llvm_tool/lib/fluxHostPass.cpp       Value *devPtr = builder.CreateCall(createBBCounterMemoryFu, {blockCountVal});</span>
+<span class='curline'><a href='../S/24.html#L178'>builder</a>           178 llvm_tool/lib/fluxHostPass.cpp       Value *n_banks_val = builder.getInt32(n_banks);</span>
+<span class='curline'><a href='../S/24.html#L182'>builder</a>           182 llvm_tool/lib/fluxHostPass.cpp       Value *tracPtr = builder.CreateCall(createBBCounterMemory1Fu, {blockCountVal});</span>
+<span class='curline'><a href='../S/24.html#L187'>builder</a>           187 llvm_tool/lib/fluxHostPass.cpp       Value *profilingMode = builder.CreateCall(getProfilingModeFu);</span>
+<span class='curline'><a href='../S/24.html#L191'>builder</a>           191 llvm_tool/lib/fluxHostPass.cpp       Value *timeval = builder.CreateCall(startClockFu);</span>
+<span class='curline'><a href='../S/24.html#L210'>builder</a>           210 llvm_tool/lib/fluxHostPass.cpp       builder.SetInsertPoint(cloneLaunchCall-&gt;getNextNode());</span>
+<span class='curline'><a href='../S/24.html#L216'>builder</a>           216 llvm_tool/lib/fluxHostPass.cpp       Value *kernelStringPtr = builder.CreateGlobalStringPtr(kernelName.c_str());</span>
+<span class='curline'><a href='../S/24.html#L221'>builder</a>           221 llvm_tool/lib/fluxHostPass.cpp       builder.CreateCall(serializeCountersFu,</span>
+<span class='curline'><a href='../S/24.html#L232'>builder</a>           232 llvm_tool/lib/fluxHostPass.cpp       builder.CreateCall(writePTX_Analysis, {ptxAnalysIsWritten, analysisStr});</span>
+<span class='curline'><a href='../S/17.html#L50'>builder</a>            50 llvm_tool/mekong-utils/inc/IRUtils.h llvm::CallInst *callPrintf(llvm::Module &amp;module, llvm::IRBuilder&lt;&gt; &amp;builder,</span>
+<span class='curline'><a href='../S/6.html#L244'>builder</a>           244 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/6.html#L245'>builder</a>           245 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.SetInsertPoint(&amp;registerGlobals-&gt;back().back());</span>
+<span class='curline'><a href='../S/6.html#L247'>builder</a>           247 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *wrapper_casted = builder.CreateBitCast(kernelWrapper, builder.getInt8PtrTy());</span>
+<span class='curline'><a href='../S/6.html#L248'>builder</a>           248 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *globalKernelNameString = builder.CreateGlobalStringPtr(name);</span>
+<span class='curline'><a href='../S/6.html#L249'>builder</a>           249 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *null = ConstantPointerNull::get(builder.getInt8PtrTy());</span>
+<span class='curline'><a href='../S/6.html#L250'>builder</a>           250 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *int32null = ConstantPointerNull::get(builder.getInt32Ty()-&gt;getPointerTo());</span>
+<span class='curline'><a href='../S/6.html#L255'>builder</a>           255 llvm_tool/mekong-utils/src/HostUtils.cpp                                            builder.getInt32(-1),</span>
+<span class='curline'><a href='../S/6.html#L263'>builder</a>           263 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.CreateCall(registerFunction, registerFunctionsArgs);</span>
+<span class='curline'><a href='../S/6.html#L273'>builder</a>           273 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/6.html#L275'>builder</a>           275 llvm_tool/mekong-utils/src/HostUtils.cpp       FunctionType::get(builder.getInt32Ty(),</span>
+<span class='curline'><a href='../S/6.html#L276'>builder</a>           276 llvm_tool/mekong-utils/src/HostUtils.cpp                         {builder.getInt8PtrTy(), builder.getInt64Ty(), builder.getInt32Ty(), builder.getInt64Ty(),</span>
+<span class='curline'><a href='../S/6.html#L277'>builder</a>           277 llvm_tool/mekong-utils/src/HostUtils.cpp                          builder.getInt32Ty(), builder.getInt8PtrTy()-&gt;getPointerTo(), builder.getInt64Ty(),</span>
+<span class='curline'><a href='../S/6.html#L287'>builder</a>           287 llvm_tool/mekong-utils/src/HostUtils.cpp   vector&lt;Type *&gt; wrapperParams = {builder.getInt64Ty(), builder.getInt32Ty(),</span>
+<span class='curline'><a href='../S/6.html#L288'>builder</a>           288 llvm_tool/mekong-utils/src/HostUtils.cpp                                   builder.getInt64Ty(), builder.getInt32Ty(),</span>
+<span class='curline'><a href='../S/6.html#L289'>builder</a>           289 llvm_tool/mekong-utils/src/HostUtils.cpp                                   builder.getInt64Ty(), m.getTypeByName("struct.CUstream_st")-&gt;getPointerTo()};</span>
+<span class='curline'><a href='../S/6.html#L295'>builder</a>           295 llvm_tool/mekong-utils/src/HostUtils.cpp   FunctionType *wrapperType = FunctionType::get(builder.getInt32Ty(), wrapperParams, false);</span>
+<span class='curline'><a href='../S/6.html#L301'>builder</a>           301 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.SetInsertPoint(entry);</span>
+<span class='curline'><a href='../S/6.html#L309'>builder</a>           309 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *fuptr = builder.CreatePointerCast(wrapper, builder.getInt8PtrTy());</span>
+<span class='curline'><a href='../S/6.html#L332'>builder</a>           332 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *ptr_array = builder.CreateAlloca(builder.getInt8PtrTy(), builder.getInt64(ft-&gt;params().size()));</span>
+<span class='curline'><a href='../S/6.html#L337'>builder</a>           337 llvm_tool/mekong-utils/src/HostUtils.cpp     Value *memptr = builder.CreateAlloca(argument-&gt;getType());</span>
+<span class='curline'><a href='../S/6.html#L338'>builder</a>           338 llvm_tool/mekong-utils/src/HostUtils.cpp     Value *store = builder.CreateStore(argument, memptr);</span>
+<span class='curline'><a href='../S/6.html#L339'>builder</a>           339 llvm_tool/mekong-utils/src/HostUtils.cpp     Value *strptr = builder.CreateGEP(ptr_array, builder.getInt64(i));</span>
+<span class='curline'><a href='../S/6.html#L340'>builder</a>           340 llvm_tool/mekong-utils/src/HostUtils.cpp     strptr = builder.CreatePointerCast(strptr, argument-&gt;getType()-&gt;getPointerTo()-&gt;getPointerTo());</span>
+<span class='curline'><a href='../S/6.html#L341'>builder</a>           341 llvm_tool/mekong-utils/src/HostUtils.cpp     builder.CreateStore(memptr, strptr);</span>
+<span class='curline'><a href='../S/6.html#L350'>builder</a>           350 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *ret = builder.CreateCall(launchKernel, launchKernelArgs);</span>
+<span class='curline'><a href='../S/6.html#L352'>builder</a>           352 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.CreateRet(ret);</span>
+<span class='curline'><a href='../S/6.html#L360'>builder</a>           360 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/6.html#L361'>builder</a>           361 llvm_tool/mekong-utils/src/HostUtils.cpp   FunctionType *fty = FunctionType::get(builder.getVoidTy(), {}, false);</span>
+<span class='curline'><a href='../S/6.html#L367'>builder</a>           367 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.SetInsertPoint(entry);</span>
+<span class='curline'><a href='../S/6.html#L368'>builder</a>           368 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.CreateRet(builder.getInt32(0));</span>
+<span class='curline'><a href='../S/6.html#L386'>builder</a>           386 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/6.html#L392'>builder</a>           392 llvm_tool/mekong-utils/src/HostUtils.cpp     builder.SetInsertPoint(confCall);</span>
+<span class='curline'><a href='../S/6.html#L393'>builder</a>           393 llvm_tool/mekong-utils/src/HostUtils.cpp     builder.CreateBr(branchTarget);</span>
+<span class='curline'><a href='../S/6.html#L397'>builder</a>           397 llvm_tool/mekong-utils/src/HostUtils.cpp   confCall-&gt;replaceAllUsesWith(builder.getInt32(0));</span>
+<span class='curline'><a href='../S/6.html#L416'>builder</a>           416 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.SetInsertPoint(kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L422'>builder</a>           422 llvm_tool/mekong-utils/src/HostUtils.cpp     args[5] = builder.CreateBitCast(args[5], params[5]);</span>
+<span class='curline'><a href='../S/6.html#L426'>builder</a>           426 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *newLaunchCall = builder.CreateCall(replacementWrapper, args);</span>
+<span class='curline'><a href='../S/6.html#L432'>builder</a>           432 llvm_tool/mekong-utils/src/HostUtils.cpp     builder.SetInsertPoint(kernelLaunchSite);</span>
+<span class='curline'><a href='../S/6.html#L433'>builder</a>           433 llvm_tool/mekong-utils/src/HostUtils.cpp     builder.CreateBr(branchTarget);</span>
+<span class='curline'><a href='../S/5.html#L155'>builder</a>           155 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::IRBuilder&lt;&gt; builder(module.getContext());</span>
+<span class='curline'><a href='../S/5.html#L156'>builder</a>           156 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::Value *strVal = builder.CreateGEP(GVStr, {zero, zero});</span>
+<span class='curline'><a href='../S/5.html#L165'>builder</a>           165 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::CallInst *ci = builder.CreateCall(printf_func, args);</span>
+<span class='curline'><a href='../S/5.html#L169'>builder</a>           169 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::CallInst *callPrintf(llvm::Module &amp;module, llvm::IRBuilder&lt;&gt; &amp;builder,</span>
+<span class='curline'><a href='../S/5.html#L171'>builder</a>           171 llvm_tool/mekong-utils/src/IRUtils.cpp   LLVMContext &amp;ctx = builder.getContext();</span>
+<span class='curline'><a href='../S/5.html#L172'>builder</a>           172 llvm_tool/mekong-utils/src/IRUtils.cpp   GlobalVariable *stringVal = builder.CreateGlobalString(str);</span>
+<span class='curline'><a href='../S/5.html#L174'>builder</a>           174 llvm_tool/mekong-utils/src/IRUtils.cpp   Constant *zero = builder.getInt32(0);</span>
+<span class='curline'><a href='../S/5.html#L176'>builder</a>           176 llvm_tool/mekong-utils/src/IRUtils.cpp   Value *strVal = builder.CreateGEP(stringVal, {zero, zero});</span>
+<span class='curline'><a href='../S/5.html#L185'>builder</a>           185 llvm_tool/mekong-utils/src/IRUtils.cpp   CallInst *ci = builder.CreateCall(printf_func, args);</span>
+</pre>
+</body>
+</html>

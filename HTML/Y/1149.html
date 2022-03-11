@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>gv</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/12.html#L19'>gv</a>                 19 llvm_tool/mekong-utils/inc/DeviceUtils.h                        llvm::GlobalVariable *&amp;gv);</span>
+<span class='curline'><a href='../S/12.html#L20'>gv</a>                 20 llvm_tool/mekong-utils/inc/DeviceUtils.h void loadGlobalVar(llvm::Function *kernel, llvm::GlobalVariable *gv,</span>
+<span class='curline'><a href='../S/8.html#L83'>gv</a>                 83 llvm_tool/mekong-utils/src/DeviceUtils.cpp                        GlobalVariable *&amp;gv) {</span>
+<span class='curline'><a href='../S/8.html#L85'>gv</a>                 85 llvm_tool/mekong-utils/src/DeviceUtils.cpp   gv = new GlobalVariable(m, type, false, GlobalValue::ExternalLinkage, nullptr,</span>
+<span class='curline'><a href='../S/8.html#L89'>gv</a>                 89 llvm_tool/mekong-utils/src/DeviceUtils.cpp   gv-&gt;setAlignment(MaybeAlign(4));</span>
+<span class='curline'><a href='../S/8.html#L92'>gv</a>                 92 llvm_tool/mekong-utils/src/DeviceUtils.cpp void loadGlobalVar(Function *kernel, GlobalVariable *gv, Value *&amp;val) {</span>
+<span class='curline'><a href='../S/8.html#L96'>gv</a>                 96 llvm_tool/mekong-utils/src/DeviceUtils.cpp       new AddrSpaceCastInst(gv, gv-&gt;getType()-&gt;getPointerTo(), "", insertPoint);</span>
+<span class='curline'><a href='../S/6.html#L88'>gv</a>                 88 llvm_tool/mekong-utils/src/HostUtils.cpp       GlobalVariable *gv = dyn_cast_or_null&lt;GlobalVariable&gt;(callBase-&gt;getArgOperand(2)-&gt;stripPointerCastsAndAliases());</span>
+<span class='curline'><a href='../S/6.html#L90'>gv</a>                 90 llvm_tool/mekong-utils/src/HostUtils.cpp       if (gv != nullptr)</span>
+<span class='curline'><a href='../S/6.html#L91'>gv</a>                 91 llvm_tool/mekong-utils/src/HostUtils.cpp         val_name = dyn_cast_or_null&lt;ConstantDataSequential&gt;(gv-&gt;getInitializer());</span>
+</pre>
+</body>
+</html>

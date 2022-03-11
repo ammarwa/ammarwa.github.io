@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>module</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/17.html#L46'>module</a>             46 llvm_tool/mekong-utils/inc/IRUtils.h llvm::Function *getPrintfFunc(llvm::Module &amp;module);</span>
+<span class='curline'><a href='../S/17.html#L48'>module</a>             48 llvm_tool/mekong-utils/inc/IRUtils.h llvm::CallInst *callPrintf(llvm::Module &amp;module, std::string str,</span>
+<span class='curline'><a href='../S/17.html#L50'>module</a>             50 llvm_tool/mekong-utils/inc/IRUtils.h llvm::CallInst *callPrintf(llvm::Module &amp;module, llvm::IRBuilder&lt;&gt; &amp;builder,</span>
+<span class='curline'><a href='../S/5.html#L131'>module</a>            131 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::Function *getPrintfFunc(llvm::Module &amp;module) {</span>
+<span class='curline'><a href='../S/5.html#L132'>module</a>            132 llvm_tool/mekong-utils/src/IRUtils.cpp   auto &amp;ctx = module.getContext();</span>
+<span class='curline'><a href='../S/5.html#L139'>module</a>            139 llvm_tool/mekong-utils/src/IRUtils.cpp       module.getOrInsertFunction("printf", printf_type).getCallee());</span>
+<span class='curline'><a href='../S/5.html#L144'>module</a>            144 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::CallInst *callPrintf(llvm::Module &amp;module, std::string str,</span>
+<span class='curline'><a href='../S/5.html#L146'>module</a>            146 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::LLVMContext &amp;ctx = module.getContext();</span>
+<span class='curline'><a href='../S/5.html#L151'>module</a>            151 llvm_tool/mekong-utils/src/IRUtils.cpp       module, type, true, llvm::GlobalValue::InternalLinkage, strConstant);</span>
+<span class='curline'><a href='../S/5.html#L155'>module</a>            155 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::IRBuilder&lt;&gt; builder(module.getContext());</span>
+<span class='curline'><a href='../S/5.html#L163'>module</a>            163 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::Function *printf_func = getPrintfFunc(module);</span>
+<span class='curline'><a href='../S/5.html#L169'>module</a>            169 llvm_tool/mekong-utils/src/IRUtils.cpp llvm::CallInst *callPrintf(llvm::Module &amp;module, llvm::IRBuilder&lt;&gt; &amp;builder,</span>
+<span class='curline'><a href='../S/5.html#L183'>module</a>            183 llvm_tool/mekong-utils/src/IRUtils.cpp   Function *printf_func = getPrintfFunc(module);</span>
+<span class='curline'><a href='../S/630.html#L4549'>module</a>           4549 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuModuleLoad(CUmodule *module, const char *fname);</span>
+<span class='curline'><a href='../S/630.html#L4586'>module</a>           4586 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuModuleLoadData(CUmodule *module, const void *image);</span>
+<span class='curline'><a href='../S/630.html#L4629'>module</a>           4629 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuModuleLoadDataEx(CUmodule *module, const void *image, unsigned int numOptions, CUjit_option *options, void **optionValues);</span>
+<span class='curline'><a href='../S/630.html#L4671'>module</a>           4671 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuModuleLoadFatBinary(CUmodule *module, const void *fatCubin);</span>
+<span class='curline'><a href='../S/635.html#L234'>module</a>            234 tracing_tool/nvbit/generated_cuda_meta.h     CUmodule *module;</span>
+<span class='curline'><a href='../S/635.html#L239'>module</a>            239 tracing_tool/nvbit/generated_cuda_meta.h     CUmodule *module;</span>
+<span class='curline'><a href='../S/635.html#L244'>module</a>            244 tracing_tool/nvbit/generated_cuda_meta.h     CUmodule *module;</span>
+<span class='curline'><a href='../S/635.html#L252'>module</a>            252 tracing_tool/nvbit/generated_cuda_meta.h     CUmodule *module;</span>
+</pre>
+</body>
+</html>

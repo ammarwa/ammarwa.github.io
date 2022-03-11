@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>dch</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/25.html#L232'>dch</a>               232 llvm_tool/lib/hostRuntime.cpp         char *dch;</span>
+<span class='curline'><a href='../S/25.html#L234'>dch</a>               234 llvm_tool/lib/hostRuntime.cpp         dch = std::strtok(tv1, "|");</span>
+<span class='curline'><a href='../S/25.html#L235'>dch</a>               235 llvm_tool/lib/hostRuntime.cpp         while (dch != NULL) {</span>
+<span class='curline'><a href='../S/25.html#L236'>dch</a>               236 llvm_tool/lib/hostRuntime.cpp           if (std::string(dch).find("[") != std::string::npos) {</span>
+<span class='curline'><a href='../S/25.html#L237'>dch</a>               237 llvm_tool/lib/hostRuntime.cpp             if (std::string(dch).find("%") != std::string::npos) {</span>
+<span class='curline'><a href='../S/25.html#L239'>dch</a>               239 llvm_tool/lib/hostRuntime.cpp               index = std::string(dch).find("..", index);</span>
+<span class='curline'><a href='../S/25.html#L241'>dch</a>               241 llvm_tool/lib/hostRuntime.cpp                 std::string(dch).erase(0, index + 2);</span>
+<span class='curline'><a href='../S/25.html#L243'>dch</a>               243 llvm_tool/lib/hostRuntime.cpp               index = std::string(dch).find("..", index);</span>
+<span class='curline'><a href='../S/25.html#L245'>dch</a>               245 llvm_tool/lib/hostRuntime.cpp                 std::string(dch).erase(index, std::string(dch).length() - 1);</span>
+<span class='curline'><a href='../S/25.html#L246'>dch</a>               246 llvm_tool/lib/hostRuntime.cpp               if (dependencies.find(std::string(dch)) != dependencies.end()) {</span>
+<span class='curline'><a href='../S/25.html#L247'>dch</a>               247 llvm_tool/lib/hostRuntime.cpp                 temp = temp + std::to_string(dependencies[std::string(dch)]) + " ";</span>
+<span class='curline'><a href='../S/25.html#L251'>dch</a>               251 llvm_tool/lib/hostRuntime.cpp             dependencies[std::string(dch)] = ind;</span>
+<span class='curline'><a href='../S/25.html#L253'>dch</a>               253 llvm_tool/lib/hostRuntime.cpp           dch = std::strtok(NULL, "|");</span>
+</pre>
+</body>
+</html>

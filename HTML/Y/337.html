@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>call</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/6.html#L200'>call</a>              200 llvm_tool/mekong-utils/src/HostUtils.cpp void getGridConfig(llvm::CallBase *call, llvm::Value *(&amp;arguments)[4]) {</span>
+<span class='curline'><a href='../S/6.html#L201'>call</a>              201 llvm_tool/mekong-utils/src/HostUtils.cpp   assert(call-&gt;getCalledFunction()-&gt;getName() == "cudaLaunchKernel");</span>
+<span class='curline'><a href='../S/6.html#L202'>call</a>              202 llvm_tool/mekong-utils/src/HostUtils.cpp   arguments[0] = call-&gt;getArgOperand(1);</span>
+<span class='curline'><a href='../S/6.html#L203'>call</a>              203 llvm_tool/mekong-utils/src/HostUtils.cpp   arguments[1] = call-&gt;getArgOperand(2);</span>
+<span class='curline'><a href='../S/6.html#L204'>call</a>              204 llvm_tool/mekong-utils/src/HostUtils.cpp   arguments[2] = call-&gt;getArgOperand(3);</span>
+<span class='curline'><a href='../S/6.html#L205'>call</a>              205 llvm_tool/mekong-utils/src/HostUtils.cpp   arguments[3] = call-&gt;getArgOperand(3);</span>
+<span class='curline'><a href='../S/632.html#L34'>call</a>               34 tracing_tool/nvbit/utils/utils.h #define CUDA_SAFECALL(call)                                                 \</span>
+<span class='curline'><a href='../S/632.html#L36'>call</a>               36 tracing_tool/nvbit/utils/utils.h         call;                                                               \</span>
+<span class='curline'><a href='../S/632.html#L42'>call</a>               42 tracing_tool/nvbit/utils/utils.h                 #call, __FILE__, __LINE__, cudaGetErrorString(err));        \</span>
+</pre>
+</body>
+</html>

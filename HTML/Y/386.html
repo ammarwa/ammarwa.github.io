@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>ctx</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L110'>ctx</a>               110 llvm_tool/lib/fluxDevicePass.cpp   LLVMContext &amp;ctx = M.getContext();</span>
+<span class='curline'><a href='../S/26.html#L131'>ctx</a>               131 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt64PtrTy(ctx));</span>
+<span class='curline'><a href='../S/26.html#L132'>ctx</a>               132 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt64PtrTy(ctx));</span>
+<span class='curline'><a href='../S/26.html#L133'>ctx</a>               133 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt32Ty(ctx));</span>
+<span class='curline'><a href='../S/26.html#L134'>ctx</a>               134 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt32Ty(ctx));</span>
+<span class='curline'><a href='../S/26.html#L156'>ctx</a>               156 llvm_tool/lib/fluxDevicePass.cpp     IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/26.html#L184'>ctx</a>               184 llvm_tool/lib/fluxDevicePass.cpp   LLVMContext &amp;ctx = M.getContext();</span>
+<span class='curline'><a href='../S/24.html#L26'>ctx</a>                26 llvm_tool/lib/fluxHostPass.cpp   LLVMContext &amp;ctx = M.getContext();</span>
+<span class='curline'><a href='../S/24.html#L106'>ctx</a>               106 llvm_tool/lib/fluxHostPass.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/24.html#L139'>ctx</a>               139 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt64PtrTy(ctx)); // Pointer to Counters for Basic Blocks</span>
+<span class='curline'><a href='../S/24.html#L140'>ctx</a>               140 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt64PtrTy(ctx)); // Pointer to Counters for Basic Blocks</span>
+<span class='curline'><a href='../S/24.html#L141'>ctx</a>               141 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt32Ty(ctx));    // Number of Banks for the counters</span>
+<span class='curline'><a href='../S/24.html#L142'>ctx</a>               142 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt32Ty(ctx));    // Profiling Mode</span>
+<span class='curline'><a href='../S/8.html#L84'>ctx</a>                84 llvm_tool/mekong-utils/src/DeviceUtils.cpp   LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/8.html#L106'>ctx</a>               106 llvm_tool/mekong-utils/src/DeviceUtils.cpp   LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/8.html#L111'>ctx</a>               111 llvm_tool/mekong-utils/src/DeviceUtils.cpp         ctx, {ValueAsMetadata::get(kernel), MDString::get(ctx, "kernel"),</span>
+<span class='curline'><a href='../S/8.html#L113'>ctx</a>               113 llvm_tool/mekong-utils/src/DeviceUtils.cpp                   ConstantInt::get(Type::getInt32Ty(ctx), 1, true))});</span>
+<span class='curline'><a href='../S/6.html#L194'>ctx</a>               194 llvm_tool/mekong-utils/src/HostUtils.cpp   LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/6.html#L196'>ctx</a>               196 llvm_tool/mekong-utils/src/HostUtils.cpp       FunctionType::get(Type::getInt32Ty(ctx), {m.getTypeByName("struct.CUstream_st")-&gt;getPointerTo()}, false);</span>
+<span class='curline'><a href='../S/6.html#L213'>ctx</a>               213 llvm_tool/mekong-utils/src/HostUtils.cpp   LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/6.html#L244'>ctx</a>               244 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/6.html#L271'>ctx</a>               271 llvm_tool/mekong-utils/src/HostUtils.cpp   LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/6.html#L273'>ctx</a>               273 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/6.html#L299'>ctx</a>               299 llvm_tool/mekong-utils/src/HostUtils.cpp   BasicBlock *entry = BasicBlock::Create(ctx, "entry", wrapper, nullptr);</span>
+<span class='curline'><a href='../S/6.html#L358'>ctx</a>               358 llvm_tool/mekong-utils/src/HostUtils.cpp   LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/6.html#L360'>ctx</a>               360 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/6.html#L365'>ctx</a>               365 llvm_tool/mekong-utils/src/HostUtils.cpp   BasicBlock *entry = BasicBlock::Create(ctx, "entry", dummy, nullptr);</span>
+<span class='curline'><a href='../S/6.html#L385'>ctx</a>               385 llvm_tool/mekong-utils/src/HostUtils.cpp   LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/6.html#L386'>ctx</a>               386 llvm_tool/mekong-utils/src/HostUtils.cpp   IRBuilder&lt;&gt; builder(ctx);</span>
+<span class='curline'><a href='../S/5.html#L118'>ctx</a>               118 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::LLVMContext &amp;ctx = m.getContext();</span>
+<span class='curline'><a href='../S/5.html#L123'>ctx</a>               123 llvm_tool/mekong-utils/src/IRUtils.cpp       err, ctx);</span>
+<span class='curline'><a href='../S/5.html#L132'>ctx</a>               132 llvm_tool/mekong-utils/src/IRUtils.cpp   auto &amp;ctx = module.getContext();</span>
+<span class='curline'><a href='../S/5.html#L135'>ctx</a>               135 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;Type *&gt; args = {Type::getInt8PtrTy(ctx)};</span>
+<span class='curline'><a href='../S/5.html#L137'>ctx</a>               137 llvm_tool/mekong-utils/src/IRUtils.cpp       FunctionType::get(Type::getInt32Ty(ctx), args, true);</span>
+<span class='curline'><a href='../S/5.html#L146'>ctx</a>               146 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::LLVMContext &amp;ctx = module.getContext();</span>
+<span class='curline'><a href='../S/5.html#L148'>ctx</a>               148 llvm_tool/mekong-utils/src/IRUtils.cpp       llvm::ArrayType::get(llvm::IntegerType::get(ctx, 8), str.size() + 1);</span>
+<span class='curline'><a href='../S/5.html#L149'>ctx</a>               149 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::Constant *strConstant = llvm::ConstantDataArray::getString(ctx, str);</span>
+<span class='curline'><a href='../S/5.html#L153'>ctx</a>               153 llvm_tool/mekong-utils/src/IRUtils.cpp       llvm::Constant::getNullValue(llvm::IntegerType::getInt32Ty(ctx));</span>
+<span class='curline'><a href='../S/5.html#L171'>ctx</a>               171 llvm_tool/mekong-utils/src/IRUtils.cpp   LLVMContext &amp;ctx = builder.getContext();</span>
+<span class='curline'><a href='../S/630.html#L3774'>ctx</a>              3774 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxDestroy(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L3808'>ctx</a>              3808 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxPushCurrent(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L3872'>ctx</a>              3872 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxSetCurrent(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L4347'>ctx</a>              4347 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxGetApiVersion(CUcontext ctx, unsigned int *version);</span>
+<span class='curline'><a href='../S/630.html#L4494'>ctx</a>              4494 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuCtxDetach(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L12592'>ctx</a>              12592 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddMemcpyNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_MEMCPY3D *copyParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L12680'>ctx</a>              12680 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddMemsetNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_MEMSET_NODE_PARAMS *memsetParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L13342'>ctx</a>              13342 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecMemcpyNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_MEMCPY3D *copyParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L13380'>ctx</a>              13380 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecMemsetNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_MEMSET_NODE_PARAMS *memsetParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L15844'>ctx</a>              15844 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxDestroy(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L15846'>ctx</a>              15846 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxPushCurrent(CUcontext ctx);</span>
+<span class='curline'><a href='../S/635.html#L161'>ctx</a>               161 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L165'>ctx</a>               165 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L173'>ctx</a>               173 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L215'>ctx</a>               215 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L230'>ctx</a>               230 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1195'>ctx</a>              1195 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1214'>ctx</a>              1214 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1348'>ctx</a>              1348 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1355'>ctx</a>              1355 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L2012'>ctx</a>              2012 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L2020'>ctx</a>              2020 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/636.html#L138'>ctx</a>               138 tracing_tool/nvbit/nvbit.h void nvbit_at_ctx_init(CUcontext ctx);</span>
+<span class='curline'><a href='../S/636.html#L142'>ctx</a>               142 tracing_tool/nvbit/nvbit.h void nvbit_at_ctx_term(CUcontext ctx);</span>
+<span class='curline'><a href='../S/636.html#L155'>ctx</a>               155 tracing_tool/nvbit/nvbit.h void nvbit_at_cuda_event(CUcontext ctx, int is_exit, nvbit_api_cuda_t cbid,</span>
+<span class='curline'><a href='../S/636.html#L165'>ctx</a>               165 tracing_tool/nvbit/nvbit.h std::vector&lt;CUfunction&gt; nvbit_get_related_functions(CUcontext ctx,</span>
+<span class='curline'><a href='../S/636.html#L169'>ctx</a>               169 tracing_tool/nvbit/nvbit.h const std::vector&lt;Instr*&gt;&amp; nvbit_get_instrs(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/636.html#L172'>ctx</a>               172 tracing_tool/nvbit/nvbit.h const CFG_t&amp; nvbit_get_CFG(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/636.html#L175'>ctx</a>               175 tracing_tool/nvbit/nvbit.h const char* nvbit_get_func_name(CUcontext ctx, CUfunction f,</span>
+<span class='curline'><a href='../S/636.html#L190'>ctx</a>               190 tracing_tool/nvbit/nvbit.h bool nvbit_is_func_kernel(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/636.html#L324'>ctx</a>               324 tracing_tool/nvbit/nvbit.h void nvbit_enable_instrumented(CUcontext ctx, CUfunction func, bool flag,</span>
+<span class='curline'><a href='../S/636.html#L329'>ctx</a>               329 tracing_tool/nvbit/nvbit.h void nvbit_set_at_launch(CUcontext ctx, CUfunction func, void* buf,</span>
+</pre>
+</body>
+</html>

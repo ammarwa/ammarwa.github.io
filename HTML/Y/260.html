@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>args</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L130'>args</a>              130 llvm_tool/lib/fluxDevicePass.cpp     std::vector&lt;Type *&gt; args;</span>
+<span class='curline'><a href='../S/26.html#L131'>args</a>              131 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt64PtrTy(ctx));</span>
+<span class='curline'><a href='../S/26.html#L132'>args</a>              132 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt64PtrTy(ctx));</span>
+<span class='curline'><a href='../S/26.html#L133'>args</a>              133 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt32Ty(ctx));</span>
+<span class='curline'><a href='../S/26.html#L134'>args</a>              134 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt32Ty(ctx));</span>
+<span class='curline'><a href='../S/26.html#L135'>args</a>              135 llvm_tool/lib/fluxDevicePass.cpp     Function *kernelClone = mekong::cloneAndAddArgs(kernel, args, {"bblist", "bblist1", "n_banks", "profiling_mode"});</span>
+<span class='curline'><a href='../S/15.html#L20'>args</a>               20 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args);</span>
+<span class='curline'><a href='../S/8.html#L62'>args</a>               62 llvm_tool/mekong-utils/src/DeviceUtils.cpp   for (Argument &amp;arg : source-&gt;args()) {</span>
+<span class='curline'><a href='../S/6.html#L119'>args</a>              119 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelArguments(llvm::CallBase *kernelLaunchSite, std::vector&lt;llvm::Value *&gt; &amp;args) {</span>
+<span class='curline'><a href='../S/6.html#L129'>args</a>              129 llvm_tool/mekong-utils/src/HostUtils.cpp     args.push_back(op.get());</span>
+<span class='curline'><a href='../S/6.html#L401'>args</a>              401 llvm_tool/mekong-utils/src/HostUtils.cpp   std::vector&lt;Value *&gt; args;</span>
+<span class='curline'><a href='../S/6.html#L404'>args</a>              404 llvm_tool/mekong-utils/src/HostUtils.cpp     args.push_back(val);</span>
+<span class='curline'><a href='../S/6.html#L408'>args</a>              408 llvm_tool/mekong-utils/src/HostUtils.cpp     args.push_back(val);</span>
+<span class='curline'><a href='../S/6.html#L412'>args</a>              412 llvm_tool/mekong-utils/src/HostUtils.cpp     args.push_back(val);</span>
+<span class='curline'><a href='../S/6.html#L421'>args</a>              421 llvm_tool/mekong-utils/src/HostUtils.cpp   if (args[5]-&gt;getType() != params[5]) {</span>
+<span class='curline'><a href='../S/6.html#L422'>args</a>              422 llvm_tool/mekong-utils/src/HostUtils.cpp     args[5] = builder.CreateBitCast(args[5], params[5]);</span>
+<span class='curline'><a href='../S/6.html#L426'>args</a>              426 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *newLaunchCall = builder.CreateCall(replacementWrapper, args);</span>
+<span class='curline'><a href='../S/5.html#L135'>args</a>              135 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;Type *&gt; args = {Type::getInt8PtrTy(ctx)};</span>
+<span class='curline'><a href='../S/5.html#L137'>args</a>              137 llvm_tool/mekong-utils/src/IRUtils.cpp       FunctionType::get(Type::getInt32Ty(ctx), args, true);</span>
+<span class='curline'><a href='../S/5.html#L158'>args</a>              158 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;llvm::Value *&gt; args;</span>
+<span class='curline'><a href='../S/5.html#L159'>args</a>              159 llvm_tool/mekong-utils/src/IRUtils.cpp   args.push_back(&amp;*strVal);</span>
+<span class='curline'><a href='../S/5.html#L161'>args</a>              161 llvm_tool/mekong-utils/src/IRUtils.cpp     args.push_back(val);</span>
+<span class='curline'><a href='../S/5.html#L165'>args</a>              165 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::CallInst *ci = builder.CreateCall(printf_func, args);</span>
+<span class='curline'><a href='../S/5.html#L178'>args</a>              178 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;llvm::Value *&gt; args;</span>
+<span class='curline'><a href='../S/5.html#L179'>args</a>              179 llvm_tool/mekong-utils/src/IRUtils.cpp   args.push_back(&amp;*strVal);</span>
+<span class='curline'><a href='../S/5.html#L181'>args</a>              181 llvm_tool/mekong-utils/src/IRUtils.cpp     args.push_back(val);</span>
+<span class='curline'><a href='../S/5.html#L185'>args</a>              185 llvm_tool/mekong-utils/src/IRUtils.cpp   CallInst *ci = builder.CreateCall(printf_func, args);</span>
+</pre>
+</body>
+</html>

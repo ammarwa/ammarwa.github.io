@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>n_banks</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L151'>n_banks</a>           151 llvm_tool/lib/fluxDevicePass.cpp     Value *n_banks = &amp;*(kernelClone-&gt;arg_begin() + (kernelClone-&gt;arg_size() - 2));</span>
+<span class='curline'><a href='../S/26.html#L171'>n_banks</a>           171 llvm_tool/lib/fluxDevicePass.cpp       builder.CreateCall(traceFun, {trace_ptr, trace_ptr1, block_ID, n_banks, profiling});</span>
+<span class='curline'><a href='../S/24.html#L171'>n_banks</a>           171 llvm_tool/lib/fluxHostPass.cpp       int32_t n_banks = 64;</span>
+<span class='curline'><a href='../S/24.html#L172'>n_banks</a>           172 llvm_tool/lib/fluxHostPass.cpp       Value *blockCountVal = builder.getInt64(blockCount * n_banks);</span>
+<span class='curline'><a href='../S/24.html#L178'>n_banks</a>           178 llvm_tool/lib/fluxHostPass.cpp       Value *n_banks_val = builder.getInt32(n_banks);</span>
+<span class='curline'><a href='../S/25.html#L93'>n_banks</a>            93 llvm_tool/lib/hostRuntime.cpp serializeBBCounter(uint64_t *d_blockList, uint64_t *d_blockList1, size_t len, uint32_t n_banks, const char *kernelname,</span>
+<span class='curline'><a href='../S/25.html#L111'>n_banks</a>           111 llvm_tool/lib/hostRuntime.cpp   for (int block_ID = 0; block_ID &lt; len / n_banks; ++block_ID) {</span>
+<span class='curline'><a href='../S/25.html#L114'>n_banks</a>           114 llvm_tool/lib/hostRuntime.cpp     for (int bank = 0; bank &lt; n_banks; ++bank) {</span>
+<span class='curline'><a href='../S/25.html#L115'>n_banks</a>           115 llvm_tool/lib/hostRuntime.cpp       if (__builtin_add_overflow(sum, h_blockList[block_ID * n_banks + bank], &amp;sum)) {</span>
+<span class='curline'><a href='../S/25.html#L120'>n_banks</a>           120 llvm_tool/lib/hostRuntime.cpp       if (__builtin_add_overflow(sum1, h_blockList1[block_ID * n_banks + bank], &amp;sum1)) {</span>
+<span class='curline'><a href='../S/25.html#L127'>n_banks</a>           127 llvm_tool/lib/hostRuntime.cpp     h_blockList[block_ID * n_banks + 0] = sum;</span>
+<span class='curline'><a href='../S/25.html#L128'>n_banks</a>           128 llvm_tool/lib/hostRuntime.cpp     h_blockList1[block_ID * n_banks + 0] = sum1;</span>
+<span class='curline'><a href='../S/25.html#L141'>n_banks</a>           141 llvm_tool/lib/hostRuntime.cpp   for (int block_ID = 0; block_ID &lt; len / n_banks; ++block_ID) {</span>
+<span class='curline'><a href='../S/25.html#L143'>n_banks</a>           143 llvm_tool/lib/hostRuntime.cpp     output &lt;&lt; ", " &lt;&lt; h_blockList[block_ID * n_banks + 0] / 32.0;</span>
+</pre>
+</body>
+</html>

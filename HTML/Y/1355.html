@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>next</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/10.html#L2991'>next</a>             2991 llvm_tool/mekong-utils/inc/ptx_parser.h   Token next = *(iter);</span>
+<span class='curline'><a href='../S/10.html#L2994'>next</a>             2994 llvm_tool/mekong-utils/inc/ptx_parser.h     next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L2995'>next</a>             2995 llvm_tool/mekong-utils/inc/ptx_parser.h     switch (next.ty) {</span>
+<span class='curline'><a href='../S/10.html#L2998'>next</a>             2998 llvm_tool/mekong-utils/inc/ptx_parser.h         next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L2999'>next</a>             2999 llvm_tool/mekong-utils/inc/ptx_parser.h       } while (next.ty != rBracket);</span>
+<span class='curline'><a href='../S/10.html#L3002'>next</a>             3002 llvm_tool/mekong-utils/inc/ptx_parser.h       func.name = next.str; // Found Function Name</span>
+<span class='curline'><a href='../S/10.html#L3007'>next</a>             3007 llvm_tool/mekong-utils/inc/ptx_parser.h   } while (next.ty != Identifier);</span>
+<span class='curline'><a href='../S/10.html#L3010'>next</a>             3010 llvm_tool/mekong-utils/inc/ptx_parser.h   if (next.ty == lBracket) {</span>
+<span class='curline'><a href='../S/10.html#L3012'>next</a>             3012 llvm_tool/mekong-utils/inc/ptx_parser.h       next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3013'>next</a>             3013 llvm_tool/mekong-utils/inc/ptx_parser.h     } while (next.ty != rBracket);</span>
+<span class='curline'><a href='../S/10.html#L3014'>next</a>             3014 llvm_tool/mekong-utils/inc/ptx_parser.h     next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3020'>next</a>             3020 llvm_tool/mekong-utils/inc/ptx_parser.h     switch (next.ty) {</span>
+<span class='curline'><a href='../S/10.html#L3027'>next</a>             3027 llvm_tool/mekong-utils/inc/ptx_parser.h       next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3031'>next</a>             3031 llvm_tool/mekong-utils/inc/ptx_parser.h   if (next.ty == lcBracket) {</span>
+<span class='curline'><a href='../S/10.html#L3037'>next</a>             3037 llvm_tool/mekong-utils/inc/ptx_parser.h       next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3040'>next</a>             3040 llvm_tool/mekong-utils/inc/ptx_parser.h       if (next.ty == Directive) {</span>
+<span class='curline'><a href='../S/10.html#L3042'>next</a>             3042 llvm_tool/mekong-utils/inc/ptx_parser.h         if (next.str == ".loc") {</span>
+<span class='curline'><a href='../S/10.html#L3044'>next</a>             3044 llvm_tool/mekong-utils/inc/ptx_parser.h             next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3045'>next</a>             3045 llvm_tool/mekong-utils/inc/ptx_parser.h             if (next.ty != Integer)</span>
+<span class='curline'><a href='../S/10.html#L3047'>next</a>             3047 llvm_tool/mekong-utils/inc/ptx_parser.h                         &lt;&lt; TokenClassName[next.ty] &lt;&lt; " instead\n";</span>
+<span class='curline'><a href='../S/10.html#L3052'>next</a>             3052 llvm_tool/mekong-utils/inc/ptx_parser.h             next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3053'>next</a>             3053 llvm_tool/mekong-utils/inc/ptx_parser.h           } while (next.ty != Semicolon);</span>
+<span class='curline'><a href='../S/10.html#L3057'>next</a>             3057 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Instruction) {</span>
+<span class='curline'><a href='../S/10.html#L3060'>next</a>             3060 llvm_tool/mekong-utils/inc/ptx_parser.h           std::cerr &lt;&lt; "Instruction: " &lt;&lt; next.str &lt;&lt; "\n";</span>
+<span class='curline'><a href='../S/10.html#L3065'>next</a>             3065 llvm_tool/mekong-utils/inc/ptx_parser.h 	std::string temp = next.str;</span>
+<span class='curline'><a href='../S/10.html#L3069'>next</a>             3069 llvm_tool/mekong-utils/inc/ptx_parser.h           next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3070'>next</a>             3070 llvm_tool/mekong-utils/inc/ptx_parser.h 	  if(next.ty != Comma &amp;&amp; next.ty != Semicolon){</span>
+<span class='curline'><a href='../S/10.html#L3071'>next</a>             3071 llvm_tool/mekong-utils/inc/ptx_parser.h 		if(next.ty == reBracket || next.ty == AddressOp || flag==1){</span>
+<span class='curline'><a href='../S/10.html#L3072'>next</a>             3072 llvm_tool/mekong-utils/inc/ptx_parser.h                         if(next.ty == Register){</span>
+<span class='curline'><a href='../S/10.html#L3073'>next</a>             3073 llvm_tool/mekong-utils/inc/ptx_parser.h 				temp = temp + ".." + next.str + "..";</span>
+<span class='curline'><a href='../S/10.html#L3075'>next</a>             3075 llvm_tool/mekong-utils/inc/ptx_parser.h 				temp = temp + next.str;</span>
+<span class='curline'><a href='../S/10.html#L3078'>next</a>             3078 llvm_tool/mekong-utils/inc/ptx_parser.h                         temp = temp + " " + next.str;</span>
+<span class='curline'><a href='../S/10.html#L3080'>next</a>             3080 llvm_tool/mekong-utils/inc/ptx_parser.h 		if(next.ty == leBracket){</span>
+<span class='curline'><a href='../S/10.html#L3083'>next</a>             3083 llvm_tool/mekong-utils/inc/ptx_parser.h 		if(next.ty == reBracket){</span>
+<span class='curline'><a href='../S/10.html#L3087'>next</a>             3087 llvm_tool/mekong-utils/inc/ptx_parser.h         } while (next.ty != Semicolon);</span>
+<span class='curline'><a href='../S/10.html#L3091'>next</a>             3091 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Comment) {</span>
+<span class='curline'><a href='../S/10.html#L3093'>next</a>             3093 llvm_tool/mekong-utils/inc/ptx_parser.h         size_t pos = next.str.rfind("// %");</span>
+<span class='curline'><a href='../S/10.html#L3098'>next</a>             3098 llvm_tool/mekong-utils/inc/ptx_parser.h           size_t wpos1 = next.str.find(" ", bbPos);</span>
+<span class='curline'><a href='../S/10.html#L3099'>next</a>             3099 llvm_tool/mekong-utils/inc/ptx_parser.h           size_t wpos2 = next.str.find("\t", bbPos);</span>
+<span class='curline'><a href='../S/10.html#L3100'>next</a>             3100 llvm_tool/mekong-utils/inc/ptx_parser.h           size_t wpos3 = next.str.find(":", bbPos);</span>
+<span class='curline'><a href='../S/10.html#L3107'>next</a>             3107 llvm_tool/mekong-utils/inc/ptx_parser.h             len = next.str.rfind("\n") - (bbPos);</span>
+<span class='curline'><a href='../S/10.html#L3109'>next</a>             3109 llvm_tool/mekong-utils/inc/ptx_parser.h           currentBB = next.str.substr(bbPos, len);</span>
+<span class='curline'><a href='../S/10.html#L3116'>next</a>             3116 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Label) {</span>
+<span class='curline'><a href='../S/10.html#L3120'>next</a>             3120 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == Guard) {</span>
+<span class='curline'><a href='../S/10.html#L3122'>next</a>             3122 llvm_tool/mekong-utils/inc/ptx_parser.h         next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3124'>next</a>             3124 llvm_tool/mekong-utils/inc/ptx_parser.h 	if(next.str.compare(p) == 0){</span>
+<span class='curline'><a href='../S/10.html#L3128'>next</a>             3128 llvm_tool/mekong-utils/inc/ptx_parser.h 		next = *(iter++);</span>
+<span class='curline'><a href='../S/10.html#L3167'>next</a>             3167 llvm_tool/mekong-utils/inc/ptx_parser.h 	} else*/ if (next.ty != Register) {</span>
+<span class='curline'><a href='../S/10.html#L3168'>next</a>             3168 llvm_tool/mekong-utils/inc/ptx_parser.h 	  std::cout &lt;&lt; "Error with: " &lt;&lt; " " &lt;&lt; (*(iter-4)).str &lt;&lt; " " &lt;&lt; (*(iter-3)).str &lt;&lt; " " &lt;&lt; (*(iter-2)).str &lt;&lt; " ..RG.. " &lt;&lt; (*(iter-1)).str &lt;&lt; " " &lt;&lt; next.str &lt;&lt; " ..RG.. " &lt;&lt; (*(iter)).str &lt;&lt; " " &lt;&lt; (*(iter+1)).str &lt;&lt; " " &lt;&lt; (*(iter+2)).str &lt;&lt; "\n";</span>
+<span class='curline'><a href='../S/10.html#L3174'>next</a>             3174 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == lcBracket) {</span>
+<span class='curline'><a href='../S/10.html#L3187'>next</a>             3187 llvm_tool/mekong-utils/inc/ptx_parser.h       else if (next.ty == rcBracket) {</span>
+<span class='curline'><a href='../S/10.html#L3198'>next</a>             3198 llvm_tool/mekong-utils/inc/ptx_parser.h         std::cerr &lt;&lt; "Unexpected token: " &lt;&lt; TokenClassName[next.ty] &lt;&lt; "\t"</span>
+<span class='curline'><a href='../S/10.html#L3199'>next</a>             3199 llvm_tool/mekong-utils/inc/ptx_parser.h                   &lt;&lt; next.str &lt;&lt; '\n';</span>
+</pre>
+</body>
+</html>

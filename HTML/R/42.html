@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>CUdevice</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/630.html#L2681'>CUdevice</a>         2681 tracing_tool/nvbit/cuda.h #define CU_DEVICE_CPU               ((CUdevice)-1)</span>
+<span class='curline'><a href='../S/630.html#L2686'>CUdevice</a>         2686 tracing_tool/nvbit/cuda.h #define CU_DEVICE_INVALID           ((CUdevice)-2)</span>
+<span class='curline'><a href='../S/630.html#L2868'>CUdevice</a>         2868 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGet(CUdevice *device, int ordinal);</span>
+<span class='curline'><a href='../S/630.html#L2927'>CUdevice</a>         2927 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetName(char *name, int len, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L2955'>CUdevice</a>         2955 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetUuid(CUuuid *uuid, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L2984'>CUdevice</a>         2984 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetLuid(char *luid, unsigned int *deviceNodeMask, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3013'>CUdevice</a>         3013 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceTotalMem(size_t *bytes, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3224'>CUdevice</a>         3224 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetAttribute(int *pi, CUdevice_attribute attrib, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3273'>CUdevice</a>         3273 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetNvSciSyncAttributes(void *nvSciSyncAttrList, CUdevice dev, int flags);</span>
+<span class='curline'><a href='../S/630.html#L3351'>CUdevice</a>         3351 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuDeviceGetProperties(CUdevprop *prop, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3385'>CUdevice</a>         3385 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuDeviceComputeCapability(int *major, int *minor, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3452'>CUdevice</a>         3452 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxRetain(CUcontext *pctx, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3493'>CUdevice</a>         3493 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxRelease(CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3558'>CUdevice</a>         3558 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxSetFlags(CUdevice dev, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L3584'>CUdevice</a>         3584 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxGetState(CUdevice dev, unsigned int *flags, int *active);</span>
+<span class='curline'><a href='../S/630.html#L3624'>CUdevice</a>         3624 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxReset(CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3736'>CUdevice</a>         3736 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3925'>CUdevice</a>         3925 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxGetDevice(CUdevice *device);</span>
+<span class='curline'><a href='../S/630.html#L5566'>CUdevice</a>         5566 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetByPCIBusId(CUdevice *dev, const char *pciBusId);</span>
+<span class='curline'><a href='../S/630.html#L5598'>CUdevice</a>         5598 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetPCIBusId(char *pciBusId, int len, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L9223'>CUdevice</a>         9223 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemPrefetchAsync(CUdeviceptr devPtr, size_t count, CUdevice dstDevice, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L9337'>CUdevice</a>         9337 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAdvise(CUdeviceptr devPtr, size_t count, CUmem_advise advice, CUdevice device);</span>
+<span class='curline'><a href='../S/630.html#L15192'>CUdevice</a>         15192 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceCanAccessPeer(int *canAccessPeer, CUdevice dev, CUdevice peerDev);</span>
+<span class='curline'><a href='../S/630.html#L15312'>CUdevice</a>         15312 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDeviceGetP2PAttribute(int* value, CUdevice_P2PAttribute attrib, CUdevice srcDevice, CUdevice dstDevice);</span>
+<span class='curline'><a href='../S/630.html#L15801'>CUdevice</a>         15801 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuDeviceTotalMem(unsigned int *bytes, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L15802'>CUdevice</a>         15802 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L15849'>CUdevice</a>         15849 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuDevicePrimaryCtxRelease(CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L15850'>CUdevice</a>         15850 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuDevicePrimaryCtxReset(CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L15851'>CUdevice</a>         15851 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuDevicePrimaryCtxSetFlags(CUdevice dev, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15909'>CUdevice</a>         15909 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemPrefetchAsync(CUdeviceptr devPtr, size_t count, CUdevice dstDevice, CUstream hStream);</span>
+<span class='curline'><a href='../S/635.html#L83'>CUdevice</a>           83 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice *device;</span>
+<span class='curline'><a href='../S/635.html#L94'>CUdevice</a>           94 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L99'>CUdevice</a>           99 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L104'>CUdevice</a>          104 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L110'>CUdevice</a>          110 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L115'>CUdevice</a>          115 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L121'>CUdevice</a>          121 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L127'>CUdevice</a>          127 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L132'>CUdevice</a>          132 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L136'>CUdevice</a>          136 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L140'>CUdevice</a>          140 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L145'>CUdevice</a>          145 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L151'>CUdevice</a>          151 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L157'>CUdevice</a>          157 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L181'>CUdevice</a>          181 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice *device;</span>
+<span class='curline'><a href='../S/635.html#L383'>CUdevice</a>          383 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice *dev;</span>
+<span class='curline'><a href='../S/635.html#L390'>CUdevice</a>          390 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L798'>CUdevice</a>          798 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L806'>CUdevice</a>          806 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice device;</span>
+<span class='curline'><a href='../S/635.html#L1640'>CUdevice</a>         1640 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L1641'>CUdevice</a>         1641 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice peerDev;</span>
+<span class='curline'><a href='../S/635.html#L1656'>CUdevice</a>         1656 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L1657'>CUdevice</a>         1657 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L1756'>CUdevice</a>         1756 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L1762'>CUdevice</a>         1762 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L2032'>CUdevice</a>         2032 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L2036'>CUdevice</a>         2036 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L2040'>CUdevice</a>         2040 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dev;</span>
+<span class='curline'><a href='../S/635.html#L2404'>CUdevice</a>         2404 tracing_tool/nvbit/generated_cuda_meta.h     CUdevice dstDevice;</span>
+</pre>
+</body>
+</html>

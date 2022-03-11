@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>Type</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L130'>Type</a>              130 llvm_tool/lib/fluxDevicePass.cpp     std::vector&lt;Type *&gt; args;</span>
+<span class='curline'><a href='../S/26.html#L131'>Type</a>              131 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt64PtrTy(ctx));</span>
+<span class='curline'><a href='../S/26.html#L132'>Type</a>              132 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt64PtrTy(ctx));</span>
+<span class='curline'><a href='../S/26.html#L133'>Type</a>              133 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt32Ty(ctx));</span>
+<span class='curline'><a href='../S/26.html#L134'>Type</a>              134 llvm_tool/lib/fluxDevicePass.cpp     args.push_back(Type::getInt32Ty(ctx));</span>
+<span class='curline'><a href='../S/24.html#L136'>Type</a>              136 llvm_tool/lib/fluxHostPass.cpp     std::vector&lt;Type *&gt; cloneParamenter;</span>
+<span class='curline'><a href='../S/24.html#L139'>Type</a>              139 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt64PtrTy(ctx)); // Pointer to Counters for Basic Blocks</span>
+<span class='curline'><a href='../S/24.html#L140'>Type</a>              140 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt64PtrTy(ctx)); // Pointer to Counters for Basic Blocks</span>
+<span class='curline'><a href='../S/24.html#L141'>Type</a>              141 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt32Ty(ctx));    // Number of Banks for the counters</span>
+<span class='curline'><a href='../S/24.html#L142'>Type</a>              142 llvm_tool/lib/fluxHostPass.cpp     cloneParamenter.push_back(Type::getInt32Ty(ctx));    // Profiling Mode</span>
+<span class='curline'><a href='../S/12.html#L18'>Type</a>               18 llvm_tool/mekong-utils/inc/DeviceUtils.h void registerGlobalVar(llvm::Module &amp;m, std::string name, llvm::Type *type,</span>
+<span class='curline'><a href='../S/12.html#L24'>Type</a>               24 llvm_tool/mekong-utils/inc/DeviceUtils.h                                 std::vector&lt;llvm::Type *&gt; argType,</span>
+<span class='curline'><a href='../S/15.html#L27'>Type</a>               27 llvm_tool/mekong-utils/inc/HostUtils.h llvm::Value *createCudaGlobalVar(llvm::Module &amp;m, const std::string name, llvm::Type *varType);</span>
+<span class='curline'><a href='../S/8.html#L41'>Type</a>               41 llvm_tool/mekong-utils/src/DeviceUtils.cpp                                 std::vector&lt;llvm::Type *&gt; argType,</span>
+<span class='curline'><a href='../S/8.html#L46'>Type</a>               46 llvm_tool/mekong-utils/src/DeviceUtils.cpp   vector&lt;Type *&gt; cloneArgs = source-&gt;getFunctionType()-&gt;params().vec();</span>
+<span class='curline'><a href='../S/8.html#L82'>Type</a>               82 llvm_tool/mekong-utils/src/DeviceUtils.cpp void registerGlobalVar(Module &amp;m, string name, Type *type,</span>
+<span class='curline'><a href='../S/8.html#L97'>Type</a>               97 llvm_tool/mekong-utils/src/DeviceUtils.cpp   Type *ty = cast&lt;PointerType&gt;(gvp-&gt;getType())-&gt;getElementType();</span>
+<span class='curline'><a href='../S/8.html#L113'>Type</a>              113 llvm_tool/mekong-utils/src/DeviceUtils.cpp                   ConstantInt::get(Type::getInt32Ty(ctx), 1, true))});</span>
+<span class='curline'><a href='../S/6.html#L196'>Type</a>              196 llvm_tool/mekong-utils/src/HostUtils.cpp       FunctionType::get(Type::getInt32Ty(ctx), {m.getTypeByName("struct.CUstream_st")-&gt;getPointerTo()}, false);</span>
+<span class='curline'><a href='../S/6.html#L287'>Type</a>              287 llvm_tool/mekong-utils/src/HostUtils.cpp   vector&lt;Type *&gt; wrapperParams = {builder.getInt64Ty(), builder.getInt32Ty(),</span>
+<span class='curline'><a href='../S/5.html#L111'>Type</a>              111 llvm_tool/mekong-utils/src/IRUtils.cpp   Constant *Zero = ConstantInt::get(Type::getInt32Ty(M.getContext()), 0);</span>
+<span class='curline'><a href='../S/5.html#L135'>Type</a>              135 llvm_tool/mekong-utils/src/IRUtils.cpp   std::vector&lt;Type *&gt; args = {Type::getInt8PtrTy(ctx)};</span>
+<span class='curline'><a href='../S/5.html#L137'>Type</a>              137 llvm_tool/mekong-utils/src/IRUtils.cpp       FunctionType::get(Type::getInt32Ty(ctx), args, true);</span>
+</pre>
+</body>
+</html>

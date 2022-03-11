@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>element_size</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/617.html#L3'>element_size</a>        3 reuse_distance_tool/narray.c narray_t* narray_new(unsigned element_size, unsigned capacity) {</span>
+<span class='curline'><a href='../S/617.html#L5'>element_size</a>        5 reuse_distance_tool/narray.c     na-&gt;element_size = element_size;</span>
+<span class='curline'><a href='../S/617.html#L7'>element_size</a>        7 reuse_distance_tool/narray.c     na-&gt;capacity = capacity * element_size;</span>
+<span class='curline'><a href='../S/617.html#L8'>element_size</a>        8 reuse_distance_tool/narray.c     na-&gt;data = calloc(capacity, element_size);</span>
+<span class='curline'><a href='../S/617.html#L14'>element_size</a>       14 reuse_distance_tool/narray.c        unsigned new_capacity = na-&gt;capacity + na-&gt;capacity + 10 * na-&gt;element_size;</span>
+<span class='curline'><a href='../S/617.html#L21'>element_size</a>       21 reuse_distance_tool/narray.c    memcpy(na-&gt;data + na-&gt;len, value, na-&gt;element_size);</span>
+<span class='curline'><a href='../S/617.html#L22'>element_size</a>       22 reuse_distance_tool/narray.c 	 na-&gt;len += na-&gt;element_size;</span>
+<span class='curline'><a href='../S/617.html#L40'>element_size</a>       40 reuse_distance_tool/narray.c narray_t* narray_heaparray_new(void* data, const unsigned len, const unsigned element_size) {</span>
+<span class='curline'><a href='../S/617.html#L45'>element_size</a>       45 reuse_distance_tool/narray.c     na-&gt;element_size = element_size;</span>
+<span class='curline'><a href='../S/623.html#L16'>element_size</a>       16 reuse_distance_tool/narray.h     unsigned len, capacity, element_size;</span>
+<span class='curline'><a href='../S/623.html#L19'>element_size</a>       19 reuse_distance_tool/narray.h narray_t* narray_heaparray_new(void* data, unsigned len, unsigned element_size);</span>
+<span class='curline'><a href='../S/623.html#L20'>element_size</a>       20 reuse_distance_tool/narray.h narray_t* narray_new(unsigned element_size, unsigned capacity);</span>
+<span class='curline'><a href='../S/623.html#L26'>element_size</a>       26 reuse_distance_tool/narray.h     return na-&gt;len/na-&gt;element_size;</span>
+</pre>
+</body>
+</html>

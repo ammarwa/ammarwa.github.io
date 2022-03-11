@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>CUdeviceptr</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/630.html#L406'>CUdeviceptr</a>       406 tracing_tool/nvbit/cuda.h         CUdeviceptr address;</span>
+<span class='curline'><a href='../S/630.html#L412'>CUdeviceptr</a>       412 tracing_tool/nvbit/cuda.h         CUdeviceptr alias; /**&lt; For driver internal use. Initial value is unimportant. */</span>
+<span class='curline'><a href='../S/630.html#L416'>CUdeviceptr</a>       416 tracing_tool/nvbit/cuda.h         CUdeviceptr address;</span>
+<span class='curline'><a href='../S/630.html#L422'>CUdeviceptr</a>       422 tracing_tool/nvbit/cuda.h         CUdeviceptr alias; /**&lt; For driver internal use. Initial value is unimportant. */</span>
+<span class='curline'><a href='../S/630.html#L1151'>CUdeviceptr</a>      1151 tracing_tool/nvbit/cuda.h     CUdeviceptr dst;                        /**&lt; Destination device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1838'>CUdeviceptr</a>      1838 tracing_tool/nvbit/cuda.h     CUdeviceptr srcDevice;      /**&lt; Source device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1847'>CUdeviceptr</a>      1847 tracing_tool/nvbit/cuda.h     CUdeviceptr dstDevice;      /**&lt; Destination device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1865'>CUdeviceptr</a>      1865 tracing_tool/nvbit/cuda.h     CUdeviceptr srcDevice;      /**&lt; Source device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1877'>CUdeviceptr</a>      1877 tracing_tool/nvbit/cuda.h     CUdeviceptr dstDevice;      /**&lt; Destination device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1898'>CUdeviceptr</a>      1898 tracing_tool/nvbit/cuda.h     CUdeviceptr srcDevice;      /**&lt; Source device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1910'>CUdeviceptr</a>      1910 tracing_tool/nvbit/cuda.h     CUdeviceptr dstDevice;      /**&lt; Destination device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1962'>CUdeviceptr</a>      1962 tracing_tool/nvbit/cuda.h             CUdeviceptr devPtr;               /**&lt; Device pointer */</span>
+<span class='curline'><a href='../S/630.html#L1968'>CUdeviceptr</a>      1968 tracing_tool/nvbit/cuda.h             CUdeviceptr devPtr;               /**&lt; Device pointer */</span>
+<span class='curline'><a href='../S/630.html#L4761'>CUdeviceptr</a>      4761 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuModuleGetGlobal(CUdeviceptr *dptr, size_t *bytes, CUmodule hmod, const char *name);</span>
+<span class='curline'><a href='../S/630.html#L5065'>CUdeviceptr</a>      5065 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAlloc(CUdeviceptr *dptr, size_t bytesize);</span>
+<span class='curline'><a href='../S/630.html#L5127'>CUdeviceptr</a>      5127 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAllocPitch(CUdeviceptr *dptr, size_t *pPitch, size_t WidthInBytes, size_t Height, unsigned int ElementSizeBytes);</span>
+<span class='curline'><a href='../S/630.html#L5157'>CUdeviceptr</a>      5157 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemFree(CUdeviceptr dptr);</span>
+<span class='curline'><a href='../S/630.html#L5191'>CUdeviceptr</a>      5191 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemGetAddressRange(CUdeviceptr *pbase, size_t *psize, CUdeviceptr dptr);</span>
+<span class='curline'><a href='../S/630.html#L5400'>CUdeviceptr</a>      5400 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemHostGetDevicePointer(CUdeviceptr *pdptr, void *p, unsigned int Flags);</span>
+<span class='curline'><a href='../S/630.html#L5537'>CUdeviceptr</a>      5537 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAllocManaged(CUdeviceptr *dptr, size_t bytesize, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L5724'>CUdeviceptr</a>      5724 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuIpcGetMemHandle(CUipcMemHandle *pHandle, CUdeviceptr dptr);</span>
+<span class='curline'><a href='../S/630.html#L5782'>CUdeviceptr</a>      5782 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuIpcOpenMemHandle(CUdeviceptr *pdptr, CUipcMemHandle handle, unsigned int Flags);</span>
+<span class='curline'><a href='../S/630.html#L5816'>CUdeviceptr</a>      5816 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuIpcCloseMemHandle(CUdeviceptr dptr);</span>
+<span class='curline'><a href='../S/630.html#L5962'>CUdeviceptr</a>      5962 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpy(CUdeviceptr dst, CUdeviceptr src, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L5992'>CUdeviceptr</a>      5992 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L6028'>CUdeviceptr</a>      6028 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoD(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L6064'>CUdeviceptr</a>      6064 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyDtoH(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L6100'>CUdeviceptr</a>      6100 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyDtoD(CUdeviceptr dstDevice, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L6136'>CUdeviceptr</a>      6136 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyDtoA(CUarray dstArray, size_t dstOffset, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L6174'>CUdeviceptr</a>      6174 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAtoD(CUdeviceptr dstDevice, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L6852'>CUdeviceptr</a>      6852 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyAsync(CUdeviceptr dst, CUdeviceptr src, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L6885'>CUdeviceptr</a>      6885 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyPeerAsync(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L6926'>CUdeviceptr</a>      6926 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyHtoDAsync(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L6967'>CUdeviceptr</a>      6967 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyDtoHAsync(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L7008'>CUdeviceptr</a>      7008 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyDtoDAsync(CUdeviceptr dstDevice, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L7496'>CUdeviceptr</a>      7496 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD8(CUdeviceptr dstDevice, unsigned char uc, size_t N);</span>
+<span class='curline'><a href='../S/630.html#L7531'>CUdeviceptr</a>      7531 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD16(CUdeviceptr dstDevice, unsigned short us, size_t N);</span>
+<span class='curline'><a href='../S/630.html#L7566'>CUdeviceptr</a>      7566 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD32(CUdeviceptr dstDevice, unsigned int ui, size_t N);</span>
+<span class='curline'><a href='../S/630.html#L7606'>CUdeviceptr</a>      7606 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD2D8(CUdeviceptr dstDevice, size_t dstPitch, unsigned char uc, size_t Width, size_t Height);</span>
+<span class='curline'><a href='../S/630.html#L7647'>CUdeviceptr</a>      7647 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD2D16(CUdeviceptr dstDevice, size_t dstPitch, unsigned short us, size_t Width, size_t Height);</span>
+<span class='curline'><a href='../S/630.html#L7688'>CUdeviceptr</a>      7688 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD2D32(CUdeviceptr dstDevice, size_t dstPitch, unsigned int ui, size_t Width, size_t Height);</span>
+<span class='curline'><a href='../S/630.html#L7725'>CUdeviceptr</a>      7725 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD8Async(CUdeviceptr dstDevice, unsigned char uc, size_t N, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L7762'>CUdeviceptr</a>      7762 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD16Async(CUdeviceptr dstDevice, unsigned short us, size_t N, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L7798'>CUdeviceptr</a>      7798 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD32Async(CUdeviceptr dstDevice, unsigned int ui, size_t N, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L7840'>CUdeviceptr</a>      7840 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD2D8Async(CUdeviceptr dstDevice, size_t dstPitch, unsigned char uc, size_t Width, size_t Height, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L7883'>CUdeviceptr</a>      7883 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD2D16Async(CUdeviceptr dstDevice, size_t dstPitch, unsigned short us, size_t Width, size_t Height, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L7926'>CUdeviceptr</a>      7926 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemsetD2D32Async(CUdeviceptr dstDevice, size_t dstPitch, unsigned int ui, size_t Width, size_t Height, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L8551'>CUdeviceptr</a>      8551 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAddressReserve(CUdeviceptr *ptr, size_t size, size_t alignment, CUdeviceptr addr, unsigned long long flags);</span>
+<span class='curline'><a href='../S/630.html#L8572'>CUdeviceptr</a>      8572 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAddressFree(CUdeviceptr ptr, size_t size);</span>
+<span class='curline'><a href='../S/630.html#L8678'>CUdeviceptr</a>      8678 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemMap(CUdeviceptr ptr, size_t size, size_t offset, CUmemGenericAllocationHandle handle, unsigned long long flags);</span>
+<span class='curline'><a href='../S/630.html#L8707'>CUdeviceptr</a>      8707 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemUnmap(CUdeviceptr ptr, size_t size);</span>
+<span class='curline'><a href='../S/630.html#L8732'>CUdeviceptr</a>      8732 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemSetAccess(CUdeviceptr ptr, size_t size, const CUmemAccessDesc *desc, size_t count);</span>
+<span class='curline'><a href='../S/630.html#L8751'>CUdeviceptr</a>      8751 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemGetAccess(unsigned long long *flags, const CUmemLocation *location, CUdeviceptr ptr);</span>
+<span class='curline'><a href='../S/630.html#L9155'>CUdeviceptr</a>      9155 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuPointerGetAttribute(void *data, CUpointer_attribute attribute, CUdeviceptr ptr);</span>
+<span class='curline'><a href='../S/630.html#L9223'>CUdeviceptr</a>      9223 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemPrefetchAsync(CUdeviceptr devPtr, size_t count, CUdevice dstDevice, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L9337'>CUdeviceptr</a>      9337 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemAdvise(CUdeviceptr devPtr, size_t count, CUmem_advise advice, CUdevice device);</span>
+<span class='curline'><a href='../S/630.html#L9395'>CUdeviceptr</a>      9395 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemRangeGetAttribute(void *data, size_t dataSize, CUmem_range_attribute attribute, CUdeviceptr devPtr, size_t count);</span>
+<span class='curline'><a href='../S/630.html#L9435'>CUdeviceptr</a>      9435 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemRangeGetAttributes(void **data, size_t *dataSizes, CUmem_range_attribute *attributes, size_t numAttributes, CUdeviceptr devPtr, size_t count);</span>
+<span class='curline'><a href='../S/630.html#L9477'>CUdeviceptr</a>      9477 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuPointerSetAttribute(const void *value, CUpointer_attribute attribute, CUdeviceptr ptr);</span>
+<span class='curline'><a href='../S/630.html#L9525'>CUdeviceptr</a>      9525 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuPointerGetAttributes(unsigned int numAttributes, CUpointer_attribute *attributes, void **data, CUdeviceptr ptr);</span>
+<span class='curline'><a href='../S/630.html#L10107'>CUdeviceptr</a>      10107 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamAttachMemAsync(CUstream hStream, CUdeviceptr dptr, size_t length, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L10721'>CUdeviceptr</a>      10721 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuExternalMemoryGetMappedBuffer(CUdeviceptr *devPtr, CUexternalMemory extMem, const CUDA_EXTERNAL_MEMORY_BUFFER_DESC *bufferDesc);</span>
+<span class='curline'><a href='../S/630.html#L11173'>CUdeviceptr</a>      11173 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L11208'>CUdeviceptr</a>      11208 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L11243'>CUdeviceptr</a>      11243 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L11277'>CUdeviceptr</a>      11277 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L13938'>CUdeviceptr</a>      13938 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetAddress(size_t *ByteOffset, CUtexref hTexRef, CUdeviceptr dptr, size_t bytes);</span>
+<span class='curline'><a href='../S/630.html#L13993'>CUdeviceptr</a>      13993 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefSetAddress2D(CUtexref hTexRef, const CUDA_ARRAY_DESCRIPTOR *desc, CUdeviceptr dptr, size_t Pitch);</span>
+<span class='curline'><a href='../S/630.html#L14344'>CUdeviceptr</a>      14344 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuTexRefGetAddress(CUdeviceptr *pdptr, CUtexref hTexRef);</span>
+<span class='curline'><a href='../S/630.html#L15461'>CUdeviceptr</a>      15461 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphicsResourceGetMappedPointer(CUdeviceptr *pDevPtr, size_t *pSize, CUgraphicsResource resource);</span>
+<span class='curline'><a href='../S/630.html#L15724'>CUdeviceptr</a>      15724 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuTexRefSetAddress2D_v2(CUtexref hTexRef, const CUDA_ARRAY_DESCRIPTOR *desc, CUdeviceptr dptr, size_t Pitch);</span>
+<span class='curline'><a href='../S/630.html#L15853'>CUdeviceptr</a>      15853 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoD_v2(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15854'>CUdeviceptr</a>      15854 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoH_v2(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15855'>CUdeviceptr</a>      15855 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoD_v2(CUdeviceptr dstDevice, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15856'>CUdeviceptr</a>      15856 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoA_v2(CUarray dstArray, size_t dstOffset, CUdeviceptr srcDevice, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15857'>CUdeviceptr</a>      15857 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAtoD_v2(CUdeviceptr dstDevice, CUarray srcArray, size_t srcOffset, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15866'>CUdeviceptr</a>      15866 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyHtoDAsync_v2(CUdeviceptr dstDevice, const void *srcHost, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15867'>CUdeviceptr</a>      15867 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoHAsync_v2(void *dstHost, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15868'>CUdeviceptr</a>      15868 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyDtoDAsync_v2(CUdeviceptr dstDevice, CUdeviceptr srcDevice, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15871'>CUdeviceptr</a>      15871 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD8_v2(CUdeviceptr dstDevice, unsigned char uc, size_t N);</span>
+<span class='curline'><a href='../S/630.html#L15872'>CUdeviceptr</a>      15872 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD16_v2(CUdeviceptr dstDevice, unsigned short us, size_t N);</span>
+<span class='curline'><a href='../S/630.html#L15873'>CUdeviceptr</a>      15873 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD32_v2(CUdeviceptr dstDevice, unsigned int ui, size_t N);</span>
+<span class='curline'><a href='../S/630.html#L15874'>CUdeviceptr</a>      15874 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD2D8_v2(CUdeviceptr dstDevice, size_t dstPitch, unsigned char uc, size_t Width, size_t Height);</span>
+<span class='curline'><a href='../S/630.html#L15875'>CUdeviceptr</a>      15875 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD2D16_v2(CUdeviceptr dstDevice, size_t dstPitch, unsigned short us, size_t Width, size_t Height);</span>
+<span class='curline'><a href='../S/630.html#L15876'>CUdeviceptr</a>      15876 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD2D32_v2(CUdeviceptr dstDevice, size_t dstPitch, unsigned int ui, size_t Width, size_t Height);</span>
+<span class='curline'><a href='../S/630.html#L15877'>CUdeviceptr</a>      15877 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpy(CUdeviceptr dst, CUdeviceptr src, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15878'>CUdeviceptr</a>      15878 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyAsync(CUdeviceptr dst, CUdeviceptr src, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15879'>CUdeviceptr</a>      15879 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15880'>CUdeviceptr</a>      15880 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyPeerAsync(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15884'>CUdeviceptr</a>      15884 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD8Async(CUdeviceptr dstDevice, unsigned char uc, size_t N, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15885'>CUdeviceptr</a>      15885 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD16Async(CUdeviceptr dstDevice, unsigned short us, size_t N, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15886'>CUdeviceptr</a>      15886 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD32Async(CUdeviceptr dstDevice, unsigned int ui, size_t N, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15887'>CUdeviceptr</a>      15887 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD2D8Async(CUdeviceptr dstDevice, size_t dstPitch, unsigned char uc, size_t Width, size_t Height, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15888'>CUdeviceptr</a>      15888 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD2D16Async(CUdeviceptr dstDevice, size_t dstPitch, unsigned short us, size_t Width, size_t Height, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15889'>CUdeviceptr</a>      15889 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemsetD2D32Async(CUdeviceptr dstDevice, size_t dstPitch, unsigned int ui, size_t Width, size_t Height, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15896'>CUdeviceptr</a>      15896 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamAttachMemAsync(CUstream hStream, CUdeviceptr dptr, size_t length, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15904'>CUdeviceptr</a>      15904 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15905'>CUdeviceptr</a>      15905 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue32(CUstream stream, CUdeviceptr addr, cuuint32_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15906'>CUdeviceptr</a>      15906 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWriteValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15907'>CUdeviceptr</a>      15907 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamWaitValue64(CUstream stream, CUdeviceptr addr, cuuint64_t value, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L15909'>CUdeviceptr</a>      15909 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemPrefetchAsync(CUdeviceptr devPtr, size_t count, CUdevice dstDevice, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15924'>CUdeviceptr</a>      15924 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuIpcOpenMemHandle(CUdeviceptr *pdptr, CUipcMemHandle handle, unsigned int Flags);</span>
+<span class='curline'><a href='../S/635.html#L267'>CUdeviceptr</a>       267 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *dptr;</span>
+<span class='curline'><a href='../S/635.html#L328'>CUdeviceptr</a>       328 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *dptr;</span>
+<span class='curline'><a href='../S/635.html#L333'>CUdeviceptr</a>       333 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *dptr;</span>
+<span class='curline'><a href='../S/635.html#L341'>CUdeviceptr</a>       341 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L345'>CUdeviceptr</a>       345 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *pbase;</span>
+<span class='curline'><a href='../S/635.html#L347'>CUdeviceptr</a>       347 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L366'>CUdeviceptr</a>       366 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *pdptr;</span>
+<span class='curline'><a href='../S/635.html#L377'>CUdeviceptr</a>       377 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *dptr;</span>
+<span class='curline'><a href='../S/635.html#L405'>CUdeviceptr</a>       405 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L409'>CUdeviceptr</a>       409 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *pdptr;</span>
+<span class='curline'><a href='../S/635.html#L415'>CUdeviceptr</a>       415 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L429'>CUdeviceptr</a>       429 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dst;</span>
+<span class='curline'><a href='../S/635.html#L430'>CUdeviceptr</a>       430 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr src;</span>
+<span class='curline'><a href='../S/635.html#L435'>CUdeviceptr</a>       435 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L437'>CUdeviceptr</a>       437 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L443'>CUdeviceptr</a>       443 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L450'>CUdeviceptr</a>       450 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L455'>CUdeviceptr</a>       455 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L456'>CUdeviceptr</a>       456 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L463'>CUdeviceptr</a>       463 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L468'>CUdeviceptr</a>       468 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L513'>CUdeviceptr</a>       513 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dst;</span>
+<span class='curline'><a href='../S/635.html#L514'>CUdeviceptr</a>       514 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr src;</span>
+<span class='curline'><a href='../S/635.html#L520'>CUdeviceptr</a>       520 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L522'>CUdeviceptr</a>       522 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L529'>CUdeviceptr</a>       529 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L537'>CUdeviceptr</a>       537 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L543'>CUdeviceptr</a>       543 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L544'>CUdeviceptr</a>       544 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L581'>CUdeviceptr</a>       581 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L587'>CUdeviceptr</a>       587 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L593'>CUdeviceptr</a>       593 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L599'>CUdeviceptr</a>       599 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L607'>CUdeviceptr</a>       607 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L615'>CUdeviceptr</a>       615 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L623'>CUdeviceptr</a>       623 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L630'>CUdeviceptr</a>       630 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L637'>CUdeviceptr</a>       637 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L644'>CUdeviceptr</a>       644 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L653'>CUdeviceptr</a>       653 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L662'>CUdeviceptr</a>       662 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L711'>CUdeviceptr</a>       711 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *ptr;</span>
+<span class='curline'><a href='../S/635.html#L714'>CUdeviceptr</a>       714 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L719'>CUdeviceptr</a>       719 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L735'>CUdeviceptr</a>       735 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L743'>CUdeviceptr</a>       743 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L748'>CUdeviceptr</a>       748 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L757'>CUdeviceptr</a>       757 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L792'>CUdeviceptr</a>       792 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L796'>CUdeviceptr</a>       796 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr devPtr;</span>
+<span class='curline'><a href='../S/635.html#L803'>CUdeviceptr</a>       803 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr devPtr;</span>
+<span class='curline'><a href='../S/635.html#L813'>CUdeviceptr</a>       813 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr devPtr;</span>
+<span class='curline'><a href='../S/635.html#L822'>CUdeviceptr</a>       822 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr devPtr;</span>
+<span class='curline'><a href='../S/635.html#L829'>CUdeviceptr</a>       829 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L836'>CUdeviceptr</a>       836 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr ptr;</span>
+<span class='curline'><a href='../S/635.html#L905'>CUdeviceptr</a>       905 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L973'>CUdeviceptr</a>       973 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *devPtr;</span>
+<span class='curline'><a href='../S/635.html#L1013'>CUdeviceptr</a>      1013 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L1020'>CUdeviceptr</a>      1020 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L1027'>CUdeviceptr</a>      1027 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L1034'>CUdeviceptr</a>      1034 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L1457'>CUdeviceptr</a>      1457 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L1464'>CUdeviceptr</a>      1464 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L1517'>CUdeviceptr</a>      1517 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *pdptr;</span>
+<span class='curline'><a href='../S/635.html#L1677'>CUdeviceptr</a>      1677 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *pDevPtr;</span>
+<span class='curline'><a href='../S/635.html#L1750'>CUdeviceptr</a>      1750 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L2045'>CUdeviceptr</a>      2045 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2052'>CUdeviceptr</a>      2052 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L2057'>CUdeviceptr</a>      2057 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2058'>CUdeviceptr</a>      2058 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L2065'>CUdeviceptr</a>      2065 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L2070'>CUdeviceptr</a>      2070 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2127'>CUdeviceptr</a>      2127 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2135'>CUdeviceptr</a>      2135 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L2141'>CUdeviceptr</a>      2141 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2142'>CUdeviceptr</a>      2142 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L2158'>CUdeviceptr</a>      2158 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2164'>CUdeviceptr</a>      2164 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2170'>CUdeviceptr</a>      2170 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2176'>CUdeviceptr</a>      2176 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2184'>CUdeviceptr</a>      2184 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2192'>CUdeviceptr</a>      2192 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2200'>CUdeviceptr</a>      2200 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dst;</span>
+<span class='curline'><a href='../S/635.html#L2201'>CUdeviceptr</a>      2201 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr src;</span>
+<span class='curline'><a href='../S/635.html#L2206'>CUdeviceptr</a>      2206 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dst;</span>
+<span class='curline'><a href='../S/635.html#L2207'>CUdeviceptr</a>      2207 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr src;</span>
+<span class='curline'><a href='../S/635.html#L2213'>CUdeviceptr</a>      2213 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2215'>CUdeviceptr</a>      2215 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L2221'>CUdeviceptr</a>      2221 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2223'>CUdeviceptr</a>      2223 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr srcDevice;</span>
+<span class='curline'><a href='../S/635.html#L2239'>CUdeviceptr</a>      2239 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2246'>CUdeviceptr</a>      2246 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2253'>CUdeviceptr</a>      2253 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2260'>CUdeviceptr</a>      2260 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2269'>CUdeviceptr</a>      2269 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2278'>CUdeviceptr</a>      2278 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dstDevice;</span>
+<span class='curline'><a href='../S/635.html#L2316'>CUdeviceptr</a>      2316 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr dptr;</span>
+<span class='curline'><a href='../S/635.html#L2368'>CUdeviceptr</a>      2368 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L2375'>CUdeviceptr</a>      2375 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L2382'>CUdeviceptr</a>      2382 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L2389'>CUdeviceptr</a>      2389 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr addr;</span>
+<span class='curline'><a href='../S/635.html#L2402'>CUdeviceptr</a>      2402 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr devPtr;</span>
+<span class='curline'><a href='../S/635.html#L2487'>CUdeviceptr</a>      2487 tracing_tool/nvbit/generated_cuda_meta.h     CUdeviceptr *pdptr;</span>
+</pre>
+</body>
+</html>

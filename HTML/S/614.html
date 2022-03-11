@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>reuse_distance_tool/splay.c</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/649.html'>reuse_distance_tool</a>/splay.c</h2>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L55'>[^]</a><a href='#L210'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'>DEFINITIONS</h2>
+This source file includes following definitions.
+<ol>
+<li><a href='#L55' title='Defined at 55.'>splay</a></li>
+<li><a href='#L127' title='Defined at 127.'>insert</a></li>
+<li><a href='#L158' title='Defined at 158.'>delete</a></li>
+<li><a href='#L184' title='Defined at 184.'>find_rank</a></li>
+<li><a href='#L203' title='Defined at 203.'>freetree</a></li>
+<li><a href='#L210' title='Defined at 210.'>printtree</a></li>
+</ol>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#include</em> "<a href='615.html'>splay.h</a>"
+<a id='L2' name='L2'></a>   2 <em class='comment'>/*</em>
+<a id='L3' name='L3'></a>   3 <em class='comment'>           An implementation of top-down splaying with sizes</em>
+<a id='L4' name='L4'></a>   4 <em class='comment'>             D. Sleator &lt;sleator@cs.cmu.edu&gt;, January 1994.</em>
+<a id='L5' name='L5'></a>   5 <em class='comment'>Modified a little by Qingpeng Niu for tracing the global chunck library memory use. Just add a compute sum of size from search node to the right most node.</em>
+<a id='L6' name='L6'></a>   6 <em class='comment'>*/</em>
+<a id='L7' name='L7'></a>   7 <em class='comment'>/*</em>
+<a id='L8' name='L8'></a>   8 <em class='comment'>           An implementation of top-down splaying with sizes</em>
+<a id='L9' name='L9'></a>   9 <em class='comment'>             D. Sleator &lt;sleator@cs.cmu.edu&gt;, January 1994.</em>
+<a id='L10' name='L10'></a>  10 <em class='comment'></em>
+<a id='L11' name='L11'></a>  11 <em class='comment'>  This extends top-down-splay.c to maintain a size field in each node.</em>
+<a id='L12' name='L12'></a>  12 <em class='comment'>  This is the number of nodes in the subtree rooted there.  This makes</em>
+<a id='L13' name='L13'></a>  13 <em class='comment'>  it possible to efficiently compute the rank of a key.  (The rank is</em>
+<a id='L14' name='L14'></a>  14 <em class='comment'>  the number of nodes to the left of the given key.)  It it also</em>
+<a id='L15' name='L15'></a>  15 <em class='comment'>  possible to quickly find the node of a given rank.  Both of these</em>
+<a id='L16' name='L16'></a>  16 <em class='comment'>  operations are illustrated in the code below.  The remainder of this</em>
+<a id='L17' name='L17'></a>  17 <em class='comment'>  introduction is taken from top-down-splay.c.</em>
+<a id='L18' name='L18'></a>  18 <em class='comment'></em>
+<a id='L19' name='L19'></a>  19 <em class='comment'>  "Splay trees", or "self-adjusting search trees" are a simple and</em>
+<a id='L20' name='L20'></a>  20 <em class='comment'>  efficient data structure for storing an ordered set.  The data</em>
+<a id='L21' name='L21'></a>  21 <em class='comment'>  structure consists of a binary tree, with no additional fields.  It</em>
+<a id='L22' name='L22'></a>  22 <em class='comment'>  allows searching, insertion, deletion, deletemin, deletemax,</em>
+<a id='L23' name='L23'></a>  23 <em class='comment'>  splitting, joining, and many other operations, all with amortized</em>
+<a id='L24' name='L24'></a>  24 <em class='comment'>  logarithmic performance.  Since the trees adapt to the sequence of</em>
+<a id='L25' name='L25'></a>  25 <em class='comment'>  requests, their performance on real access patterns is typically even</em>
+<a id='L26' name='L26'></a>  26 <em class='comment'>  better.  Splay trees are described in a number of texts and papers</em>
+<a id='L27' name='L27'></a>  27 <em class='comment'>  [1,2,3,4].</em>
+<a id='L28' name='L28'></a>  28 <em class='comment'></em>
+<a id='L29' name='L29'></a>  29 <em class='comment'>  The code here is adapted from simple top-down splay, at the bottom of</em>
+<a id='L30' name='L30'></a>  30 <em class='comment'>  page 669 of [2].  It can be obtained via anonymous ftp from</em>
+<a id='L31' name='L31'></a>  31 <em class='comment'>  spade.pc.cs.cmu.edu in directory /usr/sleator/public.</em>
+<a id='L32' name='L32'></a>  32 <em class='comment'></em>
+<a id='L33' name='L33'></a>  33 <em class='comment'>  The chief modification here is that the splay operation works even if the</em>
+<a id='L34' name='L34'></a>  34 <em class='comment'>  item being splayed is not in the tree, and even if the tree root of the</em>
+<a id='L35' name='L35'></a>  35 <em class='comment'>  tree is NULL.  So the line:</em>
+<a id='L36' name='L36'></a>  36 <em class='comment'></em>
+<a id='L37' name='L37'></a>  37 <em class='comment'>                              t = splay(i, t);</em>
+<a id='L38' name='L38'></a>  38 <em class='comment'></em>
+<a id='L39' name='L39'></a>  39 <em class='comment'>  causes it to search for item with key i in the tree rooted at t.  If it's</em>
+<a id='L40' name='L40'></a>  40 <em class='comment'>  there, it is splayed to the root.  If it isn't there, then the node put</em>
+<a id='L41' name='L41'></a>  41 <em class='comment'>  at the root is the last one before NULL that would have been reached in a</em>
+<a id='L42' name='L42'></a>  42 <em class='comment'>  normal binary search for i.  (It's a neighbor of i in the tree.)  This</em>
+<a id='L43' name='L43'></a>  43 <em class='comment'>  allows many other operations to be easily implemented, as shown below.</em>
+<a id='L44' name='L44'></a>  44 <em class='comment'></em>
+<a id='L45' name='L45'></a>  45 <em class='comment'>  [1] "Data Structures and Their Algorithms", Lewis and Denenberg,</em>
+<a id='L46' name='L46'></a>  46 <em class='comment'>       Harper Collins, 1991, pp 243-251.</em>
+<a id='L47' name='L47'></a>  47 <em class='comment'>  [2] "Self-adjusting Binary Search Trees" Sleator and Tarjan,</em>
+<a id='L48' name='L48'></a>  48 <em class='comment'>       JACM Volume 32, No 3, July 1985, pp 652-686.</em>
+<a id='L49' name='L49'></a>  49 <em class='comment'>  [3] "Data Structure and Algorithm Analysis", Mark Weiss,</em>
+<a id='L50' name='L50'></a>  50 <em class='comment'>       Benjamin Cummins, 1992, pp 119-130.</em>
+<a id='L51' name='L51'></a>  51 <em class='comment'>  [4] "Data Structures, Algorithms, and Performance", Derick Wood,</em>
+<a id='L52' name='L52'></a>  52 <em class='comment'>       Addison-Wesley, 1993, pp 367-375</em>
+<a id='L53' name='L53'></a>  53 <em class='comment'>*/</em>
+<a id='L54' name='L54'></a>  54 
+<a id='L55' name='L55'></a>  55 <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> * <a href='../R/374.html' title='Multiple referred from 4 places.'>splay</a> (<a href='../S/615.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> *<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>)
+<a id='L56' name='L56'></a>  56 <em class='comment'>/* Splay using the key i (which may or may not be in the tree.) */</em>
+<a id='L57' name='L57'></a>  57 <em class='comment'>/* The starting root is t, and the tree used is defined by rat  */</em>
+<a id='L58' name='L58'></a>  58 <em class='comment'>/* size fields are maintained */</em>
+<a id='L59' name='L59'></a>  59 <em class='brace'>{</em>
+<a id='L60' name='L60'></a>  60     <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> <a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>, *<a href='../Y/1259.html' title='Multiple used in 7 places.'>l</a>, *<a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a>, *<a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>;
+<a id='L61' name='L61'></a>  61     <a href='../S/615.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a> <a href='../Y/369.html' title='Multiple used in 4 places.'>comp</a>,<a href='../Y/1260.html' title='Multiple used in 7 places.'>l_size</a>, <a href='../Y/1594.html' title='Multiple used in 7 places.'>r_size</a>;
+<a id='L62' name='L62'></a>  62     <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>return</strong> <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L63' name='L63'></a>  63     <a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>.<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>.<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>;
+<a id='L64' name='L64'></a>  64     <a href='../Y/1259.html' title='Multiple used in 7 places.'>l</a> = <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> = &amp;<a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>;
+<a id='L65' name='L65'></a>  65     <a href='../Y/1260.html' title='Multiple used in 7 places.'>l_size</a> = <a href='../Y/1594.html' title='Multiple used in 7 places.'>r_size</a> = 0;
+<a id='L66' name='L66'></a>  66  
+<a id='L67' name='L67'></a>  67     <strong class='reserved'>for</strong> (;;) <em class='brace'>{</em>
+<a id='L68' name='L68'></a>  68         <a href='../Y/369.html' title='Multiple used in 4 places.'>comp</a> = <a href='../S/615.html#L20' title='Defined at 20 in reuse_distance_tool/splay.h.'>compare</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>);
+<a id='L69' name='L69'></a>  69         <strong class='reserved'>if</strong> (<a href='../Y/369.html' title='Multiple used in 4 places.'>comp</a> &lt; 0) <em class='brace'>{</em>
+<a id='L70' name='L70'></a>  70             <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>break</strong>;
+<a id='L71' name='L71'></a>  71             <strong class='reserved'>if</strong> (<a href='../S/615.html#L20' title='Defined at 20 in reuse_distance_tool/splay.h.'>compare</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>) &lt; 0) <em class='brace'>{</em>
+<a id='L72' name='L72'></a>  72                 <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>;                           <em class='comment'>/* rotate right */</em>
+<a id='L73' name='L73'></a>  73                 <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L74' name='L74'></a>  74                 <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L75' name='L75'></a>  75                 <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>) + <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>) + 1;
+<a id='L76' name='L76'></a>  76                 <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>;
+<a id='L77' name='L77'></a>  77                 <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>break</strong>;
+<a id='L78' name='L78'></a>  78             <em class='brace'>}</em>
+<a id='L79' name='L79'></a>  79             <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;                               <em class='comment'>/* link right */</em>
+<a id='L80' name='L80'></a>  80             <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L81' name='L81'></a>  81             <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>;
+<a id='L82' name='L82'></a>  82             <a href='../Y/1594.html' title='Multiple used in 7 places.'>r_size</a> += 1+<a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>);
+<a id='L83' name='L83'></a>  83         <em class='brace'>}</em> <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/369.html' title='Multiple used in 4 places.'>comp</a> &gt; 0) <em class='brace'>{</em>
+<a id='L84' name='L84'></a>  84             <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>break</strong>;
+<a id='L85' name='L85'></a>  85             <strong class='reserved'>if</strong> (<a href='../S/615.html#L20' title='Defined at 20 in reuse_distance_tool/splay.h.'>compare</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>) &gt; 0) <em class='brace'>{</em>
+<a id='L86' name='L86'></a>  86                 <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;                          <em class='comment'>/* rotate left */</em>
+<a id='L87' name='L87'></a>  87                 <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>;
+<a id='L88' name='L88'></a>  88                 <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L89' name='L89'></a>  89                 <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>) + <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>) + 1;
+<a id='L90' name='L90'></a>  90                 <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>;
+<a id='L91' name='L91'></a>  91                 <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>break</strong>;
+<a id='L92' name='L92'></a>  92             <em class='brace'>}</em>
+<a id='L93' name='L93'></a>  93             <a href='../Y/1259.html' title='Multiple used in 7 places.'>l</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;                              <em class='comment'>/* link left */</em>
+<a id='L94' name='L94'></a>  94             <a href='../Y/1259.html' title='Multiple used in 7 places.'>l</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L95' name='L95'></a>  95             <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L96' name='L96'></a>  96             <a href='../Y/1260.html' title='Multiple used in 7 places.'>l_size</a> += 1+<a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1259.html' title='Multiple used in 7 places.'>l</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>);
+<a id='L97' name='L97'></a>  97         <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L98' name='L98'></a>  98             <strong class='reserved'>break</strong>;
+<a id='L99' name='L99'></a>  99         <em class='brace'>}</em>
+<a id='L100' name='L100'></a> 100     <em class='brace'>}</em>
+<a id='L101' name='L101'></a> 101     <a href='../Y/1260.html' title='Multiple used in 7 places.'>l_size</a> += <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>);  <em class='comment'>/* Now l_size and r_size are the sizes of */</em>
+<a id='L102' name='L102'></a> 102     <a href='../Y/1594.html' title='Multiple used in 7 places.'>r_size</a> += <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>); <em class='comment'>/* the left and right trees we just built.*/</em>
+<a id='L103' name='L103'></a> 103     <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = <a href='../Y/1260.html' title='Multiple used in 7 places.'>l_size</a> + <a href='../Y/1594.html' title='Multiple used in 7 places.'>r_size</a> + 1;
+<a id='L104' name='L104'></a> 104 
+<a id='L105' name='L105'></a> 105     <a href='../Y/1259.html' title='Multiple used in 7 places.'>l</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>;
+<a id='L106' name='L106'></a> 106 
+<a id='L107' name='L107'></a> 107     <em class='comment'>/* The following two loops correct the size fields of the right path  */</em>
+<a id='L108' name='L108'></a> 108     <em class='comment'>/* from the left child of the root and the right path from the left   */</em>
+<a id='L109' name='L109'></a> 109     <em class='comment'>/* child of the root.                                                 */</em>
+<a id='L110' name='L110'></a> 110     <strong class='reserved'>for</strong> (<a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> = <a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>.<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>; <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> != <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>; <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> = <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>) <em class='brace'>{</em>
+<a id='L111' name='L111'></a> 111         <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = <a href='../Y/1260.html' title='Multiple used in 7 places.'>l_size</a>;
+<a id='L112' name='L112'></a> 112         <a href='../Y/1260.html' title='Multiple used in 7 places.'>l_size</a> -= 1+<a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>);
+<a id='L113' name='L113'></a> 113     <em class='brace'>}</em>
+<a id='L114' name='L114'></a> 114     <strong class='reserved'>for</strong> (<a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> = <a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>.<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>; <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> != <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>; <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a> = <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>) <em class='brace'>{</em>
+<a id='L115' name='L115'></a> 115         <a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = <a href='../Y/1594.html' title='Multiple used in 7 places.'>r_size</a>;
+<a id='L116' name='L116'></a> 116         <a href='../Y/1594.html' title='Multiple used in 7 places.'>r_size</a> -= 1+<a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1826.html' title='Multiple used in 25 places.'>y</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>);
+<a id='L117' name='L117'></a> 117     <em class='brace'>}</em>
+<a id='L118' name='L118'></a> 118  
+<a id='L119' name='L119'></a> 119     <a href='../Y/1259.html' title='Multiple used in 7 places.'>l</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>;                                <em class='comment'>/* assemble */</em>
+<a id='L120' name='L120'></a> 120     <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L121' name='L121'></a> 121     <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>.<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L122' name='L122'></a> 122     <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/125.html' title='Multiple used in 37 places.'>N</a>.<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>;
+<a id='L123' name='L123'></a> 123 
+<a id='L124' name='L124'></a> 124     <strong class='reserved'>return</strong> <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L125' name='L125'></a> 125 <em class='brace'>}</em>
+<a id='L126' name='L126'></a> 126 
+<a id='L127' name='L127'></a> 127 <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> * <a href='../R/293.html' title='Multiple referred from 26 places.'>insert</a>(<a href='../S/615.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> * <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>) <em class='brace'>{</em>
+<a id='L128' name='L128'></a> 128 <em class='comment'>/* Insert key i into the tree t, if it is not already there. */</em>
+<a id='L129' name='L129'></a> 129 <em class='comment'>/* Return a pointer to the resulting tree.                   */</em>
+<a id='L130' name='L130'></a> 130     <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> * <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>;
+<a id='L131' name='L131'></a> 131 
+<a id='L132' name='L132'></a> 132     <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> != <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <em class='brace'>{</em>
+<a id='L133' name='L133'></a> 133         <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../S/614.html#L55' title='Defined at 55 in reuse_distance_tool/splay.c.'>splay</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>,<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>);
+<a id='L134' name='L134'></a> 134         <strong class='reserved'>if</strong> (<a href='../S/615.html#L20' title='Defined at 20 in reuse_distance_tool/splay.h.'>compare</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>)==0) <em class='brace'>{</em>
+<a id='L135' name='L135'></a> 135             <strong class='reserved'>return</strong> <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;  <em class='comment'>/* it's already there */</em>
+<a id='L136' name='L136'></a> 136         <em class='brace'>}</em>
+<a id='L137' name='L137'></a> 137     <em class='brace'>}</em>
+<a id='L138' name='L138'></a> 138     <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a> = (<a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> *) <a href='../Y/1304.html' title='Multiple used in 22 places.'>malloc</a> (<strong class='reserved'>sizeof</strong> (<a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a>));
+<a id='L139' name='L139'></a> 139     <strong class='reserved'>if</strong> (<a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <em class='brace'>{</em><a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("Ran out of space\n"); <a href='../Y/994.html' title='Multiple used in 15 places.'>exit</a>(1);<em class='brace'>}</em>
+<a id='L140' name='L140'></a> 140     <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <em class='brace'>{</em>
+<a id='L141' name='L141'></a> 141         <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>;
+<a id='L142' name='L142'></a> 142     <em class='brace'>}</em> <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../S/615.html#L20' title='Defined at 20 in reuse_distance_tool/splay.h.'>compare</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>) &lt; 0) <em class='brace'>{</em>
+<a id='L143' name='L143'></a> 143         <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>;
+<a id='L144' name='L144'></a> 144         <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L145' name='L145'></a> 145         <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>;
+<a id='L146' name='L146'></a> 146         <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = 1+<a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>);
+<a id='L147' name='L147'></a> 147     <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L148' name='L148'></a> 148         <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L149' name='L149'></a> 149         <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L150' name='L150'></a> 150         <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>;
+<a id='L151' name='L151'></a> 151         <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = 1+<a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>);
+<a id='L152' name='L152'></a> 152     <em class='brace'>}</em>
+<a id='L153' name='L153'></a> 153     <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a> = <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>;
+<a id='L154' name='L154'></a> 154     <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = 1 + <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>) + <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>);
+<a id='L155' name='L155'></a> 155     <strong class='reserved'>return</strong> <a href='../Y/1352.html' title='Multiple used in 14 places.'>new</a>;
+<a id='L156' name='L156'></a> 156 <em class='brace'>}</em>
+<a id='L157' name='L157'></a> 157 
+<a id='L158' name='L158'></a> 158 <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> * <a href='../R/269.html' title='Multiple referred from 11 places.'>delete</a>(<a href='../S/615.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> *<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>) <em class='brace'>{</em>
+<a id='L159' name='L159'></a> 159 <em class='comment'>/* Deletes i from the tree if it's there.               */</em>
+<a id='L160' name='L160'></a> 160 <em class='comment'>/* Return a pointer to the resulting tree.              */</em>
+<a id='L161' name='L161'></a> 161     <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> * <a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a>;
+<a id='L162' name='L162'></a> 162     <a href='../S/615.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a> <a href='../Y/1765.html' title='Multiple used in 3 places.'>tsize</a>;
+<a id='L163' name='L163'></a> 163 
+<a id='L164' name='L164'></a> 164     <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>==<a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>return</strong> <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>;
+<a id='L165' name='L165'></a> 165     <a href='../Y/1765.html' title='Multiple used in 3 places.'>tsize</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a>;
+<a id='L166' name='L166'></a> 166     <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../S/614.html#L55' title='Defined at 55 in reuse_distance_tool/splay.c.'>splay</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>,<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>);
+<a id='L167' name='L167'></a> 167     <strong class='reserved'>if</strong> (<a href='../S/615.html#L20' title='Defined at 20 in reuse_distance_tool/splay.h.'>compare</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>) == 0) <em class='brace'>{</em>               <em class='comment'>/* found it */</em>
+<a id='L168' name='L168'></a> 168         <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <em class='brace'>{</em>
+<a id='L169' name='L169'></a> 169             <a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L170' name='L170'></a> 170         <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L171' name='L171'></a> 171             <a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a> = <a href='../S/614.html#L55' title='Defined at 55 in reuse_distance_tool/splay.c.'>splay</a>(<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>);
+<a id='L172' name='L172'></a> 172             <a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L173' name='L173'></a> 173         <em class='brace'>}</em>
+<a id='L174' name='L174'></a> 174         <a href='../Y/1032.html' title='Multiple used in 16 places.'>free</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>);
+<a id='L175' name='L175'></a> 175         <strong class='reserved'>if</strong> (<a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a> != <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <em class='brace'>{</em>
+<a id='L176' name='L176'></a> 176             <a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a> = <a href='../Y/1765.html' title='Multiple used in 3 places.'>tsize</a>-1;
+<a id='L177' name='L177'></a> 177         <em class='brace'>}</em>
+<a id='L178' name='L178'></a> 178         <strong class='reserved'>return</strong> <a href='../Y/1825.html' title='Multiple used in 19 places.'>x</a>;
+<a id='L179' name='L179'></a> 179     <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L180' name='L180'></a> 180         <strong class='reserved'>return</strong> <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;                         <em class='comment'>/* It wasn't there */</em>
+<a id='L181' name='L181'></a> 181     <em class='brace'>}</em>
+<a id='L182' name='L182'></a> 182 <em class='brace'>}</em>
+<a id='L183' name='L183'></a> 183 
+<a id='L184' name='L184'></a> 184 <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> *<a href='../S/615.html#L32' title='Referred from 32 in reuse_distance_tool/splay.h.'>find_rank</a>(<a href='../S/615.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a> <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a>, <a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> *<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>) <em class='brace'>{</em>
+<a id='L185' name='L185'></a> 185 <em class='comment'>/* Returns a pointer to the node in the tree with the given rank.  */</em>
+<a id='L186' name='L186'></a> 186 <em class='comment'>/* Returns NULL if there is no such node.                          */</em>
+<a id='L187' name='L187'></a> 187 <em class='comment'>/* Does not change the tree.  To guarantee logarithmic behavior,   */</em>
+<a id='L188' name='L188'></a> 188 <em class='comment'>/* the node found here should be splayed to the root.              */</em>
+<a id='L189' name='L189'></a> 189     <a href='../S/615.html#L13' title='Defined at 13 in reuse_distance_tool/splay.h.'>T</a> <a href='../Y/1299.html' title='Multiple used in 5 places.'>lsize</a>;
+<a id='L190' name='L190'></a> 190     <strong class='reserved'>if</strong> ((<a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> &lt; 0) || (<a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> &gt;= <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>))) <strong class='reserved'>return</strong> <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>;
+<a id='L191' name='L191'></a> 191     <strong class='reserved'>for</strong> (;;) <em class='brace'>{</em>
+<a id='L192' name='L192'></a> 192         <a href='../Y/1299.html' title='Multiple used in 5 places.'>lsize</a> = <a href='../S/615.html#L24' title='Defined at 24 in reuse_distance_tool/splay.h.'>node_size</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>);
+<a id='L193' name='L193'></a> 193         <strong class='reserved'>if</strong> (<a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> &lt; <a href='../Y/1299.html' title='Multiple used in 5 places.'>lsize</a>) <em class='brace'>{</em>
+<a id='L194' name='L194'></a> 194             <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>;
+<a id='L195' name='L195'></a> 195         <em class='brace'>}</em> <strong class='reserved'>else</strong> <strong class='reserved'>if</strong> (<a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> &gt; <a href='../Y/1299.html' title='Multiple used in 5 places.'>lsize</a>) <em class='brace'>{</em>
+<a id='L196' name='L196'></a> 196             <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> = <a href='../Y/1593.html' title='Multiple used in 13 places.'>r</a> - <a href='../Y/1299.html' title='Multiple used in 5 places.'>lsize</a> -1;
+<a id='L197' name='L197'></a> 197             <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> = <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>;
+<a id='L198' name='L198'></a> 198         <em class='brace'>}</em> <strong class='reserved'>else</strong> <em class='brace'>{</em>
+<a id='L199' name='L199'></a> 199             <strong class='reserved'>return</strong> <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>;
+<a id='L200' name='L200'></a> 200         <em class='brace'>}</em>
+<a id='L201' name='L201'></a> 201     <em class='brace'>}</em>
+<a id='L202' name='L202'></a> 202 <em class='brace'>}</em>
+<a id='L203' name='L203'></a> 203 <strong class='reserved'>void</strong> <a href='../R/276.html' title='Multiple referred from 4 places.'>freetree</a>(<a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a>* <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>)
+<a id='L204' name='L204'></a> 204 <em class='brace'>{</em>
+<a id='L205' name='L205'></a> 205     <strong class='reserved'>if</strong>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>==<a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>return</strong>;
+<a id='L206' name='L206'></a> 206     <a href='../S/614.html#L203' title='Defined at 203 in reuse_distance_tool/splay.c.'>freetree</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>);
+<a id='L207' name='L207'></a> 207     <a href='../S/614.html#L203' title='Defined at 203 in reuse_distance_tool/splay.c.'>freetree</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>);
+<a id='L208' name='L208'></a> 208     <a href='../Y/1032.html' title='Multiple used in 16 places.'>free</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>);
+<a id='L209' name='L209'></a> 209 <em class='brace'>}</em>
+<a id='L210' name='L210'></a> 210 <strong class='reserved'>void</strong> <a href='../R/354.html' title='Multiple referred from 4 places.'>printtree</a>(<a href='../S/615.html#L12' title='Defined at 12 in reuse_distance_tool/splay.h.'>Tree</a> * <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>, <strong class='reserved'>int</strong> <a href='../Y/914.html' title='Multiple used in 5 places.'>d</a>) <em class='brace'>{</em>
+<a id='L211' name='L211'></a> 211     <em class='comment'>//printf("%p\n",t);</em>
+<a id='L212' name='L212'></a> 212     <strong class='reserved'>int</strong> <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>;
+<a id='L213' name='L213'></a> 213     <strong class='reserved'>if</strong> (<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a> == <a href='../Y/128.html' title='Multiple used in 46 places.'>NULL</a>) <strong class='reserved'>return</strong>;
+<a id='L214' name='L214'></a> 214     <a href='../S/614.html#L210' title='Defined at 210 in reuse_distance_tool/splay.c.'>printtree</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1624.html' title='Multiple used in 40 places.'>right</a>, <a href='../Y/914.html' title='Multiple used in 5 places.'>d</a>+1);
+<a id='L215' name='L215'></a> 215     <strong class='reserved'>for</strong> (<a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>=0; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>&lt;<a href='../Y/914.html' title='Multiple used in 5 places.'>d</a>; <a href='../Y/1189.html' title='Multiple used in 115 places.'>i</a>++) <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("  ");
+<a id='L216' name='L216'></a> 216     <a href='../Y/1567.html' title='Multiple used in 61 places.'>printf</a>("%d(%d)\n", <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1256.html' title='Multiple used in 23 places.'>key</a>, <a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1658.html' title='Multiple used in 59 places.'>size</a>);
+<a id='L217' name='L217'></a> 217     <a href='../S/614.html#L210' title='Defined at 210 in reuse_distance_tool/splay.c.'>printtree</a>(<a href='../Y/1714.html' title='Multiple used in 90 places.'>t</a>-&gt;<a href='../Y/1277.html' title='Multiple used in 34 places.'>left</a>, <a href='../Y/914.html' title='Multiple used in 5 places.'>d</a>+1);
+<a id='L218' name='L218'></a> 218 <em class='brace'>}</em>
+<a id='L219' name='L219'></a> 219 
+<a id='L220' name='L220'></a> 220 
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;]<a href='#L55'>[^]</a><a href='#L210'>[v]</a><a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

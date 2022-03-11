@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>target_proc</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L53'>target_proc</a>        53 llvm_tool/lib/fluxDevicePass.cpp   StringRef target_proc;</span>
+<span class='curline'><a href='../S/26.html#L56'>target_proc</a>        56 llvm_tool/lib/fluxDevicePass.cpp     target_proc = kernel-&gt;getFnAttribute("target-cpu").getValueAsString();</span>
+<span class='curline'><a href='../S/26.html#L64'>target_proc</a>        64 llvm_tool/lib/fluxDevicePass.cpp       "llc -O2 -mcpu=" + target_proc.str() + " -mattr=" + target_features.str() + " -o " + ptxFile + " " + byteCodeFile;</span>
+<span class='curline'><a href='../S/26.html#L197'>target_proc</a>       197 llvm_tool/lib/fluxDevicePass.cpp   StringRef target_proc;</span>
+<span class='curline'><a href='../S/26.html#L199'>target_proc</a>       199 llvm_tool/lib/fluxDevicePass.cpp     target_proc = kernel-&gt;getFnAttribute("target-cpu").getValueAsString();</span>
+<span class='curline'><a href='../S/26.html#L218'>target_proc</a>       218 llvm_tool/lib/fluxDevicePass.cpp   exec(std::string("clang++ -v -S -emit-llvm --cuda-device-only --cuda-gpu-arch=" + target_proc.str() +</span>
+</pre>
+</body>
+</html>

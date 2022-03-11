@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>CreateCall</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L171'>CreateCall</a>        171 llvm_tool/lib/fluxDevicePass.cpp       builder.CreateCall(traceFun, {trace_ptr, trace_ptr1, block_ID, n_banks, profiling});</span>
+<span class='curline'><a href='../S/24.html#L177'>CreateCall</a>        177 llvm_tool/lib/fluxHostPass.cpp       Value *devPtr = builder.CreateCall(createBBCounterMemoryFu, {blockCountVal});</span>
+<span class='curline'><a href='../S/24.html#L182'>CreateCall</a>        182 llvm_tool/lib/fluxHostPass.cpp       Value *tracPtr = builder.CreateCall(createBBCounterMemory1Fu, {blockCountVal});</span>
+<span class='curline'><a href='../S/24.html#L187'>CreateCall</a>        187 llvm_tool/lib/fluxHostPass.cpp       Value *profilingMode = builder.CreateCall(getProfilingModeFu);</span>
+<span class='curline'><a href='../S/24.html#L191'>CreateCall</a>        191 llvm_tool/lib/fluxHostPass.cpp       Value *timeval = builder.CreateCall(startClockFu);</span>
+<span class='curline'><a href='../S/24.html#L221'>CreateCall</a>        221 llvm_tool/lib/fluxHostPass.cpp       builder.CreateCall(serializeCountersFu,</span>
+<span class='curline'><a href='../S/24.html#L232'>CreateCall</a>        232 llvm_tool/lib/fluxHostPass.cpp       builder.CreateCall(writePTX_Analysis, {ptxAnalysIsWritten, analysisStr});</span>
+<span class='curline'><a href='../S/6.html#L263'>CreateCall</a>        263 llvm_tool/mekong-utils/src/HostUtils.cpp   builder.CreateCall(registerFunction, registerFunctionsArgs);</span>
+<span class='curline'><a href='../S/6.html#L350'>CreateCall</a>        350 llvm_tool/mekong-utils/src/HostUtils.cpp   Value *ret = builder.CreateCall(launchKernel, launchKernelArgs);</span>
+<span class='curline'><a href='../S/6.html#L426'>CreateCall</a>        426 llvm_tool/mekong-utils/src/HostUtils.cpp   CallBase *newLaunchCall = builder.CreateCall(replacementWrapper, args);</span>
+<span class='curline'><a href='../S/5.html#L165'>CreateCall</a>        165 llvm_tool/mekong-utils/src/IRUtils.cpp   llvm::CallInst *ci = builder.CreateCall(printf_func, args);</span>
+<span class='curline'><a href='../S/5.html#L185'>CreateCall</a>        185 llvm_tool/mekong-utils/src/IRUtils.cpp   CallInst *ci = builder.CreateCall(printf_func, args);</span>
+</pre>
+</body>
+</html>

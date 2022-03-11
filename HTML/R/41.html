@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>CUcontext</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/630.html#L1900'>CUcontext</a>        1900 tracing_tool/nvbit/cuda.h     CUcontext srcContext;       /**&lt; Source context (ignored with srcMemoryType is ::CU_MEMORYTYPE_ARRAY) */</span>
+<span class='curline'><a href='../S/630.html#L1912'>CUcontext</a>        1912 tracing_tool/nvbit/cuda.h     CUcontext dstContext;       /**&lt; Destination context (ignored with dstMemoryType is ::CU_MEMORYTYPE_ARRAY) */</span>
+<span class='curline'><a href='../S/630.html#L3452'>CUcontext</a>        3452 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuDevicePrimaryCtxRetain(CUcontext *pctx, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3736'>CUcontext</a>        3736 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L3774'>CUcontext</a>        3774 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxDestroy(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L3808'>CUcontext</a>        3808 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxPushCurrent(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L3842'>CUcontext</a>        3842 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxPopCurrent(CUcontext *pctx);</span>
+<span class='curline'><a href='../S/630.html#L3872'>CUcontext</a>        3872 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxSetCurrent(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L3895'>CUcontext</a>        3895 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxGetCurrent(CUcontext *pctx);</span>
+<span class='curline'><a href='../S/630.html#L4347'>CUcontext</a>        4347 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxGetApiVersion(CUcontext ctx, unsigned int *version);</span>
+<span class='curline'><a href='../S/630.html#L4458'>CUcontext</a>        4458 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuCtxAttach(CUcontext *pctx, unsigned int flags);</span>
+<span class='curline'><a href='../S/630.html#L4494'>CUcontext</a>        4494 tracing_tool/nvbit/cuda.h __CUDA_DEPRECATED CUresult CUDAAPI cuCtxDetach(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L5992'>CUcontext</a>        5992 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L6885'>CUcontext</a>        6885 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemcpyPeerAsync(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L9728'>CUcontext</a>        9728 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuStreamGetCtx(CUstream hStream, CUcontext *pctx);</span>
+<span class='curline'><a href='../S/630.html#L12592'>CUcontext</a>        12592 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddMemcpyNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_MEMCPY3D *copyParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L12680'>CUcontext</a>        12680 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphAddMemsetNode(CUgraphNode *phGraphNode, CUgraph hGraph, const CUgraphNode *dependencies, size_t numDependencies, const CUDA_MEMSET_NODE_PARAMS *memsetParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L13342'>CUcontext</a>        13342 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecMemcpyNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_MEMCPY3D *copyParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L13380'>CUcontext</a>        13380 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuGraphExecMemsetNodeSetParams(CUgraphExec hGraphExec, CUgraphNode hNode, const CUDA_MEMSET_NODE_PARAMS *memsetParams, CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L15245'>CUcontext</a>        15245 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxEnablePeerAccess(CUcontext peerContext, unsigned int Flags);</span>
+<span class='curline'><a href='../S/630.html#L15272'>CUcontext</a>        15272 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuCtxDisablePeerAccess(CUcontext peerContext);</span>
+<span class='curline'><a href='../S/630.html#L15802'>CUcontext</a>        15802 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxCreate(CUcontext *pctx, unsigned int flags, CUdevice dev);</span>
+<span class='curline'><a href='../S/630.html#L15844'>CUcontext</a>        15844 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxDestroy(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L15845'>CUcontext</a>        15845 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxPopCurrent(CUcontext *pctx);</span>
+<span class='curline'><a href='../S/630.html#L15846'>CUcontext</a>        15846 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuCtxPushCurrent(CUcontext ctx);</span>
+<span class='curline'><a href='../S/630.html#L15879'>CUcontext</a>        15879 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyPeer(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount);</span>
+<span class='curline'><a href='../S/630.html#L15880'>CUcontext</a>        15880 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemcpyPeerAsync(CUdeviceptr dstDevice, CUcontext dstContext, CUdeviceptr srcDevice, CUcontext srcContext, size_t ByteCount, CUstream hStream);</span>
+<span class='curline'><a href='../S/630.html#L15893'>CUcontext</a>        15893 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuStreamGetCtx(CUstream hStream, CUcontext *pctx);</span>
+<span class='curline'><a href='../S/635.html#L131'>CUcontext</a>         131 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L155'>CUcontext</a>         155 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L161'>CUcontext</a>         161 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L165'>CUcontext</a>         165 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L169'>CUcontext</a>         169 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L173'>CUcontext</a>         173 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L177'>CUcontext</a>         177 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L215'>CUcontext</a>         215 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L225'>CUcontext</a>         225 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L230'>CUcontext</a>         230 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L436'>CUcontext</a>         436 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext dstContext;</span>
+<span class='curline'><a href='../S/635.html#L438'>CUcontext</a>         438 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
+<span class='curline'><a href='../S/635.html#L521'>CUcontext</a>         521 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext dstContext;</span>
+<span class='curline'><a href='../S/635.html#L523'>CUcontext</a>         523 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
+<span class='curline'><a href='../S/635.html#L862'>CUcontext</a>         862 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L1195'>CUcontext</a>        1195 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1214'>CUcontext</a>        1214 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1348'>CUcontext</a>        1348 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1355'>CUcontext</a>        1355 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L1645'>CUcontext</a>        1645 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext peerContext;</span>
+<span class='curline'><a href='../S/635.html#L1650'>CUcontext</a>        1650 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext peerContext;</span>
+<span class='curline'><a href='../S/635.html#L1760'>CUcontext</a>        1760 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L2012'>CUcontext</a>        2012 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L2016'>CUcontext</a>        2016 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/635.html#L2020'>CUcontext</a>        2020 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext ctx;</span>
+<span class='curline'><a href='../S/635.html#L2214'>CUcontext</a>        2214 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext dstContext;</span>
+<span class='curline'><a href='../S/635.html#L2216'>CUcontext</a>        2216 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
+<span class='curline'><a href='../S/635.html#L2222'>CUcontext</a>        2222 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext dstContext;</span>
+<span class='curline'><a href='../S/635.html#L2224'>CUcontext</a>        2224 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext srcContext;</span>
+<span class='curline'><a href='../S/635.html#L2298'>CUcontext</a>        2298 tracing_tool/nvbit/generated_cuda_meta.h     CUcontext *pctx;</span>
+<span class='curline'><a href='../S/636.html#L138'>CUcontext</a>         138 tracing_tool/nvbit/nvbit.h void nvbit_at_ctx_init(CUcontext ctx);</span>
+<span class='curline'><a href='../S/636.html#L142'>CUcontext</a>         142 tracing_tool/nvbit/nvbit.h void nvbit_at_ctx_term(CUcontext ctx);</span>
+<span class='curline'><a href='../S/636.html#L155'>CUcontext</a>         155 tracing_tool/nvbit/nvbit.h void nvbit_at_cuda_event(CUcontext ctx, int is_exit, nvbit_api_cuda_t cbid,</span>
+<span class='curline'><a href='../S/636.html#L165'>CUcontext</a>         165 tracing_tool/nvbit/nvbit.h std::vector&lt;CUfunction&gt; nvbit_get_related_functions(CUcontext ctx,</span>
+<span class='curline'><a href='../S/636.html#L169'>CUcontext</a>         169 tracing_tool/nvbit/nvbit.h const std::vector&lt;Instr*&gt;&amp; nvbit_get_instrs(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/636.html#L172'>CUcontext</a>         172 tracing_tool/nvbit/nvbit.h const CFG_t&amp; nvbit_get_CFG(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/636.html#L175'>CUcontext</a>         175 tracing_tool/nvbit/nvbit.h const char* nvbit_get_func_name(CUcontext ctx, CUfunction f,</span>
+<span class='curline'><a href='../S/636.html#L180'>CUcontext</a>         180 tracing_tool/nvbit/nvbit.h bool nvbit_get_line_info(CUcontext cuctx, CUfunction cufunc, uint32_t offset,</span>
+<span class='curline'><a href='../S/636.html#L184'>CUcontext</a>         184 tracing_tool/nvbit/nvbit.h uint32_t nvbit_get_sm_family(CUcontext cuctx);</span>
+<span class='curline'><a href='../S/636.html#L190'>CUcontext</a>         190 tracing_tool/nvbit/nvbit.h bool nvbit_is_func_kernel(CUcontext ctx, CUfunction func);</span>
+<span class='curline'><a href='../S/636.html#L195'>CUcontext</a>         195 tracing_tool/nvbit/nvbit.h uint64_t nvbit_get_shmem_base_addr(CUcontext cuctx);</span>
+<span class='curline'><a href='../S/636.html#L200'>CUcontext</a>         200 tracing_tool/nvbit/nvbit.h uint64_t nvbit_get_local_mem_base_addr(CUcontext cuctx);</span>
+<span class='curline'><a href='../S/636.html#L324'>CUcontext</a>         324 tracing_tool/nvbit/nvbit.h void nvbit_enable_instrumented(CUcontext ctx, CUfunction func, bool flag,</span>
+<span class='curline'><a href='../S/636.html#L329'>CUcontext</a>         329 tracing_tool/nvbit/nvbit.h void nvbit_set_at_launch(CUcontext ctx, CUfunction func, void* buf,</span>
+</pre>
+</body>
+</html>

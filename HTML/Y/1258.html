@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>klFun</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/15.html#L19'>klFun</a>              19 llvm_tool/mekong-utils/inc/HostUtils.h void getKernelLaunchSites(llvm::Function *klFun, std::vector&lt;llvm::CallBase *&gt; &amp;callSites);</span>
+<span class='curline'><a href='../S/6.html#L108'>klFun</a>             108 llvm_tool/mekong-utils/src/HostUtils.cpp void getKernelLaunchSites(llvm::Function *klFun, std::vector&lt;llvm::CallBase *&gt; &amp;callSites) {</span>
+<span class='curline'><a href='../S/6.html#L109'>klFun</a>             109 llvm_tool/mekong-utils/src/HostUtils.cpp   for (auto *user : klFun-&gt;users()) {</span>
+<span class='curline'><a href='../S/6.html#L112'>klFun</a>             112 llvm_tool/mekong-utils/src/HostUtils.cpp     if (callBase != nullptr &amp;&amp; (callBase-&gt;getCalledFunction() == klFun)) {</span>
+</pre>
+</body>
+</html>

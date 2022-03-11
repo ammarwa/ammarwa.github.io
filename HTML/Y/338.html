@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>callBase</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/6.html#L82'>callBase</a>           82 llvm_tool/mekong-utils/src/HostUtils.cpp     CallBase *callBase = dyn_cast_or_null&lt;CallBase&gt;(user);</span>
+<span class='curline'><a href='../S/6.html#L83'>callBase</a>           83 llvm_tool/mekong-utils/src/HostUtils.cpp     if (callBase != nullptr) {</span>
+<span class='curline'><a href='../S/6.html#L85'>callBase</a>           85 llvm_tool/mekong-utils/src/HostUtils.cpp       Value *val_func = (callBase-&gt;getArgOperand(1)-&gt;stripPointerCastsAndAliases());</span>
+<span class='curline'><a href='../S/6.html#L88'>callBase</a>           88 llvm_tool/mekong-utils/src/HostUtils.cpp       GlobalVariable *gv = dyn_cast_or_null&lt;GlobalVariable&gt;(callBase-&gt;getArgOperand(2)-&gt;stripPointerCastsAndAliases());</span>
+<span class='curline'><a href='../S/6.html#L110'>callBase</a>          110 llvm_tool/mekong-utils/src/HostUtils.cpp     CallBase *callBase = dyn_cast_or_null&lt;CallBase&gt;(user);</span>
+<span class='curline'><a href='../S/6.html#L112'>callBase</a>          112 llvm_tool/mekong-utils/src/HostUtils.cpp     if (callBase != nullptr &amp;&amp; (callBase-&gt;getCalledFunction() == klFun)) {</span>
+<span class='curline'><a href='../S/6.html#L113'>callBase</a>          113 llvm_tool/mekong-utils/src/HostUtils.cpp       callSites.push_back(callBase);</span>
+</pre>
+</body>
+</html>

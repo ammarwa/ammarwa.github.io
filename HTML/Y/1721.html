@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>t_ptr</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/25.html#L51'>t_ptr</a>              51 llvm_tool/lib/hostRuntime.cpp   uint64_t *t_ptr;</span>
+<span class='curline'><a href='../S/25.html#L53'>t_ptr</a>              53 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMalloc(&amp;t_ptr, len * array_size * sizeof(uint64_t)));</span>
+<span class='curline'><a href='../S/25.html#L55'>t_ptr</a>              55 llvm_tool/lib/hostRuntime.cpp   if (t_ptr == nullptr) {</span>
+<span class='curline'><a href='../S/25.html#L60'>t_ptr</a>              60 llvm_tool/lib/hostRuntime.cpp   CUDA_CHECK(cudaMemset(t_ptr, 0, len * array_size * sizeof(uint64_t)));</span>
+<span class='curline'><a href='../S/25.html#L61'>t_ptr</a>              61 llvm_tool/lib/hostRuntime.cpp   return t_ptr;</span>
+</pre>
+</body>
+</html>

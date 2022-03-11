@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>ekt</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/616.html#L15'>ekt</a>                15 reuse_distance_tool/parda.c void iterator(gpointer key, gpointer value, gpointer ekt) {</span>
+<span class='curline'><a href='../S/616.html#L18'>ekt</a>                18 reuse_distance_tool/parda.c 	narray_append_val(((end_keytime_t*)ekt)-&gt;gkeys, temp);</span>
+<span class='curline'><a href='../S/616.html#L19'>ekt</a>                19 reuse_distance_tool/parda.c 	narray_append_val(((end_keytime_t*)ekt)-&gt;gtimes, value);</span>
+<span class='curline'><a href='../S/616.html#L24'>ekt</a>                24 reuse_distance_tool/parda.c 	end_keytime_t ekt;</span>
+<span class='curline'><a href='../S/616.html#L25'>ekt</a>                25 reuse_distance_tool/parda.c 	ekt.gkeys = narray_new(sizeof(HKEY), 1000);</span>
+<span class='curline'><a href='../S/616.html#L26'>ekt</a>                26 reuse_distance_tool/parda.c 	ekt.gtimes = narray_new(sizeof(T), 1000);</span>
+<span class='curline'><a href='../S/616.html#L27'>ekt</a>                27 reuse_distance_tool/parda.c 	g_hash_table_foreach(gh, (GHFunc)iterator, &amp;ekt);</span>
+<span class='curline'><a href='../S/616.html#L29'>ekt</a>                29 reuse_distance_tool/parda.c 	return ekt;</span>
+<span class='curline'><a href='../S/616.html#L180'>ekt</a>               180 reuse_distance_tool/parda.c 	pdt_a-&gt;ekt = parda_generate_end(pdt_a);</span>
+<span class='curline'><a href='../S/616.html#L181'>ekt</a>               181 reuse_distance_tool/parda.c 	parda_get_abend(pdt_b, &amp;pdt_a-&gt;ekt);</span>
+<span class='curline'><a href='../S/616.html#L182'>ekt</a>               182 reuse_distance_tool/parda.c 	narray_free(pdt_a-&gt;ekt.gkeys);</span>
+<span class='curline'><a href='../S/616.html#L183'>ekt</a>               183 reuse_distance_tool/parda.c 	narray_free(pdt_a-&gt;ekt.gtimes);</span>
+<span class='curline'><a href='../S/620.html#L71'>ekt</a>                71 reuse_distance_tool/parda.h 	end_keytime_t ekt;</span>
+<span class='curline'><a href='../S/620.html#L84'>ekt</a>                84 reuse_distance_tool/parda.h void iterator(gpointer key, gpointer value, gpointer ekt);</span>
+<span class='curline'><a href='../S/620.html#L100'>ekt</a>               100 reuse_distance_tool/parda.h void parda_print_end(const end_keytime_t* ekt);</span>
+<span class='curline'><a href='../S/620.html#L104'>ekt</a>               104 reuse_distance_tool/parda.h void print_iterator(gpointer key, gpointer value, gpointer ekt);</span>
+<span class='curline'><a href='../S/608.html#L14'>ekt</a>                14 reuse_distance_tool/parda_print.c void parda_print_end(const end_keytime_t* ekt) {</span>
+<span class='curline'><a href='../S/608.html#L15'>ekt</a>                15 reuse_distance_tool/parda_print.c 	narray_t* gkeys = ekt-&gt;gkeys;</span>
+<span class='curline'><a href='../S/608.html#L16'>ekt</a>                16 reuse_distance_tool/parda_print.c 	narray_t* gtimes = ekt-&gt;gtimes;</span>
+<span class='curline'><a href='../S/608.html#L33'>ekt</a>                33 reuse_distance_tool/parda_print.c void print_iterator(gpointer key, gpointer value, gpointer ekt) {</span>
+</pre>
+</body>
+</html>

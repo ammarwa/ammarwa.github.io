@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>bb</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/26.html#L84'>bb</a>                 84 llvm_tool/lib/fluxDevicePass.cpp       outfileM &lt;&lt; "  BlockCount: " &lt;&lt; func.bb.size() &lt;&lt; "\n";</span>
+<span class='curline'><a href='../S/26.html#L86'>bb</a>                 86 llvm_tool/lib/fluxDevicePass.cpp       for (auto bb : func.bb) {</span>
+<span class='curline'><a href='../S/26.html#L88'>bb</a>                 88 llvm_tool/lib/fluxDevicePass.cpp         outfileM &lt;&lt; "  - " &lt;&lt; bb.name &lt;&lt; ":\n";</span>
+<span class='curline'><a href='../S/26.html#L89'>bb</a>                 89 llvm_tool/lib/fluxDevicePass.cpp         for (auto inst : bb.inst) {</span>
+<span class='curline'><a href='../S/26.html#L142'>bb</a>                142 llvm_tool/lib/fluxDevicePass.cpp     for (llvm::BasicBlock &amp;bb : kernelClone-&gt;getBasicBlockList()) {</span>
+<span class='curline'><a href='../S/26.html#L163'>bb</a>                163 llvm_tool/lib/fluxDevicePass.cpp     for (BasicBlock &amp;bb : kernelClone-&gt;getBasicBlockList()) {</span>
+<span class='curline'><a href='../S/26.html#L164'>bb</a>                164 llvm_tool/lib/fluxDevicePass.cpp       builder.SetInsertPoint(&amp;*bb.getFirstInsertionPt());</span>
+<span class='curline'><a href='../S/26.html#L165'>bb</a>                165 llvm_tool/lib/fluxDevicePass.cpp       Constant *block_ID = builder.getInt32(blockIDs.at(&amp;bb));</span>
+<span class='curline'><a href='../S/9.html#L16'>bb</a>                 16 llvm_tool/mekong-utils/inc/PTXFunction.h   std::vector&lt;Block&gt; bb;</span>
+<span class='curline'><a href='../S/10.html#L3088'>bb</a>               3088 llvm_tool/mekong-utils/inc/ptx_parser.h 	func.bb[bbIdx].inst.push_back(temp);</span>
+<span class='curline'><a href='../S/10.html#L3110'>bb</a>               3110 llvm_tool/mekong-utils/inc/ptx_parser.h           func.bb.push_back({currentBB, {}});</span>
+<span class='curline'><a href='../S/6.html#L230'>bb</a>                230 llvm_tool/mekong-utils/src/HostUtils.cpp     for (auto &amp;bb : *registerGlobals) {</span>
+<span class='curline'><a href='../S/6.html#L231'>bb</a>                231 llvm_tool/mekong-utils/src/HostUtils.cpp       for (auto &amp;inst : bb) {</span>
+<span class='curline'><a href='../S/5.html#L54'>bb</a>                 54 llvm_tool/mekong-utils/src/IRUtils.cpp   for (int i = 0; i &lt; funcPTX.bb.size(); ++i) {</span>
+<span class='curline'><a href='../S/5.html#L55'>bb</a>                 55 llvm_tool/mekong-utils/src/IRUtils.cpp     nameMap.insert({funcPTX.bb[i].name, i});</span>
+<span class='curline'><a href='../S/5.html#L60'>bb</a>                 60 llvm_tool/mekong-utils/src/IRUtils.cpp   for (llvm::BasicBlock &amp;bb : func-&gt;getBasicBlockList()) {</span>
+<span class='curline'><a href='../S/5.html#L61'>bb</a>                 61 llvm_tool/mekong-utils/src/IRUtils.cpp     ptrMap[&amp;bb] = nameMap[bb.getName()];</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>FluxHostPass</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<pre>
+<span class='curline'><a href='../S/20.html#L30'>FluxHostPass</a>       30 llvm_tool/inc/cudaFluxPasses.h struct FluxHostPass : public llvm::ModulePass {</span>
+<span class='curline'><a href='../S/20.html#L33'>FluxHostPass</a>       33 llvm_tool/inc/cudaFluxPasses.h   FluxHostPass() : llvm::ModulePass(ID) {}</span>
+<span class='curline'><a href='../S/24.html#L22'>FluxHostPass</a>       22 llvm_tool/lib/fluxHostPass.cpp bool FluxHostPass::runOnModule(llvm::Module &amp;M) {</span>
+<span class='curline'><a href='../S/24.html#L239'>FluxHostPass</a>      239 llvm_tool/lib/fluxHostPass.cpp void FluxHostPass::getAnalysisUsage(AnalysisUsage &amp;AU) const { AU.setPreservesAll(); }</span>
+<span class='curline'><a href='../S/24.html#L241'>FluxHostPass</a>      241 llvm_tool/lib/fluxHostPass.cpp void FluxHostPass::releaseMemory() {}</span>
+<span class='curline'><a href='../S/27.html#L10'>FluxHostPass</a>       10 llvm_tool/lib/registerPasses.cpp char FluxHostPass::ID = 0;</span>
+<span class='curline'><a href='../S/27.html#L14'>FluxHostPass</a>       14 llvm_tool/lib/registerPasses.cpp static RegisterPass&lt;FluxHostPass&gt; Y("host-cuda-flux", "Instrument nvptx kernel launches for basic block profiling");</span>
+<span class='curline'><a href='../S/27.html#L28'>FluxHostPass</a>       28 llvm_tool/lib/registerPasses.cpp   PM.add(new FluxHostPass());</span>
+</pre>
+</body>
+</html>
