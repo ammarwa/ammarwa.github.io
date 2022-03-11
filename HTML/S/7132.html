@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<title>reuse_distance_tool/parda_omp.h</title>
+<meta name='robots' content='noindex,nofollow' />
+<meta name='generator' content='GLOBAL-6.6.4' />
+<meta http-equiv='Content-Style-Type' content='text/css' />
+<link rel='stylesheet' type='text/css' href='../style.css' />
+</head>
+<body>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/7167.html'>reuse_distance_tool</a>/parda_omp.h</h2>
+<em class='comment'>/* [&lt;][&gt;][^][v][top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+<hr />
+<h2 class='header'><a href='../J/26.html' title='Multiple included from 2 places.'>INCLUDED FROM</a></h2>
+<hr />
+<pre>
+<a id='L1' name='L1'></a>   1 <em class='sharp'>#ifndef</em> <a href='../S/7132.html#L2' title='Defined at 2 in reuse_distance_tool/parda_omp.h.'>_PARDA_OMP_H</a>
+<a id='L2' name='L2'></a>   2 <em class='sharp'>#define</em> <a href='../S/7132.html#L1' title='Referred from 1 in reuse_distance_tool/parda_omp.h.'>_PARDA_OMP_H</a>
+<a id='L3' name='L3'></a>   3 
+<a id='L4' name='L4'></a>   4 <em class='sharp'>#include</em> "<a href='7141.html'>parda.h</a>"
+<a id='L5' name='L5'></a>   5 <em class='sharp'>#include</em> &lt;omp.h&gt;
+<a id='L6' name='L6'></a>   6 
+<a id='L7' name='L7'></a>   7 <a href='../S/7141.html#L66' title='Defined at 66 in reuse_distance_tool/parda.h.'>processor_info_t</a> <a href='../S/7131.html#L3' title='Defined at 3 in reuse_distance_tool/parda_omp.c.'>parda_get_thread_info</a>(<strong class='reserved'>long</strong> <a href='../Y/1286.html' title='Multiple used in 42 places.'>lines</a>, <strong class='reserved'>long</strong> <a href='../Y/293.html' title='Multiple used in 33 places.'>begin</a>, <strong class='reserved'>int</strong> <a href='../Y/1533.html' title='Multiple used in 29 places.'>pid</a>, <strong class='reserved'>int</strong> <a href='../Y/1575.html' title='Multiple used in 41 places.'>psize</a>);
+<a id='L8' name='L8'></a>   8 <a href='../S/7141.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a>* <a href='../S/7131.html#L16' title='Defined at 16 in reuse_distance_tool/parda_omp.c.'>parda_omp_init</a>(<strong class='reserved'>int</strong> <a href='../Y/1575.html' title='Multiple used in 41 places.'>psize</a>);
+<a id='L9' name='L9'></a>   9 <a href='../S/7141.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a> <a href='../S/7131.html#L70' title='Defined at 70 in reuse_distance_tool/parda_omp.c.'>parda_omp_input</a>(<strong class='reserved'>char</strong> <a href='../Y/1201.html' title='Multiple used in 26 places.'>inputFileName</a>[], <a href='../S/7141.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a>* <a href='../Y/1506.html' title='Multiple used in 39 places.'>pdt_a</a>, <strong class='reserved'>long</strong> <a href='../Y/293.html' title='Multiple used in 33 places.'>begin</a>, <strong class='reserved'>long</strong> <a href='../Y/982.html' title='Multiple used in 34 places.'>end</a>, <strong class='reserved'>int</strong> <a href='../Y/1533.html' title='Multiple used in 29 places.'>pid</a>, <strong class='reserved'>int</strong> <a href='../Y/1575.html' title='Multiple used in 41 places.'>psize</a>);
+<a id='L10' name='L10'></a>  10 <strong class='reserved'>void</strong> <a href='../S/7131.html#L112' title='Defined at 112 in reuse_distance_tool/parda_omp.c.'>parda_omp_free</a>(<a href='../S/7141.html#L74' title='Defined at 74 in reuse_distance_tool/parda.h.'>program_data_t</a>* <a href='../Y/1506.html' title='Multiple used in 39 places.'>pdt_a</a>, <strong class='reserved'>int</strong> <a href='../Y/1575.html' title='Multiple used in 41 places.'>psize</a>);
+<a id='L11' name='L11'></a>  11 <strong class='reserved'>void</strong> <a href='../S/7131.html#L125' title='Defined at 125 in reuse_distance_tool/parda_omp.c.'>parda_omp_stackdist</a>(<strong class='reserved'>char</strong>* <a href='../Y/1201.html' title='Multiple used in 26 places.'>inputFileName</a>, <strong class='reserved'>long</strong> <a href='../Y/1286.html' title='Multiple used in 42 places.'>lines</a>, <strong class='reserved'>int</strong> <a href='../Y/1735.html' title='Multiple used in 11 places.'>threads</a>);
+<a id='L12' name='L12'></a>  12 <em class='sharp'>#endif</em>
+</pre>
+<hr />
+<a id='BOTTOM' name='BOTTOM'></a>
+<em class='comment'>/* [&lt;][&gt;][^][v]<a href='#TOP'>[top]</a>[bottom]<a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
+</body>
+</html>

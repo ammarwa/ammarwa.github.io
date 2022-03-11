@@ -8,7 +8,7 @@
 <link rel='stylesheet' type='text/css' href='../style.css' />
 </head>
 <body>
-<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/621.html'>llvm_tool</a>/<a href='../files/624.html'>mekong-utils</a>/<a href='../files/626.html'>src</a>/HostUtils.cpp</h2>
+<a id='TOP' name='TOP'></a><h2 class='header'><a href='../mains.html'>root</a>/<a href='../files/7161.html'>llvm_tool</a>/<a href='../files/7164.html'>mekong-utils</a>/<a href='../files/7166.html'>src</a>/HostUtils.cpp</h2>
 <em class='comment'>/* [&lt;][&gt;]<a href='#L19'>[^]</a><a href='#L373'>[v]</a>[top]<a href='#BOTTOM'>[bottom]</a><a href='../mains.html'>[index]</a><a href='../help.html'>[help]</a> */</em>
 <hr />
 <h2 class='header'>DEFINITIONS</h2>
@@ -178,7 +178,7 @@ This source file includes following definitions.
 <a id='L146' name='L146'></a> 146   <em class='comment'>// BFSearch back to configuration call</em>
 <a id='L147' name='L147'></a> 147   <a href='../Y/41.html' title='Multiple used in 26 places.'>CallBase</a> *<a href='../Y/371.html' title='Multiple used in 16 places.'>confCall</a> = <a href='../Y/1365.html' title='Multiple used in 43 places.'>nullptr</a>;
 <a id='L148' name='L148'></a> 148   queue&lt;<a href='../Y/9.html' title='Multiple used in 29 places.'>BasicBlock</a> *&gt; <a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>;
-<a id='L149' name='L149'></a> 149   <a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>.<a href='../S/614.html#L56' title='Defined at 56 in tracing_tool/nvbit/utils/channel.hpp.'>push</a>(<a href='../Y/1247.html' title='Multiple used in 20 places.'>kernelLaunchSite</a>-&gt;<a href='../Y/1106.html' title='Multiple used in 5 places.'>getParent</a>());
+<a id='L149' name='L149'></a> 149   <a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>.<a href='../S/7154.html#L56' title='Defined at 56 in tracing_tool/nvbit/utils/channel.hpp.'>push</a>(<a href='../Y/1247.html' title='Multiple used in 20 places.'>kernelLaunchSite</a>-&gt;<a href='../Y/1106.html' title='Multiple used in 5 places.'>getParent</a>());
 <a id='L150' name='L150'></a> 150   <strong class='reserved'>while</strong> (<a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>.<a href='../Y/975.html' title='Multiple used in 3 places.'>empty</a>() == <strong class='reserved'>false</strong> <a href='../Y/248.html' title='Multiple used in 6 places.'>and</a> <a href='../Y/371.html' title='Multiple used in 16 places.'>confCall</a> == <a href='../Y/1365.html' title='Multiple used in 43 places.'>nullptr</a>) <em class='brace'>{</em>
 <a id='L151' name='L151'></a> 151     <a href='../Y/9.html' title='Multiple used in 29 places.'>BasicBlock</a> *<a href='../Y/912.html' title='Multiple used in 4 places.'>currentBlock</a> = <a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>.<a href='../Y/1035.html' title='Multiple used in 2 places.'>front</a>();
 <a id='L152' name='L152'></a> 152     <a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>.pop();
@@ -198,7 +198,7 @@ This source file includes following definitions.
 <a id='L166' name='L166'></a> 166     pred_iterator <a href='../Y/138.html' title='Multiple used in 4 places.'>PI</a> = pred_begin(<a href='../Y/912.html' title='Multiple used in 4 places.'>currentBlock</a>), <a href='../Y/63.html' title='Multiple used in 3 places.'>E</a> = pred_end(<a href='../Y/912.html' title='Multiple used in 4 places.'>currentBlock</a>);
 <a id='L167' name='L167'></a> 167     <a href='../Y/267.html' title='Multiple used in 38 places.'>assert</a>(<a href='../Y/138.html' title='Multiple used in 4 places.'>PI</a> != <a href='../Y/63.html' title='Multiple used in 3 places.'>E</a> <a href='../Y/1438.html' title='Multiple used in 4 places.'>or</a> <a href='../Y/371.html' title='Multiple used in 16 places.'>confCall</a> != <a href='../Y/1365.html' title='Multiple used in 43 places.'>nullptr</a> &amp;&amp; "Could not find kernel configuration call!");
 <a id='L168' name='L168'></a> 168     <strong class='reserved'>for</strong> (; <a href='../Y/138.html' title='Multiple used in 4 places.'>PI</a> != <a href='../Y/63.html' title='Multiple used in 3 places.'>E</a>; ++<a href='../Y/138.html' title='Multiple used in 4 places.'>PI</a>) <em class='brace'>{</em>
-<a id='L169' name='L169'></a> 169       <a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>.<a href='../S/614.html#L56' title='Defined at 56 in tracing_tool/nvbit/utils/channel.hpp.'>push</a>(*<a href='../Y/138.html' title='Multiple used in 4 places.'>PI</a>);
+<a id='L169' name='L169'></a> 169       <a href='../Y/1588.html' title='Multiple used in 6 places.'>q</a>.<a href='../S/7154.html#L56' title='Defined at 56 in tracing_tool/nvbit/utils/channel.hpp.'>push</a>(*<a href='../Y/138.html' title='Multiple used in 4 places.'>PI</a>);
 <a id='L170' name='L170'></a> 170     <em class='brace'>}</em>
 <a id='L171' name='L171'></a> 171   <em class='brace'>}</em>
 <a id='L172' name='L172'></a> 172 

@@ -9,47 +9,47 @@
 </head>
 <body>
 <pre>
-<span class='curline'><a href='../S/597.html#L96'>psize</a>              96 reuse_distance_tool/parda.c processor_info_t parda_get_processor_info(int pid, int psize, long sum) {</span>
-<span class='curline'><a href='../S/597.html#L98'>psize</a>              98 reuse_distance_tool/parda.c 	pit.tstart = parda_low(pid, psize, sum);</span>
-<span class='curline'><a href='../S/597.html#L99'>psize</a>              99 reuse_distance_tool/parda.c 	pit.tend = parda_high(pid, psize, sum);</span>
-<span class='curline'><a href='../S/597.html#L100'>psize</a>             100 reuse_distance_tool/parda.c 	pit.tlen = parda_size(pid, psize, sum);</span>
-<span class='curline'><a href='../S/597.html#L103'>psize</a>             103 reuse_distance_tool/parda.c 	pit.psize = psize;</span>
-<span class='curline'><a href='../S/601.html#L64'>psize</a>              64 reuse_distance_tool/parda.h 	int pid,psize;</span>
-<span class='curline'><a href='../S/601.html#L93'>psize</a>              93 reuse_distance_tool/parda.h processor_info_t parda_get_processor_info(int pid, int psize, long sum);</span>
-<span class='curline'><a href='../S/601.html#L116'>psize</a>             116 reuse_distance_tool/parda.h static inline T parda_low(int pid, int psize, T sum) {</span>
-<span class='curline'><a href='../S/601.html#L117'>psize</a>             117 reuse_distance_tool/parda.h 	return (((long long)(pid))*(sum)/(psize));</span>
-<span class='curline'><a href='../S/601.html#L120'>psize</a>             120 reuse_distance_tool/parda.h static inline T parda_high(int pid, int psize, T sum) {</span>
-<span class='curline'><a href='../S/601.html#L121'>psize</a>             121 reuse_distance_tool/parda.h 		return parda_low(pid + 1, psize, sum)-1;</span>
-<span class='curline'><a href='../S/601.html#L124'>psize</a>             124 reuse_distance_tool/parda.h static inline T parda_size(int pid, int psize, T sum) {</span>
-<span class='curline'><a href='../S/601.html#L125'>psize</a>             125 reuse_distance_tool/parda.h 		return (parda_low(pid + 1, psize, sum)) - (parda_low(pid, psize, sum));</span>
-<span class='curline'><a href='../S/601.html#L128'>psize</a>             128 reuse_distance_tool/parda.h static inline T parda_owner(T index, int psize, T sum) {</span>
-<span class='curline'><a href='../S/601.html#L129'>psize</a>             129 reuse_distance_tool/parda.h 		return (((long long)psize)*(index+1)-1)/sum;</span>
-<span class='curline'><a href='../S/601.html#L132'>psize</a>             132 reuse_distance_tool/parda.h static inline char* parda_generate_pfilename(char filename[], int pid, int psize) {</span>
-<span class='curline'><a href='../S/601.html#L134'>psize</a>             134 reuse_distance_tool/parda.h 	sprintf(pfilename, "%d_%s_p%d.txt", psize, filename, pid);</span>
-<span class='curline'><a href='../S/591.html#L3'>psize</a>               3 reuse_distance_tool/parda_omp.c processor_info_t parda_get_thread_info(long lines, long begin, int pid, int psize) {</span>
-<span class='curline'><a href='../S/591.html#L6'>psize</a>               6 reuse_distance_tool/parda_omp.c     pit_c.psize = psize;</span>
-<span class='curline'><a href='../S/591.html#L8'>psize</a>               8 reuse_distance_tool/parda_omp.c     pit_c.tstart = parda_low(pit_c.pid, pit_c.psize, lines);</span>
-<span class='curline'><a href='../S/591.html#L10'>psize</a>              10 reuse_distance_tool/parda_omp.c     pit_c.tend = parda_high(pit_c.pid, pit_c.psize, lines);</span>
-<span class='curline'><a href='../S/591.html#L12'>psize</a>              12 reuse_distance_tool/parda_omp.c     pit_c.tlen = parda_size(pit_c.pid, pit_c.psize, lines);</span>
-<span class='curline'><a href='../S/591.html#L27'>psize</a>              27 reuse_distance_tool/parda_omp.c     const int pid, const int nthreads, const int psize, FILE* fpa[]) {</span>
-<span class='curline'><a href='../S/591.html#L30'>psize</a>              30 reuse_distance_tool/parda_omp.c         char* pfilename = parda_generate_pfilename(inputFileName, pid * nthreads + i, psize * nthreads);</span>
-<span class='curline'><a href='../S/591.html#L36'>psize</a>              36 reuse_distance_tool/parda_omp.c     program_data_t* pdt_a, long begin, long end, int pid, int psize) {</span>
-<span class='curline'><a href='../S/591.html#L40'>psize</a>              40 reuse_distance_tool/parda_omp.c     parda_omp_openfile(inputFileName, pid, nthreads, psize, fpa);</span>
-<span class='curline'><a href='../S/591.html#L71'>psize</a>              71 reuse_distance_tool/parda_omp.c     int pid, int psize)</span>
-<span class='curline'><a href='../S/591.html#L89'>psize</a>              89 reuse_distance_tool/parda_omp.c             parda_input_with_filename(parda_generate_pfilename(inputFileName, pid * nthreads + i, psize * nthreads), &amp;pdt_a[i], pit_a[i].tstart, pit_a[i].tend);</span>
-<span class='curline'><a href='../S/591.html#L112'>psize</a>             112 reuse_distance_tool/parda_omp.c void parda_omp_free(program_data_t* pdt_a, int psize)</span>
-<span class='curline'><a href='../S/591.html#L118'>psize</a>             118 reuse_distance_tool/parda_omp.c         for(i = 0; i &lt; psize - 1; i++) {</span>
-<span class='curline'><a href='../S/592.html#L7'>psize</a>               7 reuse_distance_tool/parda_omp.h processor_info_t parda_get_thread_info(long lines, long begin, int pid, int psize);</span>
-<span class='curline'><a href='../S/592.html#L8'>psize</a>               8 reuse_distance_tool/parda_omp.h program_data_t* parda_omp_init(int psize);</span>
-<span class='curline'><a href='../S/592.html#L9'>psize</a>               9 reuse_distance_tool/parda_omp.h program_data_t parda_omp_input(char inputFileName[], program_data_t* pdt_a, long begin, long end, int pid, int psize);</span>
-<span class='curline'><a href='../S/592.html#L10'>psize</a>              10 reuse_distance_tool/parda_omp.h void parda_omp_free(program_data_t* pdt_a, int psize);</span>
-<span class='curline'><a href='../S/600.html#L71'>psize</a>              71 reuse_distance_tool/seperate.c   int psize = processor_number;</span>
-<span class='curline'><a href='../S/600.html#L72'>psize</a>              72 reuse_distance_tool/seperate.c   if(!is_binary) seperate_textfile(inputFileName, psize, lines);</span>
-<span class='curline'><a href='../S/600.html#L73'>psize</a>              73 reuse_distance_tool/seperate.c   else seperate_binaryfile(inputFileName, psize, lines);</span>
-<span class='curline'><a href='../S/611.html#L5191'>psize</a>            5191 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemGetAddressRange(CUdeviceptr *pbase, size_t *psize, CUdeviceptr dptr);</span>
-<span class='curline'><a href='../S/611.html#L15808'>psize</a>            15808 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemGetAddressRange(CUdeviceptr_v1 *pbase, unsigned int *psize, CUdeviceptr_v1 dptr);</span>
-<span class='curline'><a href='../S/616.html#L346'>psize</a>             346 tracing_tool/nvbit/generated_cuda_meta.h     size_t *psize;</span>
-<span class='curline'><a href='../S/616.html#L1796'>psize</a>            1796 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *psize;</span>
+<span class='curline'><a href='../S/7137.html#L96'>psize</a>              96 reuse_distance_tool/parda.c processor_info_t parda_get_processor_info(int pid, int psize, long sum) {</span>
+<span class='curline'><a href='../S/7137.html#L98'>psize</a>              98 reuse_distance_tool/parda.c 	pit.tstart = parda_low(pid, psize, sum);</span>
+<span class='curline'><a href='../S/7137.html#L99'>psize</a>              99 reuse_distance_tool/parda.c 	pit.tend = parda_high(pid, psize, sum);</span>
+<span class='curline'><a href='../S/7137.html#L100'>psize</a>             100 reuse_distance_tool/parda.c 	pit.tlen = parda_size(pid, psize, sum);</span>
+<span class='curline'><a href='../S/7137.html#L103'>psize</a>             103 reuse_distance_tool/parda.c 	pit.psize = psize;</span>
+<span class='curline'><a href='../S/7141.html#L64'>psize</a>              64 reuse_distance_tool/parda.h 	int pid,psize;</span>
+<span class='curline'><a href='../S/7141.html#L93'>psize</a>              93 reuse_distance_tool/parda.h processor_info_t parda_get_processor_info(int pid, int psize, long sum);</span>
+<span class='curline'><a href='../S/7141.html#L116'>psize</a>             116 reuse_distance_tool/parda.h static inline T parda_low(int pid, int psize, T sum) {</span>
+<span class='curline'><a href='../S/7141.html#L117'>psize</a>             117 reuse_distance_tool/parda.h 	return (((long long)(pid))*(sum)/(psize));</span>
+<span class='curline'><a href='../S/7141.html#L120'>psize</a>             120 reuse_distance_tool/parda.h static inline T parda_high(int pid, int psize, T sum) {</span>
+<span class='curline'><a href='../S/7141.html#L121'>psize</a>             121 reuse_distance_tool/parda.h 		return parda_low(pid + 1, psize, sum)-1;</span>
+<span class='curline'><a href='../S/7141.html#L124'>psize</a>             124 reuse_distance_tool/parda.h static inline T parda_size(int pid, int psize, T sum) {</span>
+<span class='curline'><a href='../S/7141.html#L125'>psize</a>             125 reuse_distance_tool/parda.h 		return (parda_low(pid + 1, psize, sum)) - (parda_low(pid, psize, sum));</span>
+<span class='curline'><a href='../S/7141.html#L128'>psize</a>             128 reuse_distance_tool/parda.h static inline T parda_owner(T index, int psize, T sum) {</span>
+<span class='curline'><a href='../S/7141.html#L129'>psize</a>             129 reuse_distance_tool/parda.h 		return (((long long)psize)*(index+1)-1)/sum;</span>
+<span class='curline'><a href='../S/7141.html#L132'>psize</a>             132 reuse_distance_tool/parda.h static inline char* parda_generate_pfilename(char filename[], int pid, int psize) {</span>
+<span class='curline'><a href='../S/7141.html#L134'>psize</a>             134 reuse_distance_tool/parda.h 	sprintf(pfilename, "%d_%s_p%d.txt", psize, filename, pid);</span>
+<span class='curline'><a href='../S/7131.html#L3'>psize</a>               3 reuse_distance_tool/parda_omp.c processor_info_t parda_get_thread_info(long lines, long begin, int pid, int psize) {</span>
+<span class='curline'><a href='../S/7131.html#L6'>psize</a>               6 reuse_distance_tool/parda_omp.c     pit_c.psize = psize;</span>
+<span class='curline'><a href='../S/7131.html#L8'>psize</a>               8 reuse_distance_tool/parda_omp.c     pit_c.tstart = parda_low(pit_c.pid, pit_c.psize, lines);</span>
+<span class='curline'><a href='../S/7131.html#L10'>psize</a>              10 reuse_distance_tool/parda_omp.c     pit_c.tend = parda_high(pit_c.pid, pit_c.psize, lines);</span>
+<span class='curline'><a href='../S/7131.html#L12'>psize</a>              12 reuse_distance_tool/parda_omp.c     pit_c.tlen = parda_size(pit_c.pid, pit_c.psize, lines);</span>
+<span class='curline'><a href='../S/7131.html#L27'>psize</a>              27 reuse_distance_tool/parda_omp.c     const int pid, const int nthreads, const int psize, FILE* fpa[]) {</span>
+<span class='curline'><a href='../S/7131.html#L30'>psize</a>              30 reuse_distance_tool/parda_omp.c         char* pfilename = parda_generate_pfilename(inputFileName, pid * nthreads + i, psize * nthreads);</span>
+<span class='curline'><a href='../S/7131.html#L36'>psize</a>              36 reuse_distance_tool/parda_omp.c     program_data_t* pdt_a, long begin, long end, int pid, int psize) {</span>
+<span class='curline'><a href='../S/7131.html#L40'>psize</a>              40 reuse_distance_tool/parda_omp.c     parda_omp_openfile(inputFileName, pid, nthreads, psize, fpa);</span>
+<span class='curline'><a href='../S/7131.html#L71'>psize</a>              71 reuse_distance_tool/parda_omp.c     int pid, int psize)</span>
+<span class='curline'><a href='../S/7131.html#L89'>psize</a>              89 reuse_distance_tool/parda_omp.c             parda_input_with_filename(parda_generate_pfilename(inputFileName, pid * nthreads + i, psize * nthreads), &amp;pdt_a[i], pit_a[i].tstart, pit_a[i].tend);</span>
+<span class='curline'><a href='../S/7131.html#L112'>psize</a>             112 reuse_distance_tool/parda_omp.c void parda_omp_free(program_data_t* pdt_a, int psize)</span>
+<span class='curline'><a href='../S/7131.html#L118'>psize</a>             118 reuse_distance_tool/parda_omp.c         for(i = 0; i &lt; psize - 1; i++) {</span>
+<span class='curline'><a href='../S/7132.html#L7'>psize</a>               7 reuse_distance_tool/parda_omp.h processor_info_t parda_get_thread_info(long lines, long begin, int pid, int psize);</span>
+<span class='curline'><a href='../S/7132.html#L8'>psize</a>               8 reuse_distance_tool/parda_omp.h program_data_t* parda_omp_init(int psize);</span>
+<span class='curline'><a href='../S/7132.html#L9'>psize</a>               9 reuse_distance_tool/parda_omp.h program_data_t parda_omp_input(char inputFileName[], program_data_t* pdt_a, long begin, long end, int pid, int psize);</span>
+<span class='curline'><a href='../S/7132.html#L10'>psize</a>              10 reuse_distance_tool/parda_omp.h void parda_omp_free(program_data_t* pdt_a, int psize);</span>
+<span class='curline'><a href='../S/7140.html#L71'>psize</a>              71 reuse_distance_tool/seperate.c   int psize = processor_number;</span>
+<span class='curline'><a href='../S/7140.html#L72'>psize</a>              72 reuse_distance_tool/seperate.c   if(!is_binary) seperate_textfile(inputFileName, psize, lines);</span>
+<span class='curline'><a href='../S/7140.html#L73'>psize</a>              73 reuse_distance_tool/seperate.c   else seperate_binaryfile(inputFileName, psize, lines);</span>
+<span class='curline'><a href='../S/7151.html#L5191'>psize</a>            5191 tracing_tool/nvbit/cuda.h CUresult CUDAAPI cuMemGetAddressRange(CUdeviceptr *pbase, size_t *psize, CUdeviceptr dptr);</span>
+<span class='curline'><a href='../S/7151.html#L15808'>psize</a>            15808 tracing_tool/nvbit/cuda.h     CUresult CUDAAPI cuMemGetAddressRange(CUdeviceptr_v1 *pbase, unsigned int *psize, CUdeviceptr_v1 dptr);</span>
+<span class='curline'><a href='../S/7156.html#L346'>psize</a>             346 tracing_tool/nvbit/generated_cuda_meta.h     size_t *psize;</span>
+<span class='curline'><a href='../S/7156.html#L1796'>psize</a>            1796 tracing_tool/nvbit/generated_cuda_meta.h     unsigned int *psize;</span>
 </pre>
 </body>
 </html>
